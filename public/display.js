@@ -82,7 +82,7 @@
   let muted = false;      // narration + chime ("Sound")
   let musicOn = true;     // ambient background music ("Music")
   let unlocked = false;
-  const MUSIC_VOL = 0.085;
+  const MUSIC_VOL = 0.4;
   const sndind = document.getElementById('sndind');
   const audiostart = document.getElementById('audiostart');
 
@@ -92,7 +92,7 @@
     sndind.classList.toggle('is-muted', muted && !musicOn);
   }
 
-  // A slow, modal pad (D-minor-ish) — sacred, calm, gently evolving.
+  // A calm, audible D-minor pad with gentle bell tones drifting over it.
   function startAmbient() {
     if (!audioCtx || musicGain) return;
     musicGain = audioCtx.createGain();
@@ -101,16 +101,16 @@
 
     const filter = audioCtx.createBiquadFilter();
     filter.type = 'lowpass';
-    filter.frequency.value = 650;
-    filter.Q.value = 0.6;
+    filter.frequency.value = 1500;
+    filter.Q.value = 0.5;
     filter.connect(musicGain);
 
-    const chord = [73.42, 110.00, 146.83, 220.00, 293.66]; // D2 A2 D3 A3 D4
+    const chord = [146.83, 220.00, 293.66, 349.23, 440.00]; // D3 A3 D4 F4 A4
     chord.forEach((f, i) => {
       const g = audioCtx.createGain();
-      g.gain.value = 0.22 / (i * 0.5 + 1);
+      g.gain.value = 0.07;
       g.connect(filter);
-      [f, f * 1.004].forEach((freq, j) => {
+      [f, f * 1.005].forEach((freq, j) => {
         const o = audioCtx.createOscillator();
         o.type = j === 0 ? 'sine' : 'triangle';
         o.frequency.value = freq;
@@ -119,17 +119,40 @@
       });
       const lfo = audioCtx.createOscillator(); // gentle breathing per voice
       lfo.type = 'sine';
-      lfo.frequency.value = 0.05 + i * 0.013;
+      lfo.frequency.value = 0.06 + i * 0.017;
       const lfoG = audioCtx.createGain();
-      lfoG.gain.value = 0.05;
+      lfoG.gain.value = 0.025;
       lfo.connect(lfoG); lfoG.connect(g.gain); lfo.start();
     });
-    const fLfo = audioCtx.createOscillator(); // slow filter sweep
+    const fLfo = audioCtx.createOscillator(); // slow filter sweep for movement
     fLfo.type = 'sine';
-    fLfo.frequency.value = 0.025;
+    fLfo.frequency.value = 0.03;
     const fLfoG = audioCtx.createGain();
-    fLfoG.gain.value = 260;
+    fLfoG.gain.value = 500;
     fLfo.connect(fLfoG); fLfoG.connect(filter.frequency); fLfo.start();
+
+    scheduleBell();
+  }
+
+  // Soft, slow bell notes from the chord — gives the pad a sense of music.
+  function scheduleBell() {
+    if (!audioCtx || !musicGain) return;
+    try {
+      const notes = [587.33, 698.46, 880.00, 1046.50]; // D5 F5 A5 C6
+      const f = notes[Math.floor(Math.random() * notes.length)];
+      const t = audioCtx.currentTime + 0.05;
+      const g = audioCtx.createGain();
+      g.gain.setValueAtTime(0.0001, t);
+      g.gain.exponentialRampToValueAtTime(0.22, t + 0.04);
+      g.gain.exponentialRampToValueAtTime(0.0001, t + 2.8);
+      g.connect(musicGain);
+      const o = audioCtx.createOscillator(); o.type = 'sine'; o.frequency.value = f;
+      const oh = audioCtx.createOscillator(); oh.type = 'sine'; oh.frequency.value = f * 2;
+      const ohg = audioCtx.createGain(); ohg.gain.value = 0.22; oh.connect(ohg); ohg.connect(g);
+      o.connect(g);
+      o.start(t); o.stop(t + 3.2); oh.start(t); oh.stop(t + 3.2);
+    } catch { /* noop */ }
+    setTimeout(scheduleBell, 2600 + Math.random() * 4200);
   }
 
   function rampMusic() {
