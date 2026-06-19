@@ -75,24 +75,121 @@
     raysEl.appendChild(svg);
   })();
 
-  // ---- Sound: a gentle chime, governed by the tablet --------------------
+  // ---- Audio: ambient music + narration (TTS) + reveal chime ------------
+  // The big screen produces all the sound; the tablet's 🔔 toggle controls it.
   let audioCtx = null;
+  let musicGain = null;
   let muted = false;
+  let unlocked = false;
+  const MUSIC_VOL = 0.085;
+  const sndind = document.getElementById('sndind');
+  const audiostart = document.getElementById('audiostart');
 
-  // Browsers block audio until a gesture; the operator's setup click unlocks it.
+  function reflectSoundIndicator() {
+    if (!sndind) return;
+    sndind.textContent = muted ? '🔇' : '🔊';
+    sndind.classList.toggle('is-muted', muted);
+  }
+
+  // A slow, modal pad (D-minor-ish) — sacred, calm, gently evolving.
+  function startAmbient() {
+    if (!audioCtx || musicGain) return;
+    musicGain = audioCtx.createGain();
+    musicGain.gain.value = muted ? 0 : MUSIC_VOL;
+    musicGain.connect(audioCtx.destination);
+
+    const filter = audioCtx.createBiquadFilter();
+    filter.type = 'lowpass';
+    filter.frequency.value = 650;
+    filter.Q.value = 0.6;
+    filter.connect(musicGain);
+
+    const chord = [73.42, 110.00, 146.83, 220.00, 293.66]; // D2 A2 D3 A3 D4
+    chord.forEach((f, i) => {
+      const g = audioCtx.createGain();
+      g.gain.value = 0.22 / (i * 0.5 + 1);
+      g.connect(filter);
+      [f, f * 1.004].forEach((freq, j) => {
+        const o = audioCtx.createOscillator();
+        o.type = j === 0 ? 'sine' : 'triangle';
+        o.frequency.value = freq;
+        o.connect(g);
+        o.start();
+      });
+      const lfo = audioCtx.createOscillator(); // gentle breathing per voice
+      lfo.type = 'sine';
+      lfo.frequency.value = 0.05 + i * 0.013;
+      const lfoG = audioCtx.createGain();
+      lfoG.gain.value = 0.05;
+      lfo.connect(lfoG); lfoG.connect(g.gain); lfo.start();
+    });
+    const fLfo = audioCtx.createOscillator(); // slow filter sweep
+    fLfo.type = 'sine';
+    fLfo.frequency.value = 0.025;
+    const fLfoG = audioCtx.createGain();
+    fLfoG.gain.value = 260;
+    fLfo.connect(fLfoG); fLfoG.connect(filter.frequency); fLfo.start();
+  }
+
+  function rampMusic() {
+    if (!musicGain || !audioCtx) return;
+    const now = audioCtx.currentTime;
+    musicGain.gain.cancelScheduledValues(now);
+    musicGain.gain.setTargetAtTime(muted ? 0 : MUSIC_VOL, now, 0.5);
+  }
+
   function unlock() {
+    if (unlocked) {
+      if (audiostart) audiostart.classList.add('is-gone');
+      return;
+    }
     try {
       audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
       if (audioCtx.state === 'suspended') audioCtx.resume();
+      startAmbient();
+      try { const u = new SpeechSynthesisUtterance(' '); u.volume = 0; speechSynthesis.speak(u); } catch { /* noop */ }
+      unlocked = true;
+      if (currentId && byId[currentId]) narrate(byId[currentId]);
+    } catch { /* ignore */ }
+    if (audiostart) audiostart.classList.add('is-gone');
+    reflectSoundIndicator();
+  }
+  if (audiostart) audiostart.addEventListener('click', unlock);
+  ['pointerdown', 'keydown', 'touchstart'].forEach((ev) => window.addEventListener(ev, unlock, { once: true }));
+
+  // ---- Narration (Web Speech) ----
+  let voice = null;
+  function pickVoice() {
+    try {
+      const vs = speechSynthesis.getVoices();
+      voice = vs.find((v) => /en[-_]GB/i.test(v.lang)) || vs.find((v) => /^en/i.test(v.lang)) || vs[0] || null;
+    } catch { voice = null; }
+  }
+  try { pickVoice(); speechSynthesis.addEventListener('voiceschanged', pickVoice); } catch { /* noop */ }
+
+  function narrate(s) {
+    if (muted || !unlocked || !s) return;
+    try {
+      speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(`${s.name}. ${s.epithet}. ${s.intro} ${shortSummary(s)}`);
+      u.rate = 0.92; u.pitch = 1; u.volume = 1;
+      if (voice) u.voice = voice;
+      speechSynthesis.speak(u);
     } catch { /* ignore */ }
   }
-  ['pointerdown', 'keydown', 'touchstart'].forEach((ev) =>
-    window.addEventListener(ev, unlock, { once: true }));
+  function stopNarration() { try { speechSynthesis.cancel(); } catch { /* noop */ } }
+
+  function setMuted(m) {
+    muted = !!m;
+    rampMusic();
+    if (muted) stopNarration();
+    reflectSoundIndicator();
+  }
+  reflectSoundIndicator();
 
   function chime() {
-    if (muted) return;
+    if (muted || !audioCtx) return;
     try {
-      audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
       if (audioCtx.state === 'suspended') audioCtx.resume();
       const now = audioCtx.currentTime;
       [523.25, 783.99, 1046.5].forEach((f, i) => {
@@ -108,7 +205,7 @@
         osc.start(now);
         osc.stop(now + 3.2);
       });
-    } catch { /* audio not available — no problem */ }
+    } catch { /* ignore */ }
   }
 
   // ---- Render a saint (lean: short summary + a few facts) ---------------
@@ -158,19 +255,20 @@
 
     display.classList.add('has-saint');
     void saintEl.offsetWidth;
-    if (changing) chime();
+    if (changing) { chime(); narrate(s); }
   }
 
   function showHome() {
     currentId = null;
     display.classList.remove('has-saint');
+    stopNarration();
   }
 
   // ---- Connection -------------------------------------------------------
   const conn = window.createConnection('display', (msg) => {
     if (msg.type === 'select') showSaint(msg.id);
     else if (msg.type === 'home') showHome();
-    else if (msg.type === 'mute') { muted = !!msg.muted; }
+    else if (msg.type === 'mute') setMuted(msg.muted);
   });
   // Ask the controller for the current state (covers the serverless fallback,
   // where there's no relay to push it on connect).

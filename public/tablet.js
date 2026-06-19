@@ -26,6 +26,8 @@
     ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   const monogram = (name) => name.replace(/^(St|Saint)\s+/i, '').trim().charAt(0).toUpperCase() || '✠';
   const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
+  // Haptic feedback (Android/Chrome support navigator.vibrate; iOS Safari ignores it).
+  const haptic = (ms) => { try { if (navigator.vibrate) navigator.vibrate(ms); } catch { /* noop */ } };
   const [, , VW, VH] = MAP.viewBox.split(' ').map(Number);
 
   // ---- Build the map ----------------------------------------------------
@@ -165,6 +167,7 @@
       previewEl.style.top = `${cy}px`;
       previewEl.classList.toggle('is-below', cy < w.height * 0.22);
       previewEl.classList.add('is-shown');
+      haptic(6); // light tick as the finger passes over each saint
     }
     pinNodes.forEach((node, key) => node.classList.toggle('is-hover', key === underId));
   }
@@ -224,6 +227,7 @@
     const now = performance.now();
     if (id === lastSel.id && now - lastSel.t < 500) return;
     lastSel = { id, t: now };
+    haptic(20);
     lastSent = { type: 'select', id };
     conn.send(lastSent);
     markActive(id);
@@ -243,6 +247,7 @@
   }
 
   resetBtn.addEventListener('click', () => {
+    haptic(12);
     lastSent = { type: 'home' };
     conn.send(lastSent);
     markActive(null);
@@ -282,8 +287,8 @@
     viewMapBtn.setAttribute('aria-selected', String(map));
     viewListBtn.setAttribute('aria-selected', String(!map));
   }
-  viewMapBtn.addEventListener('click', () => setView('map'));
-  viewListBtn.addEventListener('click', () => setView('list'));
+  viewMapBtn.addEventListener('click', () => { haptic(8); setView('map'); });
+  viewListBtn.addEventListener('click', () => { haptic(8); setView('list'); });
   setView('map');
 
   // ---- Sound (governs the big screen) -----------------------------------
@@ -295,6 +300,7 @@
     soundBtn.classList.toggle('is-off', muted);
   }
   soundBtn.addEventListener('click', () => {
+    haptic(10);
     conn.send({ type: 'mute', muted: !muted });
     reflectSound(!muted);
   });
