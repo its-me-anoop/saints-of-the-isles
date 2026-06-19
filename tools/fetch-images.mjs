@@ -166,12 +166,22 @@ function existingImage(id) {
 const master = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'saints.master.json'), 'utf8'));
 const creditsPath = path.join(ROOT, 'data', 'credits.json');
 const credits = fs.existsSync(creditsPath) ? JSON.parse(fs.readFileSync(creditsPath, 'utf8')) : {};
+// Saints forced to a monogram (auto-fetched images were wrong/unrelated).
+const noImagePath = path.join(ROOT, 'data', 'no-image.json');
+const SKIP = new Set(fs.existsSync(noImagePath) ? JSON.parse(fs.readFileSync(noImagePath, 'utf8')) : []);
 const final = [];
 let ok = 0, miss = 0, skipped = 0;
 
 for (let i = 0; i < master.length; i++) {
   const s = master[i];
   const accent = PALETTE[(i * 5) % PALETTE.length];
+  if (SKIP.has(s.id)) {
+    for (const ext of ['jpg', 'png', 'svg', 'jpeg']) { const p = path.join(IMG_DIR, `${s.id}.${ext}`); if (fs.existsSync(p)) fs.unlinkSync(p); }
+    delete credits[s.id];
+    final.push({ ...s, accent, image: null, credit: null });
+    miss++;
+    continue;
+  }
   let image = existingImage(s.id);
   let credit = credits[s.id];
 

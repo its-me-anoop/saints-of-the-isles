@@ -28,47 +28,17 @@ window.SAINTS = [
     ],
     "wiki": "Saint Duthac",
     "quote": "",
+    "pilgrimage": {
+      "site": "St Duthac's Collegiate Church",
+      "town": "Tain, Highland"
+    },
+    "prayer": "O Lord our God, you called your servant Duthac to be a bishop and wonder-worker in the far north of Scotland, drawing kings and pilgrims alike to seek your mercy at Tain. Through his prayers may we be renewed in holy perseverance and fervent penance, and find in you the grace we so often need to seek. Amen.",
     "accent": "66% 0.14 25",
     "image": "images/duthac.jpg",
     "credit": "Anne Burgess · CC BY-SA 2.0",
     "map": {
       "x": 373.9,
       "y": 304.2
-    }
-  },
-  {
-    "id": "maelrubha",
-    "name": "St Maelrubha",
-    "aka": "Máel Ruba; Maree",
-    "epithet": "Apostle of the Picts of the North",
-    "place": "Applecross Monastery, Applecross",
-    "region": "Highland · Scotland",
-    "country": "Scotland",
-    "lat": 57.4448,
-    "lng": -5.8121,
-    "feast": "21 April",
-    "era": "c. 642 – 722",
-    "patronage": [
-      "North-west Scotland"
-    ],
-    "intro": "From a remote monastery on the Applecross peninsula — whose Gaelic name 'A' Chomraich' simply means 'The Sanctuary' — Maelrubha spent fifty years pushing Christianity into the most challenging corners of the Scottish Highlands.",
-    "story": [
-      "Born in Ireland around 642 into a family descended from Niall of the Nine Hostages, Maelrubha was educated at the great monastery of Bangor in County Down before setting sail for Scotland in 671. After two years travelling the western Highlands, he founded a monastery at Applecross in 673 — on a remote peninsula accessible only by a steep mountain pass or by sea. From this base he evangelised the Pictish peoples, establishing at least twenty-one churches across the Highlands and Islands.",
-      "Loch Maree and the Isle of Maree both bear corrupted versions of his name, and as late as the 17th century the Presbytery of Dingwall was investigating rituals on the loch's island that blended Christian veneration of Maelrubha with much older, pre-Christian practices. He died on 21 April 722."
-    ],
-    "facts": [
-      "At twenty-one confirmed church dedications across Scotland, Maelrubha is the second most celebrated saint of north-west Scotland after Columba himself.",
-      "His name was so corrupted by local pronunciation that in Moray he became 'St Rufus' and elsewhere 'Summereve' — the latter arising from a typographical error in a medieval calendar.",
-      "Loch Maree's Isle Maree has a holy well and a wishing tree where offerings were pressed into the bark; the practice was so persistent that Queen Victoria noted it in her journal in 1877."
-    ],
-    "wiki": "Máel Ruba",
-    "quote": "",
-    "accent": "64% 0.12 218",
-    "image": null,
-    "credit": null,
-    "map": {
-      "x": 291.7,
-      "y": 336.4
     }
   },
   {
@@ -98,12 +68,141 @@ window.SAINTS = [
     ],
     "wiki": "Drostan",
     "quote": "",
-    "accent": "74% 0.13 88",
+    "pilgrimage": {
+      "site": "Deer Abbey",
+      "town": "Old Deer, Aberdeenshire"
+    },
+    "prayer": "Lord God, you inspired your servant Drostan to leave wealth and rank for the silence of Aberdeenshire's hills, founding a monastery whose monks would set down the first words of Scottish Gaelic in the margins of holy scripture. May his intercession kindle in us a love of your word and the humility to seek you in solitude. Amen.",
+    "accent": "64% 0.12 218",
     "image": null,
     "credit": null,
     "map": {
       "x": 467.5,
       "y": 329.6
+    }
+  },
+  {
+    "id": "maelrubha",
+    "name": "St Maelrubha",
+    "aka": "Máel Ruba; Maree",
+    "epithet": "Apostle of the Picts of the North",
+    "place": "Applecross Monastery, Applecross",
+    "region": "Highland · Scotland",
+    "country": "Scotland",
+    "lat": 57.4448,
+    "lng": -5.8121,
+    "feast": "21 April",
+    "era": "c. 642 – 722",
+    "patronage": [
+      "North-west Scotland"
+    ],
+    "intro": "From a remote monastery on the Applecross peninsula — whose Gaelic name 'A' Chomraich' simply means 'The Sanctuary' — Maelrubha spent fifty years pushing Christianity into the most challenging corners of the Scottish Highlands.",
+    "story": [
+      "Born in Ireland around 642 into a family descended from Niall of the Nine Hostages, Maelrubha was educated at the great monastery of Bangor in County Down before setting sail for Scotland in 671. After two years travelling the western Highlands, he founded a monastery at Applecross in 673 — on a remote peninsula accessible only by a steep mountain pass or by sea. From this base he evangelised the Pictish peoples, establishing at least twenty-one churches across the Highlands and Islands.",
+      "Loch Maree and the Isle of Maree both bear corrupted versions of his name, and as late as the 17th century the Presbytery of Dingwall was investigating rituals on the loch's island that blended Christian veneration of Maelrubha with much older, pre-Christian practices. He died on 21 April 722."
+    ],
+    "facts": [
+      "At twenty-one confirmed church dedications across Scotland, Maelrubha is the second most celebrated saint of north-west Scotland after Columba himself.",
+      "His name was so corrupted by local pronunciation that in Moray he became 'St Rufus' and elsewhere 'Summereve' — the latter arising from a typographical error in a medieval calendar.",
+      "Loch Maree's Isle Maree has a holy well and a wishing tree where offerings were pressed into the bark; the practice was so persistent that Queen Victoria noted it in her journal in 1877."
+    ],
+    "wiki": "Máel Ruba",
+    "quote": "",
+    "pilgrimage": {
+      "site": "Applecross Monastery (A' Chomraich)",
+      "town": "Applecross, Highland"
+    },
+    "prayer": "Almighty God, you led your servant Maelrubha across the sea from Ireland to the remote sanctuary of Applecross, and through his fifty years of labour brought the light of the gospel to the peoples of the northern Highlands. Grant us, after his example, the courage to carry your truth into places of darkness and difficulty, and the steadfastness to remain faithful to the end. Amen.",
+    "accent": "74% 0.13 88",
+    "image": null,
+    "credit": null,
+    "map": {
+      "x": 291.7,
+      "y": 336.4
+    }
+  },
+  {
+    "id": "fillan",
+    "name": "St Fillan",
+    "aka": "Faolán",
+    "epithet": "Patron of the Mentally Ill; Miracle-Worker of Bannockburn",
+    "place": "Strath Fillan Priory, Kirkton",
+    "region": "Stirlingshire · Scotland",
+    "country": "Scotland",
+    "lat": 56.4194,
+    "lng": -4.6611,
+    "feast": "9 January",
+    "era": "early 8th century – c. 777",
+    "patronage": [
+      "mentally ill",
+      "Stirlingshire"
+    ],
+    "intro": "An Irish monk whose luminous arm lit his scriptorium by night, Fillan settled in the Perthshire hills, and seven centuries later his relics were credited with Robert the Bruce's greatest victory over the English.",
+    "story": [
+      "Fillan came to Scotland from Ireland around 717 and settled as a hermit in Strath Fillan, the valley in west Perthshire that now bears his name. Tradition holds that while writing scripture by night, his left arm glowed with supernatural light. His holy pool in the river was used for centuries to heal the mentally ill — patients were bound and left in the pool overnight, and if found loose in the morning it was taken as a sign of cure.",
+      "When Robert the Bruce mustered his army before Bannockburn in June 1314, the Abbot of Inchaffray carried the Mayne — Fillan's silver arm-bone reliquary — among the troops. The night before battle the abbot found the reliquary miraculously full, and Bruce's resounding victory was widely attributed to Fillan's intercession. The grateful king refounded Strath Fillan Priory shortly afterwards."
+    ],
+    "facts": [
+      "Robert the Bruce's victory at Bannockburn in 1314 was publicly credited to St Fillan — Bruce subsequently restored and re-endowed the priory.",
+      "The holy pool of Fillan at Tyndrum was used to treat mental illness as late as 1791, when it was described in the first Statistical Account of Scotland.",
+      "His name, Faolán in Irish, means 'little wolf' — a popular name that gives us several distinct saints called Fillan, causing endless confusion in Scottish hagiography."
+    ],
+    "wiki": "Fillan",
+    "quote": "",
+    "pilgrimage": {
+      "site": "Strath Fillan Priory",
+      "town": "Kirkton, Stirlingshire"
+    },
+    "prayer": "Lord Jesus Christ, you endowed your servant Fillan with healing gifts that brought comfort to the suffering and hope to those whom the world had given up. Through his intercession, look with compassion on all who struggle under the weight of mental illness, and grant them healing of mind, body, and spirit. Amen.",
+    "accent": "64% 0.13 158",
+    "image": "images/fillan.jpg",
+    "credit": "Anderson, Joseph, 1832-1916 · Public domain",
+    "map": {
+      "x": 345.5,
+      "y": 424.3
+    }
+  },
+  {
+    "id": "andrew-the-apostle",
+    "name": "St Andrew",
+    "aka": "Andreas",
+    "epithet": "Patron of Scotland",
+    "place": "St Andrews Cathedral, St Andrews",
+    "region": "Fife · Scotland",
+    "country": "Scotland",
+    "lat": 56.34,
+    "lng": -2.7875,
+    "feast": "30 November",
+    "era": "1st century AD – c. 60 AD",
+    "patronage": [
+      "Scotland",
+      "fishermen",
+      "Greece",
+      "Russia"
+    ],
+    "intro": "Andrew never set foot in Scotland, yet his saltire cross blazes on the national flag and his relics, carried to the Pictish shore in the 8th century, made the town bearing his name the ecclesiastical capital of a kingdom.",
+    "story": [
+      "Brother of St Peter and first-called of the Apostles, Andrew was a fisherman from Bethsaida on the Sea of Galilee. According to tradition he was martyred around 60 AD at Patras in Greece, crucified on an X-shaped cross — the 'Saltire' — which he reportedly requested so as not to die on the same form of cross as Christ.",
+      "The Scottish connection rests on a legend that a monk named Regulus carried some of Andrew's bones to the east coast of Scotland, founding the settlement that became St Andrews; a more plausible account holds that Bishop Acca of Hexham brought relics north around 732. The shrine became the premier pilgrimage site of Scotland, and the white saltire on blue has been Scotland's flag since at least the 13th century."
+    ],
+    "facts": [
+      "The white-on-blue saltire of Scotland is one of the oldest national flags in the world, with the oldest surviving depiction dating to a seal of 1286.",
+      "Some of Andrew's relics were returned to Greece in 1964 by Pope Paul VI — a remarkable ecumenical gesture to the Eastern Orthodox Church.",
+      "Only three of Andrew's relics survive at St Andrews Cathedral, now a ruin — the rest were destroyed during the Scottish Reformation in 1559."
+    ],
+    "wiki": "Andrew the Apostle",
+    "quote": "",
+    "pilgrimage": {
+      "site": "St Andrews Cathedral",
+      "town": "St Andrews, Fife"
+    },
+    "prayer": "Almighty God, your servant Andrew heard your Son's call beside the Sea of Galilee and left his nets at once to follow him; and by your providence the relics of this first-called apostle were borne to the shores of Scotland, making it a land under his protection. Through his prayers may we, like him, answer without delay and without reserve whenever your voice calls us to deeper discipleship. Amen.",
+    "accent": "60% 0.15 312",
+    "image": "images/andrew-the-apostle.jpg",
+    "credit": "Peter Paul Rubens · Public domain",
+    "map": {
+      "x": 433.2,
+      "y": 431
     }
   },
   {
@@ -136,7 +235,12 @@ window.SAINTS = [
     ],
     "wiki": "Columba",
     "quote": "Do not call me holy — call me sinful.",
-    "accent": "64% 0.13 158",
+    "pilgrimage": {
+      "site": "Iona Abbey",
+      "town": "Isle of Iona, Argyll and Bute"
+    },
+    "prayer": "O God of the pilgrim and the exile, you drew Columba from his homeland to the shores of Iona, and from that windswept island caused the fire of your gospel to spread across Scotland and beyond. Through his prayers, grant us the grace of holy exile from our own pride, that we may build, wherever we are placed, a sanctuary worthy of your name. Amen.",
+    "accent": "70% 0.12 78",
     "image": "images/columba.jpg",
     "credit": "J. R. Skelton (Joseph Ratcliffe Skelton; 1865–1927) (illustrator), erroneously credited as John R. Skelton · Public domain",
     "map": {
@@ -172,120 +276,17 @@ window.SAINTS = [
     ],
     "wiki": "Adomnán",
     "quote": "",
-    "accent": "60% 0.15 312",
+    "pilgrimage": {
+      "site": "Iona Abbey",
+      "town": "Isle of Iona, Argyll and Bute"
+    },
+    "prayer": "Merciful God, you gave your servant Adomnán wisdom to record the life of the saints and courage to write into law the protection of the innocent in time of war. May his example inspire all who hold authority to use it in the service of justice and mercy, and may his prayers bring us ever closer to the peace that passes understanding. Amen.",
+    "accent": "62% 0.13 244",
     "image": "images/adomnan.jpg",
     "credit": "Andreas F. Borchert · CC BY-SA 4.0",
     "map": {
       "x": 264.5,
       "y": 431.5
-    }
-  },
-  {
-    "id": "fillan",
-    "name": "St Fillan",
-    "aka": "Faolán",
-    "epithet": "Patron of the Mentally Ill; Miracle-Worker of Bannockburn",
-    "place": "Strath Fillan Priory, Kirkton",
-    "region": "Stirlingshire · Scotland",
-    "country": "Scotland",
-    "lat": 56.4194,
-    "lng": -4.6611,
-    "feast": "9 January",
-    "era": "early 8th century – c. 777",
-    "patronage": [
-      "mentally ill",
-      "Stirlingshire"
-    ],
-    "intro": "An Irish monk whose luminous arm lit his scriptorium by night, Fillan settled in the Perthshire hills, and seven centuries later his relics were credited with Robert the Bruce's greatest victory over the English.",
-    "story": [
-      "Fillan came to Scotland from Ireland around 717 and settled as a hermit in Strath Fillan, the valley in west Perthshire that now bears his name. Tradition holds that while writing scripture by night, his left arm glowed with supernatural light. His holy pool in the river was used for centuries to heal the mentally ill — patients were bound and left in the pool overnight, and if found loose in the morning it was taken as a sign of cure.",
-      "When Robert the Bruce mustered his army before Bannockburn in June 1314, the Abbot of Inchaffray carried the Mayne — Fillan's silver arm-bone reliquary — among the troops. The night before battle the abbot found the reliquary miraculously full, and Bruce's resounding victory was widely attributed to Fillan's intercession. The grateful king refounded Strath Fillan Priory shortly afterwards."
-    ],
-    "facts": [
-      "Robert the Bruce's victory at Bannockburn in 1314 was publicly credited to St Fillan — Bruce subsequently restored and re-endowed the priory.",
-      "The holy pool of Fillan at Tyndrum was used to treat mental illness as late as 1791, when it was described in the first Statistical Account of Scotland.",
-      "His name, Faolán in Irish, means 'little wolf' — a popular name that gives us several distinct saints called Fillan, causing endless confusion in Scottish hagiography."
-    ],
-    "wiki": "Fillan",
-    "quote": "",
-    "accent": "70% 0.12 78",
-    "image": "images/fillan.jpg",
-    "credit": "Anderson, Joseph, 1832-1916 · Public domain",
-    "map": {
-      "x": 345.5,
-      "y": 424.3
-    }
-  },
-  {
-    "id": "john-ogilvie",
-    "name": "St John Ogilvie",
-    "aka": "",
-    "epithet": "Martyr of Scotland",
-    "place": "Glasgow Cross, Glasgow",
-    "region": "Glasgow · Scotland",
-    "country": "Scotland",
-    "lat": 55.8566,
-    "lng": -4.2438,
-    "feast": "10 March",
-    "era": "1580 – 1615",
-    "patronage": [
-      "Scotland"
-    ],
-    "intro": "Scotland's only canonised post-Reformation martyr, a Jesuit who returned to his homeland knowing the penalty, endured months of sleep-deprivation torture without giving up a single name, and was hanged at Glasgow Cross at the age of 34.",
-    "story": [
-      "John Ogilvie was born into a Calvinist family in Banffshire but converted to Catholicism during his studies on the Continent. He entered the Jesuits, was ordained in Paris, and in 1613 returned to Scotland — where saying Mass was a capital offence — to minister secretly to the Catholic communities of Edinburgh, Glasgow, and Renfrewshire.",
-      "Betrayed by an informer in 1614, he was subjected to prolonged sleep-deprivation to make him name his Catholic contacts. He refused. At his trial he challenged the court's claim that the king had spiritual authority, which sealed his fate. Hanged at Glasgow Cross on 10 March 1615, he died throwing his rosary into the crowd. He was canonised by Pope Paul VI in 1976."
-    ],
-    "facts": [
-      "Ogilvie was kept awake by guards wielding pins for days on end — a form of torture intended to break his resistance without leaving marks.",
-      "At his execution he threw his rosary beads into the crowd; a Protestant nobleman named Adam Boyd caught them, and by family tradition his conversion to Catholicism followed.",
-      "He is the only post-Reformation saint specifically canonised for Scotland, and his feast on 10 March is a principal feast of the Scottish Catholic Church."
-    ],
-    "wiki": "John Ogilvie (saint)",
-    "quote": "I will not buy my life at the price of my faith.",
-    "accent": "62% 0.13 244",
-    "image": "images/john-ogilvie.jpg",
-    "credit": "Unknown authorUnknown author · Public domain",
-    "map": {
-      "x": 365,
-      "y": 471.6
-    }
-  },
-  {
-    "id": "kentigern-mungo",
-    "name": "St Mungo",
-    "aka": "Kentigern",
-    "epithet": "Founder and Patron of Glasgow",
-    "place": "Glasgow Cathedral, Glasgow",
-    "region": "Glasgow · Scotland",
-    "country": "Scotland",
-    "lat": 55.863,
-    "lng": -4.2346,
-    "feast": "13 January",
-    "era": "c. 518 – 614",
-    "patronage": [
-      "Glasgow",
-      "salmon",
-      "those accused of infidelity"
-    ],
-    "intro": "Born of a princess cast from a cliff and set adrift at sea, Mungo grew up to found the city of Glasgow and work miracles so vivid they are still woven into Scotland's largest city's coat of arms.",
-    "story": [
-      "Kentigern — affectionately called Mungo, 'dear one' — was the illegitimate son of a Brittonic princess, raised by the holy man Serf at Culross and ordained bishop around 540. Establishing his see on the banks of the Molendinar Burn where Glasgow Cathedral now stands, he spent his life evangelising the Brittonic kingdom of Strathclyde and, after a period of exile, parts of Wales.",
-      "Four miracles are commemorated in Glasgow's coat of arms and the rhyme still taught to schoolchildren: 'Here is the bird that never flew, here is the tree that never grew, here is the bell that never rang, here is the fish that never swam.' Mungo's tomb lies in the lower church of Glasgow Cathedral, which uniquely survived the Reformation intact."
-    ],
-    "facts": [
-      "Glasgow's motto, 'Let Glasgow Flourish,' is a truncation of Mungo's reported blessing: 'Lord, let Glasgow flourish through the preaching of thy word and praising thy name.'",
-      "Mungo made a pilgrimage to Rome and returned with a bell said to have the power to silence discord — it was rung at funerals for centuries.",
-      "His mother Tenew also became a venerated Scottish saint, commemorated at the church of St Enoch in central Glasgow — 'Enoch' being a corruption of 'Thenew.'"
-    ],
-    "wiki": "Saint Mungo",
-    "quote": "",
-    "accent": "60% 0.13 168",
-    "image": "images/kentigern-mungo.jpg",
-    "credit": "dun_deagh · CC BY-SA 2.0",
-    "map": {
-      "x": 365.5,
-      "y": 471.1
     }
   },
   {
@@ -318,50 +319,17 @@ window.SAINTS = [
     ],
     "wiki": "Saint Margaret of Scotland",
     "quote": "I thank Thee, Almighty God, that in sending me so great an affliction in the last hour of my life, Thou wouldst purify me from my sins.",
-    "accent": "70% 0.11 196",
+    "pilgrimage": {
+      "site": "Dunfermline Abbey",
+      "town": "Dunfermline, Fife"
+    },
+    "prayer": "O Lord our God, you brought Margaret across storm-tossed seas to Scotland and made her a queen who gave herself without reserve to the service of the poor, the reform of your Church, and the raising of a holy household. Through her powerful intercession, form in us the same generosity of heart, that we may let no worldly comfort deflect us from the works of mercy. Amen.",
+    "accent": "60% 0.13 168",
     "image": "images/margaret-of-scotland.jpg",
     "credit": "AnonymousUnknown author · Public domain",
     "map": {
       "x": 401.6,
       "y": 453.8
-    }
-  },
-  {
-    "id": "andrew-the-apostle",
-    "name": "St Andrew",
-    "aka": "Andreas",
-    "epithet": "Patron of Scotland",
-    "place": "St Andrews Cathedral, St Andrews",
-    "region": "Fife · Scotland",
-    "country": "Scotland",
-    "lat": 56.34,
-    "lng": -2.7875,
-    "feast": "30 November",
-    "era": "1st century AD – c. 60 AD",
-    "patronage": [
-      "Scotland",
-      "fishermen",
-      "Greece",
-      "Russia"
-    ],
-    "intro": "Andrew never set foot in Scotland, yet his saltire cross blazes on the national flag and his relics, carried to the Pictish shore in the 8th century, made the town bearing his name the ecclesiastical capital of a kingdom.",
-    "story": [
-      "Brother of St Peter and first-called of the Apostles, Andrew was a fisherman from Bethsaida on the Sea of Galilee. According to tradition he was martyred around 60 AD at Patras in Greece, crucified on an X-shaped cross — the 'Saltire' — which he reportedly requested so as not to die on the same form of cross as Christ.",
-      "The Scottish connection rests on a legend that a monk named Regulus carried some of Andrew's bones to the east coast of Scotland, founding the settlement that became St Andrews; a more plausible account holds that Bishop Acca of Hexham brought relics north around 732. The shrine became the premier pilgrimage site of Scotland, and the white saltire on blue has been Scotland's flag since at least the 13th century."
-    ],
-    "facts": [
-      "The white-on-blue saltire of Scotland is one of the oldest national flags in the world, with the oldest surviving depiction dating to a seal of 1286.",
-      "Some of Andrew's relics were returned to Greece in 1964 by Pope Paul VI — a remarkable ecumenical gesture to the Eastern Orthodox Church.",
-      "Only three of Andrew's relics survive at St Andrews Cathedral, now a ruin — the rest were destroyed during the Scottish Reformation in 1559."
-    ],
-    "wiki": "Andrew the Apostle",
-    "quote": "",
-    "accent": "66% 0.16 8",
-    "image": "images/andrew-the-apostle.jpg",
-    "credit": "Peter Paul Rubens · Public domain",
-    "map": {
-      "x": 433.2,
-      "y": 431
     }
   },
   {
@@ -391,7 +359,12 @@ window.SAINTS = [
     ],
     "wiki": "Triduana",
     "quote": "",
-    "accent": "72% 0.13 132",
+    "pilgrimage": {
+      "site": "St Triduana's Aisle, Restalrig Parish Church",
+      "town": "Restalrig, Edinburgh"
+    },
+    "prayer": "Holy Triduana, who gave up the very light of your eyes rather than compromise your consecrated life, intercede for all who suffer affliction of sight and for those whose faith is tested by the desires of the powerful. By your unflinching witness, strengthen in us a love for God that surpasses every earthly thing. Amen.",
+    "accent": "70% 0.11 196",
     "image": "images/triduana.jpg",
     "credit": "kim traynor · CC BY-SA 2.0",
     "map": {
@@ -400,371 +373,126 @@ window.SAINTS = [
     }
   },
   {
-    "id": "ninian",
-    "name": "St Ninian",
-    "aka": "Ringan",
-    "epithet": "Apostle of the Southern Picts",
-    "place": "Whithorn Priory, Whithorn",
-    "region": "Dumfries and Galloway · Scotland",
+    "id": "kentigern-mungo",
+    "name": "St Mungo",
+    "aka": "Kentigern",
+    "epithet": "Founder and Patron of Glasgow",
+    "place": "Glasgow Cathedral, Glasgow",
+    "region": "Glasgow · Scotland",
     "country": "Scotland",
-    "lat": 54.733,
-    "lng": -4.4159,
-    "feast": "16 September",
-    "era": "c. 360 – c. 432",
+    "lat": 55.863,
+    "lng": -4.2346,
+    "feast": "13 January",
+    "era": "c. 518 – 614",
     "patronage": [
-      "Diocese of Galloway",
-      "Shetland Isles"
+      "Glasgow",
+      "salmon",
+      "those accused of infidelity"
     ],
-    "intro": "A century before Columba and Patrick, Ninian built Scotland's first stone church in the far southwest and sent Christianity north into Pictish lands — making him the earliest named Christian missionary on British soil.",
+    "intro": "Born of a princess cast from a cliff and set adrift at sea, Mungo grew up to found the city of Glasgow and work miracles so vivid they are still woven into Scotland's largest city's coat of arms.",
     "story": [
-      "Almost everything about Ninian comes filtered through Bede's brief 8th-century account and a 12th-century life by Aelred of Rievaulx. What seems certain is that around 397 he established a church at Whithorn in Galloway, which Bede calls the 'Candida Casa' — the White House — remarkable for being built of stone in an age of timber. He may have studied in Rome and been consecrated bishop there.",
-      "His shrine at Whithorn became the most important pilgrimage destination in Scotland. Every Stuart king from James I to James V made the journey, and archaeological excavations since the 1980s have revealed continuous occupation from the late 4th century, making it one of the most significant early Christian sites in Britain."
+      "Kentigern — affectionately called Mungo, 'dear one' — was the illegitimate son of a Brittonic princess, raised by the holy man Serf at Culross and ordained bishop around 540. Establishing his see on the banks of the Molendinar Burn where Glasgow Cathedral now stands, he spent his life evangelising the Brittonic kingdom of Strathclyde and, after a period of exile, parts of Wales.",
+      "Four miracles are commemorated in Glasgow's coat of arms and the rhyme still taught to schoolchildren: 'Here is the bird that never flew, here is the tree that never grew, here is the bell that never rang, here is the fish that never swam.' Mungo's tomb lies in the lower church of Glasgow Cathedral, which uniquely survived the Reformation intact."
     ],
     "facts": [
-      "Whithorn is the oldest Christian community in Scotland, with archaeological evidence of a 4th-century cemetery pre-dating Ninian's church.",
-      "The medieval pilgrim route to Whithorn was so well-trodden that a network of 'Pilgrim Ways' still crosses Galloway's hills and coasts.",
-      "King Robert the Bruce made a pilgrimage to Whithorn while gravely ill in 1329 — he died shortly after returning."
+      "Glasgow's motto, 'Let Glasgow Flourish,' is a truncation of Mungo's reported blessing: 'Lord, let Glasgow flourish through the preaching of thy word and praising thy name.'",
+      "Mungo made a pilgrimage to Rome and returned with a bell said to have the power to silence discord — it was rung at funerals for centuries.",
+      "His mother Tenew also became a venerated Scottish saint, commemorated at the church of St Enoch in central Glasgow — 'Enoch' being a corruption of 'Thenew.'"
     ],
-    "wiki": "Ninian",
+    "wiki": "Saint Mungo",
     "quote": "",
-    "accent": "58% 0.15 280",
-    "image": "images/ninian.jpg",
+    "pilgrimage": {
+      "site": "Glasgow Cathedral (St Mungo's Cathedral)",
+      "town": "Glasgow, Glasgow"
+    },
+    "prayer": "Loving God, you raised up Mungo to found a city upon prayer and proclaim your word to the peoples of Strathclyde, and you preserved his cathedral through centuries of upheaval as a sign of your abiding faithfulness. Through the intercession of this dear shepherd of Glasgow, let your Church flourish through the preaching of your word and the praising of your name. Amen.",
+    "accent": "66% 0.16 8",
+    "image": "images/kentigern-mungo.jpg",
+    "credit": "dun_deagh · CC BY-SA 2.0",
+    "map": {
+      "x": 365.5,
+      "y": 471.1
+    }
+  },
+  {
+    "id": "john-ogilvie",
+    "name": "St John Ogilvie",
+    "aka": "",
+    "epithet": "Martyr of Scotland",
+    "place": "Glasgow Cross, Glasgow",
+    "region": "Glasgow · Scotland",
+    "country": "Scotland",
+    "lat": 55.8566,
+    "lng": -4.2438,
+    "feast": "10 March",
+    "era": "1580 – 1615",
+    "patronage": [
+      "Scotland"
+    ],
+    "intro": "Scotland's only canonised post-Reformation martyr, a Jesuit who returned to his homeland knowing the penalty, endured months of sleep-deprivation torture without giving up a single name, and was hanged at Glasgow Cross at the age of 34.",
+    "story": [
+      "John Ogilvie was born into a Calvinist family in Banffshire but converted to Catholicism during his studies on the Continent. He entered the Jesuits, was ordained in Paris, and in 1613 returned to Scotland — where saying Mass was a capital offence — to minister secretly to the Catholic communities of Edinburgh, Glasgow, and Renfrewshire.",
+      "Betrayed by an informer in 1614, he was subjected to prolonged sleep-deprivation to make him name his Catholic contacts. He refused. At his trial he challenged the court's claim that the king had spiritual authority, which sealed his fate. Hanged at Glasgow Cross on 10 March 1615, he died throwing his rosary into the crowd. He was canonised by Pope Paul VI in 1976."
+    ],
+    "facts": [
+      "Ogilvie was kept awake by guards wielding pins for days on end — a form of torture intended to break his resistance without leaving marks.",
+      "At his execution he threw his rosary beads into the crowd; a Protestant nobleman named Adam Boyd caught them, and by family tradition his conversion to Catholicism followed.",
+      "He is the only post-Reformation saint specifically canonised for Scotland, and his feast on 10 March is a principal feast of the Scottish Catholic Church."
+    ],
+    "wiki": "John Ogilvie (saint)",
+    "quote": "I will not buy my life at the price of my faith.",
+    "pilgrimage": {
+      "site": "St Aloysius' Church (National Shrine of St John Ogilvie)",
+      "town": "Glasgow, Glasgow"
+    },
+    "prayer": "O God, you strengthened your martyr John Ogilvie to endure prolonged torment without betraying a single soul, and to die at Glasgow Cross holding fast to the faith he would not sell. By his intercession grant us courage in our own trials, and the grace never to purchase safety at the cost of integrity. Amen.",
+    "accent": "72% 0.13 132",
+    "image": "images/john-ogilvie.jpg",
     "credit": "Unknown authorUnknown author · Public domain",
     "map": {
-      "x": 357,
-      "y": 563.9
+      "x": 365,
+      "y": 471.6
     }
   },
   {
-    "id": "columba-derry",
-    "name": "St Columba of Derry",
-    "aka": "Colmcille",
-    "epithet": "Dove of the Church",
-    "place": "Long Tower Church, Derry",
-    "region": "County Londonderry · Northern Ireland",
-    "country": "Northern Ireland",
-    "lat": 54.9929,
-    "lng": -7.3285,
-    "feast": "9 June",
-    "era": "521 – 597",
+    "id": "aidan-of-lindisfarne",
+    "name": "St Aidan",
+    "aka": "Aidan of Lindisfarne",
+    "epithet": "Apostle of Northumbria",
+    "place": "Lindisfarne Priory, Holy Island",
+    "region": "Northumberland · England",
+    "country": "England",
+    "lat": 55.6705,
+    "lng": -1.8023,
+    "feast": "31 August",
+    "era": "c. 590 – 651",
     "patronage": [
-      "Derry",
-      "Ireland",
-      "poets",
-      "floods"
+      "Northumbria",
+      "firefighters"
     ],
-    "intro": "Before Iona, Columba founded his first great monastery in a grove of oak at Derry — and the city still carries his name in Irish: Doire Cholm Cille, the oak grove of Columba of the churches.",
+    "intro": "An Irish monk from Iona who walked barefoot through Northumbria converting an entire kingdom, Aidan of Lindisfarne founded the island monastery that would become the cradle of English Christianity.",
     "story": [
-      "Born into Irish royalty in Donegal, Columba founded his first monastery in Derry around 546, on a slope of oak woodland whose name — Doire, 'oak grove' — the city still carries in Irish. He went on to found monasteries at Durrow and Kells and became the foremost scholar-monk of his generation, before a dispute over a copied psalter led to the Battle of Cúl Dreimhne and his acceptance of perpetual exile.",
-      "Though he sailed to Iona in 563 and never returned to Ireland, his Irish foundations remained central to the great Columban monastic family. The Book of Kells is traditionally associated with that family. His Derry church is commemorated at the Long Tower, and he reportedly wept whenever he saw an oak, because the trees reminded him of Derry's sacred grove."
+      "When King Oswald of Northumbria asked Iona to send a bishop, the first monk returned in failure, complaining the English were too stubborn to convert. Aidan suggested the man had been too harsh — and so Iona sent Aidan instead. He arrived around 635, chose the tidal island of Lindisfarne as his base, and evangelised on foot rather than horseback, learning English as he walked village to village.",
+      "Aidan's social radicalism was remarkable: he used gifts of money from the nobility to purchase enslaved people, then educated and ordained them as priests. When he died in 651, leaning against a wall of the church at Bamburgh, his friend Cuthbert — then a teenage shepherd — allegedly saw his soul carried to heaven by angels, and resolved to become a monk."
     ],
     "facts": [
-      "Derry's Irish name, Doire Cholm Cille, means 'the oak grove of Columba of the churches.'",
-      "His secret copying of St Finnian's psalter led to a legal ruling — 'to every cow her calf, to every book its copy' — sometimes called the world's first copyright judgement.",
-      "The Book of Kells, one of the greatest treasures of medieval art, is traditionally linked to Columba's monastic family though probably produced at Iona around 800."
+      "Bede, who disagreed with Aidan's Irish dating of Easter, nonetheless praised him as a man 'who cultivated peace and love, purity and humility' and who never flattered the powerful.",
+      "When King Penda piled timber against Bamburgh's walls to burn it, Aidan prayed from Farne Island and the wind shifted, driving the flames back on the besiegers.",
+      "King Oswald served as Aidan's personal interpreter, since Aidan arrived speaking only Irish and Latin — a king translating for his own bishop was an extraordinary mark of royal humility."
     ],
-    "wiki": "Columba",
+    "wiki": "Aidan of Lindisfarne",
     "quote": "",
-    "accent": "66% 0.14 25",
-    "image": "images/columba-derry.jpg",
-    "credit": "J. R. Skelton (Joseph Ratcliffe Skelton; 1865–1927) (illustrator), erroneously credited as John R. Skelton · Public domain",
+    "pilgrimage": {
+      "site": "Lindisfarne Priory, Holy Island",
+      "town": "Lindisfarne (Holy Island), Northumberland"
+    },
+    "prayer": "Lord of all gentleness, who sent your servant Aidan on foot through the fields of Northumbria to bring the good news to king and slave alike, grant us the same unhurried charity and disregard for the world's distinctions. By his intercession, raise up in our day preachers who speak with humility and live with integrity, that your Church may flourish among all peoples. Amen.",
+    "accent": "58% 0.15 280",
+    "image": "images/aidan-of-lindisfarne.jpg",
+    "credit": "Randy OHC · CC BY 2.0",
     "map": {
-      "x": 220.7,
-      "y": 542.8
-    }
-  },
-  {
-    "id": "comgall",
-    "name": "St Comgall",
-    "aka": "Comgall of Bangor",
-    "epithet": "Abbot of Bangor",
-    "place": "Bangor Abbey, Bangor",
-    "region": "County Down · Northern Ireland",
-    "country": "Northern Ireland",
-    "lat": 54.656,
-    "lng": -5.675,
-    "feast": "10 May",
-    "era": "c. 516 – c. 601",
-    "patronage": [
-      "Bangor",
-      "monastic communities"
-    ],
-    "intro": "From a windswept shore of Belfast Lough, Comgall built the greatest monastic school in Ulster, whose famous Rule was stern enough to frighten even hardened ascetics — but it produced Columbanus, who set Europe alight.",
-    "story": [
-      "Born in County Antrim, Comgall trained under several of Ireland's leading abbots before founding Bangor Abbey around 558 on the southern shore of Belfast Lough. The monastery's rule was famously austere, but its spiritual prestige was immense. At its peak Bangor housed over four thousand monks according to tradition, and its liturgical chant, the Antiphonary of Bangor, survives as one of the oldest witnesses to Irish liturgical practice.",
-      "Comgall's most famous student was Columbanus, whom he sent to evangelise Francia and northern Italy — a mission that planted monasteries at Luxeuil and Bobbio and reshaped continental Christianity. His relics were scattered by Viking raiders in 822, but Bangor survived, and the present abbey church preserves the outline of his foundation."
-    ],
-    "facts": [
-      "Bangor's Rule was so harsh that it reportedly killed monks — yet the monastery still attracted thousands of novices from across Ireland and Britain.",
-      "Comgall personally trained Columbanus, who founded Bobbio Abbey in Italy and Luxeuil in France, making Bangor an indirect mother of European monastic civilisation.",
-      "The Antiphonary of Bangor, a 7th-century liturgical manuscript, survives in the Ambrosian Library in Milan."
-    ],
-    "wiki": "Comgall",
-    "quote": "",
-    "accent": "64% 0.12 218",
-    "image": "images/comgall.jpg",
-    "credit": "HenryPho17 · CC0",
-    "map": {
-      "x": 298.1,
-      "y": 570.2
-    }
-  },
-  {
-    "id": "saint-patrick",
-    "name": "St Patrick",
-    "aka": "Patricius",
-    "epithet": "Apostle of Ireland",
-    "place": "Armagh",
-    "region": "County Armagh · Northern Ireland",
-    "country": "Northern Ireland",
-    "lat": 54.3478,
-    "lng": -6.6562,
-    "feast": "17 March",
-    "era": "c. 385 – c. 461",
-    "patronage": [
-      "Ireland",
-      "Nigeria",
-      "engineers",
-      "the excluded"
-    ],
-    "intro": "A Romano-British teenager kidnapped into Irish slavery, Patrick returned decades later not with vengeance but with a gospel that transformed an entire island.",
-    "story": [
-      "Patrick was captured by Irish raiders at around age sixteen and spent six years as a shepherd-slave in Ireland before escaping by ship back to Britain. Driven by a vivid dream in which the Irish people called him back, he trained as a cleric and returned as a missionary bishop, spending the rest of his life founding churches and ordaining clergy across the island.",
-      "He established his principal church at Armagh around 445, a hilltop site that became — and remains — the ecclesiastical capital of Ireland. His two surviving Latin writings, the Confessio and the Letter to Coroticus, are among the earliest documents written in Ireland, revealing a man of deep humility who saw himself, above all, as a sinner rescued by grace."
-    ],
-    "facts": [
-      "Patrick's Confessio opens with 'I, Patrick, a sinner, a most simple countryman' — making him one of the earliest authors in Christian history to write a spiritual autobiography.",
-      "He was never formally canonised by Rome; his sainthood rests on the ancient custom of popular acclaim.",
-      "The shamrock legend — that Patrick used clover to explain the Trinity — first appears in writing only in 1726, more than 1,200 years after his death."
-    ],
-    "wiki": "Saint Patrick",
-    "quote": "I, Patrick, a sinner, a most simple countryman, the least of all the faithful.",
-    "accent": "74% 0.13 88",
-    "image": "images/saint-patrick.jpg",
-    "credit": "Nheyob · CC BY-SA 4.0",
-    "map": {
-      "x": 252.2,
-      "y": 595
-    }
-  },
-  {
-    "id": "saint-malachy",
-    "name": "St Malachy",
-    "aka": "Máel Máedóc Ua Morgair",
-    "epithet": "Reformer of the Irish Church",
-    "place": "St Patrick's Cathedral (RC), Armagh",
-    "region": "County Armagh · Northern Ireland",
-    "country": "Northern Ireland",
-    "lat": 54.348,
-    "lng": -6.656,
-    "feast": "3 November",
-    "era": "1094 – 1148",
-    "patronage": [
-      "Archdiocese of Armagh",
-      "Diocese of Down and Connor"
-    ],
-    "intro": "The first Irish saint formally canonised by Rome, Malachy dragged a fractured Irish Church into Latin orthodoxy, died in the arms of his friend Bernard of Clairvaux, and left behind a prophecy about popes that has intrigued conspiracy theorists ever since.",
-    "story": [
-      "Born in Armagh in 1094, Malachy became Archbishop of Armagh in 1132 and set about reforming a church that had drifted far from Roman practice — introducing canonical marriage law, regular synods, proper tithing, and the Roman rite. He travelled twice to Rome seeking papal authority for his reforms. On his second journey in 1148 he stopped at Clairvaux and died there on All Souls' Day in the arms of Abbot Bernard, who wrote his biography.",
-      "Pope Clement III canonised Malachy in 1190, making him the first Irish native to be formally canonised. A list of 112 cryptic Latin phrases known as the Prophecy of the Popes was published in 1595 and attributed to him; scholars regard it as a forgery, but it has never stopped circulating."
-    ],
-    "facts": [
-      "Malachy was the first Irish person to be formally canonised by Rome, in 1190.",
-      "He died on All Souls' Day in the arms of St Bernard of Clairvaux; his feast is kept on 3 November so as not to clash with the commemoration of the dead.",
-      "The 'Prophecy of the Popes' attributed to him first appeared in print in 1595, four and a half centuries after his death, and is now considered a learned forgery."
-    ],
-    "wiki": "Saint Malachy",
-    "quote": "",
-    "accent": "64% 0.13 158",
-    "image": "images/saint-malachy.jpg",
-    "credit": "Andreas F. Borchert · CC BY-SA 4.0",
-    "map": {
-      "x": 252.2,
-      "y": 595
-    }
-  },
-  {
-    "id": "finnian-of-clonard",
-    "name": "St Finnian of Clonard",
-    "aka": "Findbarr; Vinnianus",
-    "epithet": "Tutor of the Saints of Ireland",
-    "place": "Clonard Abbey (ruins), Clonard",
-    "region": "County Meath · Ireland",
-    "country": "Ireland",
-    "lat": 53.4518,
-    "lng": -7.0219,
-    "feast": "12 December",
-    "era": "c. 470 – 549",
-    "patronage": [
-      "Diocese of Meath"
-    ],
-    "intro": "Called the 'Teacher of the Saints of Ireland,' Finnian gathered three thousand students on the banks of the Boyne and trained the very men — Columba, Ciarán, Brendan — who would carry Irish Christianity to the ends of the known world.",
-    "story": [
-      "Finnian studied in Wales under the monastic rules of Gildas and Cadoc before returning to Ireland and founding Clonard Abbey around 520 on the River Boyne in County Meath. The school he built there attracted students in numbers almost beyond belief — ancient sources speak of three thousand scholars at one time — combining Latin learning with rigorous ascetic practice.",
-      "His real legacy walks in the footsteps of his graduates: the so-called Twelve Apostles of Ireland, including Columba of Iona, Ciarán of Clonmacnoise, Brendan the Navigator, and Canice of Kilkenny. He died of plague in 549, one of countless thousands swept away by the pandemic that devastated sixth-century Ireland."
-    ],
-    "facts": [
-      "Finnian's school at Clonard is said to have held three thousand students simultaneously — arguably one of the largest centres of learning in 6th-century western Europe.",
-      "Among his students were Columba, Ciarán of Clonmacnoise, and Brendan the Navigator.",
-      "He may be the 'Finnian' who corresponded with the Welsh monk Gildas about penitential discipline, shaping the Irish penitential system that spread across Europe."
-    ],
-    "wiki": "Finnian of Clonard",
-    "quote": "",
-    "accent": "60% 0.15 312",
-    "image": "images/finnian-of-clonard.jpg",
-    "credit": "Andreas F. Borchert · CC BY-SA 4.0",
-    "map": {
-      "x": 235,
-      "y": 666.2
-    }
-  },
-  {
-    "id": "oliver-plunkett",
-    "name": "St Oliver Plunkett",
-    "aka": "Olivéar Pluincéid",
-    "epithet": "Martyr of the Popish Plot",
-    "place": "St Peter's RC Church (shrine), Drogheda",
-    "region": "County Louth · Ireland",
-    "country": "Ireland",
-    "lat": 53.7152,
-    "lng": -6.3524,
-    "feast": "1 July",
-    "era": "1625 – 1681",
-    "patronage": [
-      "Peace and reconciliation in Ireland"
-    ],
-    "intro": "Catholic Archbishop of Armagh during the Penal Laws, Oliver Plunkett was the last person to die at Tyburn for the Catholic faith — framed on fabricated charges during the hysteria of the Popish Plot.",
-    "story": [
-      "Born in County Meath in 1625, Oliver Plunkett was ordained in Rome and spent years as a professor there before being appointed Archbishop of Armagh in 1669. Returning to an Ireland where Catholic worship was severely restricted, he quietly rebuilt the Church — ordaining priests, holding confirmations in secret, reopening schools — while working to prevent an armed uprising he feared would bring catastrophe.",
-      "In 1678 the fabricated 'Popish Plot' of Titus Oates swept England and Ireland. Plunkett was arrested in 1679 and charged with treason for allegedly plotting a French invasion. When an Irish jury refused to convict, his trial was moved to London, where he was convicted on perjured testimony and hanged, drawn, and quartered at Tyburn on 1 July 1681. Canonised in 1975, he became the first new Irish saint in nearly 700 years. His preserved head is enshrined at St Peter's, Drogheda."
-    ],
-    "facts": [
-      "Oliver Plunkett's embalmed head has been displayed at St Peter's Church in Drogheda since 1921 — one of the most visited saintly relics in Ireland.",
-      "He was the last person executed for the Catholic faith at Tyburn, London, on 1 July 1681.",
-      "When an Irish jury refused to convict him, the Crown moved the trial to London, where a conviction was virtually guaranteed."
-    ],
-    "wiki": "Oliver Plunkett",
-    "quote": "I have declared my innocence of the crimes charged against me; I forgive all who had any hand in my death.",
-    "accent": "70% 0.12 78",
-    "image": "images/oliver-plunkett.jpg",
-    "credit": "Edward Luttrell · Public domain",
-    "map": {
-      "x": 266.4,
-      "y": 645.4
-    }
-  },
-  {
-    "id": "brigid-of-kildare",
-    "name": "St Brigid of Kildare",
-    "aka": "Bríd; Mary of the Gaels",
-    "epithet": "Mary of the Gaels",
-    "place": "St Brigid's Cathedral, Kildare Town",
-    "region": "County Kildare · Ireland",
-    "country": "Ireland",
-    "lat": 53.1578,
-    "lng": -6.9111,
-    "feast": "1 February",
-    "era": "c. 451 – c. 525",
-    "patronage": [
-      "Ireland",
-      "healers",
-      "poets",
-      "dairy workers",
-      "fugitives"
-    ],
-    "intro": "Brigid founded Ireland's most powerful double monastery — for both men and women — on the edge of the Curragh plain, and kept a sacred flame burning there that outlasted her by a thousand years.",
-    "story": [
-      "Born into slavery or low status, Brigid founded the Abbey of Kildare around 480, a 'double monastery' housing communities of both men and women, which she led as abbess. The site became a major centre of learning and art. A perpetual fire, tended in rotation by nineteen nuns, burned at Kildare for over a millennium.",
-      "Her feast falls on 1 February, the ancient Gaelic festival of Imbolc, which marks the first stirring of spring — a coincidence that reflects how deeply her cult drew on pre-Christian reverence for fertility and fire. Since 2023 her feast day has been an official public holiday in Ireland. The cathedral at Kildare stands on the site of her original foundation."
-    ],
-    "facts": [
-      "The perpetual flame at Kildare burned for over 1,000 years before being extinguished at the Reformation — and was relit in Kildare's Market Square in 1993, where it still burns today.",
-      "Brigid's feast day coincides exactly with Imbolc, the pre-Christian Celtic festival of spring.",
-      "Saint Brigid's Day became an official Irish public holiday in 2023, making Brigid one of very few historical saints to gain a new national holiday in the 21st century."
-    ],
-    "wiki": "Brigid of Kildare",
-    "quote": "",
-    "accent": "62% 0.13 244",
-    "image": "images/brigid-of-kildare.jpg",
-    "credit": "Andreas F. Borchert · CC BY-SA 4.0",
-    "map": {
-      "x": 240.2,
-      "y": 689.2
-    }
-  },
-  {
-    "id": "kevin-of-glendalough",
-    "name": "St Kevin of Glendalough",
-    "aka": "Cóemgen; Caoimhín",
-    "epithet": "Hermit of the Two Lakes",
-    "place": "Glendalough Monastic City",
-    "region": "County Wicklow · Ireland",
-    "country": "Ireland",
-    "lat": 53.0104,
-    "lng": -6.3274,
-    "feast": "3 June",
-    "era": "c. 498 – 618",
-    "patronage": [
-      "Archdiocese of Dublin",
-      "Glendalough",
-      "blackbirds"
-    ],
-    "intro": "A royal prince who chose a Bronze Age cave for a hermitage, Kevin of Glendalough founded one of Ireland's most hauntingly beautiful monastic cities — and became, via Seamus Heaney, patron saint of patient stillness.",
-    "story": [
-      "Born into the royal family of Leinster, Kevin refused his inheritance and retreated as a young man to the glacial valley of Glendalough — 'the glen of the two lakes' — in the Wicklow Mountains. His first hermitage was a Bronze Age tomb cut into the cliff face above the upper lake, now called St Kevin's Bed. He lived there as a solitary for seven years before disciples gathered around him.",
-      "The monastery that grew from his hermitage eventually encompassed seven churches, a round tower, and a celebrated school. In the Middle Ages three pilgrimages to Glendalough were reckoned equivalent to one to Rome. Seamus Heaney immortalised the legend of Kevin holding out his hand so still that a blackbird laid eggs in his palm — one of the defining images of Irish monastic spirituality."
-    ],
-    "facts": [
-      "Kevin's first hermitage was a genuine Bronze Age rock-cut tomb above the upper lake — St Kevin's Bed — still visible some 30 feet up the cliff face.",
-      "In the Middle Ages, three pilgrimages to Glendalough were officially declared equivalent to one pilgrimage to Rome.",
-      "Seamus Heaney's 1996 poem 'St Kevin and the Blackbird' has made the legend famous worldwide and is read at the site each feast day."
-    ],
-    "wiki": "Kevin of Glendalough",
-    "quote": "",
-    "accent": "60% 0.13 168",
-    "image": "images/kevin-of-glendalough.jpg",
-    "credit": "Public domain",
-    "map": {
-      "x": 267.5,
-      "y": 700.7
-    }
-  },
-  {
-    "id": "brendan-the-navigator",
-    "name": "St Brendan the Navigator",
-    "aka": "Brendan of Clonfert; Bréanainn",
-    "epithet": "the Navigator",
-    "place": "Clonfert Cathedral, Clonfert",
-    "region": "County Galway · Ireland",
-    "country": "Ireland",
-    "lat": 53.2406,
-    "lng": -8.0581,
-    "feast": "16 May",
-    "era": "c. 484 – c. 577",
-    "patronage": [
-      "sailors",
-      "mariners",
-      "travellers",
-      "Kerry"
-    ],
-    "intro": "A monk who may have sailed a leather currach to North America a thousand years before Columbus, Brendan the Navigator founded Clonfert Abbey and gave the medieval world its most irresistible tale of oceanic adventure.",
-    "story": [
-      "Born near Tralee in County Kerry around 484, Brendan trained under Ita of Limerick and Finnian of Clonard before founding several monasteries, the most important being Clonfert in County Galway in 561. Clonfert Cathedral — with its extraordinary Hiberno-Romanesque carved doorway — still marks the site, and Brendan is venerated as one of the Twelve Apostles of Ireland.",
-      "His fame rests on the Navigatio Sancti Brendani, a ninth-century narrative of a seven-year ocean voyage in search of the 'Island of the Blessed.' The text describes islands of sheep, a whale mistaken for an island, columns of crystal, and an island of fire-hurling smiths. In 1976–77 explorer Tim Severin sailed a replica hide currach from Ireland to Newfoundland, proving the voyage physically possible."
-    ],
-    "facts": [
-      "Tim Severin's 1976–77 experiment proved a leather-hulled currach could cross the North Atlantic, lending unexpected plausibility to the voyage legend.",
-      "The 'island' of Jasconius — a whale on which the monks light their Easter fire before it dives — is one of the most enduring images in medieval literature.",
-      "Clonfert Cathedral's Romanesque doorway, built around 1150, is considered the finest example of Irish Romanesque carving in existence."
-    ],
-    "wiki": "Brendan the Navigator",
-    "quote": "Shall I abandon, O King of mysteries, the soft comforts of home?",
-    "accent": "70% 0.11 196",
-    "image": "images/brendan-the-navigator.jpg",
-    "credit": "Unknown mediaeval scribe. · Public domain",
-    "map": {
-      "x": 186.6,
-      "y": 682.7
+      "x": 479.3,
+      "y": 487.1
     }
   },
   {
@@ -798,48 +526,17 @@ window.SAINTS = [
     ],
     "wiki": "Cuthbert",
     "quote": "I wish to dwell in this place of combat, that I may deserve to have the divine presence with me.",
-    "accent": "66% 0.16 8",
+    "pilgrimage": {
+      "site": "Durham Cathedral",
+      "town": "Durham, County Durham"
+    },
+    "prayer": "Almighty God, who drew your servant Cuthbert from the shepherd's hillside to the hermit's rock and from there to the care of all Northumbria, grant that we, following his example of prayer and compassion, may find you in solitude and serve you in our neighbour. By his intercession, heal our infirmities and lead us, through the wilderness of this world, to the peace of your eternal rest. Amen.",
+    "accent": "66% 0.14 25",
     "image": "images/cuthbert.jpg",
     "credit": "Bede · CC0",
     "map": {
       "x": 479.3,
       "y": 487.2
-    }
-  },
-  {
-    "id": "aidan-of-lindisfarne",
-    "name": "St Aidan",
-    "aka": "Aidan of Lindisfarne",
-    "epithet": "Apostle of Northumbria",
-    "place": "Lindisfarne Priory, Holy Island",
-    "region": "Northumberland · England",
-    "country": "England",
-    "lat": 55.6705,
-    "lng": -1.8023,
-    "feast": "31 August",
-    "era": "c. 590 – 651",
-    "patronage": [
-      "Northumbria",
-      "firefighters"
-    ],
-    "intro": "An Irish monk from Iona who walked barefoot through Northumbria converting an entire kingdom, Aidan of Lindisfarne founded the island monastery that would become the cradle of English Christianity.",
-    "story": [
-      "When King Oswald of Northumbria asked Iona to send a bishop, the first monk returned in failure, complaining the English were too stubborn to convert. Aidan suggested the man had been too harsh — and so Iona sent Aidan instead. He arrived around 635, chose the tidal island of Lindisfarne as his base, and evangelised on foot rather than horseback, learning English as he walked village to village.",
-      "Aidan's social radicalism was remarkable: he used gifts of money from the nobility to purchase enslaved people, then educated and ordained them as priests. When he died in 651, leaning against a wall of the church at Bamburgh, his friend Cuthbert — then a teenage shepherd — allegedly saw his soul carried to heaven by angels, and resolved to become a monk."
-    ],
-    "facts": [
-      "Bede, who disagreed with Aidan's Irish dating of Easter, nonetheless praised him as a man 'who cultivated peace and love, purity and humility' and who never flattered the powerful.",
-      "When King Penda piled timber against Bamburgh's walls to burn it, Aidan prayed from Farne Island and the wind shifted, driving the flames back on the besiegers.",
-      "King Oswald served as Aidan's personal interpreter, since Aidan arrived speaking only Irish and Latin — a king translating for his own bishop was an extraordinary mark of royal humility."
-    ],
-    "wiki": "Aidan of Lindisfarne",
-    "quote": "",
-    "accent": "72% 0.13 132",
-    "image": "images/aidan-of-lindisfarne.jpg",
-    "credit": "Randy OHC · CC BY 2.0",
-    "map": {
-      "x": 479.3,
-      "y": 487.1
     }
   },
   {
@@ -869,12 +566,98 @@ window.SAINTS = [
     ],
     "wiki": "Bartholomew of Farne",
     "quote": "",
-    "accent": "58% 0.15 280",
+    "pilgrimage": {
+      "site": "Inner Farne Island",
+      "town": "Inner Farne, Northumberland"
+    },
+    "prayer": "O God, who sustained your servant Bartholomew through forty years of wind and solitude on the bare rock of Inner Farne, teach us through his example that perseverance in prayer is itself a form of witness. May we, in the midst of a restless world, find the still centre where you dwell, and may his intercession strengthen all who bear the hidden burdens of the contemplative life. Amen.",
+    "accent": "64% 0.12 218",
     "image": null,
     "credit": null,
     "map": {
       "x": 486.5,
       "y": 491.4
+    }
+  },
+  {
+    "id": "waltheof-of-melrose",
+    "name": "St Waltheof of Melrose",
+    "aka": "Waldef; Waldeve",
+    "epithet": "Abbot of Melrose",
+    "place": "Melrose Abbey, Melrose",
+    "region": "Scottish Borders · Scotland",
+    "country": "Scotland",
+    "lat": 55.5927,
+    "lng": -2.7173,
+    "feast": "3 August",
+    "era": "c. 1095 – 1159",
+    "patronage": [
+      "Melrose Abbey",
+      "Cistercian monasticism in Scotland"
+    ],
+    "intro": "Stepson of King David I of Scotland, Waltheof turned away from courtly power to become a Cistercian monk and then Abbot of Melrose — and his tomb, opened in 1171 to reveal his body apparently incorrupt, made the abbey one of the great pilgrimage shrines of medieval Scotland.",
+    "story": [
+      "Born around 1095, Waltheof was the son of Simon I of St Liz, Earl of Northampton, and Maud, Countess of Huntingdon — making him stepson to King David I of Scotland when his mother remarried. He could have lived out his life in a court that valued him; instead he entered the Augustinian priory of Nostell in Yorkshire, became prior of Kirkham, and then, decisively, made the harder choice by becoming a Cistercian. After periods at Wardon Abbey and Rievaulx, he was elected Abbot of Melrose in 1148. He declined the bishopric of St Andrews in 1159, dying as abbot on 3 August of that year, aged around sixty-four.",
+      "His holiness had a curious afterlife. His immediate successor resisted the growing popular cult around his grave — but when Jocelin became abbot in 1170 he allowed the tomb to be formally opened in the presence of the Bishop of Glasgow and four abbots. The body was reported incorrupt, the vestments intact. Pilgrims came from across Scotland and northern England, and his feast was observed locally for centuries. Though never formally canonised by Rome, he was included in the Scottish martyrology and is recognised as a saint in the Cistercian order."
+    ],
+    "facts": [
+      "Waltheof declined the bishopric of St Andrews in the same year he died — 1159 — choosing to remain a simple abbot rather than take the highest ecclesiastical office in Scotland.",
+      "When his tomb was opened in 1171, twelve years after his death, the body was reportedly found entire and the vestments uncorrupted — the classic medieval test of sanctity.",
+      "He was the stepson of King David I of Scotland, who founded Melrose Abbey itself in 1136, making Waltheof's abbacy a kind of spiritual completion of his stepfather's great foundation."
+    ],
+    "wiki": "Waltheof of Melrose",
+    "quote": "",
+    "pilgrimage": {
+      "site": "Melrose Abbey",
+      "town": "Melrose, Scottish Borders"
+    },
+    "prayer": "Heavenly Father, you drew Waltheof away from power and privilege into the silence of the cloister, and through his gentleness you made Melrose Abbey a place of pilgrimage and light. Grant us his courage to choose the better part, and his humility to lead others by serving them. May his witness endure in the stones of Melrose and in the hearts of all who seek you there. Amen.",
+    "accent": "74% 0.13 88",
+    "image": null,
+    "credit": null,
+    "map": {
+      "x": 436.5,
+      "y": 493.5
+    }
+  },
+  {
+    "id": "robert-of-newminster",
+    "name": "St Robert of Newminster",
+    "aka": "",
+    "epithet": "Abbot of Northumberland",
+    "place": "Newminster Abbey, Morpeth",
+    "region": "Northumberland · England",
+    "country": "England",
+    "lat": 55.1664,
+    "lng": -1.7044,
+    "feast": "7 June",
+    "era": "c. 1100 – 1159",
+    "patronage": [
+      "Cistercian monasticism"
+    ],
+    "intro": "One of the founding monks of Fountains Abbey, Robert struck out north to plant a daughter-house in the rough borderlands of Northumberland and became famous for visions, prophecy, and a friendship with St Bernard of Clairvaux himself.",
+    "story": [
+      "Robert was among the early band of monks who helped found Fountains Abbey in Yorkshire in 1132. Around 1138 he led a colony northward at the invitation of the baron Ralph de Merlay, establishing Newminster Abbey just west of Morpeth on the River Wansbeck. Despite the frontier conditions, the community flourished, and within a decade Robert oversaw three daughter-houses at Pipewell, Roche, and Sawley.",
+      "His contemporaries credited him with mystical gifts: St Bernard of Clairvaux reportedly said that at the moment Robert died he saw a ball of fire ascend to heaven. His visions, his charity to the poor, and the miracles reported at his tomb led Pope Innocent III to recognise his cult in 1200."
+    ],
+    "facts": [
+      "Robert was one of the original monks at Fountains Abbey, whose first community walked out of York in mid-winter to found a monastery from scratch in 1132.",
+      "Pope Innocent III confirmed his cult in 1200, making him one of the earliest Cistercians formally venerated as a saint.",
+      "St Bernard of Clairvaux is said to have exchanged letters with Robert and declared a vision of fire marked the moment of his death."
+    ],
+    "wiki": "Robert of Newminster",
+    "quote": "",
+    "pilgrimage": {
+      "site": "Newminster Abbey (ruins)",
+      "town": "Morpeth, Northumberland"
+    },
+    "prayer": "O God, who called your servant Robert from the fellowship of Fountains to plant a new shoot of Cistercian life in the rough borderlands of Northumbria, grant that the Church may never cease to send forth those who will begin again in hard places and with little provision. By his intercession, sustain all who lead communities in remote or difficult circumstances, and kindle in us the love of holy poverty that was the fire of his life. Amen.",
+    "accent": "64% 0.13 158",
+    "image": "images/robert-of-newminster.jpg",
+    "credit": "BSonne · CC BY-SA 3.0",
+    "map": {
+      "x": 483.9,
+      "y": 528.6
     }
   },
   {
@@ -907,12 +690,60 @@ window.SAINTS = [
     ],
     "wiki": "Oswald of Northumbria",
     "quote": "",
-    "accent": "66% 0.14 25",
+    "pilgrimage": {
+      "site": "St Oswald's Church, Heavenfield",
+      "town": "Heavenfield, near Hexham, Northumberland"
+    },
+    "prayer": "Almighty God, who gave your servant Oswald the grace to raise a cross in the darkness before battle and to trust your strength above all worldly power, grant us the same faith in the hour of our trials. By the intercession of this royal martyr, defend the innocent, guide the rulers of nations, and bring all those who suffer beneath unjust power into the freedom of your kingdom. Amen.",
+    "accent": "60% 0.15 312",
     "image": "images/oswald-of-northumbria.jpg",
     "credit": "Robin Widdison at English Wikipedia · Public domain",
     "map": {
       "x": 465.3,
       "y": 540.5
+    }
+  },
+  {
+    "id": "columba-derry",
+    "name": "St Columba of Derry",
+    "aka": "Colmcille",
+    "epithet": "Dove of the Church",
+    "place": "Long Tower Church, Derry",
+    "region": "County Londonderry · Northern Ireland",
+    "country": "Northern Ireland",
+    "lat": 54.9929,
+    "lng": -7.3285,
+    "feast": "9 June",
+    "era": "521 – 597",
+    "patronage": [
+      "Derry",
+      "Ireland",
+      "poets",
+      "floods"
+    ],
+    "intro": "Before Iona, Columba founded his first great monastery in a grove of oak at Derry — and the city still carries his name in Irish: Doire Cholm Cille, the oak grove of Columba of the churches.",
+    "story": [
+      "Born into Irish royalty in Donegal, Columba founded his first monastery in Derry around 546, on a slope of oak woodland whose name — Doire, 'oak grove' — the city still carries in Irish. He went on to found monasteries at Durrow and Kells and became the foremost scholar-monk of his generation, before a dispute over a copied psalter led to the Battle of Cúl Dreimhne and his acceptance of perpetual exile.",
+      "Though he sailed to Iona in 563 and never returned to Ireland, his Irish foundations remained central to the great Columban monastic family. The Book of Kells is traditionally associated with that family. His Derry church is commemorated at the Long Tower, and he reportedly wept whenever he saw an oak, because the trees reminded him of Derry's sacred grove."
+    ],
+    "facts": [
+      "Derry's Irish name, Doire Cholm Cille, means 'the oak grove of Columba of the churches.'",
+      "His secret copying of St Finnian's psalter led to a legal ruling — 'to every cow her calf, to every book its copy' — sometimes called the world's first copyright judgement.",
+      "The Book of Kells, one of the greatest treasures of medieval art, is traditionally linked to Columba's monastic family though probably produced at Iona around 800."
+    ],
+    "wiki": "Columba",
+    "quote": "",
+    "pilgrimage": {
+      "site": "Long Tower Church",
+      "town": "Derry, County Londonderry"
+    },
+    "prayer": "O Columba, Dove of the Church, who wept for the oak groves of Derry even as you sailed toward a greater mission, teach us to offer our dearest attachments to God's service and to find in exile a wider home. By your love of learning and your tireless proclamation of the Word, draw us deeper into the mystery of Christ crucified and risen. Amen.",
+    "accent": "70% 0.12 78",
+    "image": "images/columba-derry.jpg",
+    "credit": "J. R. Skelton (Joseph Ratcliffe Skelton; 1865–1927) (illustrator), erroneously credited as John R. Skelton · Public domain",
+    "map": {
+      "x": 220.7,
+      "y": 542.8
     }
   },
   {
@@ -945,7 +776,12 @@ window.SAINTS = [
     ],
     "wiki": "Bede",
     "quote": "All is finished.",
-    "accent": "64% 0.12 218",
+    "pilgrimage": {
+      "site": "Durham Cathedral (Galilee Chapel)",
+      "town": "Durham, County Durham"
+    },
+    "prayer": "O God of truth and light, who gave your servant Bede a mind wide enough to compass the whole learning of his age and a heart humble enough to see in it only your glory, grant that all who seek knowledge may seek it for your sake. By his intercession, inspire writers, scholars, and all who labour with words to speak truth with clarity and love. Amen.",
+    "accent": "62% 0.13 244",
     "image": "images/bede.jpg",
     "credit": "http://www.e-codices.unifr.ch/de/bke/0047/1v · Public domain",
     "map": {
@@ -983,7 +819,12 @@ window.SAINTS = [
     ],
     "wiki": "Benedict Biscop",
     "quote": "",
-    "accent": "74% 0.13 88",
+    "pilgrimage": {
+      "site": "St Peter's Church, Monkwearmouth",
+      "town": "Monkwearmouth, Sunderland, Tyne and Wear"
+    },
+    "prayer": "Lord God, whose servant Benedict Biscop crossed the seas five times to bring the gifts of learning and beauty back to a land still new to your Gospel, grant us the same tireless generosity in placing every talent and resource at the service of your Church. By his intercession, bless all who build and beautify places of worship, and all who gather the knowledge of one generation as an inheritance for the next. Amen.",
+    "accent": "60% 0.13 168",
     "image": null,
     "credit": null,
     "map": {
@@ -992,38 +833,85 @@ window.SAINTS = [
     }
   },
   {
-    "id": "robert-of-newminster",
-    "name": "St Robert of Newminster",
-    "aka": "",
-    "epithet": "Abbot of Northumberland",
-    "place": "Newminster Abbey, Morpeth",
-    "region": "Northumberland · England",
-    "country": "England",
-    "lat": 55.1664,
-    "lng": -1.7044,
-    "feast": "7 June",
-    "era": "c. 1100 – 1159",
+    "id": "ninian",
+    "name": "St Ninian",
+    "aka": "Ringan",
+    "epithet": "Apostle of the Southern Picts",
+    "place": "Whithorn Priory, Whithorn",
+    "region": "Dumfries and Galloway · Scotland",
+    "country": "Scotland",
+    "lat": 54.733,
+    "lng": -4.4159,
+    "feast": "16 September",
+    "era": "c. 360 – c. 432",
     "patronage": [
-      "Cistercian monasticism"
+      "Diocese of Galloway",
+      "Shetland Isles"
     ],
-    "intro": "One of the founding monks of Fountains Abbey, Robert struck out north to plant a daughter-house in the rough borderlands of Northumberland and became famous for visions, prophecy, and a friendship with St Bernard of Clairvaux himself.",
+    "intro": "A century before Columba and Patrick, Ninian built Scotland's first stone church in the far southwest and sent Christianity north into Pictish lands — making him the earliest named Christian missionary on British soil.",
     "story": [
-      "Robert was among the early band of monks who helped found Fountains Abbey in Yorkshire in 1132. Around 1138 he led a colony northward at the invitation of the baron Ralph de Merlay, establishing Newminster Abbey just west of Morpeth on the River Wansbeck. Despite the frontier conditions, the community flourished, and within a decade Robert oversaw three daughter-houses at Pipewell, Roche, and Sawley.",
-      "His contemporaries credited him with mystical gifts: St Bernard of Clairvaux reportedly said that at the moment Robert died he saw a ball of fire ascend to heaven. His visions, his charity to the poor, and the miracles reported at his tomb led Pope Innocent III to recognise his cult in 1200."
+      "Almost everything about Ninian comes filtered through Bede's brief 8th-century account and a 12th-century life by Aelred of Rievaulx. What seems certain is that around 397 he established a church at Whithorn in Galloway, which Bede calls the 'Candida Casa' — the White House — remarkable for being built of stone in an age of timber. He may have studied in Rome and been consecrated bishop there.",
+      "His shrine at Whithorn became the most important pilgrimage destination in Scotland. Every Stuart king from James I to James V made the journey, and archaeological excavations since the 1980s have revealed continuous occupation from the late 4th century, making it one of the most significant early Christian sites in Britain."
     ],
     "facts": [
-      "Robert was one of the original monks at Fountains Abbey, whose first community walked out of York in mid-winter to found a monastery from scratch in 1132.",
-      "Pope Innocent III confirmed his cult in 1200, making him one of the earliest Cistercians formally venerated as a saint.",
-      "St Bernard of Clairvaux is said to have exchanged letters with Robert and declared a vision of fire marked the moment of his death."
+      "Whithorn is the oldest Christian community in Scotland, with archaeological evidence of a 4th-century cemetery pre-dating Ninian's church.",
+      "The medieval pilgrim route to Whithorn was so well-trodden that a network of 'Pilgrim Ways' still crosses Galloway's hills and coasts.",
+      "King Robert the Bruce made a pilgrimage to Whithorn while gravely ill in 1329 — he died shortly after returning."
     ],
-    "wiki": "Robert of Newminster",
+    "wiki": "Ninian",
     "quote": "",
-    "accent": "64% 0.13 158",
-    "image": "images/robert-of-newminster.jpg",
-    "credit": "BSonne · CC BY-SA 3.0",
+    "pilgrimage": {
+      "site": "Whithorn Priory",
+      "town": "Whithorn, Dumfries and Galloway"
+    },
+    "prayer": "Blessed Ninian, first light of the gospel in Scotland, who raised your Candida Casa amid a people yet in darkness and carried Christ's name into the remotest places of the north, look with favour on all who seek truth in obscurity. May your prayers lead us, as you led the Southern Picts, from shadow into the brightness of God's eternal day. Amen.",
+    "accent": "70% 0.11 196",
+    "image": "images/ninian.jpg",
+    "credit": "Unknown authorUnknown author · Public domain",
     "map": {
-      "x": 483.9,
-      "y": 528.6
+      "x": 357,
+      "y": 563.9
+    }
+  },
+  {
+    "id": "comgall",
+    "name": "St Comgall",
+    "aka": "Comgall of Bangor",
+    "epithet": "Abbot of Bangor",
+    "place": "Bangor Abbey, Bangor",
+    "region": "County Down · Northern Ireland",
+    "country": "Northern Ireland",
+    "lat": 54.656,
+    "lng": -5.675,
+    "feast": "10 May",
+    "era": "c. 516 – c. 601",
+    "patronage": [
+      "Bangor",
+      "monastic communities"
+    ],
+    "intro": "From a windswept shore of Belfast Lough, Comgall built the greatest monastic school in Ulster, whose famous Rule was stern enough to frighten even hardened ascetics — but it produced Columbanus, who set Europe alight.",
+    "story": [
+      "Born in County Antrim, Comgall trained under several of Ireland's leading abbots before founding Bangor Abbey around 558 on the southern shore of Belfast Lough. The monastery's rule was famously austere, but its spiritual prestige was immense. At its peak Bangor housed over four thousand monks according to tradition, and its liturgical chant, the Antiphonary of Bangor, survives as one of the oldest witnesses to Irish liturgical practice.",
+      "Comgall's most famous student was Columbanus, whom he sent to evangelise Francia and northern Italy — a mission that planted monasteries at Luxeuil and Bobbio and reshaped continental Christianity. His relics were scattered by Viking raiders in 822, but Bangor survived, and the present abbey church preserves the outline of his foundation."
+    ],
+    "facts": [
+      "Bangor's Rule was so harsh that it reportedly killed monks — yet the monastery still attracted thousands of novices from across Ireland and Britain.",
+      "Comgall personally trained Columbanus, who founded Bobbio Abbey in Italy and Luxeuil in France, making Bangor an indirect mother of European monastic civilisation.",
+      "The Antiphonary of Bangor, a 7th-century liturgical manuscript, survives in the Ambrosian Library in Milan."
+    ],
+    "wiki": "Comgall",
+    "quote": "",
+    "pilgrimage": {
+      "site": "Bangor Abbey",
+      "town": "Bangor, County Down"
+    },
+    "prayer": "Steadfast Comgall, who built at Bangor a school of prayer whose song never ceased and whose sons carried the faith to the furthest shores of Europe, intercede for all monastic communities and for all who seek God through a rule of life. Grant that the Church in our time may be renewed by the same Spirit that fired your community on the shore of Belfast Lough. Amen.",
+    "accent": "66% 0.16 8",
+    "image": "images/comgall.jpg",
+    "credit": "HenryPho17 · CC0",
+    "map": {
+      "x": 298.1,
+      "y": 570.2
     }
   },
   {
@@ -1056,12 +944,183 @@ window.SAINTS = [
     ],
     "wiki": "Hilda of Whitby",
     "quote": "",
-    "accent": "60% 0.15 312",
+    "pilgrimage": {
+      "site": "Whitby Abbey",
+      "town": "Whitby, North Yorkshire"
+    },
+    "prayer": "Gracious God, who raised up Hilda to govern a double monastery on the windswept cliffs of Whitby and made her a mother to bishops, a patron to poets, and a host to the great council that shaped your Church in England, grant us wisdom to lead, courage to discern, and openness to discover gifts in those the world overlooks. By her intercession, bless all in positions of authority in your Church, that they may serve with both learning and love. Amen.",
+    "accent": "72% 0.13 132",
     "image": "images/hilda-of-whitby.jpg",
     "credit": "Mum's taxi · CC BY-SA 4.0",
     "map": {
       "x": 535.2,
       "y": 583.7
+    }
+  },
+  {
+    "id": "saint-malachy",
+    "name": "St Malachy",
+    "aka": "Máel Máedóc Ua Morgair",
+    "epithet": "Reformer of the Irish Church",
+    "place": "St Patrick's Cathedral (RC), Armagh",
+    "region": "County Armagh · Northern Ireland",
+    "country": "Northern Ireland",
+    "lat": 54.348,
+    "lng": -6.656,
+    "feast": "3 November",
+    "era": "1094 – 1148",
+    "patronage": [
+      "Archdiocese of Armagh",
+      "Diocese of Down and Connor"
+    ],
+    "intro": "The first Irish saint formally canonised by Rome, Malachy dragged a fractured Irish Church into Latin orthodoxy, died in the arms of his friend Bernard of Clairvaux, and left behind a prophecy about popes that has intrigued conspiracy theorists ever since.",
+    "story": [
+      "Born in Armagh in 1094, Malachy became Archbishop of Armagh in 1132 and set about reforming a church that had drifted far from Roman practice — introducing canonical marriage law, regular synods, proper tithing, and the Roman rite. He travelled twice to Rome seeking papal authority for his reforms. On his second journey in 1148 he stopped at Clairvaux and died there on All Souls' Day in the arms of Abbot Bernard, who wrote his biography.",
+      "Pope Clement III canonised Malachy in 1190, making him the first Irish native to be formally canonised. A list of 112 cryptic Latin phrases known as the Prophecy of the Popes was published in 1595 and attributed to him; scholars regard it as a forgery, but it has never stopped circulating."
+    ],
+    "facts": [
+      "Malachy was the first Irish person to be formally canonised by Rome, in 1190.",
+      "He died on All Souls' Day in the arms of St Bernard of Clairvaux; his feast is kept on 3 November so as not to clash with the commemoration of the dead.",
+      "The 'Prophecy of the Popes' attributed to him first appeared in print in 1595, four and a half centuries after his death, and is now considered a learned forgery."
+    ],
+    "wiki": "Saint Malachy",
+    "quote": "",
+    "pilgrimage": {
+      "site": "St Patrick's Cathedral (RC)",
+      "town": "Armagh, County Armagh"
+    },
+    "prayer": "Holy Malachy, reformer of the Irish Church and first of Ireland's canonised sons, who gave your last breath in the arms of your friend Bernard and died on the very feast of all the faithful departed, intercede for the Church in its continual need of renewal. May your zeal for right order and your tenderness toward the sick and the poor inspire all who serve in the Lord's house. Amen.",
+    "accent": "58% 0.15 280",
+    "image": "images/saint-malachy.jpg",
+    "credit": "Andreas F. Borchert · CC BY-SA 4.0",
+    "map": {
+      "x": 252.2,
+      "y": 595
+    }
+  },
+  {
+    "id": "saint-patrick",
+    "name": "St Patrick",
+    "aka": "Patricius",
+    "epithet": "Apostle of Ireland",
+    "place": "Armagh",
+    "region": "County Armagh · Northern Ireland",
+    "country": "Northern Ireland",
+    "lat": 54.3478,
+    "lng": -6.6562,
+    "feast": "17 March",
+    "era": "c. 385 – c. 461",
+    "patronage": [
+      "Ireland",
+      "Nigeria",
+      "engineers",
+      "the excluded"
+    ],
+    "intro": "A Romano-British teenager kidnapped into Irish slavery, Patrick returned decades later not with vengeance but with a gospel that transformed an entire island.",
+    "story": [
+      "Patrick was captured by Irish raiders at around age sixteen and spent six years as a shepherd-slave in Ireland before escaping by ship back to Britain. Driven by a vivid dream in which the Irish people called him back, he trained as a cleric and returned as a missionary bishop, spending the rest of his life founding churches and ordaining clergy across the island.",
+      "He established his principal church at Armagh around 445, a hilltop site that became — and remains — the ecclesiastical capital of Ireland. His two surviving Latin writings, the Confessio and the Letter to Coroticus, are among the earliest documents written in Ireland, revealing a man of deep humility who saw himself, above all, as a sinner rescued by grace."
+    ],
+    "facts": [
+      "Patrick's Confessio opens with 'I, Patrick, a sinner, a most simple countryman' — making him one of the earliest authors in Christian history to write a spiritual autobiography.",
+      "He was never formally canonised by Rome; his sainthood rests on the ancient custom of popular acclaim.",
+      "The shamrock legend — that Patrick used clover to explain the Trinity — first appears in writing only in 1726, more than 1,200 years after his death."
+    ],
+    "wiki": "Saint Patrick",
+    "quote": "I, Patrick, a sinner, a most simple countryman, the least of all the faithful.",
+    "pilgrimage": {
+      "site": "St Patrick's Cathedral (Church of Ireland) and St Patrick's Cathedral (RC), Armagh",
+      "town": "Armagh, County Armagh"
+    },
+    "prayer": "Glorious Patrick, who returned in love to the people who had once enslaved you and gave your whole life to their conversion, pray for us that we may answer God's call with the same reckless courage. Teach us to see, in every place of suffering, an opportunity for grace; and let the fire you kindled on the hill of Slane burn always in our hearts. Amen.",
+    "accent": "66% 0.14 25",
+    "image": "images/saint-patrick.jpg",
+    "credit": "Nheyob · CC BY-SA 4.0",
+    "map": {
+      "x": 252.2,
+      "y": 595
+    }
+  },
+  {
+    "id": "cedd",
+    "name": "St Cedd",
+    "aka": "",
+    "epithet": "Evangelist of the Middle Angles",
+    "place": "St Mary's Church, Lastingham",
+    "region": "North Yorkshire · England",
+    "country": "England",
+    "lat": 54.3045,
+    "lng": -0.8826,
+    "feast": "26 October",
+    "era": "c. 620 – 664",
+    "patronage": [
+      "Essex",
+      "interpreters",
+      "Lastingham"
+    ],
+    "intro": "Before his more famous brother Chad evangelised Mercia, it was Cedd who first planted the faith among the Middle Angles in 653 — riding deep into the pagan heartland of the Midlands at the direct order of the Northumbrian king.",
+    "story": [
+      "Cedd and Chad were two of four brothers who all became priests. Sent by King Oswiu in 653 to convert Peada, son of the Mercian king Penda, Cedd preached across the Middle Anglian territory of the Trent Valley, winning 'numerous converts of all classes' before being redirected to the East Saxons as their bishop.",
+      "He later founded the monastery at Lastingham in the North Yorkshire Moors, choosing a site the Life describes as 'the lair of robbers and haunt of wild beasts' and purifying it with prayer and fasting for forty days. He died there of plague in 664, and the Norman crypt beneath the current church is believed to stand directly above his grave."
+    ],
+    "facts": [
+      "Cedd served as interpreter at the Synod of Whitby in 664 — one of the few men who could translate fluently between the Celtic and Roman factions.",
+      "When Cedd died of plague at Lastingham, thirty of his monks from Essex walked from the Thames estuary to die beside him rather than return home without their abbot.",
+      "The medieval crypt of St Mary's, Lastingham, built c.1078, is one of the most complete Norman crypts in England, preserving the atmosphere of the original foundation over Cedd's tomb."
+    ],
+    "wiki": "Cedd",
+    "quote": "",
+    "pilgrimage": {
+      "site": "St Mary's Church, Lastingham",
+      "town": "Lastingham, North Yorkshire"
+    },
+    "prayer": "Heavenly Father, who didst send thy servant Cedd into the lair of wild beasts and robbers to consecrate it by forty days of prayer and fasting, making it a place of blessing and holy rest: purify in us likewise whatever ground is yet unclaimed by thy grace, and make us willing instruments of thy peace; through Christ our Lord. Amen.",
+    "accent": "64% 0.12 218",
+    "image": "images/cedd.jpg",
+    "credit": "Public domain",
+    "map": {
+      "x": 522.3,
+      "y": 598.5
+    }
+  },
+  {
+    "id": "aelred-of-rievaulx",
+    "name": "St Aelred of Rievaulx",
+    "aka": "Ailred, Ælred",
+    "epithet": "The Bernard of the North",
+    "place": "Rievaulx Abbey",
+    "region": "North Yorkshire · England",
+    "country": "England",
+    "lat": 54.2569,
+    "lng": -1.1183,
+    "feast": "12 January",
+    "era": "c. 1110 – 1167",
+    "patronage": [
+      "friendship"
+    ],
+    "intro": "A courtier turned Cistercian abbot who transformed a remote Yorkshire valley into the most populous monastery in England and wrote the medieval world's most searching treatise on friendship.",
+    "story": [
+      "Aelred grew up at the court of King David I of Scotland, where he served as master of the household, before a chance visit to the new Cistercian abbey at Rievaulx persuaded him to stay. He entered the monastery around 1134 and rose to become its abbot in 1147, presiding over a community that swelled to around 650 monks and lay brothers.",
+      "Despite suffering severely from kidney disease in his final years, he kept his cell door open to monks who wished to talk, and continued writing. His masterwork, De Spirituali Amicitia ('On Spiritual Friendship'), argued that true friendship is a form of love that begins in God and returns to God. He appears in the Roman Martyrology and is venerated by Catholics and Anglicans alike."
+    ],
+    "facts": [
+      "At its peak under Aelred's abbacy, Rievaulx housed around 650 monks — the largest Cistercian community in Britain.",
+      "His treatise On Spiritual Friendship was modelled directly on Cicero's De Amicitia, reframing classical philosophy as Christian theology.",
+      "He never completed formal canonisation, yet appears in the Roman Martyrology, his cult ratified by Cistercian authorities in 1476."
+    ],
+    "wiki": "Aelred of Rievaulx",
+    "quote": "Here we are, you and I, and I hope a third, Christ, is in our midst.",
+    "pilgrimage": {
+      "site": "Rievaulx Abbey",
+      "town": "Helmsley, North Yorkshire"
+    },
+    "prayer": "Gracious God, who didst inspire thy servant Aelred of Rievaulx to seek thee in the bond of true friendship, teaching that all love rightly ordered finds its beginning and end in thee: grant us, by his example, hearts open to one another and firmly anchored in thy charity; through Christ, who is himself the friend of sinners. Amen.",
+    "accent": "74% 0.13 88",
+    "image": "images/aelred-of-rievaulx.jpg",
+    "credit": "Elredo de Rieval, posiblemente · Public domain",
+    "map": {
+      "x": 511.3,
+      "y": 602.3
     }
   },
   {
@@ -1093,7 +1152,12 @@ window.SAINTS = [
     ],
     "wiki": "Wilfrid",
     "quote": "",
-    "accent": "70% 0.12 78",
+    "pilgrimage": {
+      "site": "Ripon Cathedral",
+      "town": "Ripon, North Yorkshire"
+    },
+    "prayer": "Almighty God, whose servant Wilfrid endured exile and opposition without forsaking the truth he had received, grant us the same steadfastness in holding fast to the faith through seasons of reversal and misunderstanding. By his intercession, guide your Church in all questions of order and unity, and give to all her ministers the humility to submit and the courage to speak when submission would be faithlessness. Amen.",
+    "accent": "64% 0.13 158",
     "image": "images/wilfrid.jpg",
     "credit": "Mike Quinn · CC BY-SA 2.0",
     "map": {
@@ -1102,75 +1166,85 @@ window.SAINTS = [
     }
   },
   {
-    "id": "john-of-beverley",
-    "name": "St John of Beverley",
-    "aka": "",
-    "epithet": "Bishop of York, Healer and Scholar",
-    "place": "Beverley Minster",
-    "region": "East Riding of Yorkshire · England",
-    "country": "England",
-    "lat": 53.8392,
-    "lng": -0.4245,
-    "feast": "7 May",
-    "era": "c. 640 – 721",
+    "id": "bronagh",
+    "name": "St Brónach",
+    "aka": "Bronagh; Bronach",
+    "epithet": "Virgin of Kilbroney",
+    "place": "Kilbroney Church, Rostrevor",
+    "region": "County Down · Northern Ireland",
+    "country": "Northern Ireland",
+    "lat": 54.1114,
+    "lng": -6.1841,
+    "feast": "2 April",
+    "era": "6th century",
     "patronage": [
-      "Beverley",
-      "the deaf",
-      "those with speech difficulties"
+      "Kilbroney",
+      "Sailors on Carlingford Lough"
     ],
-    "intro": "The bishop who healed a mute boy by teaching him to speak, John of Beverley was the teacher of Bede, the confessor of kings, and the saint credited by Henry V with miraculously delivering victory at Agincourt.",
+    "intro": "A sixth-century disciple of Patrick who founded her church in a mountain valley above Carlingford Lough, Brónach is remembered above all for a bell whose ringing was said to warn sailors of a rising storm — a bell rediscovered centuries later inside a fallen oak tree.",
     "story": [
-      "A student of Archbishop Theodore of Tarsus at Canterbury, John served as Bishop of Hexham and then of York before retiring around 717 to the monastery he had founded at Beverley. Bede, who knew him personally, recorded numerous miracles attributed to him, including the healing of a dumb young man by patiently teaching him words, beginning with letters of the alphabet.",
-      "His cult flourished intensely in the later Middle Ages. When Henry V marched to Agincourt in 1415, the battle fell on the feast of John's translation; the king later reported that oil and blood had flowed from the saint's tomb the night before, and adopted John as patron of the royal household. Canonised in 1037, he remains the principal saint of the East Riding."
+      "Brónach founded her settlement of Cell Brónche — now Kilbroney — in the valley of Glenn Sechis in the shadow of the Mourne Mountains. She built a refuge for sailors shipwrecked on the notoriously treacherous waters of Carlingford Lough, and her community grew into a pastoral church served by both nuns and priests. A high cross of Mourne granite, still standing in Kilbroney graveyard, is among the oldest surviving monuments in County Down. Brónach is venerated as a disciple of Patrick, placing her origins in the earliest flowering of Irish Christianity.",
+      "The most enduring legend of Brónach is her bell. Tradition held that its ringing warned of storms on the Lough — a miraculous alarm for those who worked the water. Centuries after her death, a great storm brought down an ancient oak tree in Kilbroney churchyard. In its branches was found a tenth-century iron bell, perfectly preserved, as if the tree had been holding it in trust. That bell is now kept in the local church in Rostrevor, where her name lives on in schools, a GAA club, and the townland itself."
     ],
     "facts": [
-      "Bede was ordained both deacon and priest by John of Beverley and is one of our principal sources for his miracles.",
-      "Henry V attributed the impossible English victory at Agincourt (1415) to John's intercession and decreed his feast be kept throughout England.",
-      "Beverley Minster, which grew from John's modest monastery, is architecturally on a par with many English cathedrals — its Gothic Percy Tomb is rated among the finest medieval carvings in Britain."
+      "The Bell of Kilbroney, a tenth-century iron hand-bell discovered in the branches of a fallen oak in Kilbroney churchyard, is one of the oldest ecclesiastical objects surviving in County Down.",
+      "Kilbroney takes its name directly from Brónach: Cell Brónche means 'the church of Brónach' in Old Irish.",
+      "The ancient Mourne granite high cross in Kilbroney graveyard is one of the region's earliest Christian monuments, pre-dating the Norman settlement of Down by centuries."
     ],
-    "wiki": "John of Beverley",
+    "wiki": "Brónach",
     "quote": "",
-    "accent": "62% 0.13 244",
-    "image": "images/john-of-beverley.jpg",
-    "credit": "Graham Hermon · CC BY-SA 2.0",
+    "pilgrimage": {
+      "site": "St Bronagh's Church, Kilbroney",
+      "town": "Rostrevor, County Down"
+    },
+    "prayer": "Gracious God, you gave your servant Brónach a heart of compassion for all who sailed in peril on the waters of Carlingford Lough. Through her intercession, protect those who face danger and guide us safely through the storms of this life. May the bell of Kilbroney still ring out across the valley as a call to holiness and to hope. Amen.",
+    "accent": "60% 0.15 312",
+    "image": "images/bronagh.jpg",
+    "credit": "Mickeydoyle · Public domain",
     "map": {
-      "x": 543.8,
-      "y": 635.6
+      "x": 274.2,
+      "y": 613.9
     }
   },
   {
-    "id": "aelred-of-rievaulx",
-    "name": "St Aelred of Rievaulx",
-    "aka": "Ailred, Ælred",
-    "epithet": "The Bernard of the North",
-    "place": "Rievaulx Abbey",
+    "id": "paulinus-of-york",
+    "name": "St Paulinus",
+    "aka": "Paulinus of York",
+    "epithet": "First Archbishop of York, Baptiser of Northumbria",
+    "place": "York Minster, York",
     "region": "North Yorkshire · England",
     "country": "England",
-    "lat": 54.2569,
-    "lng": -1.1183,
-    "feast": "12 January",
-    "era": "c. 1110 – 1167",
+    "lat": 53.9624,
+    "lng": -1.0819,
+    "feast": "10 October",
+    "era": "died 644",
     "patronage": [
-      "friendship"
+      "York",
+      "missionaries"
     ],
-    "intro": "A courtier turned Cistercian abbot who transformed a remote Yorkshire valley into the most populous monastery in England and wrote the medieval world's most searching treatise on friendship.",
+    "intro": "Sent from Rome by Pope Gregory the Great, Paulinus baptised King Edwin of Northumbria at York in 627 and mass-baptised thousands in northern rivers — the first great wave of Christian conversion in northern England.",
     "story": [
-      "Aelred grew up at the court of King David I of Scotland, where he served as master of the household, before a chance visit to the new Cistercian abbey at Rievaulx persuaded him to stay. He entered the monastery around 1134 and rose to become its abbot in 1147, presiding over a community that swelled to around 650 monks and lay brothers.",
-      "Despite suffering severely from kidney disease in his final years, he kept his cell door open to monks who wished to talk, and continued writing. His masterwork, De Spirituali Amicitia ('On Spiritual Friendship'), argued that true friendship is a form of love that begins in God and returns to God. He appears in the Roman Martyrology and is venerated by Catholics and Anglicans alike."
+      "Paulinus arrived in England with the second wave of Gregory's missionaries in 601 and spent two decades in Kent before accompanying the Kentish princess Æthelburg north to marry Edwin of Northumbria. In 627 he baptised Edwin in a wooden oratory hastily built at York — the direct predecessor of York Minster. Bede records that Paulinus then spent 36 days baptising crowds in the River Glen at the royal palace of Yeavering.",
+      "When Edwin was killed in battle in 633, Paulinus fled south with Queen Æthelburg by sea, becoming Bishop of Rochester for his remaining years. He left behind in Northumbria only the deacon James, who continued the mission alone through war and chaos."
     ],
     "facts": [
-      "At its peak under Aelred's abbacy, Rievaulx housed around 650 monks — the largest Cistercian community in Britain.",
-      "His treatise On Spiritual Friendship was modelled directly on Cicero's De Amicitia, reframing classical philosophy as Christian theology.",
-      "He never completed formal canonisation, yet appears in the Roman Martyrology, his cult ratified by Cistercian authorities in 1476."
+      "Bede's vivid description of Paulinus — 'tall in stature, slightly bent, with black hair, a thin face, a slender aquiline nose' — is one of the earliest eyewitness-derived pen portraits in English history.",
+      "The wooden oratory in which he baptised Edwin in 627 was rebuilt in stone by Edwin himself — beginning the architectural lineage that leads to York Minster.",
+      "Paulinus baptised Hilda of Whitby as a young woman, making him the spiritual grandfather of the Synod of Whitby."
     ],
-    "wiki": "Aelred of Rievaulx",
-    "quote": "Here we are, you and I, and I hope a third, Christ, is in our midst.",
-    "accent": "60% 0.13 168",
-    "image": "images/aelred-of-rievaulx.jpg",
-    "credit": "Elredo de Rieval, posiblemente · Public domain",
+    "wiki": "Paulinus of York",
+    "quote": "",
+    "pilgrimage": {
+      "site": "York Minster",
+      "town": "York, North Yorkshire"
+    },
+    "prayer": "O God, who didst send thy servant Paulinus across the sea to baptise a northern king and pour the waters of salvation upon whole multitudes in the rivers of Northumbria: renew in us the boldness of the first missionaries, that we may confess thy name without fear; through Jesus Christ, the light of all nations. Amen.",
+    "accent": "70% 0.12 78",
+    "image": "images/paulinus-of-york.jpg",
+    "credit": "User Polylerus on en.wikipedia · CC BY-SA 3.0",
     "map": {
-      "x": 511.3,
-      "y": 602.3
+      "x": 513,
+      "y": 625.8
     }
   },
   {
@@ -1201,7 +1275,12 @@ window.SAINTS = [
     ],
     "wiki": "William of York",
     "quote": "",
-    "accent": "70% 0.11 196",
+    "pilgrimage": {
+      "site": "York Minster",
+      "town": "York, North Yorkshire"
+    },
+    "prayer": "Almighty God, who didst vindicate thy servant William of York after long suffering and exile, restoring him to his people with such joy that even the falling bridge could not harm those who thronged to welcome him: strengthen all who are falsely accused and grant them the patience to await thy justice; through Jesus Christ our Lord. Amen.",
+    "accent": "62% 0.13 244",
     "image": "images/william-of-york.jpg",
     "credit": "Ernst.schnell · CC BY-SA 4.0",
     "map": {
@@ -1238,7 +1317,12 @@ window.SAINTS = [
     ],
     "wiki": "Margaret Clitherow",
     "quote": "I die for the love of my Lord Jesu.",
-    "accent": "66% 0.16 8",
+    "pilgrimage": {
+      "site": "Bar Convent Shrine and The Shambles",
+      "town": "York, North Yorkshire"
+    },
+    "prayer": "Lord Jesus, who didst call thy servant Margaret Clitherow to shelter thy priests at the cost of her own life, and who didst strengthen her in the hour of death with a courage that shamed her persecutors: by her intercession grant us fidelity to our conscience and love for thy Church even when the cost is great; who livest and reignest for ever and ever. Amen.",
+    "accent": "60% 0.13 168",
     "image": "images/margaret-clitherow.jpg",
     "credit": "zeitgenössischer Stecher, um 1750, nach älterer Darstellung · Public domain",
     "map": {
@@ -1247,186 +1331,250 @@ window.SAINTS = [
     }
   },
   {
-    "id": "paulinus-of-york",
-    "name": "St Paulinus",
-    "aka": "Paulinus of York",
-    "epithet": "First Archbishop of York, Baptiser of Northumbria",
-    "place": "York Minster, York",
-    "region": "North Yorkshire · England",
-    "country": "England",
-    "lat": 53.9624,
-    "lng": -1.0819,
-    "feast": "10 October",
-    "era": "died 644",
-    "patronage": [
-      "York",
-      "missionaries"
-    ],
-    "intro": "Sent from Rome by Pope Gregory the Great, Paulinus baptised King Edwin of Northumbria at York in 627 and mass-baptised thousands in northern rivers — the first great wave of Christian conversion in northern England.",
-    "story": [
-      "Paulinus arrived in England with the second wave of Gregory's missionaries in 601 and spent two decades in Kent before accompanying the Kentish princess Æthelburg north to marry Edwin of Northumbria. In 627 he baptised Edwin in a wooden oratory hastily built at York — the direct predecessor of York Minster. Bede records that Paulinus then spent 36 days baptising crowds in the River Glen at the royal palace of Yeavering.",
-      "When Edwin was killed in battle in 633, Paulinus fled south with Queen Æthelburg by sea, becoming Bishop of Rochester for his remaining years. He left behind in Northumbria only the deacon James, who continued the mission alone through war and chaos."
-    ],
-    "facts": [
-      "Bede's vivid description of Paulinus — 'tall in stature, slightly bent, with black hair, a thin face, a slender aquiline nose' — is one of the earliest eyewitness-derived pen portraits in English history.",
-      "The wooden oratory in which he baptised Edwin in 627 was rebuilt in stone by Edwin himself — beginning the architectural lineage that leads to York Minster.",
-      "Paulinus baptised Hilda of Whitby as a young woman, making him the spiritual grandfather of the Synod of Whitby."
-    ],
-    "wiki": "Paulinus of York",
-    "quote": "",
-    "accent": "72% 0.13 132",
-    "image": "images/paulinus-of-york.jpg",
-    "credit": "User Polylerus on en.wikipedia · CC BY-SA 3.0",
-    "map": {
-      "x": 513,
-      "y": 625.8
-    }
-  },
-  {
-    "id": "cedd",
-    "name": "St Cedd",
+    "id": "john-of-beverley",
+    "name": "St John of Beverley",
     "aka": "",
-    "epithet": "Evangelist of the Middle Angles",
-    "place": "St Mary's Church, Lastingham",
-    "region": "North Yorkshire · England",
+    "epithet": "Bishop of York, Healer and Scholar",
+    "place": "Beverley Minster",
+    "region": "East Riding of Yorkshire · England",
     "country": "England",
-    "lat": 54.3045,
-    "lng": -0.8826,
-    "feast": "26 October",
-    "era": "c. 620 – 664",
+    "lat": 53.8392,
+    "lng": -0.4245,
+    "feast": "7 May",
+    "era": "c. 640 – 721",
     "patronage": [
-      "Essex",
-      "interpreters",
-      "Lastingham"
+      "Beverley",
+      "the deaf",
+      "those with speech difficulties"
     ],
-    "intro": "Before his more famous brother Chad evangelised Mercia, it was Cedd who first planted the faith among the Middle Angles in 653 — riding deep into the pagan heartland of the Midlands at the direct order of the Northumbrian king.",
+    "intro": "The bishop who healed a mute boy by teaching him to speak, John of Beverley was the teacher of Bede, the confessor of kings, and the saint credited by Henry V with miraculously delivering victory at Agincourt.",
     "story": [
-      "Cedd and Chad were two of four brothers who all became priests. Sent by King Oswiu in 653 to convert Peada, son of the Mercian king Penda, Cedd preached across the Middle Anglian territory of the Trent Valley, winning 'numerous converts of all classes' before being redirected to the East Saxons as their bishop.",
-      "He later founded the monastery at Lastingham in the North Yorkshire Moors, choosing a site the Life describes as 'the lair of robbers and haunt of wild beasts' and purifying it with prayer and fasting for forty days. He died there of plague in 664, and the Norman crypt beneath the current church is believed to stand directly above his grave."
+      "A student of Archbishop Theodore of Tarsus at Canterbury, John served as Bishop of Hexham and then of York before retiring around 717 to the monastery he had founded at Beverley. Bede, who knew him personally, recorded numerous miracles attributed to him, including the healing of a dumb young man by patiently teaching him words, beginning with letters of the alphabet.",
+      "His cult flourished intensely in the later Middle Ages. When Henry V marched to Agincourt in 1415, the battle fell on the feast of John's translation; the king later reported that oil and blood had flowed from the saint's tomb the night before, and adopted John as patron of the royal household. Canonised in 1037, he remains the principal saint of the East Riding."
     ],
     "facts": [
-      "Cedd served as interpreter at the Synod of Whitby in 664 — one of the few men who could translate fluently between the Celtic and Roman factions.",
-      "When Cedd died of plague at Lastingham, thirty of his monks from Essex walked from the Thames estuary to die beside him rather than return home without their abbot.",
-      "The medieval crypt of St Mary's, Lastingham, built c.1078, is one of the most complete Norman crypts in England, preserving the atmosphere of the original foundation over Cedd's tomb."
+      "Bede was ordained both deacon and priest by John of Beverley and is one of our principal sources for his miracles.",
+      "Henry V attributed the impossible English victory at Agincourt (1415) to John's intercession and decreed his feast be kept throughout England.",
+      "Beverley Minster, which grew from John's modest monastery, is architecturally on a par with many English cathedrals — its Gothic Percy Tomb is rated among the finest medieval carvings in Britain."
     ],
-    "wiki": "Cedd",
+    "wiki": "John of Beverley",
     "quote": "",
-    "accent": "58% 0.15 280",
-    "image": "images/cedd.jpg",
-    "credit": "Public domain",
+    "pilgrimage": {
+      "site": "Beverley Minster",
+      "town": "Beverley, East Riding of Yorkshire"
+    },
+    "prayer": "O Lord our God, who didst anoint thy servant John of Beverley with pastoral wisdom and the gift of healing, granting to the mute the power of speech and to the sick the grace of restoration: hear us who call upon his intercession, and by his prayers open our ears to thy Word and our lips to thy praise; through Jesus Christ our Lord. Amen.",
+    "accent": "70% 0.11 196",
+    "image": "images/john-of-beverley.jpg",
+    "credit": "Graham Hermon · CC BY-SA 2.0",
     "map": {
-      "x": 522.3,
-      "y": 598.5
+      "x": 543.8,
+      "y": 635.6
     }
   },
   {
-    "id": "chad-of-mercia",
-    "name": "St Chad",
-    "aka": "Ceadda",
-    "epithet": "Apostle of Mercia",
-    "place": "Lichfield Cathedral",
-    "region": "Staffordshire · England",
-    "country": "England",
-    "lat": 52.6854,
-    "lng": -1.8303,
-    "feast": "2 March",
-    "era": "c. 620 – 672",
+    "id": "oliver-plunkett",
+    "name": "St Oliver Plunkett",
+    "aka": "Olivéar Pluincéid",
+    "epithet": "Martyr of the Popish Plot",
+    "place": "St Peter's RC Church (shrine), Drogheda",
+    "region": "County Louth · Ireland",
+    "country": "Ireland",
+    "lat": 53.7152,
+    "lng": -6.3524,
+    "feast": "1 July",
+    "era": "1625 – 1681",
     "patronage": [
-      "Lichfield",
-      "springs and holy wells",
-      "Mercia"
+      "Peace and reconciliation in Ireland"
     ],
-    "intro": "The bishop who refused a horse — Chad famously walked his entire diocese on foot until Archbishop Theodore physically lifted him into the saddle, saying such humility was appropriate for angels, not bishops.",
+    "intro": "Catholic Archbishop of Armagh during the Penal Laws, Oliver Plunkett was the last person to die at Tyburn for the Catholic faith — framed on fabricated charges during the hysteria of the Popish Plot.",
     "story": [
-      "Trained on Lindisfarne under the Irish monk Aidan, Chad was sent with his brother Cedd to complete his education in Ireland before returning to evangelise the pagan English. After a murky controversy over the Northumbrian see, Archbishop Theodore appointed him Bishop of the Mercians in 669, making Lichfield his seat.",
-      "Chad died of plague on 2 March 672, reportedly forewarned by heavenly music seven days before his death. When the Reformation threatened his relics, Catholics concealed the bones and eventually transferred them to St Chad's Cathedral in Birmingham, where they remain — a rare instance of a pre-Conquest saint's relics surviving in Catholic hands."
+      "Born in County Meath in 1625, Oliver Plunkett was ordained in Rome and spent years as a professor there before being appointed Archbishop of Armagh in 1669. Returning to an Ireland where Catholic worship was severely restricted, he quietly rebuilt the Church — ordaining priests, holding confirmations in secret, reopening schools — while working to prevent an armed uprising he feared would bring catastrophe.",
+      "In 1678 the fabricated 'Popish Plot' of Titus Oates swept England and Ireland. Plunkett was arrested in 1679 and charged with treason for allegedly plotting a French invasion. When an Irish jury refused to convict, his trial was moved to London, where he was convicted on perjured testimony and hanged, drawn, and quartered at Tyburn on 1 July 1681. Canonised in 1975, he became the first new Irish saint in nearly 700 years. His preserved head is enshrined at St Peter's, Drogheda."
     ],
     "facts": [
-      "Thirty-three ancient churches are dedicated to Chad, almost all in the Midlands — the highest concentration of any early English saint outside the north-east.",
-      "A holy well beside the Church of St Chad in Lichfield was reputed to cure eye disease, with pilgrims carrying away bottles of water into the post-Reformation era.",
-      "Archbishop Theodore removed Chad from the Northumbrian see as irregularly consecrated — yet so admired his character that he re-consecrated him and appointed him to Mercia."
+      "Oliver Plunkett's embalmed head has been displayed at St Peter's Church in Drogheda since 1921 — one of the most visited saintly relics in Ireland.",
+      "He was the last person executed for the Catholic faith at Tyburn, London, on 1 July 1681.",
+      "When an Irish jury refused to convict him, the Crown moved the trial to London, where a conviction was virtually guaranteed."
     ],
-    "wiki": "Chad of Mercia",
+    "wiki": "Oliver Plunkett",
+    "quote": "I have declared my innocence of the crimes charged against me; I forgive all who had any hand in my death.",
+    "pilgrimage": {
+      "site": "St Peter's RC Church (Shrine of St Oliver Plunkett)",
+      "town": "Drogheda, County Louth"
+    },
+    "prayer": "Courageous Oliver, who endured mockery, torture, and an unjust death rather than betray your flock or deny your faith, stand beside all who face persecution for conscience's sake. By your forgiveness of those who conspired against you, teach us the freedom that comes only from placing justice entirely in the hands of God. Amen.",
+    "accent": "66% 0.16 8",
+    "image": "images/oliver-plunkett.jpg",
+    "credit": "Edward Luttrell · Public domain",
+    "map": {
+      "x": 266.4,
+      "y": 645.4
+    }
+  },
+  {
+    "id": "finnian-of-clonard",
+    "name": "St Finnian of Clonard",
+    "aka": "Findbarr; Vinnianus",
+    "epithet": "Tutor of the Saints of Ireland",
+    "place": "Clonard Abbey (ruins), Clonard",
+    "region": "County Meath · Ireland",
+    "country": "Ireland",
+    "lat": 53.4518,
+    "lng": -7.0219,
+    "feast": "12 December",
+    "era": "c. 470 – 549",
+    "patronage": [
+      "Diocese of Meath"
+    ],
+    "intro": "Called the 'Teacher of the Saints of Ireland,' Finnian gathered three thousand students on the banks of the Boyne and trained the very men — Columba, Ciarán, Brendan — who would carry Irish Christianity to the ends of the known world.",
+    "story": [
+      "Finnian studied in Wales under the monastic rules of Gildas and Cadoc before returning to Ireland and founding Clonard Abbey around 520 on the River Boyne in County Meath. The school he built there attracted students in numbers almost beyond belief — ancient sources speak of three thousand scholars at one time — combining Latin learning with rigorous ascetic practice.",
+      "His real legacy walks in the footsteps of his graduates: the so-called Twelve Apostles of Ireland, including Columba of Iona, Ciarán of Clonmacnoise, Brendan the Navigator, and Canice of Kilkenny. He died of plague in 549, one of countless thousands swept away by the pandemic that devastated sixth-century Ireland."
+    ],
+    "facts": [
+      "Finnian's school at Clonard is said to have held three thousand students simultaneously — arguably one of the largest centres of learning in 6th-century western Europe.",
+      "Among his students were Columba, Ciarán of Clonmacnoise, and Brendan the Navigator.",
+      "He may be the 'Finnian' who corresponded with the Welsh monk Gildas about penitential discipline, shaping the Irish penitential system that spread across Europe."
+    ],
+    "wiki": "Finnian of Clonard",
     "quote": "",
+    "pilgrimage": {
+      "site": "Clonard Abbey (ruins)",
+      "town": "Clonard, County Meath"
+    },
+    "prayer": "Revered Finnian, teacher of the saints of Ireland, who gathered thousands on the banks of the Boyne and fashioned them into apostles for the world, pray for all who teach and for all who are searching for wisdom. May your example of disciplined learning and fervent prayer bear fruit in our generation as richly as it did in the age of Columba and Brendan. Amen.",
+    "accent": "72% 0.13 132",
+    "image": "images/finnian-of-clonard.jpg",
+    "credit": "Andreas F. Borchert · CC BY-SA 4.0",
+    "map": {
+      "x": 235,
+      "y": 666.2
+    }
+  },
+  {
+    "id": "winefride",
+    "name": "St Winefride",
+    "aka": "Gwenffrewi",
+    "epithet": "Virgin Martyr of Holywell",
+    "place": "St Winefride's Well, Holywell",
+    "region": "Flintshire · Wales",
+    "country": "Wales",
+    "lat": 53.2771,
+    "lng": -3.2236,
+    "feast": "3 November",
+    "era": "7th century, died c. 650",
+    "patronage": [
+      "Holywell",
+      "sick pilgrims",
+      "Wales"
+    ],
+    "intro": "When a spurned suitor beheaded Winefride on the hillside at Holywell, a spring of healing water burst from the earth where her head fell — and the saint, restored to life by her uncle Beuno, went on to lead a religious community for another forty years.",
+    "story": [
+      "Winefride was the daughter of a Welsh nobleman in Tegeingl (modern Flintshire). According to her hagiography, Prince Caradog beheaded her after she refused his advances. Her uncle Saint Beuno replaced her head and she was fully restored — the only mark remaining being a faint white scar around her neck. A spring of healing water welled up at the spot where she fell.",
+      "St Winefride's Well at Holywell has never ceased to draw the faithful in fifteen centuries — the late medieval bathing chapel survives intact, and the well received formal recognition as a National Shrine in 2023. Her relics were translated to Shrewsbury Abbey in 1138. Richard I and Henry V both made pilgrimages, cementing the site's reputation as the 'Lourdes of Wales.'"
+    ],
+    "facts": [
+      "St Winefride's Well has been a place of pilgrimage for an unbroken 1,300 years, one of the oldest continuously visited Christian holy sites in Britain.",
+      "The late 15th-century bathing chapel enclosing the well is considered one of the finest examples of perpendicular Gothic architecture in Wales.",
+      "National Shrine status was formally granted by the Catholic Bishops' Conference as recently as 2023."
+    ],
+    "wiki": "Saint Winifred",
+    "quote": "",
+    "pilgrimage": {
+      "site": "St Winefride's Well",
+      "town": "Holywell, Flintshire"
+    },
+    "prayer": "O Lord, who in the hour of Winefride's suffering didst cause a spring of healing to rise from stony ground, and didst restore her to life and fruitfulness through the prayers of thy servant Beuno, grant through her intercession relief to all who are afflicted in body, mind, or spirit. May the waters of this holy well be for us a sign of the unending mercy with which thou dost renew thy people, and may we drink more deeply each day from the living water of thy grace. Amen.",
+    "accent": "58% 0.15 280",
+    "image": "images/winefride.jpg",
+    "credit": "Hchc2009 · CC BY-SA 4.0",
+    "map": {
+      "x": 412.8,
+      "y": 679.9
+    }
+  },
+  {
+    "id": "asaph",
+    "name": "St Asaph",
+    "aka": "Asa",
+    "epithet": "First Welsh Bishop of St Asaph",
+    "place": "St Asaph Cathedral",
+    "region": "Denbighshire · Wales",
+    "country": "Wales",
+    "lat": 53.2571,
+    "lng": -3.442,
+    "feast": "1 May",
+    "era": "early 6th century – c. 596",
+    "patronage": [
+      "St Asaph"
+    ],
+    "intro": "A young disciple who carried live coals in his apron to warm his praying master without burning himself, Asaph inherited the see of St Asaph from Saint Kentigern and became the first Welsh bishop of one of the oldest cathedral foundations in Britain.",
+    "story": [
+      "According to his hagiography, Asaph was the son of King Sawyl Penuchel and became a disciple of Saint Kentigern (Mungo) at the monastery of Llanelwy on the River Elwy around 545. His sanctity was revealed when, as a boy, he carried burning coals in his apron to warm Kentigern during an outdoor vigil — the coals neither burned the fabric nor scorched his hands. When Kentigern was recalled to Strathclyde in 573, he consecrated Asaph as his successor.",
+      "Asaph became the first Welsh bishop of the see, which took his name. St Asaph Cathedral, where the medieval shrine once stood, is today the smallest ancient cathedral in Great Britain and Ireland and preserves one of the most complete sets of medieval choir stalls in Britain."
+    ],
+    "facts": [
+      "St Asaph Cathedral is the smallest ancient cathedral in Great Britain and Ireland, seating fewer than 300 people in its medieval nave.",
+      "The burning-coals miracle echoes the biblical story of Shadrach, Meshach, and Abednego, a standard sign of holiness in Celtic tradition.",
+      "Both the city and diocese bear Asaph's name in English, while Welsh speakers still call the settlement Llanelwy."
+    ],
+    "wiki": "Saint Asaph",
+    "quote": "",
+    "pilgrimage": {
+      "site": "St Asaph Cathedral",
+      "town": "St Asaph, Denbighshire"
+    },
+    "prayer": "Heavenly Father, who didst teach the boy Asaph to carry fire unscathed and to inherit the ancient see of Llanelwy with a wisdom beyond his years, grant through his intercession that thy Church may always burn with a fervent zeal that neither trial nor weakness can quench. As he received the trust of Kentigern and bore it faithfully to his life's end, so may we prove worthy of all thou hast entrusted to our keeping. Amen.",
     "accent": "66% 0.14 25",
-    "image": "images/chad-of-mercia.jpg",
+    "image": "images/asaph.jpg",
     "credit": "Llywelyn2000 · CC BY-SA 4.0",
     "map": {
-      "x": 478,
-      "y": 725.9
+      "x": 402.6,
+      "y": 681.4
     }
   },
   {
-    "id": "werburgh",
-    "name": "St Werburgh",
-    "aka": "Werburh",
-    "epithet": "Princess of Mercia, Abbess",
-    "place": "Chester Cathedral, Chester",
-    "region": "Cheshire · England",
-    "country": "England",
-    "lat": 53.1905,
-    "lng": -2.8907,
-    "feast": "3 February",
-    "era": "c. 650 – c. 700",
+    "id": "brendan-the-navigator",
+    "name": "St Brendan the Navigator",
+    "aka": "Brendan of Clonfert; Bréanainn",
+    "epithet": "the Navigator",
+    "place": "Clonfert Cathedral, Clonfert",
+    "region": "County Galway · Ireland",
+    "country": "Ireland",
+    "lat": 53.2406,
+    "lng": -8.0581,
+    "feast": "16 May",
+    "era": "c. 484 – c. 577",
     "patronage": [
-      "Chester",
-      "Staffordshire"
+      "sailors",
+      "mariners",
+      "travellers",
+      "Kerry"
     ],
-    "intro": "A Mercian princess who chose the veil over the throne, Werburgh governed a network of convents across the Midlands and became so beloved that her relics were rushed to safety from Viking raiders — founding one of England's great cathedral cities in the process.",
+    "intro": "A monk who may have sailed a leather currach to North America a thousand years before Columbus, Brendan the Navigator founded Clonfert Abbey and gave the medieval world its most irresistible tale of oceanic adventure.",
     "story": [
-      "Daughter of King Wulfhere of Mercia, Werburgh renounced her royal position and entered the monastery at Ely under her great-aunt Etheldreda, eventually rising to be abbess. Recalled to Mercia by her uncle King Ethelred, she reformed and governed nunneries at Weedon, Trentham, and Hanbury, where she died around 700.",
-      "When Danish raids threatened in the late ninth century, her relics were moved to Chester. The shrine established there became so important that the church was refounded as a Benedictine abbey in 1092 and later became Chester Cathedral — meaning Werburgh is the founding saint of an entire cathedral city. Medieval pilgrims wore badges showing a gaggle of geese, recalling her most famous miracle: restoring a goose to life after a servant had eaten it."
+      "Born near Tralee in County Kerry around 484, Brendan trained under Ita of Limerick and Finnian of Clonard before founding several monasteries, the most important being Clonfert in County Galway in 561. Clonfert Cathedral — with its extraordinary Hiberno-Romanesque carved doorway — still marks the site, and Brendan is venerated as one of the Twelve Apostles of Ireland.",
+      "His fame rests on the Navigatio Sancti Brendani, a ninth-century narrative of a seven-year ocean voyage in search of the 'Island of the Blessed.' The text describes islands of sheep, a whale mistaken for an island, columns of crystal, and an island of fire-hurling smiths. In 1976–77 explorer Tim Severin sailed a replica hide currach from Ireland to Newfoundland, proving the voyage physically possible."
     ],
     "facts": [
-      "Werburgh belongs to a remarkable dynasty: her mother Ermenilda, grandmother Seaxburh, and great-aunt Etheldreda were all venerated as saints — four generations in a row.",
-      "The goose miracle became her signature emblem; she is often shown holding a goose or accompanied by a flock.",
-      "Chester Cathedral still holds a partly surviving medieval stone shrine base that once housed her relics."
+      "Tim Severin's 1976–77 experiment proved a leather-hulled currach could cross the North Atlantic, lending unexpected plausibility to the voyage legend.",
+      "The 'island' of Jasconius — a whale on which the monks light their Easter fire before it dives — is one of the most enduring images in medieval literature.",
+      "Clonfert Cathedral's Romanesque doorway, built around 1150, is considered the finest example of Irish Romanesque carving in existence."
     ],
-    "wiki": "Werburgh",
-    "quote": "",
+    "wiki": "Brendan the Navigator",
+    "quote": "Shall I abandon, O King of mysteries, the soft comforts of home?",
+    "pilgrimage": {
+      "site": "Clonfert Cathedral",
+      "town": "Clonfert, County Galway"
+    },
+    "prayer": "O God, who called your servant Brendan to seek your kingdom across the unmeasured deep, grant us the same holy boldness to trust in your providence on all the seas of our lives. Through his intercession, may those who journey by water be kept safe, and may we never lose sight of the shore of your eternal kingdom. We ask this through Christ our Lord. Amen.",
     "accent": "64% 0.12 218",
-    "image": "images/werburgh.jpg",
-    "credit": "Wolfgang Sauber · CC BY-SA 3.0",
+    "image": "images/brendan-the-navigator.jpg",
+    "credit": "Unknown mediaeval scribe. · Public domain",
     "map": {
-      "x": 428.4,
-      "y": 686.6
-    }
-  },
-  {
-    "id": "guthlac-of-crowland",
-    "name": "St Guthlac",
-    "aka": "",
-    "epithet": "Hermit of the Fens",
-    "place": "Crowland Abbey",
-    "region": "Lincolnshire · England",
-    "country": "England",
-    "lat": 52.6764,
-    "lng": -0.1651,
-    "feast": "11 April",
-    "era": "674 – 714",
-    "patronage": [
-      "Crowland",
-      "Lincolnshire fens",
-      "against demonic attacks"
-    ],
-    "intro": "A Mercian warrior who turned hermit, Guthlac fought off literal demons with his psalter on a desolate fen island — and his friendship with a future Mercian king shaped the destiny of an entire kingdom.",
-    "story": [
-      "Guthlac spent nine years as a soldier in King Æthelred of Mercia's army before a sudden conversion led him to Repton Abbey at age twenty-four. Restless for greater solitude, he rowed out in 699 to a remote island in the Lincolnshire fens called Crowland and settled in a hollow mound — probably a plundered burial barrow. He lived there alone for fifteen years, enduring extreme asceticism and, according to his biographer Felix, regular assaults by demons.",
-      "Among the exiles who sought refuge with the holy hermit was the fugitive prince Æthelbald of Mercia, to whom Guthlac prophesied he would one day rule all of England. When Æthelbald became king in 716 he fulfilled his vow by founding Crowland Abbey over Guthlac's grave."
-    ],
-    "facts": [
-      "Felix's eighth-century Latin Life of Guthlac was translated into Old English, making Guthlac one of the few pre-Conquest English saints with a vernacular life.",
-      "He reportedly kept wild birds as companions, including a swallow that nested in his cell, consciously imitating the Desert Fathers.",
-      "Buried in a leaden coffin and exhumed a year later found incorrupt, his cult made Crowland a significant medieval pilgrimage site."
-    ],
-    "wiki": "Guthlac of Crowland",
-    "quote": "",
-    "accent": "74% 0.13 88",
-    "image": "images/guthlac-of-crowland.jpg",
-    "credit": "Thorvaldsson · CC BY-SA 3.0",
-    "map": {
-      "x": 555.9,
-      "y": 726.6
+      "x": 186.6,
+      "y": 682.7
     }
   },
   {
@@ -1459,7 +1607,12 @@ window.SAINTS = [
     ],
     "wiki": "Hugh of Lincoln",
     "quote": "",
-    "accent": "64% 0.13 158",
+    "pilgrimage": {
+      "site": "Lincoln Cathedral",
+      "town": "Lincoln, Lincolnshire"
+    },
+    "prayer": "O God, who endowed thy servant Hugh of Lincoln with a fearless love of justice and tender compassion for the sick, the outcast, and the poor: grant us the same holy boldness to speak truth before the powerful and to serve Christ in the least of his brothers and sisters; through Jesus Christ, our Judge and Redeemer. Amen.",
+    "accent": "74% 0.13 88",
     "image": "images/hugh-of-lincoln.jpg",
     "credit": "Unknown authorUnknown author · Public domain",
     "map": {
@@ -1468,108 +1621,424 @@ window.SAINTS = [
     }
   },
   {
-    "id": "oswald-of-worcester",
-    "name": "St Oswald of Worcester",
-    "aka": "",
-    "epithet": "Archbishop of York, Monastic Reformer",
-    "place": "Worcester Cathedral",
-    "region": "Worcestershire · England",
+    "id": "werburgh",
+    "name": "St Werburgh",
+    "aka": "Werburh",
+    "epithet": "Princess of Mercia, Abbess",
+    "place": "Chester Cathedral, Chester",
+    "region": "Cheshire · England",
     "country": "England",
-    "lat": 52.1887,
-    "lng": -2.2206,
-    "feast": "28 February",
-    "era": "c. 925 – 992",
+    "lat": 53.1905,
+    "lng": -2.8907,
+    "feast": "3 February",
+    "era": "c. 650 – c. 700",
     "patronage": [
-      "Worcester",
-      "monastic reform"
+      "Chester",
+      "Staffordshire"
     ],
-    "intro": "The grandson of a Danish Viking who died washing the feet of the poor on the last day of February — Oswald of Worcester embodied the tenth century's great paradox of warrior heritage transformed into monastic gentleness.",
+    "intro": "A Mercian princess who chose the veil over the throne, Werburgh governed a network of convents across the Midlands and became so beloved that her relics were rushed to safety from Viking raiders — founding one of England's great cathedral cities in the process.",
     "story": [
-      "Born of Danish descent into a Christianised family, Oswald was educated at Winchester and at Fleury-sur-Loire in France, Europe's leading centre of Benedictine reform. Appointed Bishop of Worcester in 961 by Archbishop Dunstan, he became one of the three great architects of the English monastic reform alongside Dunstan and Æthelwold, refounding houses at Ramsey, Pershore, Evesham, and Winchcombe.",
-      "He held the sees of Worcester and York simultaneously from 972, exercising influence across the Midlands and the north. He died on 29 February 992 in the act he performed every day of Lent: washing the feet of twelve poor men. He was buried at Worcester where his cult quickly flourished."
+      "Daughter of King Wulfhere of Mercia, Werburgh renounced her royal position and entered the monastery at Ely under her great-aunt Etheldreda, eventually rising to be abbess. Recalled to Mercia by her uncle King Ethelred, she reformed and governed nunneries at Weedon, Trentham, and Hanbury, where she died around 700.",
+      "When Danish raids threatened in the late ninth century, her relics were moved to Chester. The shrine established there became so important that the church was refounded as a Benedictine abbey in 1092 and later became Chester Cathedral — meaning Werburgh is the founding saint of an entire cathedral city. Medieval pilgrims wore badges showing a gaggle of geese, recalling her most famous miracle: restoring a goose to life after a servant had eaten it."
     ],
     "facts": [
-      "Oswald founded Ramsey Abbey in 966, whose scriptorium became one of the most productive manuscript-making centres in pre-Conquest England.",
-      "His 'Oswald's lease' system — leasing monastic estates to laymen for three generations rather than in perpetuity — was a significant innovation in Anglo-Saxon land management.",
-      "Because he died on 29 February, his feast is one of the rarest in the calendar — observed on 28 February in common years."
+      "Werburgh belongs to a remarkable dynasty: her mother Ermenilda, grandmother Seaxburh, and great-aunt Etheldreda were all venerated as saints — four generations in a row.",
+      "The goose miracle became her signature emblem; she is often shown holding a goose or accompanied by a flock.",
+      "Chester Cathedral still holds a partly surviving medieval stone shrine base that once housed her relics."
     ],
-    "wiki": "Oswald of Worcester",
+    "wiki": "Werburgh",
     "quote": "",
+    "pilgrimage": {
+      "site": "Chester Cathedral",
+      "town": "Chester, Cheshire"
+    },
+    "prayer": "Almighty God, who didst raise up thy servant Werburgh from a royal house to be a mother and reformer of monastic life, and whose relics thou didst use to plant a great church in the midst of thy people: by her prayers, guard all those committed to our care and draw us always closer to thee; through Jesus Christ our Lord. Amen.",
+    "accent": "64% 0.13 158",
+    "image": "images/werburgh.jpg",
+    "credit": "Wolfgang Sauber · CC BY-SA 3.0",
+    "map": {
+      "x": 428.4,
+      "y": 686.6
+    }
+  },
+  {
+    "id": "brigid-of-kildare",
+    "name": "St Brigid of Kildare",
+    "aka": "Bríd; Mary of the Gaels",
+    "epithet": "Mary of the Gaels",
+    "place": "St Brigid's Cathedral, Kildare Town",
+    "region": "County Kildare · Ireland",
+    "country": "Ireland",
+    "lat": 53.1578,
+    "lng": -6.9111,
+    "feast": "1 February",
+    "era": "c. 451 – c. 525",
+    "patronage": [
+      "Ireland",
+      "healers",
+      "poets",
+      "dairy workers",
+      "fugitives"
+    ],
+    "intro": "Brigid founded Ireland's most powerful double monastery — for both men and women — on the edge of the Curragh plain, and kept a sacred flame burning there that outlasted her by a thousand years.",
+    "story": [
+      "Born into slavery or low status, Brigid founded the Abbey of Kildare around 480, a 'double monastery' housing communities of both men and women, which she led as abbess. The site became a major centre of learning and art. A perpetual fire, tended in rotation by nineteen nuns, burned at Kildare for over a millennium.",
+      "Her feast falls on 1 February, the ancient Gaelic festival of Imbolc, which marks the first stirring of spring — a coincidence that reflects how deeply her cult drew on pre-Christian reverence for fertility and fire. Since 2023 her feast day has been an official public holiday in Ireland. The cathedral at Kildare stands on the site of her original foundation."
+    ],
+    "facts": [
+      "The perpetual flame at Kildare burned for over 1,000 years before being extinguished at the Reformation — and was relit in Kildare's Market Square in 1993, where it still burns today.",
+      "Brigid's feast day coincides exactly with Imbolc, the pre-Christian Celtic festival of spring.",
+      "Saint Brigid's Day became an official Irish public holiday in 2023, making Brigid one of very few historical saints to gain a new national holiday in the 21st century."
+    ],
+    "wiki": "Brigid of Kildare",
+    "quote": "",
+    "pilgrimage": {
+      "site": "St Brigid's Cathedral",
+      "town": "Kildare Town, County Kildare"
+    },
+    "prayer": "Radiant Brigid, Mary of the Gaels, who kept your sacred flame burning through a thousand years and opened wide the doors of your monastery to the poor, the stranger, and the sick, kindle in us something of your extravagant generosity. May the fire you lit at Kildare never be extinguished in the Church, but blaze to warm all who come cold and afraid to Christ's threshold. Amen.",
     "accent": "60% 0.15 312",
-    "image": "images/oswald-of-worcester.jpg",
-    "credit": "AnonymousUnknown author · Public domain",
+    "image": "images/brigid-of-kildare.jpg",
+    "credit": "Andreas F. Borchert · CC BY-SA 4.0",
     "map": {
-      "x": 459.7,
-      "y": 764
+      "x": 240.2,
+      "y": 689.2
     }
   },
   {
-    "id": "thomas-de-cantilupe",
-    "name": "St Thomas of Hereford",
-    "aka": "Thomas de Cantilupe",
-    "epithet": "The Miracle-Worker of Hereford",
-    "place": "Hereford Cathedral",
-    "region": "Herefordshire · England",
-    "country": "England",
-    "lat": 52.0543,
-    "lng": -2.716,
-    "feast": "2 October",
-    "era": "c. 1218 – 1282",
+    "id": "richard-gwyn",
+    "name": "St Richard Gwyn",
+    "aka": "Richard White",
+    "epithet": "Protomartyr of Wales",
+    "place": "The Beast Market, Wrexham",
+    "region": "Wrexham · Wales",
+    "country": "Wales",
+    "lat": 53.0403,
+    "lng": -2.9902,
+    "feast": "25 October",
+    "era": "c. 1537 – 1584",
     "patronage": [
-      "Diocese of Hereford",
-      "Herefordshire"
+      "Wales",
+      "Catholic schools",
+      "Welsh martyrs"
     ],
-    "intro": "A Lord Chancellor of England who became bishop, died in bitter dispute with the Archbishop of Canterbury, and generated more miracle claims at his Hereford tomb than almost any English saint before him.",
+    "intro": "A schoolmaster, father of six, and Welsh-language poet who was hanged, drawn and quartered in the marketplace of Wrexham for refusing to abandon his Catholic faith, Richard Gwyn became the first of the Forty Martyrs of England and Wales — and the only one native to Wales.",
     "story": [
-      "Thomas de Cantilupe combined careers in canon law, the chancellorship of Oxford, and high royal politics before becoming Bishop of Hereford in 1275. His episcopate was noted for strict discipline and care for the poor. A fierce quarrel with Archbishop John Pecham led to his excommunication, and he died on pilgrimage to Rome in 1282, seeking the Pope's judgment.",
-      "His bones were boiled clean for the journey home, and his heart separately enshrined. Within months his tomb at Hereford Cathedral became one of the most visited shrines in England, with pilgrims recording over 400 miracles. Pope John XXII canonised him in 1320 — the last English-born medieval saint canonised before the Reformation."
+      "Born around 1537 in Llanidloes, Richard Gwyn was educated at Oxford and Cambridge before settling as a schoolmaster in north-east Wales. After reconverting to Catholicism, he ran underground Catholic schools for Welsh families during the reign of Elizabeth I. Arrested in 1579 and recaptured in 1580, he was racked and tortured during his imprisonment, yet continued to write satirical and devotional poetry in Welsh mocking his captors.",
+      "At his trial in Wrexham in October 1584, Gwyn was convicted of high treason for reconciling persons to Rome. He was executed in the Beast Market on 15 October 1584. Canonised by Pope Paul VI in 1970, he remains the only Welsh-born member of the Forty Martyrs of England and Wales and is venerated as the Protomartyr of Wales."
     ],
     "facts": [
-      "More than 400 miracles were submitted in evidence at his canonisation process in Avignon, including claims of the dead being raised to life.",
-      "He served as Lord Chancellor of England under Henry III in 1265, the only medieval Bishop of Hereford to hold that office.",
-      "His skull, separately preserved, has been kept at Downside Abbey in Somerset since 1881."
+      "Gwyn was a published Welsh-language poet: six of his poems survive, including biting satires composed while imprisoned.",
+      "At his execution he was so weakened by torture that the hangman let him hang to lose consciousness before the drawing and quartering, yet witnesses reported he endured it with composure.",
+      "He is the only Welsh-born member of the Forty Martyrs of England and Wales canonised in 1970."
     ],
-    "wiki": "Thomas de Cantilupe",
+    "wiki": "Richard Gwyn",
     "quote": "",
+    "pilgrimage": {
+      "site": "Church of St Richard Gwyn, King Street, Wrexham",
+      "town": "Wrexham, Wrexham County Borough"
+    },
+    "prayer": "Lord Jesus Christ, who strengthened thy servant Richard Gwyn to endure rack and prison rather than betray his faith or his brethren, grant us by his intercession the courage to speak truth whatever the cost and to hold fast to thee in all our trials. May the witness of this schoolmaster-poet and father of six, protomartyr of Wales, inspire in thy Church a fearless love that no earthly power can silence. Amen.",
     "accent": "70% 0.12 78",
-    "image": "images/thomas-de-cantilupe.png",
-    "credit": "Salop roundel.svg:User:Hogweard *Reference for Flags.svg:User:Amada44\nderivative work: Hogweard · Public domain",
+    "image": "images/richard-gwyn.jpg",
+    "credit": "Llywelyn2000 · CC BY-SA 4.0",
     "map": {
-      "x": 436.5,
-      "y": 774.2
+      "x": 423.7,
+      "y": 698.4
     }
   },
   {
-    "id": "john-kemble",
-    "name": "St John Kemble",
+    "id": "beuno",
+    "name": "St Beuno",
     "aka": "",
-    "epithet": "The Eighty-Year-Old Priest",
-    "place": "Widemarsh Common, Hereford",
-    "region": "Herefordshire · England",
-    "country": "England",
-    "lat": 52.0587,
-    "lng": -2.7215,
-    "feast": "22 August",
-    "era": "c. 1599 – 1679",
-    "patronage": [],
-    "intro": "An eighty-year-old Catholic priest who had ministered in Herefordshire for fifty years was dragged to the gallows on the strength of Titus Oates's invented Popish Plot — and reportedly smoked a last pipe with his executioner.",
+    "epithet": "Wonder-worker of Gwynedd",
+    "place": "St Beuno's Church, Clynnog Fawr",
+    "region": "Gwynedd · Wales",
+    "country": "Wales",
+    "lat": 53.021,
+    "lng": -4.3652,
+    "feast": "21 April",
+    "era": "late 6th century – 640",
+    "patronage": [
+      "sick children",
+      "diseased cattle"
+    ],
+    "intro": "The most revered wonder-worker of early medieval North Wales, Beuno is credited with seven miraculous resurrections — including that of his niece Winefride — and founded a monastic community at Clynnog Fawr that became the principal pilgrimage church of the Llŷn Peninsula.",
     "story": [
-      "John Kemble was born into a Herefordshire recusant family around 1599, ordained at Douai in 1625, and returned to serve as an itinerant missionary priest in Monmouthshire and Herefordshire — operating from Pembridge Castle for over half a century. He survived by being modest and well-liked in a part of England where Catholic families still quietly protected their clergy.",
-      "His luck ran out when the hysteria of Titus Oates's fabricated 'Popish Plot' reached the provinces. Kemble was arrested in 1678 aged nearly eighty, the sole charge being that he was an ordained Catholic priest. On 22 August 1679 he was hanged at Widemarsh Common, pausing on the way to smoke a final pipe with the sheriff — commemorated in the tradition of 'the Kemble Pipe.'"
+      "Born into a noble family in Powys, Beuno trained at Bangor-on-Dee before undertaking missionary travels across north Wales. After a dispute with a prince, King Cadfan of Gwynedd granted him the estate of Clynnog Fawr on the Llŷn Peninsula, where Beuno founded the monastery that bears his name — the main waystation for pilgrims heading to Bardsey Island.",
+      "Beuno's most famous miracle was the restoration of his niece Winefride after she was decapitated at Holywell. Medieval pilgrims at Clynnog Fawr paid offerings into Beuno's chest, which still survives in the church, and sick children were laid overnight in his grave chapel in hope of healing. The Jesuit poet Gerard Manley Hopkins took spiritual inspiration from this saint while at St Beuno's College nearby."
     ],
     "facts": [
-      "Kemble was eighty at his execution, one of the oldest martyrs of the English Reformation, having been a priest for fifty-four years.",
-      "His farewell smoke with the sheriff gave rise to the English expression 'Kemble pipe' for a last smoke before dying.",
-      "His hand, preserved as a relic, still draws pilgrims to Hereford; his grave at Welsh Newton churchyard is also a place of pilgrimage."
+      "Beuno's grave chapel at Clynnog Fawr is the original 7th-century structure; offerings placed in Beuno's Chest paid for masses for the sick.",
+      "Gerard Manley Hopkins studied at St Beuno's College in north Wales and found deep inspiration in the Welsh landscape and Beuno's tradition.",
+      "Beuno is said to have performed seven resurrections from the dead, the most spectacular being the restoration of Winefride after decapitation."
     ],
-    "wiki": "John Kemble (martyr)",
+    "wiki": "Beuno",
     "quote": "",
+    "pilgrimage": {
+      "site": "St Beuno's Church",
+      "town": "Clynnog Fawr, Gwynedd"
+    },
+    "prayer": "O God of wonders, who didst work through thy servant Beuno mighty signs of healing and restoration, and who didst make his church at Clynnog Fawr a place of refuge for the sick and the suffering, look with compassion on all who come to thee in need. Through his intercession, grant healing to the afflicted in body and soul, and confirm in us the faith that even what is broken beyond our mending is never beyond thy power to restore. Amen.",
     "accent": "62% 0.13 244",
-    "image": "images/john-kemble.png",
-    "credit": "Unknown authorUnknown author · CC BY-SA 4.0",
+    "image": "images/beuno.jpg",
+    "credit": "Wolfgang Sauber · CC BY-SA 3.0",
     "map": {
-      "x": 436.3,
-      "y": 773.9
+      "x": 359.4,
+      "y": 699.9
+    }
+  },
+  {
+    "id": "kevin-of-glendalough",
+    "name": "St Kevin of Glendalough",
+    "aka": "Cóemgen; Caoimhín",
+    "epithet": "Hermit of the Two Lakes",
+    "place": "Glendalough Monastic City",
+    "region": "County Wicklow · Ireland",
+    "country": "Ireland",
+    "lat": 53.0104,
+    "lng": -6.3274,
+    "feast": "3 June",
+    "era": "c. 498 – 618",
+    "patronage": [
+      "Archdiocese of Dublin",
+      "Glendalough",
+      "blackbirds"
+    ],
+    "intro": "A royal prince who chose a Bronze Age cave for a hermitage, Kevin of Glendalough founded one of Ireland's most hauntingly beautiful monastic cities — and became, via Seamus Heaney, patron saint of patient stillness.",
+    "story": [
+      "Born into the royal family of Leinster, Kevin refused his inheritance and retreated as a young man to the glacial valley of Glendalough — 'the glen of the two lakes' — in the Wicklow Mountains. His first hermitage was a Bronze Age tomb cut into the cliff face above the upper lake, now called St Kevin's Bed. He lived there as a solitary for seven years before disciples gathered around him.",
+      "The monastery that grew from his hermitage eventually encompassed seven churches, a round tower, and a celebrated school. In the Middle Ages three pilgrimages to Glendalough were reckoned equivalent to one to Rome. Seamus Heaney immortalised the legend of Kevin holding out his hand so still that a blackbird laid eggs in his palm — one of the defining images of Irish monastic spirituality."
+    ],
+    "facts": [
+      "Kevin's first hermitage was a genuine Bronze Age rock-cut tomb above the upper lake — St Kevin's Bed — still visible some 30 feet up the cliff face.",
+      "In the Middle Ages, three pilgrimages to Glendalough were officially declared equivalent to one pilgrimage to Rome.",
+      "Seamus Heaney's 1996 poem 'St Kevin and the Blackbird' has made the legend famous worldwide and is read at the site each feast day."
+    ],
+    "wiki": "Kevin of Glendalough",
+    "quote": "",
+    "pilgrimage": {
+      "site": "Glendalough Monastic City",
+      "town": "Glendalough, County Wicklow"
+    },
+    "prayer": "Patient Kevin, who made your home in a cliff-side tomb above still waters and held yourself so quiet that wild creatures nested in your hands, teach us to seek God in stillness and to trust that grace comes most fully when we cease our striving. Through your intercession, may we find in the ordinary beauty of created things the presence of the One who made both the valley and the heart that longs for him. Amen.",
+    "accent": "60% 0.13 168",
+    "image": "images/kevin-of-glendalough.jpg",
+    "credit": "Public domain",
+    "map": {
+      "x": 267.5,
+      "y": 700.7
+    }
+  },
+  {
+    "id": "john-roberts",
+    "name": "St John Roberts",
+    "aka": "Ioan Roberts",
+    "epithet": "Prior of Douai, Martyr of Tyburn",
+    "place": "Trawsfynydd, Gwynedd",
+    "region": "Gwynedd · Wales",
+    "country": "Wales",
+    "lat": 52.9026,
+    "lng": -3.9232,
+    "feast": "10 December",
+    "era": "c. 1577 – 1610",
+    "patronage": [
+      "Wales",
+      "Downside Abbey",
+      "Benedictine missionaries"
+    ],
+    "intro": "From the slate hills of Snowdonia to the gallows of Tyburn, John Roberts crammed into thirty-three years a conversion in Paris, a Benedictine profession in Spain, the founding of a monastery in France, five separate arrests in England, and a ministry to London's plague-stricken poor — hanged, drawn and quartered on 10 December 1610.",
+    "story": [
+      "John was born around 1577 in Trawsfynydd, a village in the Snowdonian heartland of Gwynedd, of a family that traced its descent from Welsh princes. He went to Oxford and then read law in London, apparently still Anglican, before travelling to the Continent. In Paris, at Notre-Dame Cathedral, he converted to Catholicism. He enrolled at St Alban's College in Valladolid in October 1598, became a Benedictine monk, and was ordained priest in 1602. He founded St Gregory's Monastery at Douai — the house that would eventually become Downside Abbey in Somerset — and served as its first prior.",
+      "Between 1603 and 1610 John made at least four missionary journeys to England, was arrested multiple times, and was repeatedly banished — only to return. He ministered above all to the victims of London's plague epidemics, when other help had fled. Arrested on 2 December 1610 while saying Mass, he was tried and condemned for exercising his priesthood. On 10 December 1610, aged around thirty-three, he was hanged, drawn and quartered at Tyburn. The sympathetic crowd reportedly prevented his disembowelment while he still lived. He was beatified by Pope Leo XIII in 1886 and canonised by Pope Paul VI on 25 October 1970 as one of the Forty Martyrs of England and Wales."
+    ],
+    "facts": [
+      "John Roberts was the first prior of St Gregory's Monastery at Douai — the community that later relocated to Downside Abbey in Somerset, still a living Benedictine house today.",
+      "He returned to England after each banishment, ministering especially to plague victims — choosing the most dangerous pastoral work in one of the most dangerous periods for Catholic priests.",
+      "At his trial in 1610 a Protestant woman in the courtroom praised him publicly, saying she had never heard anyone preach with such learning and piety — a testimony that became famous."
+    ],
+    "wiki": "John Roberts (martyr)",
+    "quote": "I die for God and religion's sake, and I think myself so happy that I wish I had as many lives as there are hairs upon my head, to bestow them all on the same cause.",
+    "pilgrimage": {
+      "site": "St Illtyd's Catholic Church (near memorial, Trawsfynydd)",
+      "town": "Trawsfynydd, Gwynedd"
+    },
+    "prayer": "Lord God, you gave John Roberts the grace to found a monastic family, to heal the sick in time of plague, and to face death at Tyburn without faltering. Through his intercession, grant us the zeal to build up your Church and the courage to profess our faith when it costs us something to do so. Amen.",
+    "accent": "70% 0.11 196",
+    "image": "images/john-roberts.jpg",
+    "credit": "Unknown authorUnknown author · Public domain",
+    "map": {
+      "x": 380,
+      "y": 709.1
+    }
+  },
+  {
+    "id": "melangell",
+    "name": "St Melangell",
+    "aka": "Monacella",
+    "epithet": "Patron of Hares and Sanctuary",
+    "place": "St Melangell's Church, Pennant Melangell",
+    "region": "Powys · Wales",
+    "country": "Wales",
+    "lat": 52.8275,
+    "lng": -3.4497,
+    "feast": "27 May",
+    "era": "7th – 8th century",
+    "patronage": [
+      "hares",
+      "wildlife",
+      "sanctuary seekers"
+    ],
+    "intro": "An Irish princess who fled to the remotest valley in Wales to pray alone, Melangell sheltered a hunted hare beneath her cloak so effectively that the prince's hounds refused to pursue it — and gave her the land to found an abbey of women where hunting was forever forbidden.",
+    "story": [
+      "According to her hagiography, Melangell was an Irish princess who escaped an arranged marriage by sailing to Wales and settling as a solitary hermit in the remote Tanat Valley of Powys, where she prayed for fifteen years without seeing another human face. When the local prince Brochwel Ysgithrog was hunting hare, his quarry took refuge under her cloak. His hounds froze and could not advance; his horn refused to sound. Brochwel, awed, granted her the entire valley as a sanctuary.",
+      "She established an abbey of women there and served as abbess for 37 years, during which no animal could be killed within the valley's bounds. The local people called hares 'St Monacella's lambs' for centuries. Her 12th-century Romanesque shrine, reconstructed in the 20th century from surviving fragments, is the oldest Romanesque shrine structure in the British Isles."
+    ],
+    "facts": [
+      "The reconstructed 12th-century shrine at Pennant Melangell is considered the oldest surviving Romanesque shrine structure in the British Isles.",
+      "For centuries no local person would kill a hare within the parish — they were called 'St Monacella's lambs.'",
+      "Melangell's story inspired a modern healing ministry: the Melangell Centre now provides support for people facing terminal illness."
+    ],
+    "wiki": "Melangell",
+    "quote": "",
+    "pilgrimage": {
+      "site": "St Melangell's Church",
+      "town": "Pennant Melangell, Powys"
+    },
+    "prayer": "O God, who didst draw thy servant Melangell into the hidden valley of Tanat and there didst make her a shelter for the hunted and a sign of thy compassionate sanctuary, grant through her prayers that all who flee to thee for refuge may truly find their rest in thee. May we learn from her still and solitary life to seek thee in the depths of silence, and may this holy valley be for all who come to it a place of meeting with thy healing mercy. Amen.",
+    "accent": "66% 0.16 8",
+    "image": "images/melangell.jpg",
+    "credit": "John Ingleby · Public domain",
+    "map": {
+      "x": 402.2,
+      "y": 714.9
+    }
+  },
+  {
+    "id": "chad-of-mercia",
+    "name": "St Chad",
+    "aka": "Ceadda",
+    "epithet": "Apostle of Mercia",
+    "place": "Lichfield Cathedral",
+    "region": "Staffordshire · England",
+    "country": "England",
+    "lat": 52.6854,
+    "lng": -1.8303,
+    "feast": "2 March",
+    "era": "c. 620 – 672",
+    "patronage": [
+      "Lichfield",
+      "springs and holy wells",
+      "Mercia"
+    ],
+    "intro": "The bishop who refused a horse — Chad famously walked his entire diocese on foot until Archbishop Theodore physically lifted him into the saddle, saying such humility was appropriate for angels, not bishops.",
+    "story": [
+      "Trained on Lindisfarne under the Irish monk Aidan, Chad was sent with his brother Cedd to complete his education in Ireland before returning to evangelise the pagan English. After a murky controversy over the Northumbrian see, Archbishop Theodore appointed him Bishop of the Mercians in 669, making Lichfield his seat.",
+      "Chad died of plague on 2 March 672, reportedly forewarned by heavenly music seven days before his death. When the Reformation threatened his relics, Catholics concealed the bones and eventually transferred them to St Chad's Cathedral in Birmingham, where they remain — a rare instance of a pre-Conquest saint's relics surviving in Catholic hands."
+    ],
+    "facts": [
+      "Thirty-three ancient churches are dedicated to Chad, almost all in the Midlands — the highest concentration of any early English saint outside the north-east.",
+      "A holy well beside the Church of St Chad in Lichfield was reputed to cure eye disease, with pilgrims carrying away bottles of water into the post-Reformation era.",
+      "Archbishop Theodore removed Chad from the Northumbrian see as irregularly consecrated — yet so admired his character that he re-consecrated him and appointed him to Mercia."
+    ],
+    "wiki": "Chad of Mercia",
+    "quote": "",
+    "pilgrimage": {
+      "site": "Lichfield Cathedral",
+      "town": "Lichfield, Staffordshire"
+    },
+    "prayer": "O Lord, who didst bestow on thy bishop Chad such holy humility that he chose to walk where others rode, and such heavenly joy that the sound of wind and thunder drove him to prayer: grant us, after his example, to hold worldly honour lightly and to seek only thy face; through Jesus Christ our Lord. Amen.",
+    "accent": "72% 0.13 132",
+    "image": "images/chad-of-mercia.jpg",
+    "credit": "Llywelyn2000 · CC BY-SA 4.0",
+    "map": {
+      "x": 478,
+      "y": 725.9
+    }
+  },
+  {
+    "id": "guthlac-of-crowland",
+    "name": "St Guthlac",
+    "aka": "",
+    "epithet": "Hermit of the Fens",
+    "place": "Crowland Abbey",
+    "region": "Lincolnshire · England",
+    "country": "England",
+    "lat": 52.6764,
+    "lng": -0.1651,
+    "feast": "11 April",
+    "era": "674 – 714",
+    "patronage": [
+      "Crowland",
+      "Lincolnshire fens",
+      "against demonic attacks"
+    ],
+    "intro": "A Mercian warrior who turned hermit, Guthlac fought off literal demons with his psalter on a desolate fen island — and his friendship with a future Mercian king shaped the destiny of an entire kingdom.",
+    "story": [
+      "Guthlac spent nine years as a soldier in King Æthelred of Mercia's army before a sudden conversion led him to Repton Abbey at age twenty-four. Restless for greater solitude, he rowed out in 699 to a remote island in the Lincolnshire fens called Crowland and settled in a hollow mound — probably a plundered burial barrow. He lived there alone for fifteen years, enduring extreme asceticism and, according to his biographer Felix, regular assaults by demons.",
+      "Among the exiles who sought refuge with the holy hermit was the fugitive prince Æthelbald of Mercia, to whom Guthlac prophesied he would one day rule all of England. When Æthelbald became king in 716 he fulfilled his vow by founding Crowland Abbey over Guthlac's grave."
+    ],
+    "facts": [
+      "Felix's eighth-century Latin Life of Guthlac was translated into Old English, making Guthlac one of the few pre-Conquest English saints with a vernacular life.",
+      "He reportedly kept wild birds as companions, including a swallow that nested in his cell, consciously imitating the Desert Fathers.",
+      "Buried in a leaden coffin and exhumed a year later found incorrupt, his cult made Crowland a significant medieval pilgrimage site."
+    ],
+    "wiki": "Guthlac of Crowland",
+    "quote": "",
+    "pilgrimage": {
+      "site": "Crowland Abbey",
+      "town": "Crowland, Lincolnshire"
+    },
+    "prayer": "O God, who didst call thy servant Guthlac from the field of battle to the solitude of the fenland waste, there to combat the enemy of souls with prayer and thy holy word: strengthen us in our own spiritual warfare, and grant that, armed with the psalms of thy Church, we may overcome all that sets itself against thee; through Christ our Lord. Amen.",
+    "accent": "58% 0.15 280",
+    "image": "images/guthlac-of-crowland.jpg",
+    "credit": "Thorvaldsson · CC BY-SA 3.0",
+    "map": {
+      "x": 555.9,
+      "y": 726.6
+    }
+  },
+  {
+    "id": "walstan-of-bawburgh",
+    "name": "St Walstan of Bawburgh",
+    "aka": "Walstan",
+    "epithet": "Patron of Farm Workers and Animals",
+    "place": "St Mary and St Walstan's Church, Bawburgh",
+    "region": "Norfolk · England",
+    "country": "England",
+    "lat": 52.6327,
+    "lng": 1.1797,
+    "feast": "30 May",
+    "era": "c. 975 – 1016",
+    "patronage": [
+      "farm workers",
+      "farm animals",
+      "agricultural labourers",
+      "Norfolk"
+    ],
+    "intro": "An Anglo-Saxon prince who gave away his inheritance to become a farmhand — and whose funeral cortège was led by his two bulls, who walked miraculously through walls and river crossings to bring him home to Bawburgh.",
+    "story": [
+      "Walstan was born around 975 near Norwich, reportedly of noble or royal stock. At twelve he gave away his wealth and hired himself out as a farm labourer at Taverham, giving away his wages to the poor and refusing his employer's offers of inheritance. On 30 May 1016, while working in the fields, he was granted a vision of his own death and summoned priests for his last rites.",
+      "His dying wish was that his body be placed on a cart drawn by his two working bulls, allowed to go where God directed them. The bulls processed through walls and across rivers, arriving at Bawburgh where Walstan was buried. Healing springs appeared along the route, and the shrine attracted pilgrims throughout the Middle Ages; annual pilgrimage was revived in the 20th century."
+    ],
+    "facts": [
+      "Walstan is one of very few medieval English saints venerated as a patron of farm animals — shown holding a scythe and accompanied by cattle, wearing a crown for his rejected royal birth.",
+      "His funeral bulls are said to have walked through the walls of Costessey manor and crossed the River Yare without getting wet, holy springs bubbling up at each miracle point.",
+      "By 1309 the shrine's revenues were supporting six priests in addition to the parish vicar — remarkable income for a tiny Norfolk village."
+    ],
+    "wiki": "Saint Walstan",
+    "quote": "",
+    "pilgrimage": {
+      "site": "St Mary and St Walstan's Church",
+      "town": "Bawburgh, Norfolk"
+    },
+    "prayer": "Lord Jesus, who blessed the labour of your servant Walstan in the fields and honoured his hidden life of poverty and service, grant through his prayers that all who work with their hands may know the dignity of their toil and find in it a share in your own labour for the world. May the springs that rose along the path of his last journey be for us a sign that grace flows wherever your saints have walked. Amen.",
+    "accent": "66% 0.14 25",
+    "image": "images/walstan-of-bawburgh.jpg",
+    "credit": "Amitchell125 · CC BY-SA 4.0",
+    "map": {
+      "x": 618.8,
+      "y": 729.9
     }
   },
   {
@@ -1601,7 +2070,12 @@ window.SAINTS = [
     ],
     "wiki": "Æthelthryth",
     "quote": "",
-    "accent": "60% 0.13 168",
+    "pilgrimage": {
+      "site": "Ely Cathedral",
+      "town": "Ely, Cambridgeshire"
+    },
+    "prayer": "O God, who endowed your servant Æthelthryth with royal dignity and a deeper consecration to yourself, and whose power was shown in her incorrupt body long after death, teach us by her intercession to hold lightly the honours of this world and to seek the imperishable beauty of holiness. May all who come in pilgrimage to this cathedral find in her example the grace to live with integrity of heart. Through Christ our Lord, Amen.",
+    "accent": "64% 0.12 218",
     "image": "images/etheldreda-of-ely.jpg",
     "credit": "monk · Public domain",
     "map": {
@@ -1637,7 +2111,12 @@ window.SAINTS = [
     ],
     "wiki": "Felix of Burgundy",
     "quote": "",
-    "accent": "70% 0.11 196",
+    "pilgrimage": {
+      "site": "St Andrew's Church (site of Felix's monastery)",
+      "town": "Soham, Cambridgeshire"
+    },
+    "prayer": "Gracious God, who sent your servant Felix across the sea from Burgundy to free the people of East Anglia from the long darkness of unbelief, stir in us by his intercession a missionary boldness to carry the gospel to those who have not yet heard it. Grant that the Church may always find among her sons and daughters those who love the world as he did, with patient labour and joyful confidence. Through Christ our Lord, Amen.",
+    "accent": "74% 0.13 88",
     "image": "images/felix-of-burgundy.jpg",
     "credit": "Amitchell125 at English Wikipedia · Public domain",
     "map": {
@@ -1675,12 +2154,58 @@ window.SAINTS = [
     ],
     "wiki": "Edmund the Martyr",
     "quote": "Never in this life will Edmund submit to Ivar the heathen war-leader, unless he first submit to Christ.",
-    "accent": "66% 0.16 8",
+    "pilgrimage": {
+      "site": "Bury St Edmunds Abbey and Cathedral",
+      "town": "Bury St Edmunds, Suffolk"
+    },
+    "prayer": "O Lord of hosts, who gave your king Edmund courage to refuse apostasy even when bound and pierced with arrows, grant us through his intercession the strength to hold fast to our faith when the world demands we surrender it. May the witness of this royal martyr, who chose death rather than deny you, inspire your Church to love you above all earthly safety. Through Christ our Lord, Amen.",
+    "accent": "64% 0.13 158",
     "image": "images/edmund-the-martyr.jpg",
     "credit": "Public domain",
     "map": {
       "x": 597.3,
       "y": 759.8
+    }
+  },
+  {
+    "id": "oswald-of-worcester",
+    "name": "St Oswald of Worcester",
+    "aka": "",
+    "epithet": "Archbishop of York, Monastic Reformer",
+    "place": "Worcester Cathedral",
+    "region": "Worcestershire · England",
+    "country": "England",
+    "lat": 52.1887,
+    "lng": -2.2206,
+    "feast": "28 February",
+    "era": "c. 925 – 992",
+    "patronage": [
+      "Worcester",
+      "monastic reform"
+    ],
+    "intro": "The grandson of a Danish Viking who died washing the feet of the poor on the last day of February — Oswald of Worcester embodied the tenth century's great paradox of warrior heritage transformed into monastic gentleness.",
+    "story": [
+      "Born of Danish descent into a Christianised family, Oswald was educated at Winchester and at Fleury-sur-Loire in France, Europe's leading centre of Benedictine reform. Appointed Bishop of Worcester in 961 by Archbishop Dunstan, he became one of the three great architects of the English monastic reform alongside Dunstan and Æthelwold, refounding houses at Ramsey, Pershore, Evesham, and Winchcombe.",
+      "He held the sees of Worcester and York simultaneously from 972, exercising influence across the Midlands and the north. He died on 29 February 992 in the act he performed every day of Lent: washing the feet of twelve poor men. He was buried at Worcester where his cult quickly flourished."
+    ],
+    "facts": [
+      "Oswald founded Ramsey Abbey in 966, whose scriptorium became one of the most productive manuscript-making centres in pre-Conquest England.",
+      "His 'Oswald's lease' system — leasing monastic estates to laymen for three generations rather than in perpetuity — was a significant innovation in Anglo-Saxon land management.",
+      "Because he died on 29 February, his feast is one of the rarest in the calendar — observed on 28 February in common years."
+    ],
+    "wiki": "Oswald of Worcester",
+    "quote": "",
+    "pilgrimage": {
+      "site": "Worcester Cathedral",
+      "town": "Worcester, Worcestershire"
+    },
+    "prayer": "O God, who raised up your servant Oswald to reform the Church by the beauty of monastic life and to serve the poor with the same hands he used to wash their feet, grant us, at his intercession, a spirit of humble service and fervent prayer. May we, like him, find our greatness not in power but in self-giving love, and so attain the life that never ends. Through Christ our Lord, Amen.",
+    "accent": "60% 0.15 312",
+    "image": "images/oswald-of-worcester.jpg",
+    "credit": "AnonymousUnknown author · Public domain",
+    "map": {
+      "x": 459.7,
+      "y": 764
     }
   },
   {
@@ -1713,7 +2238,12 @@ window.SAINTS = [
     ],
     "wiki": "Botolph of Thorney",
     "quote": "",
-    "accent": "72% 0.13 132",
+    "pilgrimage": {
+      "site": "St Botolph's Church, Iken",
+      "town": "Iken, Suffolk"
+    },
+    "prayer": "O God, who called your servant Botolph to make his home in a desolate marsh and to build there a house of prayer and learning, bless all who travel uncertain roads and grant them his protection at every threshold. May travellers and wayfarers know themselves guarded by your providence, and arrive at last at the home you have prepared for them. Through Christ our Lord, Amen.",
+    "accent": "70% 0.12 78",
     "image": "images/botolph-of-thorney.jpg",
     "credit": "Fr James Bradley from Southampton, UK · CC BY 2.0",
     "map": {
@@ -1722,478 +2252,123 @@ window.SAINTS = [
     }
   },
   {
-    "id": "walstan-of-bawburgh",
-    "name": "St Walstan of Bawburgh",
-    "aka": "Walstan",
-    "epithet": "Patron of Farm Workers and Animals",
-    "place": "St Mary and St Walstan's Church, Bawburgh",
-    "region": "Norfolk · England",
-    "country": "England",
-    "lat": 52.6327,
-    "lng": 1.1797,
-    "feast": "30 May",
-    "era": "c. 975 – 1016",
-    "patronage": [
-      "farm workers",
-      "farm animals",
-      "agricultural labourers",
-      "Norfolk"
-    ],
-    "intro": "An Anglo-Saxon prince who gave away his inheritance to become a farmhand — and whose funeral cortège was led by his two bulls, who walked miraculously through walls and river crossings to bring him home to Bawburgh.",
-    "story": [
-      "Walstan was born around 975 near Norwich, reportedly of noble or royal stock. At twelve he gave away his wealth and hired himself out as a farm labourer at Taverham, giving away his wages to the poor and refusing his employer's offers of inheritance. On 30 May 1016, while working in the fields, he was granted a vision of his own death and summoned priests for his last rites.",
-      "His dying wish was that his body be placed on a cart drawn by his two working bulls, allowed to go where God directed them. The bulls processed through walls and across rivers, arriving at Bawburgh where Walstan was buried. Healing springs appeared along the route, and the shrine attracted pilgrims throughout the Middle Ages; annual pilgrimage was revived in the 20th century."
-    ],
-    "facts": [
-      "Walstan is one of very few medieval English saints venerated as a patron of farm animals — shown holding a scythe and accompanied by cattle, wearing a crown for his rejected royal birth.",
-      "His funeral bulls are said to have walked through the walls of Costessey manor and crossed the River Yare without getting wet, holy springs bubbling up at each miracle point.",
-      "By 1309 the shrine's revenues were supporting six priests in addition to the parish vicar — remarkable income for a tiny Norfolk village."
-    ],
-    "wiki": "Saint Walstan",
-    "quote": "",
-    "accent": "58% 0.15 280",
-    "image": "images/walstan-of-bawburgh.jpg",
-    "credit": "Amitchell125 · CC BY-SA 4.0",
-    "map": {
-      "x": 618.8,
-      "y": 729.9
-    }
-  },
-  {
-    "id": "augustine-of-canterbury",
-    "name": "St Augustine of Canterbury",
-    "aka": "Austin of Canterbury",
-    "epithet": "Apostle of the English",
-    "place": "St Augustine's Abbey, Canterbury",
-    "region": "Kent · England",
-    "country": "England",
-    "lat": 51.2789,
-    "lng": 1.0871,
-    "feast": "27 May",
-    "era": "c. early 6th century – c. 604",
-    "patronage": [
-      "England",
-      "missionaries",
-      "Kent"
-    ],
-    "intro": "A Roman prior who nervously turned back twice before Pope Gregory the Great urged him on, Augustine crossed the Channel in 597 and converted a pagan English kingdom in a single year — reshaping the island's history forever.",
-    "story": [
-      "When Pope Gregory I dispatched Augustine and forty monks from Rome in 596, the party got as far as Gaul before panic set in — rumours of the fierce Anglo-Saxons sent them scurrying back to Rome for permission to abandon the mission. Gregory refused and sent them on. Landing at Ebbsfleet on the Isle of Thanet, they were received by King Æthelberht of Kent, who heard their preaching seated outdoors.",
-      "Augustine established his see at the old Roman city of Canterbury and founded Christ Church Cathedral as well as the monastery of SS Peter and Paul. He was consecrated the first Archbishop of Canterbury, setting in motion a primatial see that endures to this day. He died around 604 and was buried at his own abbey."
-    ],
-    "facts": [
-      "He was so rattled by tales of Anglo-Saxon ferocity that he turned back to Rome mid-journey, earning a firm push from Pope Gregory.",
-      "On Christmas Day 597 he is said to have baptised more than ten thousand converts in a single ceremony.",
-      "St Augustine's Abbey became the burial ground for the first archbishops of Canterbury and the kings of Kent."
-    ],
-    "wiki": "Augustine of Canterbury",
-    "quote": "",
-    "accent": "66% 0.14 25",
-    "image": "images/augustine-of-canterbury.jpg",
-    "credit": "Scriptorium de l'abbaye de Wearmouth-Jarrow · Public domain",
-    "map": {
-      "x": 614.5,
-      "y": 832.7
-    }
-  },
-  {
-    "id": "thomas-becket",
-    "name": "St Thomas Becket",
-    "aka": "Thomas of Canterbury",
-    "epithet": "Martyr of Canterbury",
-    "place": "Canterbury Cathedral",
-    "region": "Kent · England",
-    "country": "England",
-    "lat": 51.2798,
-    "lng": 1.0827,
-    "feast": "29 December",
-    "era": "c. 1120 – 1170",
-    "patronage": [
-      "secular clergy",
-      "the City of London",
-      "Portsmouth"
-    ],
-    "intro": "One of the most dramatic deaths in medieval Christendom: an archbishop cut down at his own altar by knights acting on the rage of a king, his blood still seeping through the cathedral stones when pilgrims began arriving.",
-    "story": [
-      "Thomas Becket rose from a London merchant family to become Henry II's closest companion and Lord Chancellor. When Henry appointed him Archbishop of Canterbury in 1162, expecting a pliable ally, Becket transformed into an uncompromising defender of Church rights against royal encroachment. The two clashed over whether clergy accused of crimes could be tried in royal courts, and Becket fled to France for six years before an uneasy reconciliation.",
-      "On 29 December 1170, four knights — inflamed by Henry's outburst 'Will no one rid me of this turbulent priest?' — cornered Becket in the north transept of his cathedral. He refused to flee, and the knights hacked off the top of his skull. Within three years he was canonised; within fifty his shrine was the wealthiest pilgrimage destination in northern Europe, inspiring Chaucer's Canterbury Tales."
-    ],
-    "facts": [
-      "His shrine in Trinity Chapel was so encrusted with gold and jewels that a visiting French king reportedly needed two carts to carry his gifts.",
-      "Henry II's public flogging by Canterbury monks in 1174 — seventy strokes at the tomb — is one of the most extraordinary acts of royal penance in English history.",
-      "The shrine was demolished on Henry VIII's orders in 1538 and its treasures filled twenty-six carts."
-    ],
-    "wiki": "Thomas Becket",
-    "quote": "I am ready to die for my Lord, that in my blood the Church may obtain liberty and peace.",
-    "accent": "64% 0.12 218",
-    "image": "images/thomas-becket.jpg",
-    "credit": "Unknown Miniaturist, English (active 1170s in Cirenchester) · Public domain",
-    "map": {
-      "x": 614.3,
-      "y": 832.7
-    }
-  },
-  {
-    "id": "mildrith",
-    "name": "St Mildred of Thanet",
-    "aka": "Mildrith",
-    "epithet": "Fairest Lily of the English",
-    "place": "Minster Abbey, Minster-in-Thanet",
-    "region": "Kent · England",
-    "country": "England",
-    "lat": 51.3313,
-    "lng": 1.3175,
-    "feast": "13 July",
-    "era": "c. 660 – c. 730",
-    "patronage": [
-      "Thanet"
-    ],
-    "intro": "An Anglo-Saxon royal princess who turned down a violently abusive suitor, fled back to England from France, stepped ashore onto a stone that bore the imprint of her foot for centuries, and became one of Kent's most beloved abbesses.",
-    "story": [
-      "Mildred was the daughter of the Kentish royal house, sent to be educated at the Abbey of Chelles in Gaul. There a nobleman attempted to force her into marriage and, when she resisted, allegedly tried to kill her. She escaped and returned to England, landing at Ebbsfleet, where legend says a great stone received the imprint of her foot as she stepped ashore.",
-      "Back in Kent, Mildred entered the nunnery at Minster-in-Thanet that her mother St Eormenburga had founded, becoming abbess around 694. Goscelin's Life praises her for welcoming strangers, nursing the sick with her own hands, and never speaking sharply to her nuns. Her relics were translated to St Augustine's Abbey in Canterbury in 1030, expanding her cult."
-    ],
-    "facts": [
-      "Both her sisters were also venerated as saints, making her one of three sainted daughters from the same royal Kentish family.",
-      "The stone imprinted with her footprint was kept at Minster Abbey for centuries; dust scraped from it and mixed in water was used as medicine.",
-      "Her relics were stolen from Canterbury and taken to Deventer in the Netherlands in the 11th century, prompting a diplomatic row."
-    ],
-    "wiki": "Mildrith",
-    "quote": "",
-    "accent": "74% 0.13 88",
-    "image": "images/mildrith.jpg",
-    "credit": "Mum's taxi · CC BY-SA 3.0",
-    "map": {
-      "x": 625.3,
-      "y": 828.8
-    }
-  },
-  {
-    "id": "dunstan",
-    "name": "St Dunstan",
+    "id": "john-kemble",
+    "name": "St John Kemble",
     "aka": "",
-    "epithet": "Reformer of English Monasticism",
-    "place": "Glastonbury Abbey",
-    "region": "Somerset · England",
+    "epithet": "The Eighty-Year-Old Priest",
+    "place": "Widemarsh Common, Hereford",
+    "region": "Herefordshire · England",
     "country": "England",
-    "lat": 51.147,
-    "lng": -2.7169,
-    "feast": "19 May",
-    "era": "c. 909 – 988",
-    "patronage": [
-      "blacksmiths",
-      "goldsmiths",
-      "musicians",
-      "bellringers"
-    ],
-    "intro": "Mystic, metalworker, musician, and kingmaker: Dunstan spent his early years as a hermit-craftsman in a cell at Glastonbury and ended them as the most powerful churchman in England, having crowned four kings.",
+    "lat": 52.0587,
+    "lng": -2.7215,
+    "feast": "22 August",
+    "era": "c. 1599 – 1679",
+    "patronage": [],
+    "intro": "An eighty-year-old Catholic priest who had ministered in Herefordshire for fifty years was dragged to the gallows on the strength of Titus Oates's invented Popish Plot — and reportedly smoked a last pipe with his executioner.",
     "story": [
-      "Born near Glastonbury, Dunstan was educated by Irish monks and attached to the court of King Athelstan, but rivals had him expelled on charges of practising magic. He retreated to a tiny cell beside the church at Glastonbury, where he worked a forge, copied manuscripts, and played a harp — all while, legend has it, holding the devil at bay with red-hot tongs. Recalled by King Edmund, he was appointed Abbot of Glastonbury in 940, transforming it into the most rigorous Benedictine house in England.",
-      "His greatest achievement was the wholesale renewal of English monastic life, working with Bishops Æthelwold and Oswald under King Edgar. As Archbishop of Canterbury from 959 he crowned Edgar at Bath in 973 in a ceremony so carefully designed that it became the direct model for all subsequent English coronations."
+      "John Kemble was born into a Herefordshire recusant family around 1599, ordained at Douai in 1625, and returned to serve as an itinerant missionary priest in Monmouthshire and Herefordshire — operating from Pembridge Castle for over half a century. He survived by being modest and well-liked in a part of England where Catholic families still quietly protected their clergy.",
+      "His luck ran out when the hysteria of Titus Oates's fabricated 'Popish Plot' reached the provinces. Kemble was arrested in 1678 aged nearly eighty, the sole charge being that he was an ordained Catholic priest. On 22 August 1679 he was hanged at Widemarsh Common, pausing on the way to smoke a final pipe with the sheriff — commemorated in the tradition of 'the Kemble Pipe.'"
     ],
     "facts": [
-      "The legend that he grabbed the devil by the nose with red-hot tongs gave rise to the superstition that horseshoes nailed over a door keep evil away.",
-      "He designed the coronation rite used at Bath in 973, which — with modest additions — remains the template for British royal coronations today.",
-      "A skilled musician said to have heard the angels sing, his harp was kept as a relic at Glastonbury for centuries."
+      "Kemble was eighty at his execution, one of the oldest martyrs of the English Reformation, having been a priest for fifty-four years.",
+      "His farewell smoke with the sheriff gave rise to the English expression 'Kemble pipe' for a last smoke before dying.",
+      "His hand, preserved as a relic, still draws pilgrims to Hereford; his grave at Welsh Newton churchyard is also a place of pilgrimage."
     ],
-    "wiki": "Dunstan",
+    "wiki": "John Kemble (martyr)",
     "quote": "",
-    "accent": "64% 0.13 158",
-    "image": "images/dunstan.jpg",
-    "credit": "Dunstan · Public domain",
+    "pilgrimage": {
+      "site": "St Francis Xavier Church (hand relic shrine)",
+      "town": "Hereford, Herefordshire"
+    },
+    "prayer": "Lord God, who sustained your priest John Kemble through fifty years of hidden ministry and gave him grace to face death with serenity and even with a last gesture of kindness, strengthen us by his example to be faithful in the ordinary and steadfast in the extreme. Grant that those who venerate his relics may receive courage to witness to the faith in the midst of a sceptical world. Through Christ our Lord, Amen.",
+    "accent": "62% 0.13 244",
+    "image": "images/john-kemble.png",
+    "credit": "Unknown authorUnknown author · CC BY-SA 4.0",
+    "map": {
+      "x": 436.3,
+      "y": 773.9
+    }
+  },
+  {
+    "id": "thomas-de-cantilupe",
+    "name": "St Thomas of Hereford",
+    "aka": "Thomas de Cantilupe",
+    "epithet": "The Miracle-Worker of Hereford",
+    "place": "Hereford Cathedral",
+    "region": "Herefordshire · England",
+    "country": "England",
+    "lat": 52.0543,
+    "lng": -2.716,
+    "feast": "2 October",
+    "era": "c. 1218 – 1282",
+    "patronage": [
+      "Diocese of Hereford",
+      "Herefordshire"
+    ],
+    "intro": "A Lord Chancellor of England who became bishop, died in bitter dispute with the Archbishop of Canterbury, and generated more miracle claims at his Hereford tomb than almost any English saint before him.",
+    "story": [
+      "Thomas de Cantilupe combined careers in canon law, the chancellorship of Oxford, and high royal politics before becoming Bishop of Hereford in 1275. His episcopate was noted for strict discipline and care for the poor. A fierce quarrel with Archbishop John Pecham led to his excommunication, and he died on pilgrimage to Rome in 1282, seeking the Pope's judgment.",
+      "His bones were boiled clean for the journey home, and his heart separately enshrined. Within months his tomb at Hereford Cathedral became one of the most visited shrines in England, with pilgrims recording over 400 miracles. Pope John XXII canonised him in 1320 — the last English-born medieval saint canonised before the Reformation."
+    ],
+    "facts": [
+      "More than 400 miracles were submitted in evidence at his canonisation process in Avignon, including claims of the dead being raised to life.",
+      "He served as Lord Chancellor of England under Henry III in 1265, the only medieval Bishop of Hereford to hold that office.",
+      "His skull, separately preserved, has been kept at Downside Abbey in Somerset since 1881."
+    ],
+    "wiki": "Thomas de Cantilupe",
+    "quote": "",
+    "pilgrimage": {
+      "site": "Hereford Cathedral",
+      "town": "Hereford, Herefordshire"
+    },
+    "prayer": "Almighty God, who gave your bishop Thomas of Hereford a shepherd's zeal for truth and an unflinching courage before earthly power, hear our prayers through his intercession and grant that we may pursue justice without fear and seek reconciliation without pride. May his witness at this holy shrine kindle in us a love for your Church that counts no cost too great. Through Christ our Lord, Amen.",
+    "accent": "60% 0.13 168",
+    "image": "images/thomas-de-cantilupe.png",
+    "credit": "Salop roundel.svg:User:Hogweard *Reference for Flags.svg:User:Amada44\nderivative work: Hogweard · Public domain",
     "map": {
       "x": 436.5,
-      "y": 842.6
+      "y": 774.2
     }
   },
   {
-    "id": "edward-the-confessor",
-    "name": "St Edward the Confessor",
+    "id": "teilo",
+    "name": "St Teilo",
     "aka": "",
-    "epithet": "King and Builder of Westminster",
-    "place": "Westminster Abbey, London",
-    "region": "London · England",
-    "country": "England",
-    "lat": 51.4994,
-    "lng": -0.1273,
-    "feast": "13 October",
-    "era": "c. 1003 – 1066",
+    "epithet": "Bishop of Llandaff",
+    "place": "Llandeilo Fawr",
+    "region": "Carmarthenshire · Wales",
+    "country": "Wales",
+    "lat": 51.8846,
+    "lng": -3.9915,
+    "feast": "9 February",
+    "era": "c. 500 – c. 560",
     "patronage": [
-      "England",
-      "the Monarchy of the United Kingdom",
-      "difficult marriages"
+      "Cardiff",
+      "horses"
     ],
-    "intro": "The only king of England to be canonised by a pope, Edward rebuilt Westminster Abbey as his mausoleum and spiritual legacy — dying just days after its consecration, as if his life's purpose was complete.",
+    "intro": "So beloved was Teilo that after his death in the 560s, three separate churches each claimed his body had miraculously appeared at their altar — and all three communities buried what they were certain was the real St Teilo.",
     "story": [
-      "Edward was king of England from 1042 to 1066, the son of Æthelred the Unready who spent much of his youth in Norman exile. On the throne he was known for personal piety, generosity to the poor, and a reported gift of healing — touching scrofula sufferers in what became the 'Royal Touch' tradition. His most consuming project was the complete rebuilding of Westminster Abbey as a great Norman church.",
-      "He died on 5 January 1066, just eight days after the abbey's consecration, and was laid in the choir he had built. Pope Alexander III canonised him in 1161, and in 1163 Thomas Becket presided over the translation of his remains to a magnificent shrine behind the high altar — the same shrine, rebuilt after the Reformation, that stands in the abbey today."
+      "Born at Penally near Tenby, Teilo studied under Dyfrig and Paulinus, becoming a close companion of Saint David. He founded the great church at Llandaff and established Llandeilo Fawr in Carmarthenshire as another important centre. When a yellow plague swept through Wales around 547, Teilo led a seven-year exile to Brittany, where he helped evangelise the Breton church — his name is still venerated in over a dozen Breton parishes.",
+      "Teilo's fame was such that no fewer than twenty-five churches across Wales, Brittany, Cornwall, and Devon bear his dedication. The legend of his triple body — three identical corpses simultaneously claimed by Llandaff, Llandeilo Fawr, and Llandeilo Tal-y-bont — reflects the extraordinary competition between communities to possess his relics."
     ],
     "facts": [
-      "His medieval shrine survives intact, making it one of the oldest undisturbed royal burial sites in the world.",
-      "The 'Royal Touch' — monarchs healing scrofula by touch — is traced to Edward; Charles II later 'touched' nearly 100,000 people.",
-      "Contemporaries said he so neglected the realm's defence to build the abbey that Harald Hardrada and William the Conqueror both invaded within a year of his death."
+      "When Teilo died, three communities each claimed his body had miraculously appeared at their church — the earliest recorded 'bilocation' relic dispute in Welsh hagiography.",
+      "Teilo reportedly accompanied Saint David on pilgrimage to Jerusalem and was consecrated bishop there by the Patriarch.",
+      "According to legend, Teilo single-handedly tamed a belligerent dragon by tying it to a rock off the coast of Brittany."
     ],
-    "wiki": "Edward the Confessor",
+    "wiki": "Saint Teilo",
     "quote": "",
-    "accent": "60% 0.15 312",
-    "image": "images/edward-the-confessor.jpg",
-    "credit": "Myrabella · Public domain",
-    "map": {
-      "x": 557.7,
-      "y": 816.2
-    }
-  },
-  {
-    "id": "thomas-more",
-    "name": "St Thomas More",
-    "aka": "",
-    "epithet": "Lord Chancellor, Martyr of Conscience",
-    "place": "Tower Hill, London",
-    "region": "City of London · England",
-    "country": "England",
-    "lat": 51.5081,
-    "lng": -0.0762,
-    "feast": "22 June",
-    "era": "1478 – 1535",
-    "patronage": [
-      "lawyers",
-      "statesmen and politicians",
-      "difficult marriages",
-      "stepparents"
-    ],
-    "intro": "The most powerful lawyer in England chose his conscience over his king — and paid with his head on Tower Hill.",
-    "story": [
-      "Thomas More rose from London barrister to Lord Chancellor of England, the highest legal office in the land. A Renaissance humanist, close friend of Erasmus, and author of the visionary Utopia (1516), he seemed the perfect Tudor courtier — until Henry VIII demanded he endorse the annulment of Catherine of Aragon and acknowledge the king as Supreme Head of the Church. More resigned the chancellorship and maintained a careful silence, but silence was not enough.",
-      "Imprisoned in the Tower for over a year, More refused both bribery and pressure. At his trial in 1535 he was convicted on the perjured testimony of Richard Rich. On the scaffold he jested with the headsman and told the crowd, 'I die the King's good servant, and God's first.' Canonised in 1935, he was declared patron of statesmen by John Paul II in 2000."
-    ],
-    "facts": [
-      "More's skull is preserved in St Dunstan's Church, Canterbury — retrieved from London Bridge by his daughter Margaret Roper, who carried it under her cloak.",
-      "His book Utopia (1516) coined the word 'utopia' and became an instant European bestseller.",
-      "Climbing the scaffold he reportedly told the Lieutenant, 'Help me up; I'll shift for myself coming down.'"
-    ],
-    "wiki": "Thomas More",
-    "quote": "I die the King's good servant, and God's first.",
-    "accent": "70% 0.12 78",
-    "image": "images/thomas-more.jpg",
-    "credit": "Hans Holbein the Younger · Public domain",
-    "map": {
-      "x": 560.1,
-      "y": 815.5
-    }
-  },
-  {
-    "id": "edmund-campion",
-    "name": "St Edmund Campion",
-    "aka": "",
-    "epithet": "Diamond of England",
-    "place": "Tyburn, London",
-    "region": "London · England",
-    "country": "England",
-    "lat": 51.5134,
-    "lng": -0.1587,
-    "feast": "1 December",
-    "era": "1540 – 1581",
-    "patronage": [
-      "Jesuits in England",
-      "printers"
-    ],
-    "intro": "Oxford's most brilliant student became a Jesuit fugitive who printed his arguments underground and preached in secret — until he was racked and then hanged, drawn, and quartered at Tyburn.",
-    "story": [
-      "Edmund Campion was the son of a London bookseller who became one of the most celebrated orators at Oxford, acclaimed when Queen Elizabeth herself visited the university. He took Anglican deacon's orders but then fled to Douai and joined the Jesuits in Rome. In 1580 he returned to England disguised as a jewel merchant, celebrating Mass in hidden chambers and secretly printing his polemical treatise Decem Rationes.",
-      "Betrayed and captured at Lyford Grange in 1581, Campion was displayed in a cage through the streets of London, then racked multiple times in the Tower. His 'Challenge to the Privy Council' circulated widely and made him a celebrity in captivity. Convicted of conspiracy, he was hanged, drawn, and quartered at Tyburn on 1 December 1581, and canonised among the Forty Martyrs in 1970."
-    ],
-    "facts": [
-      "His underground press used moveable type hidden in a priest hole at Stonor Park to print Decem Rationes — 400 copies were distributed at the Oxford Commencement of 1581.",
-      "Queen Elizabeth I personally offered to spare his life if he would renounce his priesthood; he declined.",
-      "Henry Walpole, splashed with a drop of Campion's blood at the execution, was converted and went on to his own martyrdom."
-    ],
-    "wiki": "Edmund Campion",
-    "quote": "I confessed that I am a priest of the Catholic Church. I am come to do a work that is both glorious and necessary.",
-    "accent": "62% 0.13 244",
-    "image": "images/edmund-campion.jpg",
-    "credit": "Unknown authorUnknown author · Public domain",
-    "map": {
-      "x": 556.2,
-      "y": 815.1
-    }
-  },
-  {
-    "id": "robert-southwell",
-    "name": "St Robert Southwell",
-    "aka": "",
-    "epithet": "The Poet of the Passion",
-    "place": "Tyburn, London",
-    "region": "London · England",
-    "country": "England",
-    "lat": 51.5131,
-    "lng": -0.1589,
-    "feast": "21 February",
-    "era": "c. 1561 – 1595",
-    "patronage": [
-      "poets"
-    ],
-    "intro": "A Jesuit priest who spent his underground ministry writing poetry, Robert Southwell was tortured thirteen times in the Tower before being hanged, drawn, and quartered — and his verse still influences English literature.",
-    "story": [
-      "Robert Southwell came from a Norfolk recusant family and was educated by the Jesuits in Paris and Rome, where he was ordained. He returned to England in 1586 and for six years ministered secretly to Catholic households, all the while writing poetry of striking emotional directness — works that influenced Shakespeare, Donne, and Gerard Manley Hopkins. His Christmas poem 'The Burning Babe' prompted Ben Jonson to say he would destroy many of his own works to have written it.",
-      "Captured in 1592 through betrayal, Southwell was subjected to at least thirteen sessions of torture under the priest-hunter Richard Topcliffe. He demanded a trial, was convicted of high treason for the act of being a priest in England, and was executed at Tyburn on 21 February 1595. When his head was held up, no voice in the crowd cried the traditional 'Traitor!' Canonised in 1970."
-    ],
-    "facts": [
-      "Ben Jonson said he would have destroyed many of his own poems to have written 'The Burning Babe.'",
-      "His prose meditation An Epistle of Comfort was smuggled into the Tower to sustain fellow prisoners.",
-      "Scholars have identified verbal echoes of Southwell's poetry in at least twelve of Shakespeare's plays and poems."
-    ],
-    "wiki": "Robert Southwell (priest)",
-    "quote": "Not where I breathe, but where I love, I live.",
-    "accent": "60% 0.13 168",
-    "image": "images/robert-southwell.jpg",
-    "credit": "Unknown authorUnknown author · Public domain",
-    "map": {
-      "x": 556.2,
-      "y": 815.2
-    }
-  },
-  {
-    "id": "earconwald",
-    "name": "St Erkenwald",
-    "aka": "Earconwald",
-    "epithet": "Light of London",
-    "place": "Old St Paul's Cathedral, London",
-    "region": "City of London · England",
-    "country": "England",
-    "lat": 51.5138,
-    "lng": -0.0984,
-    "feast": "30 April",
-    "era": "c. 630 – 693",
-    "patronage": [
-      "London"
-    ],
-    "intro": "Medieval London's most beloved saint, whose bejewelled shrine in Old St Paul's drew such crowds that the cathedral had to be enlarged — and whose litter was said to cure the sick along the roads when he travelled.",
-    "story": [
-      "Before becoming Bishop of London, Erkenwald founded two monasteries: Chertsey Abbey in Surrey, where he became abbot, and Barking Abbey in Essex for his sister, the abbess St Ethelburga. He was consecrated Bishop of London in 675 by Archbishop Theodore, and was especially known as a peacemaker, reconciling the bitter dispute between Theodore and the exiled bishop Wilfrid.",
-      "After his death at Barking in 693, his body was brought by barge up the Thames — and the sick who touched the passing vessel reportedly recovered. His shrine in Old St Paul's became one of the great pilgrimage destinations of medieval England. A late 14th-century alliterative poem, St Erkenwald, dramatises his raising of a long-dead judge from the grave."
-    ],
-    "facts": [
-      "The litter in which he was carried during his final illness became a relic: splinters were credited with healing the sick for years.",
-      "His shrine in Old St Paul's was so popular that the cathedral had to be extended to cope with pilgrims.",
-      "The medieval poem St Erkenwald, possibly by the Gawain-poet, depicts him baptising a miraculously revived pagan judge with a single falling tear."
-    ],
-    "wiki": "Earconwald",
-    "quote": "",
+    "pilgrimage": {
+      "site": "Llandaff Cathedral",
+      "town": "Cardiff"
+    },
+    "prayer": "O Lord God, who didst inspire thy bishop Teilo to plant the faith across Wales, Brittany, and Cornwall, and whose sanctity was so great that three communities each claimed him as their own treasure, grant us through his prayers a share in that charity which draws all people together in thee. Let the witness of his joyful exile and his labours among the sick teach us to hold the gifts of this world lightly and to seek our homeland in thee alone. Amen.",
     "accent": "70% 0.11 196",
-    "image": "images/earconwald.jpg",
-    "credit": "Navewham · CC0",
+    "image": "images/teilo.jpg",
+    "credit": "Gwenddwr · CC BY-SA 3.0",
     "map": {
-      "x": 559,
-      "y": 815.1
-    }
-  },
-  {
-    "id": "richard-of-chichester",
-    "name": "St Richard of Chichester",
-    "aka": "Richard de Wyche",
-    "epithet": "The Barefoot Bishop",
-    "place": "Chichester Cathedral",
-    "region": "West Sussex · England",
-    "country": "England",
-    "lat": 50.8363,
-    "lng": -0.7807,
-    "feast": "3 April",
-    "era": "c. 1197 – 1253",
-    "patronage": [
-      "coachmen",
-      "Diocese of Chichester",
-      "Sussex"
-    ],
-    "intro": "A bishop so committed to poverty that he shared a single gown with his chaplain and went barefoot rather than spend church money on himself — and whose three-line prayer became, seven centuries later, the hit song of a Broadway musical.",
-    "story": [
-      "Richard de Wyche grew up in poverty in Worcestershire, working as a farm labourer before winning a place at Oxford, where he slept on straw. He became Chancellor of Oxford University and then Chancellor to St Edmund Rich, Archbishop of Canterbury. When appointed Bishop of Chichester in 1244, King Henry III — furious that his own candidate had been passed over — confiscated all the diocese's revenues, leaving Richard to minister on foot.",
-      "For two years Richard walked his diocese barefoot, confirming, preaching, and reforming the clergy while the king tried to starve him out. He was known for fasting and care for the poor. He died in 1253 at Dover while preaching a crusade, and was canonised in 1262. His prayer — 'May I know thee more clearly, love thee more dearly, follow thee more nearly' — was set to music in the 1971 musical Godspell."
-    ],
-    "facts": [
-      "His prayer became the song 'Day by Day' in the 1971 musical Godspell, reaching number 13 on the US Billboard Hot 100.",
-      "When Henry III stripped him of all income, Richard walked his entire diocese barefoot for two years, staying in parish priests' homes.",
-      "His shrine at Chichester was destroyed by Henry VIII in 1538; relics recovered centuries later were reinstated there in 1930."
-    ],
-    "wiki": "Richard of Chichester",
-    "quote": "Thanks be to Thee, my Lord Jesus Christ, for all the benefits thou hast given me.",
-    "accent": "66% 0.16 8",
-    "image": "images/richard-of-chichester.jpg",
-    "credit": "Fr James Bradley from Southampton, UK · CC BY 2.0",
-    "map": {
-      "x": 527.1,
-      "y": 865.7
-    }
-  },
-  {
-    "id": "philip-howard",
-    "name": "St Philip Howard",
-    "aka": "13th Earl of Arundel",
-    "epithet": "The Courtier Who Chose the Cell",
-    "place": "Arundel Cathedral, Arundel",
-    "region": "West Sussex · England",
-    "country": "England",
-    "lat": 50.8553,
-    "lng": -0.5588,
-    "feast": "19 October",
-    "era": "1557 – 1595",
-    "patronage": [
-      "Diocese of Arundel and Brighton"
-    ],
-    "intro": "Elizabeth I's glittering courtier converted to Catholicism, was sentenced to death — and then left to rot in the Tower for a decade while the queen never signed the warrant.",
-    "story": [
-      "Philip Howard was born into the most powerful noble family in England and spent his youth as a favourite at Elizabeth I's court. His conversion began in 1581 when he attended a debate involving the imprisoned Edmund Campion and was struck by Campion's courage. Received back into the Catholic Church in 1584, he attempted to flee England to live openly as a Catholic, but was betrayed before his ship cleared the Channel and imprisoned in the Tower without trial.",
-      "He was condemned to death in 1589 on the basis of a private prayer offered for the success of the Spanish Armada, but Elizabeth never signed the warrant. He spent ten years in the Tower, never again seeing his wife or the son born after his imprisonment began. He carved into his cell wall: 'The more affliction we endure for Christ in this world, the more glory we shall gain.' He died of dysentery in 1595, and now rests in Arundel Cathedral."
-    ],
-    "facts": [
-      "His dog reportedly followed him to the Tower and stayed outside for years, refusing to leave until after his master's death.",
-      "The inscription he carved in his cell in the Beauchamp Tower is still visible to visitors today.",
-      "His son Thomas Howard became the most important art patron in Jacobean England, his collection forming the basis of the Arundel Marbles."
-    ],
-    "wiki": "Philip Howard, 13th Earl of Arundel",
-    "quote": "The more affliction we endure for Christ in this world, the more glory we shall gain with Christ in the next.",
-    "accent": "72% 0.13 132",
-    "image": "images/philip-howard.jpg",
-    "credit": "Unidentified painter · Public domain",
-    "map": {
-      "x": 537.5,
-      "y": 864.3
-    }
-  },
-  {
-    "id": "swithun",
-    "name": "St Swithun",
-    "aka": "",
-    "epithet": "The Humble Bishop of Winchester",
-    "place": "Winchester Cathedral",
-    "region": "Hampshire · England",
-    "country": "England",
-    "lat": 51.0607,
-    "lng": -1.3128,
-    "feast": "15 July",
-    "era": "c. 800 – 863",
-    "patronage": [
-      "Winchester",
-      "drought relief",
-      "good weather"
-    ],
-    "intro": "The ninth-century bishop who begged to be buried where rain would fall on his grave became England's most weather-obsessed saint — and his drenching reputation has lasted twelve centuries.",
-    "story": [
-      "Swithun served as Bishop of Winchester from 852 until his death in 863, and was a trusted counsellor to the kings of Wessex. He was known for practical piety: he supervised the building of a bridge at Winchester and is said to have miraculously restored a basket of eggs smashed by workmen. His dying wish was for an outdoor grave, where passers-by might tread over him and rain might fall upon his resting place — a mark of radical humility.",
-      "On 15 July 971, Bishop Æthelwold translated Swithun's remains into Winchester Cathedral amid reports of spectacular miracles. The date became his feast day, and a folk belief took root: if it rains on St Swithun's Day, it will rain for forty days more. The legend has no meteorological basis but has proved unshakeable."
-    ],
-    "facts": [
-      "His best-attested miracle was reassembling a basket of eggs that workmen had smashed — a human-scaled wonder that gave him lasting popular appeal.",
-      "The 'forty days of rain' tradition appears to derive from storms on the day his relics were moved in 971.",
-      "Winchester Cathedral's shrine, rebuilt after Henry VIII's commissioners destroyed the medieval original, still draws pilgrims."
-    ],
-    "wiki": "Swithun",
-    "quote": "Let my grave be where the feet of men may tread and the rain of heaven fall upon me.",
-    "accent": "58% 0.15 280",
-    "image": "images/swithun.jpg",
-    "credit": "Unknown authorUnknown author · Public domain",
-    "map": {
-      "x": 502.2,
-      "y": 849
+      "x": 376.8,
+      "y": 787.1
     }
   },
   {
@@ -2226,7 +2401,12 @@ window.SAINTS = [
     ],
     "wiki": "Saint David",
     "quote": "Do ye the little things in life.",
-    "accent": "66% 0.14 25",
+    "pilgrimage": {
+      "site": "St Davids Cathedral",
+      "town": "St Davids, Pembrokeshire"
+    },
+    "prayer": "O God, who didst raise up thy servant David to be the light of Wales and a beacon of holy simplicity, grant that, following his example, we may attend to the little things of daily life with faithful and undivided hearts. May his intercession sustain us in prayer and in the service of our neighbours, that we too may know thee as our all-sufficient portion. Amen.",
+    "accent": "66% 0.16 8",
     "image": "images/david-of-wales.jpg",
     "credit": "Hchc2009 · CC BY-SA 4.0",
     "map": {
@@ -2261,7 +2441,12 @@ window.SAINTS = [
     ],
     "wiki": "Saint Non",
     "quote": "",
-    "accent": "64% 0.12 218",
+    "pilgrimage": {
+      "site": "Chapel of St Non and Holy Well",
+      "town": "St Davids, Pembrokeshire"
+    },
+    "prayer": "Gracious Lord, who didst bless thy handmaid Non with a holy fruitfulness beyond all earthly reckoning, granting that the very ground should spring with healing waters at the birth of thy servant David, hear our prayers through her intercession. As she bore in patient faith the trials appointed to her, so strengthen us in our own hour of darkness to trust in thy merciful providence. Amen.",
+    "accent": "72% 0.13 132",
     "image": "images/non.jpg",
     "credit": "Thruxton · CC BY 3.0",
     "map": {
@@ -2270,75 +2455,457 @@ window.SAINTS = [
     }
   },
   {
-    "id": "teilo",
-    "name": "St Teilo",
-    "aka": "",
-    "epithet": "Bishop of Llandaff",
-    "place": "Llandeilo Fawr",
-    "region": "Carmarthenshire · Wales",
+    "id": "david-lewis",
+    "name": "St David Lewis",
+    "aka": "Tad y Tlodion (Father of the Poor)",
+    "epithet": "The Last Welsh Martyr",
+    "place": "Usk, Monmouthshire",
+    "region": "Monmouthshire · Wales",
     "country": "Wales",
-    "lat": 51.8846,
-    "lng": -3.9915,
-    "feast": "9 February",
-    "era": "c. 500 – c. 560",
+    "lat": 51.7044,
+    "lng": -2.9044,
+    "feast": "27 August",
+    "era": "1616 – 1679",
     "patronage": [
-      "Cardiff",
-      "horses"
+      "the poor"
     ],
-    "intro": "So beloved was Teilo that after his death in the 560s, three separate churches each claimed his body had miraculously appeared at their altar — and all three communities buried what they were certain was the real St Teilo.",
+    "intro": "A Welsh Jesuit who ministered to the rural poor of Monmouthshire for thirty years, was swept up in the hysteria of the Popish Plot, and went to his death at Usk in 1679 as the last Catholic to be executed for his priesthood in Wales.",
     "story": [
-      "Born at Penally near Tenby, Teilo studied under Dyfrig and Paulinus, becoming a close companion of Saint David. He founded the great church at Llandaff and established Llandeilo Fawr in Carmarthenshire as another important centre. When a yellow plague swept through Wales around 547, Teilo led a seven-year exile to Brittany, where he helped evangelise the Breton church — his name is still venerated in over a dozen Breton parishes.",
-      "Teilo's fame was such that no fewer than twenty-five churches across Wales, Brittany, Cornwall, and Devon bear his dedication. The legend of his triple body — three identical corpses simultaneously claimed by Llandaff, Llandeilo Fawr, and Llandeilo Tal-y-bont — reflects the extraordinary competition between communities to possess his relics."
+      "David Lewis was born in Abergavenny, son of a Protestant schoolmaster and a Catholic mother. After studies in Paris and Rome, where he entered the Jesuits, he returned to Wales in 1647 and spent the next three decades serving isolated Catholic communities in Monmouthshire. His care for the poor earned him the Welsh epithet Tad y Tlodion, 'Father of the Poor.'",
+      "In 1678 Titus Oates's fabricated 'Popish Plot' unleashed a new wave of persecution. Lewis was arrested at Llantarnam and imprisoned at Usk. Offered his freedom if he would renounce his faith or betray other Catholics, he refused both. He was hanged, drawn and quartered at Usk on 27 August 1679. Canonised in 1970, the church on the site of his execution is still a place of pilgrimage."
     ],
     "facts": [
-      "When Teilo died, three communities each claimed his body had miraculously appeared at their church — the earliest recorded 'bilocation' relic dispute in Welsh hagiography.",
-      "Teilo reportedly accompanied Saint David on pilgrimage to Jerusalem and was consecrated bishop there by the Patriarch.",
-      "According to legend, Teilo single-handedly tamed a belligerent dragon by tying it to a rock off the coast of Brittany."
+      "Lewis celebrated Mass for thirty years in the farmhouses and barns of Monmouthshire, moving constantly to avoid detection.",
+      "He was arrested as a direct result of Titus Oates's fabricated Popish Plot of 1678, which sent at least 22 innocent Catholics to their deaths.",
+      "A Catholic church dedicated to him stands on the traditional site of his execution in Usk, where an annual pilgrimage still marks his martyrdom."
     ],
-    "wiki": "Saint Teilo",
-    "quote": "",
-    "accent": "74% 0.13 88",
-    "image": "images/teilo.jpg",
-    "credit": "Gwenddwr · CC BY-SA 3.0",
+    "wiki": "David Lewis (Jesuit priest)",
+    "quote": "I die for God and religion's sake.",
+    "pilgrimage": {
+      "site": "St David Lewis RC Church, Usk (site of his execution)",
+      "town": "Usk, Monmouthshire"
+    },
+    "prayer": "Almighty God, whose servant David Lewis ministered to the poorest of thy people in Monmouthshire for thirty years, moving by night through farmhouse and barn to bring thy sacraments to those who had no other shepherd, hear our prayer through his intercession and raise up in thy Church pastors who seek not comfort but the lost. By the example of him whom the poor called Tad y Tlodion, may we serve thee in one another without counting the cost. Amen.",
+    "accent": "58% 0.15 280",
+    "image": "images/david-lewis.jpg",
+    "credit": "Alexander Voet the Elder · Public domain",
     "map": {
-      "x": 376.8,
-      "y": 787.1
+      "x": 427.7,
+      "y": 800.7
     }
   },
   {
-    "id": "illtud",
-    "name": "St Illtud",
-    "aka": "Illtyd Farchog",
-    "epithet": "Teacher of the Saints of Britain",
-    "place": "St Illtyd's Church, Llantwit Major",
-    "region": "Vale of Glamorgan · Wales",
-    "country": "Wales",
-    "lat": 51.4081,
-    "lng": -3.4878,
-    "feast": "6 November",
-    "era": "5th – 6th century",
+    "id": "aldhelm",
+    "name": "St Aldhelm",
+    "aka": "",
+    "epithet": "Scholar-Abbot of Malmesbury",
+    "place": "Malmesbury Abbey",
+    "region": "Wiltshire · England",
+    "country": "England",
+    "lat": 51.5847,
+    "lng": -2.0989,
+    "feast": "25 May",
+    "era": "c. 639 – 709",
     "patronage": [
-      "scholars",
-      "teachers"
+      "Malmesbury",
+      "Sherborne",
+      "musicians",
+      "poets"
     ],
-    "intro": "Called the most learned of all the Britons in his time, Illtud founded what is believed to be the earliest centre of formal learning in Britain at Llantwit Major — a school that trained Saints David, Samson, and Gildas.",
+    "intro": "England's first great Latin stylist would stand on a bridge busking vernacular songs to lure pagans into earshot — then slip in a sermon before they could walk away.",
     "story": [
-      "According to his medieval biography, Illtud began his career as a soldier — hence the epithet Farchog, 'the Knight' — before a supernatural encounter prompted his conversion. He established Bangor Illtyd at Llanilltud Fawr (Llantwit Major), where his monastic school reportedly housed over a thousand students at its peak and was celebrated throughout the Celtic world for teaching scripture, philosophy, geometry, rhetoric, grammar, and arithmetic.",
-      "Illtud's pupils read like a who's who of early Welsh Christianity: Saint David, Samson of Dol, Gildas the Briton, and Paul Aurelian. Medieval Welsh tradition also claimed him as a cousin of King Arthur, entrusted with the Holy Grail — a legend that speaks to the prestige his community held in Celtic memory."
+      "Aldhelm was educated at Malmesbury by the Irish scholar Maildubh and later at Canterbury under the African-born Hadrian, absorbing the best of Irish, Roman, and Mediterranean learning. He became Abbot of Malmesbury around 675 and founded daughter-houses at Bradford-on-Avon and Frome. His Latin scholarship was the most ambitious in England before Bede: he composed 101 hexameter riddles, treatises on metre and virginity, and letters of dazzling complexity.",
+      "In 705 he became the first Bishop of Sherborne when Wessex's diocese was divided, a role he held for his last four years. He died at Doulting in Somerset in 709, and his relics were later translated by St Dunstan. Malmesbury's surviving Romanesque abbey was built on the site of his own monastery."
     ],
     "facts": [
-      "Illtud's school at Llantwit Major is considered by many scholars the oldest institution of higher learning in Britain, predating Oxford by some six centuries.",
-      "His community was reportedly so large — over a thousand students — that it functioned more like a small university town than a monastery.",
-      "Medieval tradition insists Illtud was once a knight and cousin to King Arthur before his conversion."
+      "He composed the earliest surviving Anglo-Latin acrostic poem and is thought to have built one of the first organs in England.",
+      "His 101 Latin riddles influenced riddlers across medieval Europe, including the Exeter Book's Old English riddles.",
+      "Pope Sergius I reportedly praised Aldhelm's scholarship in person when he visited Rome in the 690s."
     ],
-    "wiki": "Illtud",
+    "wiki": "Aldhelm",
     "quote": "",
-    "accent": "64% 0.13 158",
-    "image": "images/illtud.jpg",
-    "credit": "Gwenddwr · CC BY-SA 3.0",
+    "pilgrimage": {
+      "site": "Malmesbury Abbey, Malmesbury",
+      "town": "Malmesbury, Wiltshire"
+    },
+    "prayer": "O God, the fountain of all wisdom, who didst fill thy servant Aldhelm with such learning and wit that he stood on bridges singing to draw souls within earshot of thy truth, grant us through his intercession a delight in all good knowledge rightly used, and the ingenuity to commend thy gospel to every generation in forms they can receive. By his example may thy Church never be dull in the telling of the everlasting story. Amen.",
+    "accent": "66% 0.14 25",
+    "image": "images/aldhelm.jpg",
+    "credit": "Arpingstone · Public domain",
     "map": {
-      "x": 400.4,
-      "y": 823
+      "x": 465.4,
+      "y": 809.8
+    }
+  },
+  {
+    "id": "earconwald",
+    "name": "St Erkenwald",
+    "aka": "Earconwald",
+    "epithet": "Light of London",
+    "place": "Old St Paul's Cathedral, London",
+    "region": "City of London · England",
+    "country": "England",
+    "lat": 51.5138,
+    "lng": -0.0984,
+    "feast": "30 April",
+    "era": "c. 630 – 693",
+    "patronage": [
+      "London"
+    ],
+    "intro": "Medieval London's most beloved saint, whose bejewelled shrine in Old St Paul's drew such crowds that the cathedral had to be enlarged — and whose litter was said to cure the sick along the roads when he travelled.",
+    "story": [
+      "Before becoming Bishop of London, Erkenwald founded two monasteries: Chertsey Abbey in Surrey, where he became abbot, and Barking Abbey in Essex for his sister, the abbess St Ethelburga. He was consecrated Bishop of London in 675 by Archbishop Theodore, and was especially known as a peacemaker, reconciling the bitter dispute between Theodore and the exiled bishop Wilfrid.",
+      "After his death at Barking in 693, his body was brought by barge up the Thames — and the sick who touched the passing vessel reportedly recovered. His shrine in Old St Paul's became one of the great pilgrimage destinations of medieval England. A late 14th-century alliterative poem, St Erkenwald, dramatises his raising of a long-dead judge from the grave."
+    ],
+    "facts": [
+      "The litter in which he was carried during his final illness became a relic: splinters were credited with healing the sick for years.",
+      "His shrine in Old St Paul's was so popular that the cathedral had to be extended to cope with pilgrims.",
+      "The medieval poem St Erkenwald, possibly by the Gawain-poet, depicts him baptising a miraculously revived pagan judge with a single falling tear."
+    ],
+    "wiki": "Earconwald",
+    "quote": "",
+    "pilgrimage": {
+      "site": "St Paul's Cathedral (site of Erkenwald's Shrine)",
+      "town": "City of London, London"
+    },
+    "prayer": "Gracious God, whose bishop Erkenwald lit the city of London with a peacemaker's gentleness and a pastor's tireless care, hear the prayers of all who stand on the sacred ground where his shrine once drew the sick and sorrowing of England. Grant us the wisdom and charity he showed in reconciling those at war, that the city he served may be ever a place of justice, healing, and praise. Amen.",
+    "accent": "64% 0.12 218",
+    "image": "images/earconwald.jpg",
+    "credit": "Navewham · CC0",
+    "map": {
+      "x": 559,
+      "y": 815.1
+    }
+  },
+  {
+    "id": "edmund-campion",
+    "name": "St Edmund Campion",
+    "aka": "",
+    "epithet": "Diamond of England",
+    "place": "Tyburn, London",
+    "region": "London · England",
+    "country": "England",
+    "lat": 51.5134,
+    "lng": -0.1587,
+    "feast": "1 December",
+    "era": "1540 – 1581",
+    "patronage": [
+      "Jesuits in England",
+      "printers"
+    ],
+    "intro": "Oxford's most brilliant student became a Jesuit fugitive who printed his arguments underground and preached in secret — until he was racked and then hanged, drawn, and quartered at Tyburn.",
+    "story": [
+      "Edmund Campion was the son of a London bookseller who became one of the most celebrated orators at Oxford, acclaimed when Queen Elizabeth herself visited the university. He took Anglican deacon's orders but then fled to Douai and joined the Jesuits in Rome. In 1580 he returned to England disguised as a jewel merchant, celebrating Mass in hidden chambers and secretly printing his polemical treatise Decem Rationes.",
+      "Betrayed and captured at Lyford Grange in 1581, Campion was displayed in a cage through the streets of London, then racked multiple times in the Tower. His 'Challenge to the Privy Council' circulated widely and made him a celebrity in captivity. Convicted of conspiracy, he was hanged, drawn, and quartered at Tyburn on 1 December 1581, and canonised among the Forty Martyrs in 1970."
+    ],
+    "facts": [
+      "His underground press used moveable type hidden in a priest hole at Stonor Park to print Decem Rationes — 400 copies were distributed at the Oxford Commencement of 1581.",
+      "Queen Elizabeth I personally offered to spare his life if he would renounce his priesthood; he declined.",
+      "Henry Walpole, splashed with a drop of Campion's blood at the execution, was converted and went on to his own martyrdom."
+    ],
+    "wiki": "Edmund Campion",
+    "quote": "I confessed that I am a priest of the Catholic Church. I am come to do a work that is both glorious and necessary.",
+    "pilgrimage": {
+      "site": "Tyburn Convent (Shrine of the Martyrs)",
+      "town": "Marble Arch, London"
+    },
+    "prayer": "O God of courage, you fashioned Edmund Campion into a diamond of wit and faith that no rack or threat could break; by his intercession, give us boldness to speak the truth we know, to bear the cost of our convictions, and to trust that your word will not return to you empty. May his cheerful sacrifice at Tyburn remind us that the glory to come outweighs every present affliction. Amen.",
+    "accent": "74% 0.13 88",
+    "image": "images/edmund-campion.jpg",
+    "credit": "Unknown authorUnknown author · Public domain",
+    "map": {
+      "x": 556.2,
+      "y": 815.1
+    }
+  },
+  {
+    "id": "robert-southwell",
+    "name": "St Robert Southwell",
+    "aka": "",
+    "epithet": "The Poet of the Passion",
+    "place": "Tyburn, London",
+    "region": "London · England",
+    "country": "England",
+    "lat": 51.5131,
+    "lng": -0.1589,
+    "feast": "21 February",
+    "era": "c. 1561 – 1595",
+    "patronage": [
+      "poets"
+    ],
+    "intro": "A Jesuit priest who spent his underground ministry writing poetry, Robert Southwell was tortured thirteen times in the Tower before being hanged, drawn, and quartered — and his verse still influences English literature.",
+    "story": [
+      "Robert Southwell came from a Norfolk recusant family and was educated by the Jesuits in Paris and Rome, where he was ordained. He returned to England in 1586 and for six years ministered secretly to Catholic households, all the while writing poetry of striking emotional directness — works that influenced Shakespeare, Donne, and Gerard Manley Hopkins. His Christmas poem 'The Burning Babe' prompted Ben Jonson to say he would destroy many of his own works to have written it.",
+      "Captured in 1592 through betrayal, Southwell was subjected to at least thirteen sessions of torture under the priest-hunter Richard Topcliffe. He demanded a trial, was convicted of high treason for the act of being a priest in England, and was executed at Tyburn on 21 February 1595. When his head was held up, no voice in the crowd cried the traditional 'Traitor!' Canonised in 1970."
+    ],
+    "facts": [
+      "Ben Jonson said he would have destroyed many of his own poems to have written 'The Burning Babe.'",
+      "His prose meditation An Epistle of Comfort was smuggled into the Tower to sustain fellow prisoners.",
+      "Scholars have identified verbal echoes of Southwell's poetry in at least twelve of Shakespeare's plays and poems."
+    ],
+    "wiki": "Robert Southwell (priest)",
+    "quote": "Not where I breathe, but where I love, I live.",
+    "pilgrimage": {
+      "site": "Tyburn Convent (Shrine of the Martyrs)",
+      "town": "Marble Arch, London"
+    },
+    "prayer": "Lord Jesus, you set a burning babe in the heart of your poet Robert Southwell, and no torment could quench that flame; grant us by his intercession a love for you that is as imaginative as it is steadfast. As he breathed grace into the English tongue through thirteen sessions of agony, may we too find in suffering a school of deeper praise. Amen.",
+    "accent": "64% 0.13 158",
+    "image": "images/robert-southwell.jpg",
+    "credit": "Unknown authorUnknown author · Public domain",
+    "map": {
+      "x": 556.2,
+      "y": 815.2
+    }
+  },
+  {
+    "id": "anne-line",
+    "name": "St Anne Line",
+    "aka": "Alice Higham",
+    "epithet": "Martyr of Tyburn",
+    "place": "Tyburn, London",
+    "region": "Greater London · England",
+    "country": "England",
+    "lat": 51.5131,
+    "lng": -0.1589,
+    "feast": "27 February",
+    "era": "c. 1563 – 1601",
+    "patronage": [
+      "Widows",
+      "Converts",
+      "Those who shelter the persecuted"
+    ],
+    "intro": "A convert from Puritanism who lost her husband to exile and her health to chronic illness, Anne Line ran a London safe house for hunted Catholic priests for years — and was so frail at her trial that she had to be carried to the dock in a chair, yet declared she only wished she could have sheltered a thousand more.",
+    "story": [
+      "Born Alice Higham in Dunmow, Essex around 1563, Anne converted to Catholicism as a young woman along with her brother, and both were immediately disinherited by their Puritan father. She married Roger Line, a fellow convert, in 1583; he was imprisoned and then exiled to Flanders, where he died in 1594. Left widowed and almost penniless, Anne was placed by the Jesuit Father John Gerard in charge of a London refuge for priests working clandestinely in the capital. She managed it for years despite worsening illness and the constant threat of arrest.",
+      "On Candlemas, 2 February 1601, pursuivants raided her house while Mass was in progress. The priest, Father Francis Page, escaped; Anne was arrested. At her trial on 26 February she was so weakened by fever that she could not stand, and was carried to the court in a chair. Asked if she repented of harbouring priests, she said she wished she could have received a thousand more. She was hanged at Tyburn the following morning, 27 February 1601, alongside two priests who received the harsher sentence of hanging, drawing and quartering. Beatified in 1929, she was canonised by Pope Paul VI on 25 October 1970 as one of the Forty Martyrs of England and Wales."
+    ],
+    "facts": [
+      "At her trial Anne was so ill with fever that she had to be carried to the dock in a chair — yet she declared she only regretted not having sheltered a thousand priests instead of one.",
+      "Anne converted from Puritanism, meaning she was not merely a recusant Catholic but a convert who had actively abandoned her family's faith — for which her father disinherited her immediately.",
+      "She was executed immediately before two priests, Roger Filcock and Mark Barkworth, who received the aggravated sentence of hanging, drawing and quartering; Anne was hanged only."
+    ],
+    "wiki": "Anne Line",
+    "quote": "I am sorry I could not do more for so many more of them.",
+    "pilgrimage": {
+      "site": "Tyburn Convent",
+      "town": "Marble Arch, Greater London"
+    },
+    "prayer": "Lord Jesus Christ, you strengthened your servant Anne Line to keep faith through widowhood, poverty, and persecution, and to stand before her accusers without flinching. Through her intercession, give us courage to shelter the vulnerable at whatever cost to ourselves, and to hold our faith when the world demands we abandon it. Amen.",
+    "accent": "60% 0.15 312",
+    "image": "images/anne-line.jpg",
+    "credit": "Caedwalla · CC BY-SA 3.0",
+    "map": {
+      "x": 556.2,
+      "y": 815.2
+    }
+  },
+  {
+    "id": "thomas-more",
+    "name": "St Thomas More",
+    "aka": "",
+    "epithet": "Lord Chancellor, Martyr of Conscience",
+    "place": "Tower Hill, London",
+    "region": "City of London · England",
+    "country": "England",
+    "lat": 51.5081,
+    "lng": -0.0762,
+    "feast": "22 June",
+    "era": "1478 – 1535",
+    "patronage": [
+      "lawyers",
+      "statesmen and politicians",
+      "difficult marriages",
+      "stepparents"
+    ],
+    "intro": "The most powerful lawyer in England chose his conscience over his king — and paid with his head on Tower Hill.",
+    "story": [
+      "Thomas More rose from London barrister to Lord Chancellor of England, the highest legal office in the land. A Renaissance humanist, close friend of Erasmus, and author of the visionary Utopia (1516), he seemed the perfect Tudor courtier — until Henry VIII demanded he endorse the annulment of Catherine of Aragon and acknowledge the king as Supreme Head of the Church. More resigned the chancellorship and maintained a careful silence, but silence was not enough.",
+      "Imprisoned in the Tower for over a year, More refused both bribery and pressure. At his trial in 1535 he was convicted on the perjured testimony of Richard Rich. On the scaffold he jested with the headsman and told the crowd, 'I die the King's good servant, and God's first.' Canonised in 1935, he was declared patron of statesmen by John Paul II in 2000."
+    ],
+    "facts": [
+      "More's skull is preserved in St Dunstan's Church, Canterbury — retrieved from London Bridge by his daughter Margaret Roper, who carried it under her cloak.",
+      "His book Utopia (1516) coined the word 'utopia' and became an instant European bestseller.",
+      "Climbing the scaffold he reportedly told the Lieutenant, 'Help me up; I'll shift for myself coming down.'"
+    ],
+    "wiki": "Thomas More",
+    "quote": "I die the King's good servant, and God's first.",
+    "pilgrimage": {
+      "site": "Chelsea Old Church (More Chapel)",
+      "town": "Chelsea, London"
+    },
+    "prayer": "Merciful God, who strengthened your servant Thomas More to hold fast to conscience when every worldly comfort urged him to yield, grant us the same steadfast integrity in the small as in the great trials of our lives. May we, who inherit the liberty of conscience he defended at the cost of his life, never sell that liberty cheaply or surrender it without prayer. Amen.",
+    "accent": "70% 0.12 78",
+    "image": "images/thomas-more.jpg",
+    "credit": "Hans Holbein the Younger · Public domain",
+    "map": {
+      "x": 560.1,
+      "y": 815.5
+    }
+  },
+  {
+    "id": "edward-the-confessor",
+    "name": "St Edward the Confessor",
+    "aka": "",
+    "epithet": "King and Builder of Westminster",
+    "place": "Westminster Abbey, London",
+    "region": "London · England",
+    "country": "England",
+    "lat": 51.4994,
+    "lng": -0.1273,
+    "feast": "13 October",
+    "era": "c. 1003 – 1066",
+    "patronage": [
+      "England",
+      "the Monarchy of the United Kingdom",
+      "difficult marriages"
+    ],
+    "intro": "The only king of England to be canonised by a pope, Edward rebuilt Westminster Abbey as his mausoleum and spiritual legacy — dying just days after its consecration, as if his life's purpose was complete.",
+    "story": [
+      "Edward was king of England from 1042 to 1066, the son of Æthelred the Unready who spent much of his youth in Norman exile. On the throne he was known for personal piety, generosity to the poor, and a reported gift of healing — touching scrofula sufferers in what became the 'Royal Touch' tradition. His most consuming project was the complete rebuilding of Westminster Abbey as a great Norman church.",
+      "He died on 5 January 1066, just eight days after the abbey's consecration, and was laid in the choir he had built. Pope Alexander III canonised him in 1161, and in 1163 Thomas Becket presided over the translation of his remains to a magnificent shrine behind the high altar — the same shrine, rebuilt after the Reformation, that stands in the abbey today."
+    ],
+    "facts": [
+      "His medieval shrine survives intact, making it one of the oldest undisturbed royal burial sites in the world.",
+      "The 'Royal Touch' — monarchs healing scrofula by touch — is traced to Edward; Charles II later 'touched' nearly 100,000 people.",
+      "Contemporaries said he so neglected the realm's defence to build the abbey that Harald Hardrada and William the Conqueror both invaded within a year of his death."
+    ],
+    "wiki": "Edward the Confessor",
+    "quote": "",
+    "pilgrimage": {
+      "site": "Westminster Abbey",
+      "town": "Westminster, London"
+    },
+    "prayer": "Lord God, you gave your servant Edward a kingly crown and the greater gift of a humble heart; by his prayers, grant to all who bear authority the wisdom to govern justly, the will to serve the poor, and the peace that passes understanding. As he built your house at Westminster with loving devotion, so build us up as living stones in that temple not made with hands. Amen.",
+    "accent": "62% 0.13 244",
+    "image": "images/edward-the-confessor.jpg",
+    "credit": "Myrabella · Public domain",
+    "map": {
+      "x": 557.7,
+      "y": 816.2
+    }
+  },
+  {
+    "id": "dubricius",
+    "name": "St Dyfrig",
+    "aka": "Dubricius",
+    "epithet": "Architect of the Early Welsh Church",
+    "place": "Llandaff Cathedral, Cardiff",
+    "region": "Cardiff · Wales",
+    "country": "Wales",
+    "lat": 51.4908,
+    "lng": -3.2175,
+    "feast": "14 November",
+    "era": "c. 465 – c. 550",
+    "patronage": [
+      "South Wales"
+    ],
+    "intro": "The greatest ecclesiastical figure in early South Wales, Dyfrig trained both Teilo and Samson, crowned King Arthur in legend, and retired to Bardsey Island to die — his bones later carried in triumph to Llandaff Cathedral.",
+    "story": [
+      "Born around 465 in the kingdom of Ergyng on the Welsh-English border, Dyfrig founded monasteries at Hentland and Moccas and became the most senior bishop in early South Wales, overseeing Glamorgan and Gwent. His school trained a generation of saints including Teilo and Samson of Dol. Geoffrey of Monmouth's legends gave him further fame as the bishop who crowned King Arthur.",
+      "At the Synod of Llanddewi Brefi around 545, Dyfrig yielded his primacy to Saint David — an act recorded as a recognition of David's supreme holiness. He then retired to Bardsey Island, the 'Island of Twenty Thousand Saints,' where he died around 550. In 1120, his relics were solemnly translated to the newly built Llandaff Cathedral."
+    ],
+    "facts": [
+      "Geoffrey of Monmouth cast Dyfrig as the archbishop who crowned King Arthur at Caerleon.",
+      "He voluntarily resigned his primacy over South Wales at the Synod of Llanddewi Brefi in favour of Saint David.",
+      "His relics were translated from Bardsey Island to Llandaff Cathedral in 1120, a journey of over 60 miles intended to give the new Norman cathedral an ancient Welsh pedigree."
+    ],
+    "wiki": "Dubricius",
+    "quote": "",
+    "pilgrimage": {
+      "site": "Llandaff Cathedral",
+      "town": "Cardiff"
+    },
+    "prayer": "Lord Jesus Christ, who didst draw thy servant Dyfrig from the frontier lands of Wales to become the chief shepherd of thy Church among the Britons, and who taught him a holy humility to yield precedence to one holier than himself, grant us through his prayers the grace of true selflessness. As he trained Teilo and Samson to carry thy gospel far beyond what his own hands could reach, so bless all who teach and form others in the faith. Amen.",
+    "accent": "60% 0.13 168",
+    "image": "images/dubricius.jpg",
+    "credit": "Hchc2009 · CC BY-SA 4.0",
+    "map": {
+      "x": 413.1,
+      "y": 816.8
+    }
+  },
+  {
+    "id": "carlo-acutis",
+    "name": "St Carlo Acutis",
+    "aka": "Carlo; God's Influencer",
+    "epithet": "The First Millennial Saint",
+    "place": "Church of Our Lady of Dolours, Fulham Road, Chelsea",
+    "region": "Greater London · England",
+    "country": "England",
+    "lat": 51.4848,
+    "lng": -0.1846,
+    "feast": "12 October",
+    "era": "1991 – 2006",
+    "patronage": [
+      "Young people",
+      "Computer programmers",
+      "The internet"
+    ],
+    "intro": "Born in London on 3 May 1991 and baptised on the Fulham Road before his family moved to Milan, Carlo Acutis became the first saint of the millennial generation — a computer-coding teenager whose website cataloguing Eucharistic miracles reached millions, and who died of leukaemia at fifteen.",
+    "story": [
+      "Carlo was born at the Portland Clinic near Oxford Circus and baptised fifteen days later at Our Lady of Dolours on Fulham Road, Chelsea — the church that would host a thanksgiving Mass after his canonisation in 2025. When he was just four months old his family moved to Milan, but England kept a quiet claim on him: his grandparents had married at Westminster Cathedral in 1963. Growing up in Milan, Carlo taught himself programming without formal instruction and began, aged eleven, to build the first comprehensive online catalogue of Church-recognised Eucharistic miracles. He worked in jeans and trainers, ate simply, and prayed before the Blessed Sacrament every day, telling friends that the Eucharist was his 'motorway to heaven.'",
+      "In October 2006 Carlo was diagnosed with acute myeloid leukaemia. He died on 12 October 2006 — the date that would become his feast day. His body, dressed in jeans and a hoodie, rests in a glass reliquary at the Sanctuary of the Spoliation in Assisi. Pope Francis beatified him in 2020; Pope Leo XIV canonised him in St Peter's Square on 7 September 2025, making Carlo the first saint born in the 1990s. A relic shrine stands near the baptismal font at Our Lady of Dolours, Chelsea."
+    ],
+    "facts": [
+      "Carlo's Eucharistic miracles website, launched publicly on 4 October 2006 just before his death, has been exhibited in over 10,000 locations worldwide and translated into many languages.",
+      "He was born at the Portland Clinic close to Oxford Circus on 3 May 1991 — one of only a handful of canonised saints born on British soil in the modern era.",
+      "Carlo refused the only bed in the oncology ward, saying he had offered his suffering for the Pope and for the Church; his last words to his mother were: 'Don't be afraid — since Jesus became a man, death is the passage towards life.'"
+    ],
+    "wiki": "Carlo Acutis",
+    "quote": "Don't be afraid. Since Jesus became a man, death has become the passage towards life.",
+    "pilgrimage": {
+      "site": "Church of Our Lady of Dolours",
+      "town": "Chelsea, Greater London"
+    },
+    "prayer": "Lord God, you raised up Carlo Acutis in the digital age to proclaim the mystery of the Eucharist with the tools of his own generation. Through his intercession, grant us the same joyful faith that turned an ordinary teenager into a witness to the extraordinary. May we, like him, offer our daily lives as a highway to heaven. Amen.",
+    "accent": "70% 0.11 196",
+    "image": "images/carlo-acutis.jpg",
+    "credit": "Wikimedia Commons",
+    "map": {
+      "x": 555,
+      "y": 817.3
+    }
+  },
+  {
+    "id": "john-jones",
+    "name": "St John Jones",
+    "aka": "John Griffith Jones; Robert Buckley",
+    "epithet": "Franciscan Martyr of Southwark",
+    "place": "St Thomas's Waterings, Southwark",
+    "region": "Greater London · England",
+    "country": "England",
+    "lat": 51.4839,
+    "lng": -0.0664,
+    "feast": "12 July",
+    "era": "c. 1530 – 1598",
+    "patronage": [
+      "Wales",
+      "Franciscan missionaries"
+    ],
+    "intro": "Born in the Llŷn Peninsula of north Wales, John Jones served as a diocesan priest, survived the Marshalsea prison, joined the Franciscans in France in his sixties, and then returned to minister illegally in London — enduring torture before his execution on Old Kent Road at the age of around sixty-eight.",
+    "story": [
+      "John was born around 1530 at Clynnog Fawr in Caernarfonshire, the Gwynedd village that was itself a major pilgrimage site dedicated to St Beuno. Ordained as a diocesan priest, he was imprisoned in the Marshalsea in the early 1580s under the alias Robert Buckley for administering the Catholic sacraments. Released around 1585, he left England, and at the remarkable age of around sixty joined the Conventual Franciscans at Pontoise, France, before transferring to the Observant house at Ara Coeli in Rome. He returned to England around 1592 and worked from a house managed by Anne Line and provided by the Jesuit Father John Gerard.",
+      "Arrested in 1596 after being informed upon, John was subjected to severe torture by the notorious priest-catcher Richard Topcliffe. He was held for nearly two years before trial, during which time he gave spiritual support to fellow prisoner John Rigby, whose faith he helped steady. On 3 July 1598 he was convicted of high treason for exercising his priesthood; on 12 July he was drawn on a hurdle to St Thomas's Waterings on the Old Kent Road in Southwark, and there hanged. He was beatified by Pope Pius XI in 1929 and canonised by Pope Paul VI on 25 October 1970 as one of the Forty Martyrs of England and Wales."
+    ],
+    "facts": [
+      "John Jones joined the Franciscan order at approximately sixty years old — making his entry into religious life one of the latest on record among the Forty Martyrs.",
+      "He was executed at St Thomas's Waterings, a site on Old Kent Road where pilgrims to Canterbury traditionally watered their horses — making his martyrdom take place at a spot already soaked in the memory of an earlier English saint.",
+      "He worked from the same Anne Line safe house as several other martyrs of the period, linking the Welsh Franciscan friar to the wider underground network of Elizabethan Catholic resistance."
+    ],
+    "wiki": "John Jones (martyr)",
+    "quote": "",
+    "pilgrimage": {
+      "site": "Southwark Cathedral",
+      "town": "Southwark, Greater London"
+    },
+    "prayer": "Almighty God, you sustained John Jones through prison and torture to proclaim your Gospel in an age of persecution. Through his intercession, strengthen all who minister in danger, and give us faith as steadfast as his to continue in the service of your Church whatever the cost. Amen.",
+    "accent": "66% 0.16 8",
+    "image": "images/john-jones.png",
+    "credit": "[former] Chilworth Friary of the Holy Ghost · CC BY-SA 4.0",
+    "map": {
+      "x": 560.5,
+      "y": 817.4
     }
   },
   {
@@ -2370,7 +2937,12 @@ window.SAINTS = [
     ],
     "wiki": "Cadoc",
     "quote": "",
-    "accent": "60% 0.15 312",
+    "pilgrimage": {
+      "site": "St Cadoc's Church",
+      "town": "Llancarfan, Vale of Glamorgan"
+    },
+    "prayer": "O God, who didst endow thy servant Cadoc with such wisdom that the nations called him Cattwg the Wise, and who through his monastery at Llancarfan didst send the light of learning from Wales to Scotland and Brittany, grant us through his intercession a wise and humble spirit. Help us to pursue thy truth with constancy, that we may one day rejoice with all thy saints in the wisdom that neither age nor sorrow can diminish. Amen.",
+    "accent": "72% 0.13 132",
     "image": "images/cadoc.jpg",
     "credit": "CC BY-SA 3.0",
     "map": {
@@ -2379,255 +2951,500 @@ window.SAINTS = [
     }
   },
   {
-    "id": "dubricius",
-    "name": "St Dyfrig",
-    "aka": "Dubricius",
-    "epithet": "Architect of the Early Welsh Church",
-    "place": "Llandaff Cathedral, Cardiff",
-    "region": "Cardiff · Wales",
+    "id": "illtud",
+    "name": "St Illtud",
+    "aka": "Illtyd Farchog",
+    "epithet": "Teacher of the Saints of Britain",
+    "place": "St Illtyd's Church, Llantwit Major",
+    "region": "Vale of Glamorgan · Wales",
     "country": "Wales",
-    "lat": 51.4908,
-    "lng": -3.2175,
-    "feast": "14 November",
-    "era": "c. 465 – c. 550",
+    "lat": 51.4081,
+    "lng": -3.4878,
+    "feast": "6 November",
+    "era": "5th – 6th century",
     "patronage": [
-      "South Wales"
+      "scholars",
+      "teachers"
     ],
-    "intro": "The greatest ecclesiastical figure in early South Wales, Dyfrig trained both Teilo and Samson, crowned King Arthur in legend, and retired to Bardsey Island to die — his bones later carried in triumph to Llandaff Cathedral.",
+    "intro": "Called the most learned of all the Britons in his time, Illtud founded what is believed to be the earliest centre of formal learning in Britain at Llantwit Major — a school that trained Saints David, Samson, and Gildas.",
     "story": [
-      "Born around 465 in the kingdom of Ergyng on the Welsh-English border, Dyfrig founded monasteries at Hentland and Moccas and became the most senior bishop in early South Wales, overseeing Glamorgan and Gwent. His school trained a generation of saints including Teilo and Samson of Dol. Geoffrey of Monmouth's legends gave him further fame as the bishop who crowned King Arthur.",
-      "At the Synod of Llanddewi Brefi around 545, Dyfrig yielded his primacy to Saint David — an act recorded as a recognition of David's supreme holiness. He then retired to Bardsey Island, the 'Island of Twenty Thousand Saints,' where he died around 550. In 1120, his relics were solemnly translated to the newly built Llandaff Cathedral."
+      "According to his medieval biography, Illtud began his career as a soldier — hence the epithet Farchog, 'the Knight' — before a supernatural encounter prompted his conversion. He established Bangor Illtyd at Llanilltud Fawr (Llantwit Major), where his monastic school reportedly housed over a thousand students at its peak and was celebrated throughout the Celtic world for teaching scripture, philosophy, geometry, rhetoric, grammar, and arithmetic.",
+      "Illtud's pupils read like a who's who of early Welsh Christianity: Saint David, Samson of Dol, Gildas the Briton, and Paul Aurelian. Medieval Welsh tradition also claimed him as a cousin of King Arthur, entrusted with the Holy Grail — a legend that speaks to the prestige his community held in Celtic memory."
     ],
     "facts": [
-      "Geoffrey of Monmouth cast Dyfrig as the archbishop who crowned King Arthur at Caerleon.",
-      "He voluntarily resigned his primacy over South Wales at the Synod of Llanddewi Brefi in favour of Saint David.",
-      "His relics were translated from Bardsey Island to Llandaff Cathedral in 1120, a journey of over 60 miles intended to give the new Norman cathedral an ancient Welsh pedigree."
+      "Illtud's school at Llantwit Major is considered by many scholars the oldest institution of higher learning in Britain, predating Oxford by some six centuries.",
+      "His community was reportedly so large — over a thousand students — that it functioned more like a small university town than a monastery.",
+      "Medieval tradition insists Illtud was once a knight and cousin to King Arthur before his conversion."
     ],
-    "wiki": "Dubricius",
+    "wiki": "Illtud",
     "quote": "",
-    "accent": "70% 0.12 78",
-    "image": "images/dubricius.jpg",
-    "credit": "Hchc2009 · CC BY-SA 4.0",
-    "map": {
-      "x": 413.1,
-      "y": 816.8
-    }
-  },
-  {
-    "id": "beuno",
-    "name": "St Beuno",
-    "aka": "",
-    "epithet": "Wonder-worker of Gwynedd",
-    "place": "St Beuno's Church, Clynnog Fawr",
-    "region": "Gwynedd · Wales",
-    "country": "Wales",
-    "lat": 53.021,
-    "lng": -4.3652,
-    "feast": "21 April",
-    "era": "late 6th century – 640",
-    "patronage": [
-      "sick children",
-      "diseased cattle"
-    ],
-    "intro": "The most revered wonder-worker of early medieval North Wales, Beuno is credited with seven miraculous resurrections — including that of his niece Winefride — and founded a monastic community at Clynnog Fawr that became the principal pilgrimage church of the Llŷn Peninsula.",
-    "story": [
-      "Born into a noble family in Powys, Beuno trained at Bangor-on-Dee before undertaking missionary travels across north Wales. After a dispute with a prince, King Cadfan of Gwynedd granted him the estate of Clynnog Fawr on the Llŷn Peninsula, where Beuno founded the monastery that bears his name — the main waystation for pilgrims heading to Bardsey Island.",
-      "Beuno's most famous miracle was the restoration of his niece Winefride after she was decapitated at Holywell. Medieval pilgrims at Clynnog Fawr paid offerings into Beuno's chest, which still survives in the church, and sick children were laid overnight in his grave chapel in hope of healing. The Jesuit poet Gerard Manley Hopkins took spiritual inspiration from this saint while at St Beuno's College nearby."
-    ],
-    "facts": [
-      "Beuno's grave chapel at Clynnog Fawr is the original 7th-century structure; offerings placed in Beuno's Chest paid for masses for the sick.",
-      "Gerard Manley Hopkins studied at St Beuno's College in north Wales and found deep inspiration in the Welsh landscape and Beuno's tradition.",
-      "Beuno is said to have performed seven resurrections from the dead, the most spectacular being the restoration of Winefride after decapitation."
-    ],
-    "wiki": "Beuno",
-    "quote": "",
-    "accent": "62% 0.13 244",
-    "image": "images/beuno.jpg",
-    "credit": "Wolfgang Sauber · CC BY-SA 3.0",
-    "map": {
-      "x": 359.4,
-      "y": 699.9
-    }
-  },
-  {
-    "id": "winefride",
-    "name": "St Winefride",
-    "aka": "Gwenffrewi",
-    "epithet": "Virgin Martyr of Holywell",
-    "place": "St Winefride's Well, Holywell",
-    "region": "Flintshire · Wales",
-    "country": "Wales",
-    "lat": 53.2771,
-    "lng": -3.2236,
-    "feast": "3 November",
-    "era": "7th century, died c. 650",
-    "patronage": [
-      "Holywell",
-      "sick pilgrims",
-      "Wales"
-    ],
-    "intro": "When a spurned suitor beheaded Winefride on the hillside at Holywell, a spring of healing water burst from the earth where her head fell — and the saint, restored to life by her uncle Beuno, went on to lead a religious community for another forty years.",
-    "story": [
-      "Winefride was the daughter of a Welsh nobleman in Tegeingl (modern Flintshire). According to her hagiography, Prince Caradog beheaded her after she refused his advances. Her uncle Saint Beuno replaced her head and she was fully restored — the only mark remaining being a faint white scar around her neck. A spring of healing water welled up at the spot where she fell.",
-      "St Winefride's Well at Holywell has never ceased to draw the faithful in fifteen centuries — the late medieval bathing chapel survives intact, and the well received formal recognition as a National Shrine in 2023. Her relics were translated to Shrewsbury Abbey in 1138. Richard I and Henry V both made pilgrimages, cementing the site's reputation as the 'Lourdes of Wales.'"
-    ],
-    "facts": [
-      "St Winefride's Well has been a place of pilgrimage for an unbroken 1,300 years, one of the oldest continuously visited Christian holy sites in Britain.",
-      "The late 15th-century bathing chapel enclosing the well is considered one of the finest examples of perpendicular Gothic architecture in Wales.",
-      "National Shrine status was formally granted by the Catholic Bishops' Conference as recently as 2023."
-    ],
-    "wiki": "Saint Winifred",
-    "quote": "",
-    "accent": "60% 0.13 168",
-    "image": "images/winefride.jpg",
-    "credit": "Hchc2009 · CC BY-SA 4.0",
-    "map": {
-      "x": 412.8,
-      "y": 679.9
-    }
-  },
-  {
-    "id": "asaph",
-    "name": "St Asaph",
-    "aka": "Asa",
-    "epithet": "First Welsh Bishop of St Asaph",
-    "place": "St Asaph Cathedral",
-    "region": "Denbighshire · Wales",
-    "country": "Wales",
-    "lat": 53.2571,
-    "lng": -3.442,
-    "feast": "1 May",
-    "era": "early 6th century – c. 596",
-    "patronage": [
-      "St Asaph"
-    ],
-    "intro": "A young disciple who carried live coals in his apron to warm his praying master without burning himself, Asaph inherited the see of St Asaph from Saint Kentigern and became the first Welsh bishop of one of the oldest cathedral foundations in Britain.",
-    "story": [
-      "According to his hagiography, Asaph was the son of King Sawyl Penuchel and became a disciple of Saint Kentigern (Mungo) at the monastery of Llanelwy on the River Elwy around 545. His sanctity was revealed when, as a boy, he carried burning coals in his apron to warm Kentigern during an outdoor vigil — the coals neither burned the fabric nor scorched his hands. When Kentigern was recalled to Strathclyde in 573, he consecrated Asaph as his successor.",
-      "Asaph became the first Welsh bishop of the see, which took his name. St Asaph Cathedral, where the medieval shrine once stood, is today the smallest ancient cathedral in Great Britain and Ireland and preserves one of the most complete sets of medieval choir stalls in Britain."
-    ],
-    "facts": [
-      "St Asaph Cathedral is the smallest ancient cathedral in Great Britain and Ireland, seating fewer than 300 people in its medieval nave.",
-      "The burning-coals miracle echoes the biblical story of Shadrach, Meshach, and Abednego, a standard sign of holiness in Celtic tradition.",
-      "Both the city and diocese bear Asaph's name in English, while Welsh speakers still call the settlement Llanelwy."
-    ],
-    "wiki": "Saint Asaph",
-    "quote": "",
-    "accent": "70% 0.11 196",
-    "image": "images/asaph.jpg",
-    "credit": "Llywelyn2000 · CC BY-SA 4.0",
-    "map": {
-      "x": 402.6,
-      "y": 681.4
-    }
-  },
-  {
-    "id": "melangell",
-    "name": "St Melangell",
-    "aka": "Monacella",
-    "epithet": "Patron of Hares and Sanctuary",
-    "place": "St Melangell's Church, Pennant Melangell",
-    "region": "Powys · Wales",
-    "country": "Wales",
-    "lat": 52.8275,
-    "lng": -3.4497,
-    "feast": "27 May",
-    "era": "7th – 8th century",
-    "patronage": [
-      "hares",
-      "wildlife",
-      "sanctuary seekers"
-    ],
-    "intro": "An Irish princess who fled to the remotest valley in Wales to pray alone, Melangell sheltered a hunted hare beneath her cloak so effectively that the prince's hounds refused to pursue it — and gave her the land to found an abbey of women where hunting was forever forbidden.",
-    "story": [
-      "According to her hagiography, Melangell was an Irish princess who escaped an arranged marriage by sailing to Wales and settling as a solitary hermit in the remote Tanat Valley of Powys, where she prayed for fifteen years without seeing another human face. When the local prince Brochwel Ysgithrog was hunting hare, his quarry took refuge under her cloak. His hounds froze and could not advance; his horn refused to sound. Brochwel, awed, granted her the entire valley as a sanctuary.",
-      "She established an abbey of women there and served as abbess for 37 years, during which no animal could be killed within the valley's bounds. The local people called hares 'St Monacella's lambs' for centuries. Her 12th-century Romanesque shrine, reconstructed in the 20th century from surviving fragments, is the oldest Romanesque shrine structure in the British Isles."
-    ],
-    "facts": [
-      "The reconstructed 12th-century shrine at Pennant Melangell is considered the oldest surviving Romanesque shrine structure in the British Isles.",
-      "For centuries no local person would kill a hare within the parish — they were called 'St Monacella's lambs.'",
-      "Melangell's story inspired a modern healing ministry: the Melangell Centre now provides support for people facing terminal illness."
-    ],
-    "wiki": "Melangell",
-    "quote": "",
-    "accent": "66% 0.16 8",
-    "image": "images/melangell.jpg",
-    "credit": "John Ingleby · Public domain",
-    "map": {
-      "x": 402.2,
-      "y": 714.9
-    }
-  },
-  {
-    "id": "richard-gwyn",
-    "name": "St Richard Gwyn",
-    "aka": "Richard White",
-    "epithet": "Protomartyr of Wales",
-    "place": "The Beast Market, Wrexham",
-    "region": "Wrexham · Wales",
-    "country": "Wales",
-    "lat": 53.0403,
-    "lng": -2.9902,
-    "feast": "25 October",
-    "era": "c. 1537 – 1584",
-    "patronage": [
-      "Wales",
-      "Catholic schools",
-      "Welsh martyrs"
-    ],
-    "intro": "A schoolmaster, father of six, and Welsh-language poet who was hanged, drawn and quartered in the marketplace of Wrexham for refusing to abandon his Catholic faith, Richard Gwyn became the first of the Forty Martyrs of England and Wales — and the only one native to Wales.",
-    "story": [
-      "Born around 1537 in Llanidloes, Richard Gwyn was educated at Oxford and Cambridge before settling as a schoolmaster in north-east Wales. After reconverting to Catholicism, he ran underground Catholic schools for Welsh families during the reign of Elizabeth I. Arrested in 1579 and recaptured in 1580, he was racked and tortured during his imprisonment, yet continued to write satirical and devotional poetry in Welsh mocking his captors.",
-      "At his trial in Wrexham in October 1584, Gwyn was convicted of high treason for reconciling persons to Rome. He was executed in the Beast Market on 15 October 1584. Canonised by Pope Paul VI in 1970, he remains the only Welsh-born member of the Forty Martyrs of England and Wales and is venerated as the Protomartyr of Wales."
-    ],
-    "facts": [
-      "Gwyn was a published Welsh-language poet: six of his poems survive, including biting satires composed while imprisoned.",
-      "At his execution he was so weakened by torture that the hangman let him hang to lose consciousness before the drawing and quartering, yet witnesses reported he endured it with composure.",
-      "He is the only Welsh-born member of the Forty Martyrs of England and Wales canonised in 1970."
-    ],
-    "wiki": "Richard Gwyn",
-    "quote": "",
-    "accent": "72% 0.13 132",
-    "image": "images/richard-gwyn.jpg",
-    "credit": "Llywelyn2000 · CC BY-SA 4.0",
-    "map": {
-      "x": 423.7,
-      "y": 698.4
-    }
-  },
-  {
-    "id": "david-lewis",
-    "name": "St David Lewis",
-    "aka": "Tad y Tlodion (Father of the Poor)",
-    "epithet": "The Last Welsh Martyr",
-    "place": "Usk, Monmouthshire",
-    "region": "Monmouthshire · Wales",
-    "country": "Wales",
-    "lat": 51.7044,
-    "lng": -2.9044,
-    "feast": "27 August",
-    "era": "1616 – 1679",
-    "patronage": [
-      "the poor"
-    ],
-    "intro": "A Welsh Jesuit who ministered to the rural poor of Monmouthshire for thirty years, was swept up in the hysteria of the Popish Plot, and went to his death at Usk in 1679 as the last Catholic to be executed for his priesthood in Wales.",
-    "story": [
-      "David Lewis was born in Abergavenny, son of a Protestant schoolmaster and a Catholic mother. After studies in Paris and Rome, where he entered the Jesuits, he returned to Wales in 1647 and spent the next three decades serving isolated Catholic communities in Monmouthshire. His care for the poor earned him the Welsh epithet Tad y Tlodion, 'Father of the Poor.'",
-      "In 1678 Titus Oates's fabricated 'Popish Plot' unleashed a new wave of persecution. Lewis was arrested at Llantarnam and imprisoned at Usk. Offered his freedom if he would renounce his faith or betray other Catholics, he refused both. He was hanged, drawn and quartered at Usk on 27 August 1679. Canonised in 1970, the church on the site of his execution is still a place of pilgrimage."
-    ],
-    "facts": [
-      "Lewis celebrated Mass for thirty years in the farmhouses and barns of Monmouthshire, moving constantly to avoid detection.",
-      "He was arrested as a direct result of Titus Oates's fabricated Popish Plot of 1678, which sent at least 22 innocent Catholics to their deaths.",
-      "A Catholic church dedicated to him stands on the traditional site of his execution in Usk, where an annual pilgrimage still marks his martyrdom."
-    ],
-    "wiki": "David Lewis (Jesuit priest)",
-    "quote": "I die for God and religion's sake.",
+    "pilgrimage": {
+      "site": "St Illtyd's Church",
+      "town": "Llantwit Major, Vale of Glamorgan"
+    },
+    "prayer": "Almighty God, who raised up thy servant Illtud from the life of arms to become the most learned of all the Britons, and through his school at Llantwit Major didst form a generation of saints who carried thy gospel to the ends of the earth, grant that we who seek wisdom may find it first in thee. May his intercession kindle in us a love of holy learning, and a willingness to lay aside all that hinders our progress toward thee. Amen.",
     "accent": "58% 0.15 280",
-    "image": "images/david-lewis.jpg",
-    "credit": "Alexander Voet the Elder · Public domain",
+    "image": "images/illtud.jpg",
+    "credit": "Gwenddwr · CC BY-SA 3.0",
     "map": {
-      "x": 427.7,
-      "y": 800.7
+      "x": 400.4,
+      "y": 823
+    }
+  },
+  {
+    "id": "mildrith",
+    "name": "St Mildred of Thanet",
+    "aka": "Mildrith",
+    "epithet": "Fairest Lily of the English",
+    "place": "Minster Abbey, Minster-in-Thanet",
+    "region": "Kent · England",
+    "country": "England",
+    "lat": 51.3313,
+    "lng": 1.3175,
+    "feast": "13 July",
+    "era": "c. 660 – c. 730",
+    "patronage": [
+      "Thanet"
+    ],
+    "intro": "An Anglo-Saxon royal princess who turned down a violently abusive suitor, fled back to England from France, stepped ashore onto a stone that bore the imprint of her foot for centuries, and became one of Kent's most beloved abbesses.",
+    "story": [
+      "Mildred was the daughter of the Kentish royal house, sent to be educated at the Abbey of Chelles in Gaul. There a nobleman attempted to force her into marriage and, when she resisted, allegedly tried to kill her. She escaped and returned to England, landing at Ebbsfleet, where legend says a great stone received the imprint of her foot as she stepped ashore.",
+      "Back in Kent, Mildred entered the nunnery at Minster-in-Thanet that her mother St Eormenburga had founded, becoming abbess around 694. Goscelin's Life praises her for welcoming strangers, nursing the sick with her own hands, and never speaking sharply to her nuns. Her relics were translated to St Augustine's Abbey in Canterbury in 1030, expanding her cult."
+    ],
+    "facts": [
+      "Both her sisters were also venerated as saints, making her one of three sainted daughters from the same royal Kentish family.",
+      "The stone imprinted with her footprint was kept at Minster Abbey for centuries; dust scraped from it and mixed in water was used as medicine.",
+      "Her relics were stolen from Canterbury and taken to Deventer in the Netherlands in the 11th century, prompting a diplomatic row."
+    ],
+    "wiki": "Mildrith",
+    "quote": "",
+    "pilgrimage": {
+      "site": "Minster Abbey",
+      "town": "Minster-in-Thanet, Kent"
+    },
+    "prayer": "O God, who called your servant Mildred to leave worldly honour and take up the gentle yoke of the cloister on the isle of Thanet, grant us by her intercession the grace to choose humility over ambition and mercy over pride. As she welcomed the stranger and nursed the sick with her own hands, may we be made ready to serve our neighbours in your name. Amen.",
+    "accent": "66% 0.14 25",
+    "image": "images/mildrith.jpg",
+    "credit": "Mum's taxi · CC BY-SA 3.0",
+    "map": {
+      "x": 625.3,
+      "y": 828.8
+    }
+  },
+  {
+    "id": "thomas-becket",
+    "name": "St Thomas Becket",
+    "aka": "Thomas of Canterbury",
+    "epithet": "Martyr of Canterbury",
+    "place": "Canterbury Cathedral",
+    "region": "Kent · England",
+    "country": "England",
+    "lat": 51.2798,
+    "lng": 1.0827,
+    "feast": "29 December",
+    "era": "c. 1120 – 1170",
+    "patronage": [
+      "secular clergy",
+      "the City of London",
+      "Portsmouth"
+    ],
+    "intro": "One of the most dramatic deaths in medieval Christendom: an archbishop cut down at his own altar by knights acting on the rage of a king, his blood still seeping through the cathedral stones when pilgrims began arriving.",
+    "story": [
+      "Thomas Becket rose from a London merchant family to become Henry II's closest companion and Lord Chancellor. When Henry appointed him Archbishop of Canterbury in 1162, expecting a pliable ally, Becket transformed into an uncompromising defender of Church rights against royal encroachment. The two clashed over whether clergy accused of crimes could be tried in royal courts, and Becket fled to France for six years before an uneasy reconciliation.",
+      "On 29 December 1170, four knights — inflamed by Henry's outburst 'Will no one rid me of this turbulent priest?' — cornered Becket in the north transept of his cathedral. He refused to flee, and the knights hacked off the top of his skull. Within three years he was canonised; within fifty his shrine was the wealthiest pilgrimage destination in northern Europe, inspiring Chaucer's Canterbury Tales."
+    ],
+    "facts": [
+      "His shrine in Trinity Chapel was so encrusted with gold and jewels that a visiting French king reportedly needed two carts to carry his gifts.",
+      "Henry II's public flogging by Canterbury monks in 1174 — seventy strokes at the tomb — is one of the most extraordinary acts of royal penance in English history.",
+      "The shrine was demolished on Henry VIII's orders in 1538 and its treasures filled twenty-six carts."
+    ],
+    "wiki": "Thomas Becket",
+    "quote": "I am ready to die for my Lord, that in my blood the Church may obtain liberty and peace.",
+    "pilgrimage": {
+      "site": "Canterbury Cathedral",
+      "town": "Canterbury, Kent"
+    },
+    "prayer": "O God, whose archbishop Thomas counted not his life dear to himself when the freedom of your Church was at stake, grant us through his martyrdom the grace to stand firm in conscience when ease and self-interest counsel surrender. May the blood shed at this holy altar remind all who come in pilgrimage that truth is worth dying for, and that you vindicate those who trust in you. Through Christ our Lord, Amen.",
+    "accent": "64% 0.12 218",
+    "image": "images/thomas-becket.jpg",
+    "credit": "Unknown Miniaturist, English (active 1170s in Cirenchester) · Public domain",
+    "map": {
+      "x": 614.3,
+      "y": 832.7
+    }
+  },
+  {
+    "id": "augustine-of-canterbury",
+    "name": "St Augustine of Canterbury",
+    "aka": "Austin of Canterbury",
+    "epithet": "Apostle of the English",
+    "place": "St Augustine's Abbey, Canterbury",
+    "region": "Kent · England",
+    "country": "England",
+    "lat": 51.2789,
+    "lng": 1.0871,
+    "feast": "27 May",
+    "era": "c. early 6th century – c. 604",
+    "patronage": [
+      "England",
+      "missionaries",
+      "Kent"
+    ],
+    "intro": "A Roman prior who nervously turned back twice before Pope Gregory the Great urged him on, Augustine crossed the Channel in 597 and converted a pagan English kingdom in a single year — reshaping the island's history forever.",
+    "story": [
+      "When Pope Gregory I dispatched Augustine and forty monks from Rome in 596, the party got as far as Gaul before panic set in — rumours of the fierce Anglo-Saxons sent them scurrying back to Rome for permission to abandon the mission. Gregory refused and sent them on. Landing at Ebbsfleet on the Isle of Thanet, they were received by King Æthelberht of Kent, who heard their preaching seated outdoors.",
+      "Augustine established his see at the old Roman city of Canterbury and founded Christ Church Cathedral as well as the monastery of SS Peter and Paul. He was consecrated the first Archbishop of Canterbury, setting in motion a primatial see that endures to this day. He died around 604 and was buried at his own abbey."
+    ],
+    "facts": [
+      "He was so rattled by tales of Anglo-Saxon ferocity that he turned back to Rome mid-journey, earning a firm push from Pope Gregory.",
+      "On Christmas Day 597 he is said to have baptised more than ten thousand converts in a single ceremony.",
+      "St Augustine's Abbey became the burial ground for the first archbishops of Canterbury and the kings of Kent."
+    ],
+    "wiki": "Augustine of Canterbury",
+    "quote": "",
+    "pilgrimage": {
+      "site": "St Augustine's Abbey",
+      "town": "Canterbury, Kent"
+    },
+    "prayer": "Almighty God, whose servant Augustine overcame fear and uncertainty to bring the gospel to the English people and establish the see of Canterbury as a lasting foundation of faith, grant that your Church may never lose the apostolic courage he showed when he crossed the sea at your command. By his intercession, raise up in every age those willing to go where they are sent, trusting only in your promise. Through Christ our Lord, Amen.",
+    "accent": "74% 0.13 88",
+    "image": "images/augustine-of-canterbury.jpg",
+    "credit": "Scriptorium de l'abbaye de Wearmouth-Jarrow · Public domain",
+    "map": {
+      "x": 614.5,
+      "y": 832.7
+    }
+  },
+  {
+    "id": "dunstan",
+    "name": "St Dunstan",
+    "aka": "",
+    "epithet": "Reformer of English Monasticism",
+    "place": "Glastonbury Abbey",
+    "region": "Somerset · England",
+    "country": "England",
+    "lat": 51.147,
+    "lng": -2.7169,
+    "feast": "19 May",
+    "era": "c. 909 – 988",
+    "patronage": [
+      "blacksmiths",
+      "goldsmiths",
+      "musicians",
+      "bellringers"
+    ],
+    "intro": "Mystic, metalworker, musician, and kingmaker: Dunstan spent his early years as a hermit-craftsman in a cell at Glastonbury and ended them as the most powerful churchman in England, having crowned four kings.",
+    "story": [
+      "Born near Glastonbury, Dunstan was educated by Irish monks and attached to the court of King Athelstan, but rivals had him expelled on charges of practising magic. He retreated to a tiny cell beside the church at Glastonbury, where he worked a forge, copied manuscripts, and played a harp — all while, legend has it, holding the devil at bay with red-hot tongs. Recalled by King Edmund, he was appointed Abbot of Glastonbury in 940, transforming it into the most rigorous Benedictine house in England.",
+      "His greatest achievement was the wholesale renewal of English monastic life, working with Bishops Æthelwold and Oswald under King Edgar. As Archbishop of Canterbury from 959 he crowned Edgar at Bath in 973 in a ceremony so carefully designed that it became the direct model for all subsequent English coronations."
+    ],
+    "facts": [
+      "The legend that he grabbed the devil by the nose with red-hot tongs gave rise to the superstition that horseshoes nailed over a door keep evil away.",
+      "He designed the coronation rite used at Bath in 973, which — with modest additions — remains the template for British royal coronations today.",
+      "A skilled musician said to have heard the angels sing, his harp was kept as a relic at Glastonbury for centuries."
+    ],
+    "wiki": "Dunstan",
+    "quote": "",
+    "pilgrimage": {
+      "site": "Glastonbury Abbey",
+      "town": "Glastonbury, Somerset"
+    },
+    "prayer": "Almighty God, you drew your servant Dunstan from a hermit's forge at Glastonbury to become the reformer and shepherd of the English Church; grant that, fired by his example of patient craft and fearless holiness, we may mend what is broken, order what is disordered, and crown every work we undertake with praise of your name. By his prayers, renew in us that love of prayer, learning, and beauty which adorned his long life. Amen.",
+    "accent": "64% 0.13 158",
+    "image": "images/dunstan.jpg",
+    "credit": "Dunstan · Public domain",
+    "map": {
+      "x": 436.5,
+      "y": 842.6
+    }
+  },
+  {
+    "id": "osmund-of-salisbury",
+    "name": "St Osmund",
+    "aka": "Osmund of Salisbury",
+    "epithet": "Bishop of Salisbury, Compiler of the Sarum Rite",
+    "place": "Salisbury Cathedral, Salisbury",
+    "region": "Wiltshire · England",
+    "country": "England",
+    "lat": 51.0652,
+    "lng": -1.798,
+    "feast": "4 December",
+    "era": "c. 1010 – 1099",
+    "patronage": [
+      "Mental illness",
+      "Paralysis",
+      "Toothache"
+    ],
+    "intro": "A Norman nobleman who crossed with William the Conqueror, served as Chancellor of England, then became Bishop of Salisbury — and whose liturgical compilation, the Sarum Rite, spread across England, Wales, Ireland and Scotland to become the dominant form of Latin worship in the medieval British Isles for four centuries.",
+    "story": [
+      "Osmund came from Normandy — possibly Sées — and was related, according to later tradition, to William the Conqueror himself. He accompanied the Conquest in 1066 and rose to serve as Chancellor of England from around 1070 to 1078, helping to compile the Domesday Book. Consecrated Bishop of Salisbury in 1078 by Archbishop Lanfranc, he began the cathedral at Old Sarum — a windswept hillfort outside Salisbury — which he consecrated on 5 April 1092. He also established a cathedral chapter with precisely defined roles for dean, precentor, chancellor and treasurer, a model copied by every other major English cathedral.",
+      "Osmund's most enduring gift was liturgical. Drawing on Norman and Anglo-Saxon traditions, he organised the Sarum Use — a thorough ordering of Mass, the Divine Office, and the calendar for the diocese of Salisbury. By 1250 it had spread to most of England, all of Wales and Ireland, and much of Scotland; it remained dominant until the 1549 Book of Common Prayer swept it away. His canonisation, championed by Salisbury's bishops for nearly 230 years, was finally granted by Pope Callixtus III on 1 January 1457 — the last English saint canonised until Thomas More in 1935. His relics, translated to Salisbury Cathedral on 23 July 1457, were destroyed under Henry VIII."
+    ],
+    "facts": [
+      "The Sarum Rite that Osmund compiled became the basis for Thomas Cranmer's 1549 Book of Common Prayer — the foundational text of the Church of England — making Osmund a paradoxical ancestor of Anglican worship.",
+      "Osmund's canonisation process lasted 229 years, from 1228 to 1457, one of the longest in medieval Church history; his advocates submitted over 350 recorded miracles.",
+      "He helped compile the Domesday Book of 1086 as Chancellor of England, making him one of the few saints whose name appears in both medieval hagiography and the foundational administrative record of the English nation."
+    ],
+    "wiki": "Saint Osmund",
+    "quote": "",
+    "pilgrimage": {
+      "site": "Salisbury Cathedral",
+      "town": "Salisbury, Wiltshire"
+    },
+    "prayer": "Lord God, you gave your servant Osmund a genius for order in the service of prayer, and through his Sarum Rite the worship of your Church rang out across these islands for four centuries. Through his intercession, restore in us a reverence for the liturgy and a love for the unity of your people, that our own lives may be ordered wholly toward your glory. Amen.",
+    "accent": "60% 0.15 312",
+    "image": "images/osmund-of-salisbury.jpg",
+    "credit": "James Bradley · CC BY 2.0",
+    "map": {
+      "x": 479.5,
+      "y": 848.7
+    }
+  },
+  {
+    "id": "swithun",
+    "name": "St Swithun",
+    "aka": "",
+    "epithet": "The Humble Bishop of Winchester",
+    "place": "Winchester Cathedral",
+    "region": "Hampshire · England",
+    "country": "England",
+    "lat": 51.0607,
+    "lng": -1.3128,
+    "feast": "15 July",
+    "era": "c. 800 – 863",
+    "patronage": [
+      "Winchester",
+      "drought relief",
+      "good weather"
+    ],
+    "intro": "The ninth-century bishop who begged to be buried where rain would fall on his grave became England's most weather-obsessed saint — and his drenching reputation has lasted twelve centuries.",
+    "story": [
+      "Swithun served as Bishop of Winchester from 852 until his death in 863, and was a trusted counsellor to the kings of Wessex. He was known for practical piety: he supervised the building of a bridge at Winchester and is said to have miraculously restored a basket of eggs smashed by workmen. His dying wish was for an outdoor grave, where passers-by might tread over him and rain might fall upon his resting place — a mark of radical humility.",
+      "On 15 July 971, Bishop Æthelwold translated Swithun's remains into Winchester Cathedral amid reports of spectacular miracles. The date became his feast day, and a folk belief took root: if it rains on St Swithun's Day, it will rain for forty days more. The legend has no meteorological basis but has proved unshakeable."
+    ],
+    "facts": [
+      "His best-attested miracle was reassembling a basket of eggs that workmen had smashed — a human-scaled wonder that gave him lasting popular appeal.",
+      "The 'forty days of rain' tradition appears to derive from storms on the day his relics were moved in 971.",
+      "Winchester Cathedral's shrine, rebuilt after Henry VIII's commissioners destroyed the medieval original, still draws pilgrims."
+    ],
+    "wiki": "Swithun",
+    "quote": "Let my grave be where the feet of men may tread and the rain of heaven fall upon me.",
+    "pilgrimage": {
+      "site": "Winchester Cathedral",
+      "town": "Winchester, Hampshire"
+    },
+    "prayer": "Lord God, who taught your bishop Swithun to seek no glory but to lie where rain might fall and feet might tread upon him, grant us by his example that true humility which is content to be overlooked by men yet known to you. Through his prayers, water the dry ground of our hearts and let the gentle rain of your mercy fall upon all who call upon his name at Winchester. Amen.",
+    "accent": "70% 0.12 78",
+    "image": "images/swithun.jpg",
+    "credit": "Unknown authorUnknown author · Public domain",
+    "map": {
+      "x": 502.2,
+      "y": 849
+    }
+  },
+  {
+    "id": "edward-the-martyr",
+    "name": "St Edward the Martyr",
+    "aka": "",
+    "epithet": "The Boy-King of Shaftesbury",
+    "place": "Shaftesbury Abbey",
+    "region": "Dorset · England",
+    "country": "England",
+    "lat": 51.0053,
+    "lng": -2.1986,
+    "feast": "18 March",
+    "era": "c. 962 – 978",
+    "patronage": [
+      "Shaftesbury Abbey"
+    ],
+    "intro": "Murdered at Corfe Castle by his stepmother's household at the age of sixteen, the boy-king's relics were found incorrupt, his shrine drew miracles, and his half-brother Æthelred — who benefitted most from his death — dutifully promoted his cult.",
+    "story": [
+      "Edward became King of England at about thirteen on the death of his father Edgar in 975, but his reign lasted barely three years. On 18 March 978 he arrived at Corfe Castle to visit his stepmother Ælfthryth and half-brother Æthelred. While still mounted, he was seized and stabbed — medieval sources laid the blame on Ælfthryth's retainers. His body was buried without ceremony at Wareham, but exhumed the following year and found reportedly incorrupt.",
+      "His remains were translated with great ceremony to Shaftesbury Abbey in 980, and King Æthelred ordered Edward's feast to be observed throughout England. Shaftesbury became a major pilgrimage destination. The relics were rediscovered during excavations in 1931; a portion is now held by the Orthodox monastery of St Edward at Brookwood."
+    ],
+    "facts": [
+      "Medieval chroniclers described Edward as abusive to his companions — yet he was venerated as a martyr because the manner and innocence of his death determined his sanctity, not the quality of his life.",
+      "His remains, found during 1931 excavations, have been the subject of ownership disputes between the Church of England and an Orthodox brotherhood.",
+      "Æthelred, who became 'the Unready' after Edward's murder, actively promoted his murdered brother's cult — possibly to distance himself from suspicion."
+    ],
+    "wiki": "Edward the Martyr",
+    "quote": "",
+    "pilgrimage": {
+      "site": "Shaftesbury Abbey (site of his enshrinement), Shaftesbury",
+      "town": "Shaftesbury, Dorset"
+    },
+    "prayer": "Lord Jesus, innocent lamb who bore the sins of the world, we remember before thee thy servant Edward, king and martyr, who in the innocence of youth was betrayed by those he trusted and whose incorrupt body bore witness to thy power over death. Grant us through his intercession steadfastness in faith when we are wronged, and the grace to entrust all judgement to thee who seest in secret. Amen.",
+    "accent": "62% 0.13 244",
+    "image": "images/edward-the-martyr.jpg",
+    "credit": "Unknown authorUnknown author · Public domain",
+    "map": {
+      "x": 460.7,
+      "y": 853.1
+    }
+  },
+  {
+    "id": "philip-howard",
+    "name": "St Philip Howard",
+    "aka": "13th Earl of Arundel",
+    "epithet": "The Courtier Who Chose the Cell",
+    "place": "Arundel Cathedral, Arundel",
+    "region": "West Sussex · England",
+    "country": "England",
+    "lat": 50.8553,
+    "lng": -0.5588,
+    "feast": "19 October",
+    "era": "1557 – 1595",
+    "patronage": [
+      "Diocese of Arundel and Brighton"
+    ],
+    "intro": "Elizabeth I's glittering courtier converted to Catholicism, was sentenced to death — and then left to rot in the Tower for a decade while the queen never signed the warrant.",
+    "story": [
+      "Philip Howard was born into the most powerful noble family in England and spent his youth as a favourite at Elizabeth I's court. His conversion began in 1581 when he attended a debate involving the imprisoned Edmund Campion and was struck by Campion's courage. Received back into the Catholic Church in 1584, he attempted to flee England to live openly as a Catholic, but was betrayed before his ship cleared the Channel and imprisoned in the Tower without trial.",
+      "He was condemned to death in 1589 on the basis of a private prayer offered for the success of the Spanish Armada, but Elizabeth never signed the warrant. He spent ten years in the Tower, never again seeing his wife or the son born after his imprisonment began. He carved into his cell wall: 'The more affliction we endure for Christ in this world, the more glory we shall gain.' He died of dysentery in 1595, and now rests in Arundel Cathedral."
+    ],
+    "facts": [
+      "His dog reportedly followed him to the Tower and stayed outside for years, refusing to leave until after his master's death.",
+      "The inscription he carved in his cell in the Beauchamp Tower is still visible to visitors today.",
+      "His son Thomas Howard became the most important art patron in Jacobean England, his collection forming the basis of the Arundel Marbles."
+    ],
+    "wiki": "Philip Howard, 13th Earl of Arundel",
+    "quote": "The more affliction we endure for Christ in this world, the more glory we shall gain with Christ in the next.",
+    "pilgrimage": {
+      "site": "Arundel Cathedral",
+      "town": "Arundel, West Sussex"
+    },
+    "prayer": "God of mercy, you transformed Philip Howard from a creature of royal courts into a patient prisoner of conscience, and in the darkness of the Tower gave him a peace no earthly king could take away; by his intercession, grant us the grace to bear affliction without bitterness and to carve on the walls of our own trials a testimony of faith as sure as his. May the glory he sought through ten years of silent suffering be ours at last. Amen.",
+    "accent": "60% 0.13 168",
+    "image": "images/philip-howard.jpg",
+    "credit": "Unidentified painter · Public domain",
+    "map": {
+      "x": 537.5,
+      "y": 864.3
+    }
+  },
+  {
+    "id": "richard-of-chichester",
+    "name": "St Richard of Chichester",
+    "aka": "Richard de Wyche",
+    "epithet": "The Barefoot Bishop",
+    "place": "Chichester Cathedral",
+    "region": "West Sussex · England",
+    "country": "England",
+    "lat": 50.8363,
+    "lng": -0.7807,
+    "feast": "3 April",
+    "era": "c. 1197 – 1253",
+    "patronage": [
+      "coachmen",
+      "Diocese of Chichester",
+      "Sussex"
+    ],
+    "intro": "A bishop so committed to poverty that he shared a single gown with his chaplain and went barefoot rather than spend church money on himself — and whose three-line prayer became, seven centuries later, the hit song of a Broadway musical.",
+    "story": [
+      "Richard de Wyche grew up in poverty in Worcestershire, working as a farm labourer before winning a place at Oxford, where he slept on straw. He became Chancellor of Oxford University and then Chancellor to St Edmund Rich, Archbishop of Canterbury. When appointed Bishop of Chichester in 1244, King Henry III — furious that his own candidate had been passed over — confiscated all the diocese's revenues, leaving Richard to minister on foot.",
+      "For two years Richard walked his diocese barefoot, confirming, preaching, and reforming the clergy while the king tried to starve him out. He was known for fasting and care for the poor. He died in 1253 at Dover while preaching a crusade, and was canonised in 1262. His prayer — 'May I know thee more clearly, love thee more dearly, follow thee more nearly' — was set to music in the 1971 musical Godspell."
+    ],
+    "facts": [
+      "His prayer became the song 'Day by Day' in the 1971 musical Godspell, reaching number 13 on the US Billboard Hot 100.",
+      "When Henry III stripped him of all income, Richard walked his entire diocese barefoot for two years, staying in parish priests' homes.",
+      "His shrine at Chichester was destroyed by Henry VIII in 1538; relics recovered centuries later were reinstated there in 1930."
+    ],
+    "wiki": "Richard of Chichester",
+    "quote": "Thanks be to Thee, my Lord Jesus Christ, for all the benefits thou hast given me.",
+    "pilgrimage": {
+      "site": "Chichester Cathedral",
+      "town": "Chichester, West Sussex"
+    },
+    "prayer": "Lord Christ, who so filled your servant Richard with love for you that he walked barefoot through his diocese and counted poverty a privilege, grant us the same clear-eyed devotion: to know you more clearly, love you more dearly, and follow you more nearly, day by day. By his prayers, free us from every attachment that would slow our steps toward you. Amen.",
+    "accent": "70% 0.11 196",
+    "image": "images/richard-of-chichester.jpg",
+    "credit": "Fr James Bradley from Southampton, UK · CC BY 2.0",
+    "map": {
+      "x": 527.1,
+      "y": 865.7
+    }
+  },
+  {
+    "id": "boniface",
+    "name": "St Boniface",
+    "aka": "Winfrid",
+    "epithet": "Apostle of Germany",
+    "place": "Holy Cross Church, Crediton",
+    "region": "Devon · England",
+    "country": "England",
+    "lat": 50.7896,
+    "lng": -3.6523,
+    "feast": "5 June",
+    "era": "c. 675 – 754",
+    "patronage": [
+      "Germany",
+      "Devon",
+      "brewers",
+      "tailors"
+    ],
+    "intro": "Born Winfrid in a Devon village, he crossed to the Continent, felled a sacred oak the Germanic tribes thought would destroy him, and remade the church in half of Europe.",
+    "story": [
+      "Winfrid of Crediton entered the monastery at Nursling in Hampshire as a child and became a distinguished teacher before setting out on missionary journeys to Frisia and Germany from 716. Commissioned by Pope Gregory II, who renamed him Boniface, he systematically evangelised Germany and the Low Countries, founding monasteries including the great abbey of Fulda, reforming the Frankish church, and crowning Pepin III. His most dramatic act was felling Donar's Oak at Geismar: when the thunder-god failed to strike him dead, the crowd converted on the spot.",
+      "In 754, around eighty years old, Boniface set out on a last preaching mission to Frisia. His party was ambushed near Dokkum by pagan raiders who expected treasure; they found instead manuscripts and an old man who refused to flee. He was martyred on 5 June 754. His body was carried to Fulda, where it remains beneath the high altar. Crediton became a cathedral city in his memory."
+    ],
+    "facts": [
+      "Before leaving England he wrote one of the earliest Latin grammars by an Englishman and composed acrostic riddles in the style of Aldhelm.",
+      "Pope Gregory II renamed him Boniface ('doer of good') in 719; he never used his birth name Winfrid again.",
+      "His attackers in Frisia, expecting church gold, found only the manuscripts he used to teach — several survive among the treasures of Fulda Cathedral library."
+    ],
+    "wiki": "Saint Boniface",
+    "quote": "",
+    "pilgrimage": {
+      "site": "Holy Cross Church (Boniface's birthplace minster), Crediton",
+      "town": "Crediton, Devon"
+    },
+    "prayer": "Eternal God, who sent thy servant Boniface from the fields of Devon across the seas to fell the idols of the nations and plant thy Church in the heart of Europe, grant us through his intercession the boldness to proclaim thy gospel wherever ignorance or fear holds sway. As he laid down his life unarmed among those he came to save, may we too trust that thy word is mightier than any sword. Amen.",
+    "accent": "66% 0.16 8",
+    "image": "images/boniface.jpg",
+    "credit": "Cornelis Bloemaert · Public domain",
+    "map": {
+      "x": 392.7,
+      "y": 869.1
+    }
+  },
+  {
+    "id": "sidwell",
+    "name": "St Sidwell",
+    "aka": "Sativola",
+    "epithet": "The Scythe-Martyr of Exeter",
+    "place": "St Sidwell's Church, Exeter",
+    "region": "Devon · England",
+    "country": "England",
+    "lat": 50.729,
+    "lng": -3.5243,
+    "feast": "2 August",
+    "era": "8th century (died c. 740)",
+    "patronage": [
+      "Exeter"
+    ],
+    "intro": "Beheaded by her stepmother's hired reapers outside Exeter's east gate, Sidwell stands as Devon's own martyr — her well still flows where her head fell, and her image glows in stained glass in Exeter Cathedral.",
+    "story": [
+      "Sidwell was, by tradition, a Saxon Christian woman of Exeter whose father Benna left her to a jealous stepmother on his death. The stepmother bribed the corn reapers working the family fields to behead Sidwell as she brought them their midday meal. They killed her with a scythe just outside the city's east gate, and at the spot where her head fell a spring of pure water broke from the ground.",
+      "Her cult was established at Exeter before the Norman Conquest, and the Church of St Sidwell — just outside the medieval east gate — was a pilgrimage destination by the year 1000. She appears in the cathedral's stained glass and on seven painted rood screens across Devon. Her well, a pilgrimage site for over a thousand years, survives inside a building on Well Street."
+    ],
+    "facts": [
+      "Sidwell's iconography is instantly recognisable: she carries her own severed head in one hand and a scythe in the other.",
+      "Her Well of St Sidwell survives inside a private building on Well Street, having been in continuous local memory for over a thousand years.",
+      "She appears in the stained glass of Exeter Cathedral and on no fewer than seven painted rood screens across Devon."
+    ],
+    "wiki": "Saint Sidwell",
+    "quote": "",
+    "pilgrimage": {
+      "site": "St Sidwell's Church, Sidwell Street, Exeter",
+      "town": "Exeter, Devon"
+    },
+    "prayer": "O God, who dost gather the blood of thy martyrs as precious seed, look graciously upon us who honour thy servant Sidwell, slain unjustly at the city gate of Exeter, and at whose falling a spring of healing water burst from the earth. Grant us through her intercession purity of heart and readiness to suffer wrong rather than do it, that we may at last be counted among those whom no violence can separate from thy love. Amen.",
+    "accent": "72% 0.13 132",
+    "image": "images/sidwell.jpg",
+    "credit": "Derek Harper · CC BY-SA 2.0",
+    "map": {
+      "x": 398.7,
+      "y": 873.6
     }
   },
   {
@@ -2660,7 +3477,12 @@ window.SAINTS = [
     ],
     "wiki": "Saint Petroc",
     "quote": "",
-    "accent": "66% 0.14 25",
+    "pilgrimage": {
+      "site": "St Petroc's Church and Priory, Bodmin",
+      "town": "Bodmin, Cornwall"
+    },
+    "prayer": "Gracious God, who called thy servant Petroc from the courts of princes to the wild headlands of Cornwall, there to found monasteries, tame wolves, and carry thy gospel to the uttermost west, grant us through his intercession a like willingness to leave behind all false security and follow where thou leadest. May the faithful who come to his shrine at Bodmin be strengthened in faith and renewed in the peace that passes understanding. Amen.",
+    "accent": "58% 0.15 280",
     "image": "images/petroc.png",
     "credit": "Unknown authorUnknown author · Public domain",
     "map": {
@@ -2696,158 +3518,17 @@ window.SAINTS = [
     ],
     "wiki": "Saint Piran",
     "quote": "",
-    "accent": "64% 0.12 218",
+    "pilgrimage": {
+      "site": "St Piran's Oratory, Penhale Sands, Perranzabuloe",
+      "town": "Perranporth, Cornwall"
+    },
+    "prayer": "Lord of all creation, who led thy servant Piran to the shore of Cornwall and hid his little oratory in the dunes as a lamp set under the earth until thy time, grant us through his prayers a spirit of patient solitude and joyful simplicity. As he who found tin flowing from the fire became patron of those who labour in darkness underground, so by his intercession may all who toil in hidden places know the light of thy presence. Amen.",
+    "accent": "66% 0.14 25",
     "image": "images/piran.png",
     "credit": "Unknown authorUnknown author · Public domain",
     "map": {
       "x": 323.1,
       "y": 900.4
-    }
-  },
-  {
-    "id": "sidwell",
-    "name": "St Sidwell",
-    "aka": "Sativola",
-    "epithet": "The Scythe-Martyr of Exeter",
-    "place": "St Sidwell's Church, Exeter",
-    "region": "Devon · England",
-    "country": "England",
-    "lat": 50.729,
-    "lng": -3.5243,
-    "feast": "2 August",
-    "era": "8th century (died c. 740)",
-    "patronage": [
-      "Exeter"
-    ],
-    "intro": "Beheaded by her stepmother's hired reapers outside Exeter's east gate, Sidwell stands as Devon's own martyr — her well still flows where her head fell, and her image glows in stained glass in Exeter Cathedral.",
-    "story": [
-      "Sidwell was, by tradition, a Saxon Christian woman of Exeter whose father Benna left her to a jealous stepmother on his death. The stepmother bribed the corn reapers working the family fields to behead Sidwell as she brought them their midday meal. They killed her with a scythe just outside the city's east gate, and at the spot where her head fell a spring of pure water broke from the ground.",
-      "Her cult was established at Exeter before the Norman Conquest, and the Church of St Sidwell — just outside the medieval east gate — was a pilgrimage destination by the year 1000. She appears in the cathedral's stained glass and on seven painted rood screens across Devon. Her well, a pilgrimage site for over a thousand years, survives inside a building on Well Street."
-    ],
-    "facts": [
-      "Sidwell's iconography is instantly recognisable: she carries her own severed head in one hand and a scythe in the other.",
-      "Her Well of St Sidwell survives inside a private building on Well Street, having been in continuous local memory for over a thousand years.",
-      "She appears in the stained glass of Exeter Cathedral and on no fewer than seven painted rood screens across Devon."
-    ],
-    "wiki": "Saint Sidwell",
-    "quote": "",
-    "accent": "74% 0.13 88",
-    "image": "images/sidwell.jpg",
-    "credit": "Derek Harper · CC BY-SA 2.0",
-    "map": {
-      "x": 398.7,
-      "y": 873.6
-    }
-  },
-  {
-    "id": "boniface",
-    "name": "St Boniface",
-    "aka": "Winfrid",
-    "epithet": "Apostle of Germany",
-    "place": "Holy Cross Church, Crediton",
-    "region": "Devon · England",
-    "country": "England",
-    "lat": 50.7896,
-    "lng": -3.6523,
-    "feast": "5 June",
-    "era": "c. 675 – 754",
-    "patronage": [
-      "Germany",
-      "Devon",
-      "brewers",
-      "tailors"
-    ],
-    "intro": "Born Winfrid in a Devon village, he crossed to the Continent, felled a sacred oak the Germanic tribes thought would destroy him, and remade the church in half of Europe.",
-    "story": [
-      "Winfrid of Crediton entered the monastery at Nursling in Hampshire as a child and became a distinguished teacher before setting out on missionary journeys to Frisia and Germany from 716. Commissioned by Pope Gregory II, who renamed him Boniface, he systematically evangelised Germany and the Low Countries, founding monasteries including the great abbey of Fulda, reforming the Frankish church, and crowning Pepin III. His most dramatic act was felling Donar's Oak at Geismar: when the thunder-god failed to strike him dead, the crowd converted on the spot.",
-      "In 754, around eighty years old, Boniface set out on a last preaching mission to Frisia. His party was ambushed near Dokkum by pagan raiders who expected treasure; they found instead manuscripts and an old man who refused to flee. He was martyred on 5 June 754. His body was carried to Fulda, where it remains beneath the high altar. Crediton became a cathedral city in his memory."
-    ],
-    "facts": [
-      "Before leaving England he wrote one of the earliest Latin grammars by an Englishman and composed acrostic riddles in the style of Aldhelm.",
-      "Pope Gregory II renamed him Boniface ('doer of good') in 719; he never used his birth name Winfrid again.",
-      "His attackers in Frisia, expecting church gold, found only the manuscripts he used to teach — several survive among the treasures of Fulda Cathedral library."
-    ],
-    "wiki": "Saint Boniface",
-    "quote": "",
-    "accent": "64% 0.13 158",
-    "image": "images/boniface.jpg",
-    "credit": "Cornelis Bloemaert · Public domain",
-    "map": {
-      "x": 392.7,
-      "y": 869.1
-    }
-  },
-  {
-    "id": "edward-the-martyr",
-    "name": "St Edward the Martyr",
-    "aka": "",
-    "epithet": "The Boy-King of Shaftesbury",
-    "place": "Shaftesbury Abbey",
-    "region": "Dorset · England",
-    "country": "England",
-    "lat": 51.0053,
-    "lng": -2.1986,
-    "feast": "18 March",
-    "era": "c. 962 – 978",
-    "patronage": [
-      "Shaftesbury Abbey"
-    ],
-    "intro": "Murdered at Corfe Castle by his stepmother's household at the age of sixteen, the boy-king's relics were found incorrupt, his shrine drew miracles, and his half-brother Æthelred — who benefitted most from his death — dutifully promoted his cult.",
-    "story": [
-      "Edward became King of England at about thirteen on the death of his father Edgar in 975, but his reign lasted barely three years. On 18 March 978 he arrived at Corfe Castle to visit his stepmother Ælfthryth and half-brother Æthelred. While still mounted, he was seized and stabbed — medieval sources laid the blame on Ælfthryth's retainers. His body was buried without ceremony at Wareham, but exhumed the following year and found reportedly incorrupt.",
-      "His remains were translated with great ceremony to Shaftesbury Abbey in 980, and King Æthelred ordered Edward's feast to be observed throughout England. Shaftesbury became a major pilgrimage destination. The relics were rediscovered during excavations in 1931; a portion is now held by the Orthodox monastery of St Edward at Brookwood."
-    ],
-    "facts": [
-      "Medieval chroniclers described Edward as abusive to his companions — yet he was venerated as a martyr because the manner and innocence of his death determined his sanctity, not the quality of his life.",
-      "His remains, found during 1931 excavations, have been the subject of ownership disputes between the Church of England and an Orthodox brotherhood.",
-      "Æthelred, who became 'the Unready' after Edward's murder, actively promoted his murdered brother's cult — possibly to distance himself from suspicion."
-    ],
-    "wiki": "Edward the Martyr",
-    "quote": "",
-    "accent": "60% 0.15 312",
-    "image": "images/edward-the-martyr.jpg",
-    "credit": "Unknown authorUnknown author · Public domain",
-    "map": {
-      "x": 460.7,
-      "y": 853.1
-    }
-  },
-  {
-    "id": "aldhelm",
-    "name": "St Aldhelm",
-    "aka": "",
-    "epithet": "Scholar-Abbot of Malmesbury",
-    "place": "Malmesbury Abbey",
-    "region": "Wiltshire · England",
-    "country": "England",
-    "lat": 51.5847,
-    "lng": -2.0989,
-    "feast": "25 May",
-    "era": "c. 639 – 709",
-    "patronage": [
-      "Malmesbury",
-      "Sherborne",
-      "musicians",
-      "poets"
-    ],
-    "intro": "England's first great Latin stylist would stand on a bridge busking vernacular songs to lure pagans into earshot — then slip in a sermon before they could walk away.",
-    "story": [
-      "Aldhelm was educated at Malmesbury by the Irish scholar Maildubh and later at Canterbury under the African-born Hadrian, absorbing the best of Irish, Roman, and Mediterranean learning. He became Abbot of Malmesbury around 675 and founded daughter-houses at Bradford-on-Avon and Frome. His Latin scholarship was the most ambitious in England before Bede: he composed 101 hexameter riddles, treatises on metre and virginity, and letters of dazzling complexity.",
-      "In 705 he became the first Bishop of Sherborne when Wessex's diocese was divided, a role he held for his last four years. He died at Doulting in Somerset in 709, and his relics were later translated by St Dunstan. Malmesbury's surviving Romanesque abbey was built on the site of his own monastery."
-    ],
-    "facts": [
-      "He composed the earliest surviving Anglo-Latin acrostic poem and is thought to have built one of the first organs in England.",
-      "His 101 Latin riddles influenced riddlers across medieval Europe, including the Exeter Book's Old English riddles.",
-      "Pope Sergius I reportedly praised Aldhelm's scholarship in person when he visited Rome in the 690s."
-    ],
-    "wiki": "Aldhelm",
-    "quote": "",
-    "accent": "70% 0.12 78",
-    "image": "images/aldhelm.jpg",
-    "credit": "Arpingstone · Public domain",
-    "map": {
-      "x": 465.4,
-      "y": 809.8
     }
   }
 ];

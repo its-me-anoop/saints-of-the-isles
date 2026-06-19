@@ -1,0 +1,702 @@
+{
+  "newSaints": [
+    {
+      "id": "carlo-acutis",
+      "name": "St Carlo Acutis",
+      "aka": "Carlo; God's Influencer",
+      "epithet": "The First Millennial Saint",
+      "place": "Church of Our Lady of Dolours, Fulham Road, Chelsea",
+      "region": "Greater London · England",
+      "country": "England",
+      "lat": 51.4848,
+      "lng": -0.1846,
+      "feast": "12 October",
+      "era": "1991 – 2006",
+      "patronage": [
+        "Young people",
+        "Computer programmers",
+        "The internet"
+      ],
+      "intro": "Born in London on 3 May 1991 and baptised on the Fulham Road before his family moved to Milan, Carlo Acutis became the first saint of the millennial generation — a computer-coding teenager whose website cataloguing Eucharistic miracles reached millions, and who died of leukaemia at fifteen.",
+      "story": [
+        "Carlo was born at the Portland Clinic near Oxford Circus and baptised fifteen days later at Our Lady of Dolours on Fulham Road, Chelsea — the church that would host a thanksgiving Mass after his canonisation in 2025. When he was just four months old his family moved to Milan, but England kept a quiet claim on him: his grandparents had married at Westminster Cathedral in 1963. Growing up in Milan, Carlo taught himself programming without formal instruction and began, aged eleven, to build the first comprehensive online catalogue of Church-recognised Eucharistic miracles. He worked in jeans and trainers, ate simply, and prayed before the Blessed Sacrament every day, telling friends that the Eucharist was his 'motorway to heaven.'",
+        "In October 2006 Carlo was diagnosed with acute myeloid leukaemia. He died on 12 October 2006 — the date that would become his feast day. His body, dressed in jeans and a hoodie, rests in a glass reliquary at the Sanctuary of the Spoliation in Assisi. Pope Francis beatified him in 2020; Pope Leo XIV canonised him in St Peter's Square on 7 September 2025, making Carlo the first saint born in the 1990s. A relic shrine stands near the baptismal font at Our Lady of Dolours, Chelsea."
+      ],
+      "facts": [
+        "Carlo's Eucharistic miracles website, launched publicly on 4 October 2006 just before his death, has been exhibited in over 10,000 locations worldwide and translated into many languages.",
+        "He was born at the Portland Clinic close to Oxford Circus on 3 May 1991 — one of only a handful of canonised saints born on British soil in the modern era.",
+        "Carlo refused the only bed in the oncology ward, saying he had offered his suffering for the Pope and for the Church; his last words to his mother were: 'Don't be afraid — since Jesus became a man, death is the passage towards life.'"
+      ],
+      "wiki": "Carlo Acutis",
+      "quote": "Don't be afraid. Since Jesus became a man, death has become the passage towards life.",
+      "pilgrimageSite": "Church of Our Lady of Dolours",
+      "pilgrimageTown": "Chelsea, Greater London",
+      "prayer": "Lord God, you raised up Carlo Acutis in the digital age to proclaim the mystery of the Eucharist with the tools of his own generation. Through his intercession, grant us the same joyful faith that turned an ordinary teenager into a witness to the extraordinary. May we, like him, offer our daily lives as a highway to heaven. Amen."
+    },
+    {
+      "id": "bronagh",
+      "name": "St Brónach",
+      "aka": "Bronagh; Bronach",
+      "epithet": "Virgin of Kilbroney",
+      "place": "Kilbroney Church, Rostrevor",
+      "region": "County Down · Northern Ireland",
+      "country": "Northern Ireland",
+      "lat": 54.1114,
+      "lng": -6.1841,
+      "feast": "2 April",
+      "era": "6th century",
+      "patronage": [
+        "Kilbroney",
+        "Sailors on Carlingford Lough"
+      ],
+      "intro": "A sixth-century disciple of Patrick who founded her church in a mountain valley above Carlingford Lough, Brónach is remembered above all for a bell whose ringing was said to warn sailors of a rising storm — a bell rediscovered centuries later inside a fallen oak tree.",
+      "story": [
+        "Brónach founded her settlement of Cell Brónche — now Kilbroney — in the valley of Glenn Sechis in the shadow of the Mourne Mountains. She built a refuge for sailors shipwrecked on the notoriously treacherous waters of Carlingford Lough, and her community grew into a pastoral church served by both nuns and priests. A high cross of Mourne granite, still standing in Kilbroney graveyard, is among the oldest surviving monuments in County Down. Brónach is venerated as a disciple of Patrick, placing her origins in the earliest flowering of Irish Christianity.",
+        "The most enduring legend of Brónach is her bell. Tradition held that its ringing warned of storms on the Lough — a miraculous alarm for those who worked the water. Centuries after her death, a great storm brought down an ancient oak tree in Kilbroney churchyard. In its branches was found a tenth-century iron bell, perfectly preserved, as if the tree had been holding it in trust. That bell is now kept in the local church in Rostrevor, where her name lives on in schools, a GAA club, and the townland itself."
+      ],
+      "facts": [
+        "The Bell of Kilbroney, a tenth-century iron hand-bell discovered in the branches of a fallen oak in Kilbroney churchyard, is one of the oldest ecclesiastical objects surviving in County Down.",
+        "Kilbroney takes its name directly from Brónach: Cell Brónche means 'the church of Brónach' in Old Irish.",
+        "The ancient Mourne granite high cross in Kilbroney graveyard is one of the region's earliest Christian monuments, pre-dating the Norman settlement of Down by centuries."
+      ],
+      "wiki": "Brónach",
+      "quote": "",
+      "pilgrimageSite": "St Bronagh's Church, Kilbroney",
+      "pilgrimageTown": "Rostrevor, County Down",
+      "prayer": "Gracious God, you gave your servant Brónach a heart of compassion for all who sailed in peril on the waters of Carlingford Lough. Through her intercession, protect those who face danger and guide us safely through the storms of this life. May the bell of Kilbroney still ring out across the valley as a call to holiness and to hope. Amen."
+    },
+    {
+      "id": "waltheof-of-melrose",
+      "name": "St Waltheof of Melrose",
+      "aka": "Waldef; Waldeve",
+      "epithet": "Abbot of Melrose",
+      "place": "Melrose Abbey, Melrose",
+      "region": "Scottish Borders · Scotland",
+      "country": "Scotland",
+      "lat": 55.5927,
+      "lng": -2.7173,
+      "feast": "3 August",
+      "era": "c. 1095 – 1159",
+      "patronage": [
+        "Melrose Abbey",
+        "Cistercian monasticism in Scotland"
+      ],
+      "intro": "Stepson of King David I of Scotland, Waltheof turned away from courtly power to become a Cistercian monk and then Abbot of Melrose — and his tomb, opened in 1171 to reveal his body apparently incorrupt, made the abbey one of the great pilgrimage shrines of medieval Scotland.",
+      "story": [
+        "Born around 1095, Waltheof was the son of Simon I of St Liz, Earl of Northampton, and Maud, Countess of Huntingdon — making him stepson to King David I of Scotland when his mother remarried. He could have lived out his life in a court that valued him; instead he entered the Augustinian priory of Nostell in Yorkshire, became prior of Kirkham, and then, decisively, made the harder choice by becoming a Cistercian. After periods at Wardon Abbey and Rievaulx, he was elected Abbot of Melrose in 1148. He declined the bishopric of St Andrews in 1159, dying as abbot on 3 August of that year, aged around sixty-four.",
+        "His holiness had a curious afterlife. His immediate successor resisted the growing popular cult around his grave — but when Jocelin became abbot in 1170 he allowed the tomb to be formally opened in the presence of the Bishop of Glasgow and four abbots. The body was reported incorrupt, the vestments intact. Pilgrims came from across Scotland and northern England, and his feast was observed locally for centuries. Though never formally canonised by Rome, he was included in the Scottish martyrology and is recognised as a saint in the Cistercian order."
+      ],
+      "facts": [
+        "Waltheof declined the bishopric of St Andrews in the same year he died — 1159 — choosing to remain a simple abbot rather than take the highest ecclesiastical office in Scotland.",
+        "When his tomb was opened in 1171, twelve years after his death, the body was reportedly found entire and the vestments uncorrupted — the classic medieval test of sanctity.",
+        "He was the stepson of King David I of Scotland, who founded Melrose Abbey itself in 1136, making Waltheof's abbacy a kind of spiritual completion of his stepfather's great foundation."
+      ],
+      "wiki": "Waltheof of Melrose",
+      "quote": "",
+      "pilgrimageSite": "Melrose Abbey",
+      "pilgrimageTown": "Melrose, Scottish Borders",
+      "prayer": "Heavenly Father, you drew Waltheof away from power and privilege into the silence of the cloister, and through his gentleness you made Melrose Abbey a place of pilgrimage and light. Grant us his courage to choose the better part, and his humility to lead others by serving them. May his witness endure in the stones of Melrose and in the hearts of all who seek you there. Amen."
+    },
+    {
+      "id": "anne-line",
+      "name": "St Anne Line",
+      "aka": "Alice Higham",
+      "epithet": "Martyr of Tyburn",
+      "place": "Tyburn, London",
+      "region": "Greater London · England",
+      "country": "England",
+      "lat": 51.5131,
+      "lng": -0.1589,
+      "feast": "27 February",
+      "era": "c. 1563 – 1601",
+      "patronage": [
+        "Widows",
+        "Converts",
+        "Those who shelter the persecuted"
+      ],
+      "intro": "A convert from Puritanism who lost her husband to exile and her health to chronic illness, Anne Line ran a London safe house for hunted Catholic priests for years — and was so frail at her trial that she had to be carried to the dock in a chair, yet declared she only wished she could have sheltered a thousand more.",
+      "story": [
+        "Born Alice Higham in Dunmow, Essex around 1563, Anne converted to Catholicism as a young woman along with her brother, and both were immediately disinherited by their Puritan father. She married Roger Line, a fellow convert, in 1583; he was imprisoned and then exiled to Flanders, where he died in 1594. Left widowed and almost penniless, Anne was placed by the Jesuit Father John Gerard in charge of a London refuge for priests working clandestinely in the capital. She managed it for years despite worsening illness and the constant threat of arrest.",
+        "On Candlemas, 2 February 1601, pursuivants raided her house while Mass was in progress. The priest, Father Francis Page, escaped; Anne was arrested. At her trial on 26 February she was so weakened by fever that she could not stand, and was carried to the court in a chair. Asked if she repented of harbouring priests, she said she wished she could have received a thousand more. She was hanged at Tyburn the following morning, 27 February 1601, alongside two priests who received the harsher sentence of hanging, drawing and quartering. Beatified in 1929, she was canonised by Pope Paul VI on 25 October 1970 as one of the Forty Martyrs of England and Wales."
+      ],
+      "facts": [
+        "At her trial Anne was so ill with fever that she had to be carried to the dock in a chair — yet she declared she only regretted not having sheltered a thousand priests instead of one.",
+        "Anne converted from Puritanism, meaning she was not merely a recusant Catholic but a convert who had actively abandoned her family's faith — for which her father disinherited her immediately.",
+        "She was executed immediately before two priests, Roger Filcock and Mark Barkworth, who received the aggravated sentence of hanging, drawing and quartering; Anne was hanged only."
+      ],
+      "wiki": "Anne Line",
+      "quote": "I am sorry I could not do more for so many more of them.",
+      "pilgrimageSite": "Tyburn Convent",
+      "pilgrimageTown": "Marble Arch, Greater London",
+      "prayer": "Lord Jesus Christ, you strengthened your servant Anne Line to keep faith through widowhood, poverty, and persecution, and to stand before her accusers without flinching. Through her intercession, give us courage to shelter the vulnerable at whatever cost to ourselves, and to hold our faith when the world demands we abandon it. Amen."
+    },
+    {
+      "id": "john-jones",
+      "name": "St John Jones",
+      "aka": "John Griffith Jones; Robert Buckley",
+      "epithet": "Franciscan Martyr of Southwark",
+      "place": "St Thomas's Waterings, Southwark",
+      "region": "Greater London · England",
+      "country": "England",
+      "lat": 51.4839,
+      "lng": -0.0664,
+      "feast": "12 July",
+      "era": "c. 1530 – 1598",
+      "patronage": [
+        "Wales",
+        "Franciscan missionaries"
+      ],
+      "intro": "Born in the Llŷn Peninsula of north Wales, John Jones served as a diocesan priest, survived the Marshalsea prison, joined the Franciscans in France in his sixties, and then returned to minister illegally in London — enduring torture before his execution on Old Kent Road at the age of around sixty-eight.",
+      "story": [
+        "John was born around 1530 at Clynnog Fawr in Caernarfonshire, the Gwynedd village that was itself a major pilgrimage site dedicated to St Beuno. Ordained as a diocesan priest, he was imprisoned in the Marshalsea in the early 1580s under the alias Robert Buckley for administering the Catholic sacraments. Released around 1585, he left England, and at the remarkable age of around sixty joined the Conventual Franciscans at Pontoise, France, before transferring to the Observant house at Ara Coeli in Rome. He returned to England around 1592 and worked from a house managed by Anne Line and provided by the Jesuit Father John Gerard.",
+        "Arrested in 1596 after being informed upon, John was subjected to severe torture by the notorious priest-catcher Richard Topcliffe. He was held for nearly two years before trial, during which time he gave spiritual support to fellow prisoner John Rigby, whose faith he helped steady. On 3 July 1598 he was convicted of high treason for exercising his priesthood; on 12 July he was drawn on a hurdle to St Thomas's Waterings on the Old Kent Road in Southwark, and there hanged. He was beatified by Pope Pius XI in 1929 and canonised by Pope Paul VI on 25 October 1970 as one of the Forty Martyrs of England and Wales."
+      ],
+      "facts": [
+        "John Jones joined the Franciscan order at approximately sixty years old — making his entry into religious life one of the latest on record among the Forty Martyrs.",
+        "He was executed at St Thomas's Waterings, a site on Old Kent Road where pilgrims to Canterbury traditionally watered their horses — making his martyrdom take place at a spot already soaked in the memory of an earlier English saint.",
+        "He worked from the same Anne Line safe house as several other martyrs of the period, linking the Welsh Franciscan friar to the wider underground network of Elizabethan Catholic resistance."
+      ],
+      "wiki": "John Jones (martyr)",
+      "quote": "",
+      "pilgrimageSite": "Southwark Cathedral",
+      "pilgrimageTown": "Southwark, Greater London",
+      "prayer": "Almighty God, you sustained John Jones through prison and torture to proclaim your Gospel in an age of persecution. Through his intercession, strengthen all who minister in danger, and give us faith as steadfast as his to continue in the service of your Church whatever the cost. Amen."
+    },
+    {
+      "id": "john-roberts",
+      "name": "St John Roberts",
+      "aka": "Ioan Roberts",
+      "epithet": "Prior of Douai, Martyr of Tyburn",
+      "place": "Trawsfynydd, Gwynedd",
+      "region": "Gwynedd · Wales",
+      "country": "Wales",
+      "lat": 52.9026,
+      "lng": -3.9232,
+      "feast": "10 December",
+      "era": "c. 1577 – 1610",
+      "patronage": [
+        "Wales",
+        "Downside Abbey",
+        "Benedictine missionaries"
+      ],
+      "intro": "From the slate hills of Snowdonia to the gallows of Tyburn, John Roberts crammed into thirty-three years a conversion in Paris, a Benedictine profession in Spain, the founding of a monastery in France, five separate arrests in England, and a ministry to London's plague-stricken poor — hanged, drawn and quartered on 10 December 1610.",
+      "story": [
+        "John was born around 1577 in Trawsfynydd, a village in the Snowdonian heartland of Gwynedd, of a family that traced its descent from Welsh princes. He went to Oxford and then read law in London, apparently still Anglican, before travelling to the Continent. In Paris, at Notre-Dame Cathedral, he converted to Catholicism. He enrolled at St Alban's College in Valladolid in October 1598, became a Benedictine monk, and was ordained priest in 1602. He founded St Gregory's Monastery at Douai — the house that would eventually become Downside Abbey in Somerset — and served as its first prior.",
+        "Between 1603 and 1610 John made at least four missionary journeys to England, was arrested multiple times, and was repeatedly banished — only to return. He ministered above all to the victims of London's plague epidemics, when other help had fled. Arrested on 2 December 1610 while saying Mass, he was tried and condemned for exercising his priesthood. On 10 December 1610, aged around thirty-three, he was hanged, drawn and quartered at Tyburn. The sympathetic crowd reportedly prevented his disembowelment while he still lived. He was beatified by Pope Leo XIII in 1886 and canonised by Pope Paul VI on 25 October 1970 as one of the Forty Martyrs of England and Wales."
+      ],
+      "facts": [
+        "John Roberts was the first prior of St Gregory's Monastery at Douai — the community that later relocated to Downside Abbey in Somerset, still a living Benedictine house today.",
+        "He returned to England after each banishment, ministering especially to plague victims — choosing the most dangerous pastoral work in one of the most dangerous periods for Catholic priests.",
+        "At his trial in 1610 a Protestant woman in the courtroom praised him publicly, saying she had never heard anyone preach with such learning and piety — a testimony that became famous."
+      ],
+      "wiki": "John Roberts (martyr)",
+      "quote": "I die for God and religion's sake, and I think myself so happy that I wish I had as many lives as there are hairs upon my head, to bestow them all on the same cause.",
+      "pilgrimageSite": "St Illtyd's Catholic Church (near memorial, Trawsfynydd)",
+      "pilgrimageTown": "Trawsfynydd, Gwynedd",
+      "prayer": "Lord God, you gave John Roberts the grace to found a monastic family, to heal the sick in time of plague, and to face death at Tyburn without faltering. Through his intercession, grant us the zeal to build up your Church and the courage to profess our faith when it costs us something to do so. Amen."
+    },
+    {
+      "id": "osmund-of-salisbury",
+      "name": "St Osmund",
+      "aka": "Osmund of Salisbury",
+      "epithet": "Bishop of Salisbury, Compiler of the Sarum Rite",
+      "place": "Salisbury Cathedral, Salisbury",
+      "region": "Wiltshire · England",
+      "country": "England",
+      "lat": 51.0652,
+      "lng": -1.798,
+      "feast": "4 December",
+      "era": "c. 1010 – 1099",
+      "patronage": [
+        "Mental illness",
+        "Paralysis",
+        "Toothache"
+      ],
+      "intro": "A Norman nobleman who crossed with William the Conqueror, served as Chancellor of England, then became Bishop of Salisbury — and whose liturgical compilation, the Sarum Rite, spread across England, Wales, Ireland and Scotland to become the dominant form of Latin worship in the medieval British Isles for four centuries.",
+      "story": [
+        "Osmund came from Normandy — possibly Sées — and was related, according to later tradition, to William the Conqueror himself. He accompanied the Conquest in 1066 and rose to serve as Chancellor of England from around 1070 to 1078, helping to compile the Domesday Book. Consecrated Bishop of Salisbury in 1078 by Archbishop Lanfranc, he began the cathedral at Old Sarum — a windswept hillfort outside Salisbury — which he consecrated on 5 April 1092. He also established a cathedral chapter with precisely defined roles for dean, precentor, chancellor and treasurer, a model copied by every other major English cathedral.",
+        "Osmund's most enduring gift was liturgical. Drawing on Norman and Anglo-Saxon traditions, he organised the Sarum Use — a thorough ordering of Mass, the Divine Office, and the calendar for the diocese of Salisbury. By 1250 it had spread to most of England, all of Wales and Ireland, and much of Scotland; it remained dominant until the 1549 Book of Common Prayer swept it away. His canonisation, championed by Salisbury's bishops for nearly 230 years, was finally granted by Pope Callixtus III on 1 January 1457 — the last English saint canonised until Thomas More in 1935. His relics, translated to Salisbury Cathedral on 23 July 1457, were destroyed under Henry VIII."
+      ],
+      "facts": [
+        "The Sarum Rite that Osmund compiled became the basis for Thomas Cranmer's 1549 Book of Common Prayer — the foundational text of the Church of England — making Osmund a paradoxical ancestor of Anglican worship.",
+        "Osmund's canonisation process lasted 229 years, from 1228 to 1457, one of the longest in medieval Church history; his advocates submitted over 350 recorded miracles.",
+        "He helped compile the Domesday Book of 1086 as Chancellor of England, making him one of the few saints whose name appears in both medieval hagiography and the foundational administrative record of the English nation."
+      ],
+      "wiki": "Saint Osmund",
+      "quote": "",
+      "pilgrimageSite": "Salisbury Cathedral",
+      "pilgrimageTown": "Salisbury, Wiltshire",
+      "prayer": "Lord God, you gave your servant Osmund a genius for order in the service of prayer, and through his Sarum Rite the worship of your Church rang out across these islands for four centuries. Through his intercession, restore in us a reverence for the liturgy and a love for the unity of your people, that our own lives may be ordered wholly toward your glory. Amen."
+    }
+  ],
+  "enrich": [
+    {
+      "id": "john-of-beverley",
+      "pilgrimageSite": "Beverley Minster",
+      "pilgrimageTown": "Beverley, East Riding of Yorkshire",
+      "prayer": "O Lord our God, who didst anoint thy servant John of Beverley with pastoral wisdom and the gift of healing, granting to the mute the power of speech and to the sick the grace of restoration: hear us who call upon his intercession, and by his prayers open our ears to thy Word and our lips to thy praise; through Jesus Christ our Lord. Amen."
+    },
+    {
+      "id": "aelred-of-rievaulx",
+      "pilgrimageSite": "Rievaulx Abbey",
+      "pilgrimageTown": "Helmsley, North Yorkshire",
+      "prayer": "Gracious God, who didst inspire thy servant Aelred of Rievaulx to seek thee in the bond of true friendship, teaching that all love rightly ordered finds its beginning and end in thee: grant us, by his example, hearts open to one another and firmly anchored in thy charity; through Christ, who is himself the friend of sinners. Amen."
+    },
+    {
+      "id": "william-of-york",
+      "pilgrimageSite": "York Minster",
+      "pilgrimageTown": "York, North Yorkshire",
+      "prayer": "Almighty God, who didst vindicate thy servant William of York after long suffering and exile, restoring him to his people with such joy that even the falling bridge could not harm those who thronged to welcome him: strengthen all who are falsely accused and grant them the patience to await thy justice; through Jesus Christ our Lord. Amen."
+    },
+    {
+      "id": "margaret-clitherow",
+      "pilgrimageSite": "Bar Convent Shrine and The Shambles",
+      "pilgrimageTown": "York, North Yorkshire",
+      "prayer": "Lord Jesus, who didst call thy servant Margaret Clitherow to shelter thy priests at the cost of her own life, and who didst strengthen her in the hour of death with a courage that shamed her persecutors: by her intercession grant us fidelity to our conscience and love for thy Church even when the cost is great; who livest and reignest for ever and ever. Amen."
+    },
+    {
+      "id": "paulinus-of-york",
+      "pilgrimageSite": "York Minster",
+      "pilgrimageTown": "York, North Yorkshire",
+      "prayer": "O God, who didst send thy servant Paulinus across the sea to baptise a northern king and pour the waters of salvation upon whole multitudes in the rivers of Northumbria: renew in us the boldness of the first missionaries, that we may confess thy name without fear; through Jesus Christ, the light of all nations. Amen."
+    },
+    {
+      "id": "cedd",
+      "pilgrimageSite": "St Mary's Church, Lastingham",
+      "pilgrimageTown": "Lastingham, North Yorkshire",
+      "prayer": "Heavenly Father, who didst send thy servant Cedd into the lair of wild beasts and robbers to consecrate it by forty days of prayer and fasting, making it a place of blessing and holy rest: purify in us likewise whatever ground is yet unclaimed by thy grace, and make us willing instruments of thy peace; through Christ our Lord. Amen."
+    },
+    {
+      "id": "chad-of-mercia",
+      "pilgrimageSite": "Lichfield Cathedral",
+      "pilgrimageTown": "Lichfield, Staffordshire",
+      "prayer": "O Lord, who didst bestow on thy bishop Chad such holy humility that he chose to walk where others rode, and such heavenly joy that the sound of wind and thunder drove him to prayer: grant us, after his example, to hold worldly honour lightly and to seek only thy face; through Jesus Christ our Lord. Amen."
+    },
+    {
+      "id": "werburgh",
+      "pilgrimageSite": "Chester Cathedral",
+      "pilgrimageTown": "Chester, Cheshire",
+      "prayer": "Almighty God, who didst raise up thy servant Werburgh from a royal house to be a mother and reformer of monastic life, and whose relics thou didst use to plant a great church in the midst of thy people: by her prayers, guard all those committed to our care and draw us always closer to thee; through Jesus Christ our Lord. Amen."
+    },
+    {
+      "id": "guthlac-of-crowland",
+      "pilgrimageSite": "Crowland Abbey",
+      "pilgrimageTown": "Crowland, Lincolnshire",
+      "prayer": "O God, who didst call thy servant Guthlac from the field of battle to the solitude of the fenland waste, there to combat the enemy of souls with prayer and thy holy word: strengthen us in our own spiritual warfare, and grant that, armed with the psalms of thy Church, we may overcome all that sets itself against thee; through Christ our Lord. Amen."
+    },
+    {
+      "id": "hugh-of-lincoln",
+      "pilgrimageSite": "Lincoln Cathedral",
+      "pilgrimageTown": "Lincoln, Lincolnshire",
+      "prayer": "O God, who endowed thy servant Hugh of Lincoln with a fearless love of justice and tender compassion for the sick, the outcast, and the poor: grant us the same holy boldness to speak truth before the powerful and to serve Christ in the least of his brothers and sisters; through Jesus Christ, our Judge and Redeemer. Amen."
+    },
+    {
+      "id": "triduana",
+      "pilgrimageSite": "St Triduana's Aisle, Restalrig Parish Church",
+      "pilgrimageTown": "Restalrig, Edinburgh",
+      "prayer": "Holy Triduana, who gave up the very light of your eyes rather than compromise your consecrated life, intercede for all who suffer affliction of sight and for those whose faith is tested by the desires of the powerful. By your unflinching witness, strengthen in us a love for God that surpasses every earthly thing. Amen."
+    },
+    {
+      "id": "ninian",
+      "pilgrimageSite": "Whithorn Priory",
+      "pilgrimageTown": "Whithorn, Dumfries and Galloway",
+      "prayer": "Blessed Ninian, first light of the gospel in Scotland, who raised your Candida Casa amid a people yet in darkness and carried Christ's name into the remotest places of the north, look with favour on all who seek truth in obscurity. May your prayers lead us, as you led the Southern Picts, from shadow into the brightness of God's eternal day. Amen."
+    },
+    {
+      "id": "columba-derry",
+      "pilgrimageSite": "Long Tower Church",
+      "pilgrimageTown": "Derry, County Londonderry",
+      "prayer": "O Columba, Dove of the Church, who wept for the oak groves of Derry even as you sailed toward a greater mission, teach us to offer our dearest attachments to God's service and to find in exile a wider home. By your love of learning and your tireless proclamation of the Word, draw us deeper into the mystery of Christ crucified and risen. Amen."
+    },
+    {
+      "id": "comgall",
+      "pilgrimageSite": "Bangor Abbey",
+      "pilgrimageTown": "Bangor, County Down",
+      "prayer": "Steadfast Comgall, who built at Bangor a school of prayer whose song never ceased and whose sons carried the faith to the furthest shores of Europe, intercede for all monastic communities and for all who seek God through a rule of life. Grant that the Church in our time may be renewed by the same Spirit that fired your community on the shore of Belfast Lough. Amen."
+    },
+    {
+      "id": "saint-patrick",
+      "pilgrimageSite": "St Patrick's Cathedral (Church of Ireland) and St Patrick's Cathedral (RC), Armagh",
+      "pilgrimageTown": "Armagh, County Armagh",
+      "prayer": "Glorious Patrick, who returned in love to the people who had once enslaved you and gave your whole life to their conversion, pray for us that we may answer God's call with the same reckless courage. Teach us to see, in every place of suffering, an opportunity for grace; and let the fire you kindled on the hill of Slane burn always in our hearts. Amen."
+    },
+    {
+      "id": "saint-malachy",
+      "pilgrimageSite": "St Patrick's Cathedral (RC)",
+      "pilgrimageTown": "Armagh, County Armagh",
+      "prayer": "Holy Malachy, reformer of the Irish Church and first of Ireland's canonised sons, who gave your last breath in the arms of your friend Bernard and died on the very feast of all the faithful departed, intercede for the Church in its continual need of renewal. May your zeal for right order and your tenderness toward the sick and the poor inspire all who serve in the Lord's house. Amen."
+    },
+    {
+      "id": "finnian-of-clonard",
+      "pilgrimageSite": "Clonard Abbey (ruins)",
+      "pilgrimageTown": "Clonard, County Meath",
+      "prayer": "Revered Finnian, teacher of the saints of Ireland, who gathered thousands on the banks of the Boyne and fashioned them into apostles for the world, pray for all who teach and for all who are searching for wisdom. May your example of disciplined learning and fervent prayer bear fruit in our generation as richly as it did in the age of Columba and Brendan. Amen."
+    },
+    {
+      "id": "oliver-plunkett",
+      "pilgrimageSite": "St Peter's RC Church (Shrine of St Oliver Plunkett)",
+      "pilgrimageTown": "Drogheda, County Louth",
+      "prayer": "Courageous Oliver, who endured mockery, torture, and an unjust death rather than betray your flock or deny your faith, stand beside all who face persecution for conscience's sake. By your forgiveness of those who conspired against you, teach us the freedom that comes only from placing justice entirely in the hands of God. Amen."
+    },
+    {
+      "id": "brigid-of-kildare",
+      "pilgrimageSite": "St Brigid's Cathedral",
+      "pilgrimageTown": "Kildare Town, County Kildare",
+      "prayer": "Radiant Brigid, Mary of the Gaels, who kept your sacred flame burning through a thousand years and opened wide the doors of your monastery to the poor, the stranger, and the sick, kindle in us something of your extravagant generosity. May the fire you lit at Kildare never be extinguished in the Church, but blaze to warm all who come cold and afraid to Christ's threshold. Amen."
+    },
+    {
+      "id": "kevin-of-glendalough",
+      "pilgrimageSite": "Glendalough Monastic City",
+      "pilgrimageTown": "Glendalough, County Wicklow",
+      "prayer": "Patient Kevin, who made your home in a cliff-side tomb above still waters and held yourself so quiet that wild creatures nested in your hands, teach us to seek God in stillness and to trust that grace comes most fully when we cease our striving. Through your intercession, may we find in the ordinary beauty of created things the presence of the One who made both the valley and the heart that longs for him. Amen."
+    },
+    {
+      "id": "duthac",
+      "pilgrimageSite": "St Duthac's Collegiate Church",
+      "pilgrimageTown": "Tain, Highland",
+      "prayer": "O Lord our God, you called your servant Duthac to be a bishop and wonder-worker in the far north of Scotland, drawing kings and pilgrims alike to seek your mercy at Tain. Through his prayers may we be renewed in holy perseverance and fervent penance, and find in you the grace we so often need to seek. Amen."
+    },
+    {
+      "id": "maelrubha",
+      "pilgrimageSite": "Applecross Monastery (A' Chomraich)",
+      "pilgrimageTown": "Applecross, Highland",
+      "prayer": "Almighty God, you led your servant Maelrubha across the sea from Ireland to the remote sanctuary of Applecross, and through his fifty years of labour brought the light of the gospel to the peoples of the northern Highlands. Grant us, after his example, the courage to carry your truth into places of darkness and difficulty, and the steadfastness to remain faithful to the end. Amen."
+    },
+    {
+      "id": "drostan",
+      "pilgrimageSite": "Deer Abbey",
+      "pilgrimageTown": "Old Deer, Aberdeenshire",
+      "prayer": "Lord God, you inspired your servant Drostan to leave wealth and rank for the silence of Aberdeenshire's hills, founding a monastery whose monks would set down the first words of Scottish Gaelic in the margins of holy scripture. May his intercession kindle in us a love of your word and the humility to seek you in solitude. Amen."
+    },
+    {
+      "id": "columba",
+      "pilgrimageSite": "Iona Abbey",
+      "pilgrimageTown": "Isle of Iona, Argyll and Bute",
+      "prayer": "O God of the pilgrim and the exile, you drew Columba from his homeland to the shores of Iona, and from that windswept island caused the fire of your gospel to spread across Scotland and beyond. Through his prayers, grant us the grace of holy exile from our own pride, that we may build, wherever we are placed, a sanctuary worthy of your name. Amen."
+    },
+    {
+      "id": "adomnan",
+      "pilgrimageSite": "Iona Abbey",
+      "pilgrimageTown": "Isle of Iona, Argyll and Bute",
+      "prayer": "Merciful God, you gave your servant Adomnán wisdom to record the life of the saints and courage to write into law the protection of the innocent in time of war. May his example inspire all who hold authority to use it in the service of justice and mercy, and may his prayers bring us ever closer to the peace that passes understanding. Amen."
+    },
+    {
+      "id": "fillan",
+      "pilgrimageSite": "Strath Fillan Priory",
+      "pilgrimageTown": "Kirkton, Stirlingshire",
+      "prayer": "Lord Jesus Christ, you endowed your servant Fillan with healing gifts that brought comfort to the suffering and hope to those whom the world had given up. Through his intercession, look with compassion on all who struggle under the weight of mental illness, and grant them healing of mind, body, and spirit. Amen."
+    },
+    {
+      "id": "john-ogilvie",
+      "pilgrimageSite": "St Aloysius' Church (National Shrine of St John Ogilvie)",
+      "pilgrimageTown": "Glasgow, Glasgow",
+      "prayer": "O God, you strengthened your martyr John Ogilvie to endure prolonged torment without betraying a single soul, and to die at Glasgow Cross holding fast to the faith he would not sell. By his intercession grant us courage in our own trials, and the grace never to purchase safety at the cost of integrity. Amen."
+    },
+    {
+      "id": "kentigern-mungo",
+      "pilgrimageSite": "Glasgow Cathedral (St Mungo's Cathedral)",
+      "pilgrimageTown": "Glasgow, Glasgow",
+      "prayer": "Loving God, you raised up Mungo to found a city upon prayer and proclaim your word to the peoples of Strathclyde, and you preserved his cathedral through centuries of upheaval as a sign of your abiding faithfulness. Through the intercession of this dear shepherd of Glasgow, let your Church flourish through the preaching of your word and the praising of your name. Amen."
+    },
+    {
+      "id": "margaret-of-scotland",
+      "pilgrimageSite": "Dunfermline Abbey",
+      "pilgrimageTown": "Dunfermline, Fife",
+      "prayer": "O Lord our God, you brought Margaret across storm-tossed seas to Scotland and made her a queen who gave herself without reserve to the service of the poor, the reform of your Church, and the raising of a holy household. Through her powerful intercession, form in us the same generosity of heart, that we may let no worldly comfort deflect us from the works of mercy. Amen."
+    },
+    {
+      "id": "andrew-the-apostle",
+      "pilgrimageSite": "St Andrews Cathedral",
+      "pilgrimageTown": "St Andrews, Fife",
+      "prayer": "Almighty God, your servant Andrew heard your Son's call beside the Sea of Galilee and left his nets at once to follow him; and by your providence the relics of this first-called apostle were borne to the shores of Scotland, making it a land under his protection. Through his prayers may we, like him, answer without delay and without reserve whenever your voice calls us to deeper discipleship. Amen."
+    },
+    {
+      "id": "mildrith",
+      "pilgrimageSite": "Minster Abbey",
+      "pilgrimageTown": "Minster-in-Thanet, Kent",
+      "prayer": "O God, who called your servant Mildred to leave worldly honour and take up the gentle yoke of the cloister on the isle of Thanet, grant us by her intercession the grace to choose humility over ambition and mercy over pride. As she welcomed the stranger and nursed the sick with her own hands, may we be made ready to serve our neighbours in your name. Amen."
+    },
+    {
+      "id": "dunstan",
+      "pilgrimageSite": "Glastonbury Abbey",
+      "pilgrimageTown": "Glastonbury, Somerset",
+      "prayer": "Almighty God, you drew your servant Dunstan from a hermit's forge at Glastonbury to become the reformer and shepherd of the English Church; grant that, fired by his example of patient craft and fearless holiness, we may mend what is broken, order what is disordered, and crown every work we undertake with praise of your name. By his prayers, renew in us that love of prayer, learning, and beauty which adorned his long life. Amen."
+    },
+    {
+      "id": "edward-the-confessor",
+      "pilgrimageSite": "Westminster Abbey",
+      "pilgrimageTown": "Westminster, London",
+      "prayer": "Lord God, you gave your servant Edward a kingly crown and the greater gift of a humble heart; by his prayers, grant to all who bear authority the wisdom to govern justly, the will to serve the poor, and the peace that passes understanding. As he built your house at Westminster with loving devotion, so build us up as living stones in that temple not made with hands. Amen."
+    },
+    {
+      "id": "thomas-more",
+      "pilgrimageSite": "Chelsea Old Church (More Chapel)",
+      "pilgrimageTown": "Chelsea, London",
+      "prayer": "Merciful God, who strengthened your servant Thomas More to hold fast to conscience when every worldly comfort urged him to yield, grant us the same steadfast integrity in the small as in the great trials of our lives. May we, who inherit the liberty of conscience he defended at the cost of his life, never sell that liberty cheaply or surrender it without prayer. Amen."
+    },
+    {
+      "id": "edmund-campion",
+      "pilgrimageSite": "Tyburn Convent (Shrine of the Martyrs)",
+      "pilgrimageTown": "Marble Arch, London",
+      "prayer": "O God of courage, you fashioned Edmund Campion into a diamond of wit and faith that no rack or threat could break; by his intercession, give us boldness to speak the truth we know, to bear the cost of our convictions, and to trust that your word will not return to you empty. May his cheerful sacrifice at Tyburn remind us that the glory to come outweighs every present affliction. Amen."
+    },
+    {
+      "id": "robert-southwell",
+      "pilgrimageSite": "Tyburn Convent (Shrine of the Martyrs)",
+      "pilgrimageTown": "Marble Arch, London",
+      "prayer": "Lord Jesus, you set a burning babe in the heart of your poet Robert Southwell, and no torment could quench that flame; grant us by his intercession a love for you that is as imaginative as it is steadfast. As he breathed grace into the English tongue through thirteen sessions of agony, may we too find in suffering a school of deeper praise. Amen."
+    },
+    {
+      "id": "earconwald",
+      "pilgrimageSite": "St Paul's Cathedral (site of Erkenwald's Shrine)",
+      "pilgrimageTown": "City of London, London",
+      "prayer": "Gracious God, whose bishop Erkenwald lit the city of London with a peacemaker's gentleness and a pastor's tireless care, hear the prayers of all who stand on the sacred ground where his shrine once drew the sick and sorrowing of England. Grant us the wisdom and charity he showed in reconciling those at war, that the city he served may be ever a place of justice, healing, and praise. Amen."
+    },
+    {
+      "id": "richard-of-chichester",
+      "pilgrimageSite": "Chichester Cathedral",
+      "pilgrimageTown": "Chichester, West Sussex",
+      "prayer": "Lord Christ, who so filled your servant Richard with love for you that he walked barefoot through his diocese and counted poverty a privilege, grant us the same clear-eyed devotion: to know you more clearly, love you more dearly, and follow you more nearly, day by day. By his prayers, free us from every attachment that would slow our steps toward you. Amen."
+    },
+    {
+      "id": "philip-howard",
+      "pilgrimageSite": "Arundel Cathedral",
+      "pilgrimageTown": "Arundel, West Sussex",
+      "prayer": "God of mercy, you transformed Philip Howard from a creature of royal courts into a patient prisoner of conscience, and in the darkness of the Tower gave him a peace no earthly king could take away; by his intercession, grant us the grace to bear affliction without bitterness and to carve on the walls of our own trials a testimony of faith as sure as his. May the glory he sought through ten years of silent suffering be ours at last. Amen."
+    },
+    {
+      "id": "swithun",
+      "pilgrimageSite": "Winchester Cathedral",
+      "pilgrimageTown": "Winchester, Hampshire",
+      "prayer": "Lord God, who taught your bishop Swithun to seek no glory but to lie where rain might fall and feet might tread upon him, grant us by his example that true humility which is content to be overlooked by men yet known to you. Through his prayers, water the dry ground of our hearts and let the gentle rain of your mercy fall upon all who call upon his name at Winchester. Amen."
+    },
+    {
+      "id": "brendan-the-navigator",
+      "pilgrimageSite": "Clonfert Cathedral",
+      "pilgrimageTown": "Clonfert, County Galway",
+      "prayer": "O God, who called your servant Brendan to seek your kingdom across the unmeasured deep, grant us the same holy boldness to trust in your providence on all the seas of our lives. Through his intercession, may those who journey by water be kept safe, and may we never lose sight of the shore of your eternal kingdom. We ask this through Christ our Lord. Amen."
+    },
+    {
+      "id": "cuthbert",
+      "pilgrimageSite": "Durham Cathedral",
+      "pilgrimageTown": "Durham, County Durham",
+      "prayer": "Almighty God, who drew your servant Cuthbert from the shepherd's hillside to the hermit's rock and from there to the care of all Northumbria, grant that we, following his example of prayer and compassion, may find you in solitude and serve you in our neighbour. By his intercession, heal our infirmities and lead us, through the wilderness of this world, to the peace of your eternal rest. Amen."
+    },
+    {
+      "id": "aidan-of-lindisfarne",
+      "pilgrimageSite": "Lindisfarne Priory, Holy Island",
+      "pilgrimageTown": "Lindisfarne (Holy Island), Northumberland",
+      "prayer": "Lord of all gentleness, who sent your servant Aidan on foot through the fields of Northumbria to bring the good news to king and slave alike, grant us the same unhurried charity and disregard for the world's distinctions. By his intercession, raise up in our day preachers who speak with humility and live with integrity, that your Church may flourish among all peoples. Amen."
+    },
+    {
+      "id": "bartholomew-of-farne",
+      "pilgrimageSite": "Inner Farne Island",
+      "pilgrimageTown": "Inner Farne, Northumberland",
+      "prayer": "O God, who sustained your servant Bartholomew through forty years of wind and solitude on the bare rock of Inner Farne, teach us through his example that perseverance in prayer is itself a form of witness. May we, in the midst of a restless world, find the still centre where you dwell, and may his intercession strengthen all who bear the hidden burdens of the contemplative life. Amen."
+    },
+    {
+      "id": "oswald-of-northumbria",
+      "pilgrimageSite": "St Oswald's Church, Heavenfield",
+      "pilgrimageTown": "Heavenfield, near Hexham, Northumberland",
+      "prayer": "Almighty God, who gave your servant Oswald the grace to raise a cross in the darkness before battle and to trust your strength above all worldly power, grant us the same faith in the hour of our trials. By the intercession of this royal martyr, defend the innocent, guide the rulers of nations, and bring all those who suffer beneath unjust power into the freedom of your kingdom. Amen."
+    },
+    {
+      "id": "bede",
+      "pilgrimageSite": "Durham Cathedral (Galilee Chapel)",
+      "pilgrimageTown": "Durham, County Durham",
+      "prayer": "O God of truth and light, who gave your servant Bede a mind wide enough to compass the whole learning of his age and a heart humble enough to see in it only your glory, grant that all who seek knowledge may seek it for your sake. By his intercession, inspire writers, scholars, and all who labour with words to speak truth with clarity and love. Amen."
+    },
+    {
+      "id": "benedict-biscop",
+      "pilgrimageSite": "St Peter's Church, Monkwearmouth",
+      "pilgrimageTown": "Monkwearmouth, Sunderland, Tyne and Wear",
+      "prayer": "Lord God, whose servant Benedict Biscop crossed the seas five times to bring the gifts of learning and beauty back to a land still new to your Gospel, grant us the same tireless generosity in placing every talent and resource at the service of your Church. By his intercession, bless all who build and beautify places of worship, and all who gather the knowledge of one generation as an inheritance for the next. Amen."
+    },
+    {
+      "id": "robert-of-newminster",
+      "pilgrimageSite": "Newminster Abbey (ruins)",
+      "pilgrimageTown": "Morpeth, Northumberland",
+      "prayer": "O God, who called your servant Robert from the fellowship of Fountains to plant a new shoot of Cistercian life in the rough borderlands of Northumbria, grant that the Church may never cease to send forth those who will begin again in hard places and with little provision. By his intercession, sustain all who lead communities in remote or difficult circumstances, and kindle in us the love of holy poverty that was the fire of his life. Amen."
+    },
+    {
+      "id": "hilda-of-whitby",
+      "pilgrimageSite": "Whitby Abbey",
+      "pilgrimageTown": "Whitby, North Yorkshire",
+      "prayer": "Gracious God, who raised up Hilda to govern a double monastery on the windswept cliffs of Whitby and made her a mother to bishops, a patron to poets, and a host to the great council that shaped your Church in England, grant us wisdom to lead, courage to discern, and openness to discover gifts in those the world overlooks. By her intercession, bless all in positions of authority in your Church, that they may serve with both learning and love. Amen."
+    },
+    {
+      "id": "wilfrid",
+      "pilgrimageSite": "Ripon Cathedral",
+      "pilgrimageTown": "Ripon, North Yorkshire",
+      "prayer": "Almighty God, whose servant Wilfrid endured exile and opposition without forsaking the truth he had received, grant us the same steadfastness in holding fast to the faith through seasons of reversal and misunderstanding. By his intercession, guide your Church in all questions of order and unity, and give to all her ministers the humility to submit and the courage to speak when submission would be faithlessness. Amen."
+    },
+    {
+      "id": "oswald-of-worcester",
+      "pilgrimageSite": "Worcester Cathedral",
+      "pilgrimageTown": "Worcester, Worcestershire",
+      "prayer": "O God, who raised up your servant Oswald to reform the Church by the beauty of monastic life and to serve the poor with the same hands he used to wash their feet, grant us, at his intercession, a spirit of humble service and fervent prayer. May we, like him, find our greatness not in power but in self-giving love, and so attain the life that never ends. Through Christ our Lord, Amen."
+    },
+    {
+      "id": "thomas-de-cantilupe",
+      "pilgrimageSite": "Hereford Cathedral",
+      "pilgrimageTown": "Hereford, Herefordshire",
+      "prayer": "Almighty God, who gave your bishop Thomas of Hereford a shepherd's zeal for truth and an unflinching courage before earthly power, hear our prayers through his intercession and grant that we may pursue justice without fear and seek reconciliation without pride. May his witness at this holy shrine kindle in us a love for your Church that counts no cost too great. Through Christ our Lord, Amen."
+    },
+    {
+      "id": "john-kemble",
+      "pilgrimageSite": "St Francis Xavier Church (hand relic shrine)",
+      "pilgrimageTown": "Hereford, Herefordshire",
+      "prayer": "Lord God, who sustained your priest John Kemble through fifty years of hidden ministry and gave him grace to face death with serenity and even with a last gesture of kindness, strengthen us by his example to be faithful in the ordinary and steadfast in the extreme. Grant that those who venerate his relics may receive courage to witness to the faith in the midst of a sceptical world. Through Christ our Lord, Amen."
+    },
+    {
+      "id": "etheldreda-of-ely",
+      "pilgrimageSite": "Ely Cathedral",
+      "pilgrimageTown": "Ely, Cambridgeshire",
+      "prayer": "O God, who endowed your servant Æthelthryth with royal dignity and a deeper consecration to yourself, and whose power was shown in her incorrupt body long after death, teach us by her intercession to hold lightly the honours of this world and to seek the imperishable beauty of holiness. May all who come in pilgrimage to this cathedral find in her example the grace to live with integrity of heart. Through Christ our Lord, Amen."
+    },
+    {
+      "id": "felix-of-burgundy",
+      "pilgrimageSite": "St Andrew's Church (site of Felix's monastery)",
+      "pilgrimageTown": "Soham, Cambridgeshire",
+      "prayer": "Gracious God, who sent your servant Felix across the sea from Burgundy to free the people of East Anglia from the long darkness of unbelief, stir in us by his intercession a missionary boldness to carry the gospel to those who have not yet heard it. Grant that the Church may always find among her sons and daughters those who love the world as he did, with patient labour and joyful confidence. Through Christ our Lord, Amen."
+    },
+    {
+      "id": "edmund-the-martyr",
+      "pilgrimageSite": "Bury St Edmunds Abbey and Cathedral",
+      "pilgrimageTown": "Bury St Edmunds, Suffolk",
+      "prayer": "O Lord of hosts, who gave your king Edmund courage to refuse apostasy even when bound and pierced with arrows, grant us through his intercession the strength to hold fast to our faith when the world demands we surrender it. May the witness of this royal martyr, who chose death rather than deny you, inspire your Church to love you above all earthly safety. Through Christ our Lord, Amen."
+    },
+    {
+      "id": "botolph-of-thorney",
+      "pilgrimageSite": "St Botolph's Church, Iken",
+      "pilgrimageTown": "Iken, Suffolk",
+      "prayer": "O God, who called your servant Botolph to make his home in a desolate marsh and to build there a house of prayer and learning, bless all who travel uncertain roads and grant them his protection at every threshold. May travellers and wayfarers know themselves guarded by your providence, and arrive at last at the home you have prepared for them. Through Christ our Lord, Amen."
+    },
+    {
+      "id": "walstan-of-bawburgh",
+      "pilgrimageSite": "St Mary and St Walstan's Church",
+      "pilgrimageTown": "Bawburgh, Norfolk",
+      "prayer": "Lord Jesus, who blessed the labour of your servant Walstan in the fields and honoured his hidden life of poverty and service, grant through his prayers that all who work with their hands may know the dignity of their toil and find in it a share in your own labour for the world. May the springs that rose along the path of his last journey be for us a sign that grace flows wherever your saints have walked. Amen."
+    },
+    {
+      "id": "augustine-of-canterbury",
+      "pilgrimageSite": "St Augustine's Abbey",
+      "pilgrimageTown": "Canterbury, Kent",
+      "prayer": "Almighty God, whose servant Augustine overcame fear and uncertainty to bring the gospel to the English people and establish the see of Canterbury as a lasting foundation of faith, grant that your Church may never lose the apostolic courage he showed when he crossed the sea at your command. By his intercession, raise up in every age those willing to go where they are sent, trusting only in your promise. Through Christ our Lord, Amen."
+    },
+    {
+      "id": "thomas-becket",
+      "pilgrimageSite": "Canterbury Cathedral",
+      "pilgrimageTown": "Canterbury, Kent",
+      "prayer": "O God, whose archbishop Thomas counted not his life dear to himself when the freedom of your Church was at stake, grant us through his martyrdom the grace to stand firm in conscience when ease and self-interest counsel surrender. May the blood shed at this holy altar remind all who come in pilgrimage that truth is worth dying for, and that you vindicate those who trust in you. Through Christ our Lord, Amen."
+    },
+    {
+      "id": "david-of-wales",
+      "pilgrimageSite": "St Davids Cathedral",
+      "pilgrimageTown": "St Davids, Pembrokeshire",
+      "prayer": "O God, who didst raise up thy servant David to be the light of Wales and a beacon of holy simplicity, grant that, following his example, we may attend to the little things of daily life with faithful and undivided hearts. May his intercession sustain us in prayer and in the service of our neighbours, that we too may know thee as our all-sufficient portion. Amen."
+    },
+    {
+      "id": "non",
+      "pilgrimageSite": "Chapel of St Non and Holy Well",
+      "pilgrimageTown": "St Davids, Pembrokeshire",
+      "prayer": "Gracious Lord, who didst bless thy handmaid Non with a holy fruitfulness beyond all earthly reckoning, granting that the very ground should spring with healing waters at the birth of thy servant David, hear our prayers through her intercession. As she bore in patient faith the trials appointed to her, so strengthen us in our own hour of darkness to trust in thy merciful providence. Amen."
+    },
+    {
+      "id": "teilo",
+      "pilgrimageSite": "Llandaff Cathedral",
+      "pilgrimageTown": "Cardiff",
+      "prayer": "O Lord God, who didst inspire thy bishop Teilo to plant the faith across Wales, Brittany, and Cornwall, and whose sanctity was so great that three communities each claimed him as their own treasure, grant us through his prayers a share in that charity which draws all people together in thee. Let the witness of his joyful exile and his labours among the sick teach us to hold the gifts of this world lightly and to seek our homeland in thee alone. Amen."
+    },
+    {
+      "id": "illtud",
+      "pilgrimageSite": "St Illtyd's Church",
+      "pilgrimageTown": "Llantwit Major, Vale of Glamorgan",
+      "prayer": "Almighty God, who raised up thy servant Illtud from the life of arms to become the most learned of all the Britons, and through his school at Llantwit Major didst form a generation of saints who carried thy gospel to the ends of the earth, grant that we who seek wisdom may find it first in thee. May his intercession kindle in us a love of holy learning, and a willingness to lay aside all that hinders our progress toward thee. Amen."
+    },
+    {
+      "id": "cadoc",
+      "pilgrimageSite": "St Cadoc's Church",
+      "pilgrimageTown": "Llancarfan, Vale of Glamorgan",
+      "prayer": "O God, who didst endow thy servant Cadoc with such wisdom that the nations called him Cattwg the Wise, and who through his monastery at Llancarfan didst send the light of learning from Wales to Scotland and Brittany, grant us through his intercession a wise and humble spirit. Help us to pursue thy truth with constancy, that we may one day rejoice with all thy saints in the wisdom that neither age nor sorrow can diminish. Amen."
+    },
+    {
+      "id": "dubricius",
+      "pilgrimageSite": "Llandaff Cathedral",
+      "pilgrimageTown": "Cardiff",
+      "prayer": "Lord Jesus Christ, who didst draw thy servant Dyfrig from the frontier lands of Wales to become the chief shepherd of thy Church among the Britons, and who taught him a holy humility to yield precedence to one holier than himself, grant us through his prayers the grace of true selflessness. As he trained Teilo and Samson to carry thy gospel far beyond what his own hands could reach, so bless all who teach and form others in the faith. Amen."
+    },
+    {
+      "id": "beuno",
+      "pilgrimageSite": "St Beuno's Church",
+      "pilgrimageTown": "Clynnog Fawr, Gwynedd",
+      "prayer": "O God of wonders, who didst work through thy servant Beuno mighty signs of healing and restoration, and who didst make his church at Clynnog Fawr a place of refuge for the sick and the suffering, look with compassion on all who come to thee in need. Through his intercession, grant healing to the afflicted in body and soul, and confirm in us the faith that even what is broken beyond our mending is never beyond thy power to restore. Amen."
+    },
+    {
+      "id": "winefride",
+      "pilgrimageSite": "St Winefride's Well",
+      "pilgrimageTown": "Holywell, Flintshire",
+      "prayer": "O Lord, who in the hour of Winefride's suffering didst cause a spring of healing to rise from stony ground, and didst restore her to life and fruitfulness through the prayers of thy servant Beuno, grant through her intercession relief to all who are afflicted in body, mind, or spirit. May the waters of this holy well be for us a sign of the unending mercy with which thou dost renew thy people, and may we drink more deeply each day from the living water of thy grace. Amen."
+    },
+    {
+      "id": "asaph",
+      "pilgrimageSite": "St Asaph Cathedral",
+      "pilgrimageTown": "St Asaph, Denbighshire",
+      "prayer": "Heavenly Father, who didst teach the boy Asaph to carry fire unscathed and to inherit the ancient see of Llanelwy with a wisdom beyond his years, grant through his intercession that thy Church may always burn with a fervent zeal that neither trial nor weakness can quench. As he received the trust of Kentigern and bore it faithfully to his life's end, so may we prove worthy of all thou hast entrusted to our keeping. Amen."
+    },
+    {
+      "id": "melangell",
+      "pilgrimageSite": "St Melangell's Church",
+      "pilgrimageTown": "Pennant Melangell, Powys",
+      "prayer": "O God, who didst draw thy servant Melangell into the hidden valley of Tanat and there didst make her a shelter for the hunted and a sign of thy compassionate sanctuary, grant through her prayers that all who flee to thee for refuge may truly find their rest in thee. May we learn from her still and solitary life to seek thee in the depths of silence, and may this holy valley be for all who come to it a place of meeting with thy healing mercy. Amen."
+    },
+    {
+      "id": "richard-gwyn",
+      "pilgrimageSite": "Church of St Richard Gwyn, King Street, Wrexham",
+      "pilgrimageTown": "Wrexham, Wrexham County Borough",
+      "prayer": "Lord Jesus Christ, who strengthened thy servant Richard Gwyn to endure rack and prison rather than betray his faith or his brethren, grant us by his intercession the courage to speak truth whatever the cost and to hold fast to thee in all our trials. May the witness of this schoolmaster-poet and father of six, protomartyr of Wales, inspire in thy Church a fearless love that no earthly power can silence. Amen."
+    },
+    {
+      "id": "david-lewis",
+      "pilgrimageSite": "St David Lewis RC Church, Usk (site of his execution)",
+      "pilgrimageTown": "Usk, Monmouthshire",
+      "prayer": "Almighty God, whose servant David Lewis ministered to the poorest of thy people in Monmouthshire for thirty years, moving by night through farmhouse and barn to bring thy sacraments to those who had no other shepherd, hear our prayer through his intercession and raise up in thy Church pastors who seek not comfort but the lost. By the example of him whom the poor called Tad y Tlodion, may we serve thee in one another without counting the cost. Amen."
+    },
+    {
+      "id": "petroc",
+      "pilgrimageSite": "St Petroc's Church and Priory, Bodmin",
+      "pilgrimageTown": "Bodmin, Cornwall",
+      "prayer": "Gracious God, who called thy servant Petroc from the courts of princes to the wild headlands of Cornwall, there to found monasteries, tame wolves, and carry thy gospel to the uttermost west, grant us through his intercession a like willingness to leave behind all false security and follow where thou leadest. May the faithful who come to his shrine at Bodmin be strengthened in faith and renewed in the peace that passes understanding. Amen."
+    },
+    {
+      "id": "piran",
+      "pilgrimageSite": "St Piran's Oratory, Penhale Sands, Perranzabuloe",
+      "pilgrimageTown": "Perranporth, Cornwall",
+      "prayer": "Lord of all creation, who led thy servant Piran to the shore of Cornwall and hid his little oratory in the dunes as a lamp set under the earth until thy time, grant us through his prayers a spirit of patient solitude and joyful simplicity. As he who found tin flowing from the fire became patron of those who labour in darkness underground, so by his intercession may all who toil in hidden places know the light of thy presence. Amen."
+    },
+    {
+      "id": "sidwell",
+      "pilgrimageSite": "St Sidwell's Church, Sidwell Street, Exeter",
+      "pilgrimageTown": "Exeter, Devon",
+      "prayer": "O God, who dost gather the blood of thy martyrs as precious seed, look graciously upon us who honour thy servant Sidwell, slain unjustly at the city gate of Exeter, and at whose falling a spring of healing water burst from the earth. Grant us through her intercession purity of heart and readiness to suffer wrong rather than do it, that we may at last be counted among those whom no violence can separate from thy love. Amen."
+    },
+    {
+      "id": "boniface",
+      "pilgrimageSite": "Holy Cross Church (Boniface's birthplace minster), Crediton",
+      "pilgrimageTown": "Crediton, Devon",
+      "prayer": "Eternal God, who sent thy servant Boniface from the fields of Devon across the seas to fell the idols of the nations and plant thy Church in the heart of Europe, grant us through his intercession the boldness to proclaim thy gospel wherever ignorance or fear holds sway. As he laid down his life unarmed among those he came to save, may we too trust that thy word is mightier than any sword. Amen."
+    },
+    {
+      "id": "edward-the-martyr",
+      "pilgrimageSite": "Shaftesbury Abbey (site of his enshrinement), Shaftesbury",
+      "pilgrimageTown": "Shaftesbury, Dorset",
+      "prayer": "Lord Jesus, innocent lamb who bore the sins of the world, we remember before thee thy servant Edward, king and martyr, who in the innocence of youth was betrayed by those he trusted and whose incorrupt body bore witness to thy power over death. Grant us through his intercession steadfastness in faith when we are wronged, and the grace to entrust all judgement to thee who seest in secret. Amen."
+    },
+    {
+      "id": "aldhelm",
+      "pilgrimageSite": "Malmesbury Abbey, Malmesbury",
+      "pilgrimageTown": "Malmesbury, Wiltshire",
+      "prayer": "O God, the fountain of all wisdom, who didst fill thy servant Aldhelm with such learning and wit that he stood on bridges singing to draw souls within earshot of thy truth, grant us through his intercession a delight in all good knowledge rightly used, and the ingenuity to commend thy gospel to every generation in forms they can receive. By his example may thy Church never be dull in the telling of the everlasting story. Amen."
+    }
+  ]
+}

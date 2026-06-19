@@ -186,17 +186,41 @@
   function pickVoice() {
     try {
       const vs = speechSynthesis.getVoices();
+      // Prefer a natural, named British English voice when one is installed.
+      const pref = ['Google UK English Female', 'Google UK English Male', 'Serena', 'Kate', 'Stephanie',
+        'Daniel', 'Arthur', 'Oliver', 'Microsoft Libby Online (Natural) - English (United Kingdom)',
+        'Microsoft Sonia Online (Natural) - English (United Kingdom)'];
+      for (const n of pref) { const v = vs.find((x) => x.name === n); if (v) { voice = v; return; } }
       voice = vs.find((v) => /en[-_]GB/i.test(v.lang)) || vs.find((v) => /^en/i.test(v.lang)) || vs[0] || null;
     } catch { voice = null; }
   }
   try { pickVoice(); speechSynthesis.addEventListener('voiceschanged', pickVoice); } catch { /* noop */ }
 
+  // Build clear, naturally-spoken narration: expand abbreviations the speech
+  // engine mangles ("St" -> "Saint", "c." -> "circa", drop "S.J."/"O.S.B."...).
+  function speechText(s) {
+    const parts = [s.name, s.epithet, s.intro, shortSummary(s)];
+    if (s.pilgrimage && s.pilgrimage.site) {
+      parts.push(`You can visit ${s.pilgrimage.site}${s.pilgrimage.town ? ', ' + s.pilgrimage.town : ''}`);
+    }
+    return parts.filter(Boolean).join('. ')
+      .replace(/\bSt\.?\s/g, 'Saint ')
+      .replace(/\bc\.\s*(?=\d)/g, 'circa ')
+      .replace(/\bd\.\s*(?=\d)/g, 'died ')
+      .replace(/,?\s*(?:S\.?J\.?|O\.?S\.?B\.?|O\.?F\.?M\.?|O\.?P\.?)\b/g, '')
+      .replace(/&/g, ' and ')
+      .replace(/[—–]/g, ', ')
+      .replace(/\s+/g, ' ')
+      .replace(/\.\s*\./g, '.')
+      .trim();
+  }
   function narrate(s) {
     if (muted || !unlocked || !s) return;
     try {
       speechSynthesis.cancel();
-      const u = new SpeechSynthesisUtterance(`${s.name}. ${s.epithet}. ${s.intro} ${shortSummary(s)}`);
-      u.rate = 0.92; u.pitch = 1; u.volume = 1;
+      const u = new SpeechSynthesisUtterance(speechText(s));
+      u.rate = 0.9; u.pitch = 1.0; u.volume = 1;
+      u.lang = (voice && voice.lang) || 'en-GB';
       if (voice) u.voice = voice;
       speechSynthesis.speak(u);
     } catch { /* ignore */ }
@@ -259,6 +283,14 @@
            <div class="saint__facts-head">Curious facts</div>
            <ul class="saint__facts">${facts}</ul>
          </div>` : '';
+    const pilg = (s.pilgrimage && s.pilgrimage.site)
+      ? `<div class="saint__pilg rise" style="--rise-delay:.32s">
+           <span class="saint__pilg-label">Pilgrimage</span>
+           <span class="saint__pilg-site">${esc(s.pilgrimage.site)}</span>
+           ${s.pilgrimage.town ? `<span class="saint__pilg-town">${esc(s.pilgrimage.town)}</span>` : ''}
+         </div>` : '';
+    const prayer = s.prayer
+      ? `<blockquote class="saint__prayer rise" style="--rise-delay:.58s">✛ ${esc(s.prayer)}</blockquote>` : '';
 
     saintEl.innerHTML = `
       <div class="saint__left">
@@ -271,6 +303,7 @@
           <div><dt>Feast</dt><dd>${esc(s.feast)}</dd></div>
           <div><dt>Lived</dt><dd>${esc(s.era)}</dd></div>
         </dl>
+        ${pilg}
         ${credit}
       </div>
       <div class="saint__right">
@@ -279,6 +312,7 @@
         <p class="saint__intro rise" style="--rise-delay:.24s">${esc(s.intro)}</p>
         ${summary}
         ${factsBlock}
+        ${prayer}
       </div>`;
 
     display.classList.add('has-saint');

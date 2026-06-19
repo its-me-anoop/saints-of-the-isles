@@ -516,5 +516,44 @@
     "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Bronze_casket_for_St_Mildred%27s_relics.JPG",
     "license": "CC BY-SA 3.0",
     "artist": "Mum's taxi"
+  },
+  "bronagh": {
+    "name": "St Brónach",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/2/28/Stbronagh.jpg",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Stbronagh.jpg",
+    "license": "Public domain",
+    "artist": "Mickeydoyle"
+  },
+  "john-roberts": {
+    "name": "St John Roberts",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/6/6b/John_Roberts_%28martyr%29.webp",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:John_Roberts_(martyr).webp",
+    "license": "Public domain",
+    "artist": "Unknown authorUnknown author"
+  },
+  "anne-line": {
+    "name": "St Anne Line",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/9/9a/St_Anne_Line.jpg",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:St_Anne_Line.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Caedwalla"
+  },
+  "carlo-acutis": {
+    "name": "St Carlo Acutis",
+    "source": "https://upload.wikimedia.org/wikipedia/en/c/c8/Carlo_Acutis_%28born_1991%29.jpg"
+  },
+  "john-jones": {
+    "name": "St John Jones",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/0/07/John-jones.png",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:John-jones.png",
+    "license": "CC BY-SA 4.0",
+    "artist": "[former] Chilworth Friary of the Holy Ghost"
+  },
+  "osmund-of-salisbury": {
+    "name": "St Osmund",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Saint_Osmund_colored_statue.jpg/960px-Saint_Osmund_colored_statue.jpg",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Saint_Osmund_colored_statue.jpg",
+    "license": "CC BY 2.0",
+    "artist": "James Bradley"
   }
 }

@@ -9,13 +9,17 @@ short summary, and a few curious facts, set in an illuminated-manuscript style.
 The two screens stay in sync over your local network through a small Node
 server — **no pairing code, they connect automatically**.
 
-- **78 saints** across England, Scotland, Wales, Northern Ireland & Ireland.
+- **85 saints** across England, Scotland, Wales, Northern Ireland & Ireland —
+  from St Cuthbert to **St Carlo Acutis** (born in London, canonised 2025), each
+  with a **pilgrimage site** and a short **prayer**.
 - A **large, geographically accurate** UK + Ireland map (real coastline, real
   pin positions) rendered from open GISCO geometry, filling the tablet.
 - **Scrub to preview** (drag a finger across the map to see a circular avatar of
   the saint under your finger; lift to send them to the big screen),
   **pinch to zoom**, and a **Map / List** toggle (saints grouped by country).
-- **Real portraits** for 74 of the 78 saints, downloaded from Wikimedia Commons
+- The **big screen narrates** each saint aloud (Web Speech), reads the
+  pilgrimage site, and plays gentle ambient music — all toggled from the tablet.
+- **Real portraits** for 80 of the 85 saints, downloaded from Wikimedia Commons
   with full attribution (the few without a usable image show an elegant
   monogram). Images are stored locally so the kiosk works offline.
 - The **big screen** opens with a living constellation of drifting saint
