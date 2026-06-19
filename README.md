@@ -59,41 +59,26 @@ transport automatically:
 
 - **WebSocket** when a relay server is present (local `npm start`) — the tablet
   and big screen connect automatically across the network, no code needed.
-- **WebRTC pairing** when there is no server (a static host such as **Vercel**).
+- **MQTT pairing** when there is no server (a static host such as **Vercel**).
   The big screen shows a 4-character **pairing code**; enter it on the tablet
-  and the two connect **directly, device-to-device**. A free public PeerJS
-  broker is used only for the brief handshake — the live link is a direct
-  peer-to-peer DataChannel, so it works across separate devices with no backend.
+  and both subscribe to a topic named after that code on a public MQTT broker
+  (secure WebSocket). The tiny sync messages relay through the broker, so it
+  works across **any network and on iOS Safari** — no TURN, no NAT/firewall
+  traversal, no accounts. (WebRTC was tried first but iOS Safari's local-network
+  handling made direct device-to-device links unreliable.)
 
 ### Pairing on the hosted site
-1. Open **`/display`** on the big screen — it shows a pairing code (e.g. `3YWS`).
-2. Open **`/tablet`** on the tablet, type the code, tap **Connect**.
-3. They link up; tapping a saint on the tablet now reveals it on the big screen.
-   Tap the "Big screen" status dot on the tablet to re-pair if the link drops.
+1. Open **`/display`** on the big screen — it shows a pairing code (e.g. `42XQ`).
+2. Open **`/tablet`** on the tablet, type the code, tap **Connect** — connects in
+   a second or two, on any network (same Wi-Fi, different Wi-Fi, or mobile data).
+3. Tapping a saint on the tablet reveals it on the big screen. Tap the
+   "Big screen" status dot on the tablet to re-pair if the link drops.
 
-**Keep both devices on the same Wi-Fi.** WebRTC connects them directly, which
-works on a shared network without client-isolation (the normal on-site setup).
-Connecting across *different* networks (e.g. mobile data, or guest Wi-Fi that
-isolates clients / uses symmetric NAT) requires a **TURN relay**, and there is
-no working free public one. To support those cases, add your own TURN
-credentials (a free metered.ca key is plenty) in any of these ways — no code
-change needed:
-
-```js
-// option A: a tiny inline <script> before the other scripts, on both pages
-window.SAINTS_TURN = [{ urls: 'turn:YOUR.HOST:3478', username: 'U', credential: 'C' }];
-```
-```
-// option B: per-device, in the browser console / DevTools
-localStorage.setItem('saints-ice', JSON.stringify([
-  { urls: 'stun:stun.l.google.com:19302' },
-  { urls: 'turn:YOUR.HOST:3478', username: 'U', credential: 'C' }
-]));
-// option C: a URL param — ?ice=<base64 of that same JSON array>
-```
-
-Append `?rtc` to either URL to force pairing mode even when a relay server is
-available (handy for testing).
+The brokers used (EMQX, then HiveMQ as fallback) are free public ones — ideal
+for zero-setup, but they're shared/best-effort. For a high-stakes installation,
+point `BROKERS` in `connection.js` at your own MQTT-over-WSS broker (any hosted
+MQTT service, free tiers available). Append `?rtc` to either URL to force
+pairing mode even when a relay server is available (handy for testing).
 
 > Live demo: **https://saints-of-the-isles.vercel.app** — open `/display` and
 > `/tablet` on two devices and pair them.
