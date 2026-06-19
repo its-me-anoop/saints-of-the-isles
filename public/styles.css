@@ -804,6 +804,7 @@ body {
   margin: 0.1em 0 0;
 }
 .pairgate p { color: var(--mist); margin: 0 0 0.6em; line-height: 1.5; }
+.pairgate p small { color: var(--mist-dim); font-size: 0.82em; }
 .pairgate__input {
   font-family: var(--font-deco);
   font-weight: 700;

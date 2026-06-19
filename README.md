@@ -71,9 +71,29 @@ transport automatically:
 3. They link up; tapping a saint on the tablet now reveals it on the big screen.
    Tap the "Big screen" status dot on the tablet to re-pair if the link drops.
 
-Both devices need internet only for the initial handshake; the same venue
-Wi-Fi gives the lowest-latency link. Append `?rtc` to either URL to force
-pairing mode even when a relay server is available.
+**Keep both devices on the same Wi-Fi.** WebRTC connects them directly, which
+works on a shared network without client-isolation (the normal on-site setup).
+Connecting across *different* networks (e.g. mobile data, or guest Wi-Fi that
+isolates clients / uses symmetric NAT) requires a **TURN relay**, and there is
+no working free public one. To support those cases, add your own TURN
+credentials (a free metered.ca key is plenty) in any of these ways — no code
+change needed:
+
+```js
+// option A: a tiny inline <script> before the other scripts, on both pages
+window.SAINTS_TURN = [{ urls: 'turn:YOUR.HOST:3478', username: 'U', credential: 'C' }];
+```
+```
+// option B: per-device, in the browser console / DevTools
+localStorage.setItem('saints-ice', JSON.stringify([
+  { urls: 'stun:stun.l.google.com:19302' },
+  { urls: 'turn:YOUR.HOST:3478', username: 'U', credential: 'C' }
+]));
+// option C: a URL param — ?ice=<base64 of that same JSON array>
+```
+
+Append `?rtc` to either URL to force pairing mode even when a relay server is
+available (handy for testing).
 
 > Live demo: **https://saints-of-the-isles.vercel.app** — open `/display` and
 > `/tablet` on two devices and pair them.
