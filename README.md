@@ -4,27 +4,22 @@ An interactive, two-screen exhibition piece. Visitors **touch a place on a real
 map of the British Isles on a tablet**, and a **large screen** beside it comes
 alive with the story of the Catholic saint who shaped that place — their actual
 portrait (a painting, icon, statue or stained-glass window), dates, feast day, a
-short tale, fun facts, and a closing quote, set in an illuminated-manuscript
-style.
+short summary, and a few curious facts, set in an illuminated-manuscript style.
 
-The two screens stay in sync over the local network, so the tablet and the big
-display can be the same computer (two windows) **or two separate devices on the
-same Wi-Fi**.
+The two screens stay in sync over your local network through a small Node
+server — **no pairing code, they connect automatically**.
 
 - **78 saints** across England, Scotland, Wales, Northern Ireland & Ireland.
 - A **large, geographically accurate** UK + Ireland map (real coastline, real
-  pin positions) rendered from open GISCO geometry, filling the tablet so it's
-  easy to touch.
-- **Scrub to preview:** drag a finger across the map and a circular avatar of
-  the saint under your finger appears; lift to send them to the big screen.
-- **Pinch to zoom** the map (two fingers) and **switch to a List view** — saints
-  grouped by country, tap to send any of them to the big screen.
+  pin positions) rendered from open GISCO geometry, filling the tablet.
+- **Scrub to preview** (drag a finger across the map to see a circular avatar of
+  the saint under your finger; lift to send them to the big screen),
+  **pinch to zoom**, and a **Map / List** toggle (saints grouped by country).
 - **Real portraits** for 74 of the 78 saints, downloaded from Wikimedia Commons
   with full attribution (the few without a usable image show an elegant
   monogram). Images are stored locally so the kiosk works offline.
-- The **big screen** opens with a living constellation of saint portraits
-  drifting behind the title, and each reveal stays lean — a short summary and a
-  few curious facts, never overflowing.
+- The **big screen** opens with a living constellation of drifting saint
+  portraits; each reveal stays lean — a short summary and a few curious facts.
 - **Sound is controlled from the tablet** (the 🔔 button); the big screen obeys.
 
 ---
@@ -46,42 +41,18 @@ The terminal prints the addresses to open. Typically:
 
 Run on another port with `PORT=8080 npm start`.
 
-### Two devices on the same Wi-Fi
+### Two devices (tablet + big screen)
 
-The server also prints a `http://<your-ip>:3000/...` address. Open `…/tablet` on
-the tablet and `…/display` on the screen's browser — they connect automatically
-and reconnect on their own if a device sleeps or reboots.
+The server also prints a `http://<your-ip>:3000/...` address. On **both**
+devices open that address (not `localhost` — on the tablet, `localhost` means
+the tablet itself):
 
-## Hosting & how the two screens pair
+- big screen → `http://<your-ip>:3000/display`
+- tablet → `http://<your-ip>:3000/tablet`
 
-The sync layer ([`public/connection.js`](public/connection.js)) picks its
-transport automatically:
-
-- **WebSocket** when a relay server is present (local `npm start`) — the tablet
-  and big screen connect automatically across the network, no code needed.
-- **MQTT pairing** when there is no server (a static host such as **Vercel**).
-  The big screen shows a 4-character **pairing code**; enter it on the tablet
-  and both subscribe to a topic named after that code on a public MQTT broker
-  (secure WebSocket). The tiny sync messages relay through the broker, so it
-  works across **any network and on iOS Safari** — no TURN, no NAT/firewall
-  traversal, no accounts. (WebRTC was tried first but iOS Safari's local-network
-  handling made direct device-to-device links unreliable.)
-
-### Pairing on the hosted site
-1. Open **`/display`** on the big screen — it shows a pairing code (e.g. `42XQ`).
-2. Open **`/tablet`** on the tablet, type the code, tap **Connect** — connects in
-   a second or two, on any network (same Wi-Fi, different Wi-Fi, or mobile data).
-3. Tapping a saint on the tablet reveals it on the big screen. Tap the
-   "Big screen" status dot on the tablet to re-pair if the link drops.
-
-The brokers used (EMQX, then HiveMQ as fallback) are free public ones — ideal
-for zero-setup, but they're shared/best-effort. For a high-stakes installation,
-point `BROKERS` in `connection.js` at your own MQTT-over-WSS broker (any hosted
-MQTT service, free tiers available). Append `?rtc` to either URL to force
-pairing mode even when a relay server is available (handy for testing).
-
-> Live demo: **https://saints-of-the-isles.vercel.app** — open `/display` and
-> `/tablet` on two devices and pair them.
+Both devices must be on the **same Wi-Fi as the computer** running the server,
+and that computer's firewall must allow port 3000. They connect automatically
+and reconnect on their own if a device sleeps or reboots — no code needed.
 
 ## Exhibition setup tips
 
@@ -90,10 +61,10 @@ pairing mode even when a relay server is available (handy for testing).
 - Open **`/tablet`** full-screen on the tablet; the map fills the screen and the
   pins have finger-sized tap targets.
 - The 🔔 button (on the **tablet**) toggles the soft reveal chime that plays on
-  the big screen — silence it in a quiet gallery.
-- Browsers block audio until a click, so click the big screen once at setup
-  (going full-screen does it) to allow the chime.
-- **"Clear the screen"** on the tablet returns the display to its idle invitation.
+  the big screen — silence it in a quiet gallery. Browsers block audio until a
+  click, so click the big screen once at setup to allow the chime.
+- **"Clear the screen"** on the tablet returns the display to its idle
+  invitation.
 
 ## How it fits together
 
@@ -126,8 +97,7 @@ instantly.
 
 ## Editing the saints / regenerating
 
-The content lives in **`data/saints.master.json`** (name, place, lat/lng, feast,
-era, story, facts, quote, Wikipedia title). To change the line-up:
+The content lives in **`data/saints.master.json`**. To change the line-up:
 
 ```bash
 # 1. edit data/saints.master.json
@@ -136,10 +106,7 @@ node tools/genmap.mjs         # re-project pins, rebuild public/map.js + saints.
 node tools/gen-credits.mjs    # refresh CREDITS.md
 ```
 
-`fetch-images.mjs` skips saints already on disk, throttles requests and retries
-rate-limits, so re-running only fills gaps. The map projection comes from
-`data/uk-ie.geo.json` (no network needed); set `GEO_SRC=...` to use other
-geometry.
+The map projection comes from `data/uk-ie.geo.json` (no network needed).
 
 ## Image credits & licensing
 

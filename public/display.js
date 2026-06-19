@@ -166,24 +166,14 @@
     display.classList.remove('has-saint');
   }
 
-  // ---- Pairing panel (only shown when on the WebRTC transport) ----------
-  const pairbox = document.getElementById('pairbox');
-  const pairCodeEl = document.getElementById('pairCode');
-  let rtcMode = false, codeShown = null, linked = false;
-  function refreshPairbox() { pairbox.hidden = !(rtcMode && !linked && codeShown); }
-
   // ---- Connection -------------------------------------------------------
   const conn = window.createConnection('display', (msg) => {
     if (msg.type === 'select') showSaint(msg.id);
     else if (msg.type === 'home') showHome();
     else if (msg.type === 'mute') { muted = !!msg.muted; }
-  }, {
-    onMode: (m) => { rtcMode = (m === 'rtc'); refreshPairbox(); },
-    onStatus: (s) => { linked = (s === 'online'); refreshPairbox(); },
-    onCode: (code) => { codeShown = code; pairCodeEl.textContent = code.split('').join(' '); refreshPairbox(); },
-    onPaired: () => { linked = true; refreshPairbox(); },
   });
-  // Ask the controller for the current state (covers reconnects).
+  // Ask the controller for the current state (covers the serverless fallback,
+  // where there's no relay to push it on connect).
   [300, 1200, 2600].forEach((t) => setTimeout(() => conn.send({ type: 'requestState' }), t));
 
   const demo = new URLSearchParams(location.search).get('demo');

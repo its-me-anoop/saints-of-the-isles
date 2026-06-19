@@ -15,10 +15,6 @@
   const listview = document.getElementById('listview');
   const zoomResetBtn = document.getElementById('zoomReset');
   const mapHint = document.getElementById('mapHint');
-  const pairgate = document.getElementById('pairgate');
-  const pairInput = document.getElementById('pairInput');
-  const pairConnect = document.getElementById('pairConnect');
-  const pairMsg = document.getElementById('pairMsg');
 
   const SVGNS = 'http://www.w3.org/2000/svg';
   const el = (name, attrs) => {
@@ -303,39 +299,11 @@
     reflectSound(!muted);
   });
 
-  // ---- Pairing gate (only on the WebRTC transport) ----------------------
-  let rtcMode = false, linked = false;
-  function refreshGate() { pairgate.hidden = !(rtcMode && !linked); if (!pairgate.hidden) setTimeout(() => pairInput.focus(), 60); }
-
   // ---- Connection -------------------------------------------------------
   const conn = window.createConnection('tablet', (msg) => {
     if (msg.type === 'select') markActive(msg.id);
     else if (msg.type === 'home') markActive(null);
     else if (msg.type === 'mute') reflectSound(msg.muted);
-    else if (msg.type === 'requestState') conn.send(lastSent); // late-join sync
-  }, {
-    onMode: (m) => { rtcMode = (m === 'rtc'); refreshGate(); },
-    onStatus: (s) => { linked = (s === 'online'); if (linked) { pairMsg.textContent = ''; pairMsg.classList.remove('is-error'); } refreshGate(); },
-    onPaired: () => { linked = true; refreshGate(); },
-    onPairError: (msg) => { if (msg) { pairMsg.textContent = msg; pairMsg.classList.add('is-error'); } },
-  });
-
-  function attemptPair() {
-    const code = (pairInput.value || '').trim().toUpperCase();
-    if (code.length < 4) { pairMsg.textContent = 'Enter the 4-character code.'; pairMsg.classList.add('is-error'); return; }
-    pairMsg.classList.remove('is-error');
-    pairMsg.textContent = 'Connecting…';
-    conn.pair(code);
-  }
-  pairConnect.addEventListener('click', attemptPair);
-  pairInput.addEventListener('input', () => {
-    pairInput.value = pairInput.value.toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 4);
-  });
-  pairInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') attemptPair(); });
-
-  // Tap the "Big screen" lamp to re-pair (handy if the link drops).
-  const lamp = document.querySelector('.lamp[data-conn-status]');
-  if (lamp) lamp.addEventListener('click', () => {
-    if (rtcMode) { conn.repair(); linked = false; pairMsg.textContent = ''; pairMsg.classList.remove('is-error'); refreshGate(); }
+    else if (msg.type === 'requestState') conn.send(lastSent); // serverless late-join
   });
 })();
