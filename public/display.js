@@ -79,7 +79,8 @@
   // The big screen produces all the sound; the tablet's 🔔 toggle controls it.
   let audioCtx = null;
   let musicGain = null;
-  let muted = false;
+  let muted = false;      // narration + chime ("Sound")
+  let musicOn = true;     // ambient background music ("Music")
   let unlocked = false;
   const MUSIC_VOL = 0.085;
   const sndind = document.getElementById('sndind');
@@ -87,15 +88,15 @@
 
   function reflectSoundIndicator() {
     if (!sndind) return;
-    sndind.textContent = muted ? '🔇' : '🔊';
-    sndind.classList.toggle('is-muted', muted);
+    sndind.textContent = (musicOn ? '🎵' : '') + (muted ? '🔇' : '🔊');
+    sndind.classList.toggle('is-muted', muted && !musicOn);
   }
 
   // A slow, modal pad (D-minor-ish) — sacred, calm, gently evolving.
   function startAmbient() {
     if (!audioCtx || musicGain) return;
     musicGain = audioCtx.createGain();
-    musicGain.gain.value = muted ? 0 : MUSIC_VOL;
+    musicGain.gain.value = musicOn ? MUSIC_VOL : 0;
     musicGain.connect(audioCtx.destination);
 
     const filter = audioCtx.createBiquadFilter();
@@ -135,7 +136,7 @@
     if (!musicGain || !audioCtx) return;
     const now = audioCtx.currentTime;
     musicGain.gain.cancelScheduledValues(now);
-    musicGain.gain.setTargetAtTime(muted ? 0 : MUSIC_VOL, now, 0.5);
+    musicGain.gain.setTargetAtTime(musicOn ? MUSIC_VOL : 0, now, 0.5);
   }
 
   function unlock() {
@@ -179,10 +180,14 @@
   }
   function stopNarration() { try { speechSynthesis.cancel(); } catch { /* noop */ } }
 
-  function setMuted(m) {
+  function setMuted(m) {        // "Sound" — narration + chime
     muted = !!m;
-    rampMusic();
     if (muted) stopNarration();
+    reflectSoundIndicator();
+  }
+  function setMusic(on) {       // "Music" — ambient background pad
+    musicOn = !!on;
+    rampMusic();
     reflectSoundIndicator();
   }
   reflectSoundIndicator();
@@ -269,6 +274,7 @@
     if (msg.type === 'select') showSaint(msg.id);
     else if (msg.type === 'home') showHome();
     else if (msg.type === 'mute') setMuted(msg.muted);
+    else if (msg.type === 'music') setMusic(msg.on);
   });
   // Ask the controller for the current state (covers the serverless fallback,
   // where there's no relay to push it on connect).

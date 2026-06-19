@@ -10,6 +10,7 @@
   const nowShowing = document.getElementById('nowshowing');
   const resetBtn = document.getElementById('reset');
   const soundBtn = document.getElementById('sound');
+  const musicBtn = document.getElementById('music');
   const viewMapBtn = document.getElementById('viewMap');
   const viewListBtn = document.getElementById('viewList');
   const listview = document.getElementById('listview');
@@ -297,7 +298,7 @@
     muted = !!m;
     soundBtn.textContent = muted ? '🔕 Muted' : '🔔 Sound';
     soundBtn.setAttribute('aria-pressed', String(!muted));
-    soundBtn.classList.toggle('is-off', muted);
+    soundBtn.classList.toggle('is-quiet', muted);
   }
   soundBtn.addEventListener('click', () => {
     haptic(10);
@@ -305,11 +306,26 @@
     reflectSound(!muted);
   });
 
+  // ---- Background music (governs the big screen) ------------------------
+  let musicOn = true;
+  function reflectMusic(on) {
+    musicOn = !!on;
+    musicBtn.textContent = musicOn ? '🎵 Music' : '🎵 Music off';
+    musicBtn.setAttribute('aria-pressed', String(musicOn));
+    musicBtn.classList.toggle('is-quiet', !musicOn);
+  }
+  musicBtn.addEventListener('click', () => {
+    haptic(10);
+    conn.send({ type: 'music', on: !musicOn });
+    reflectMusic(!musicOn);
+  });
+
   // ---- Connection -------------------------------------------------------
   const conn = window.createConnection('tablet', (msg) => {
     if (msg.type === 'select') markActive(msg.id);
     else if (msg.type === 'home') markActive(null);
     else if (msg.type === 'mute') reflectSound(msg.muted);
+    else if (msg.type === 'music') reflectMusic(msg.on);
     else if (msg.type === 'requestState') conn.send(lastSent); // serverless late-join
   });
 })();

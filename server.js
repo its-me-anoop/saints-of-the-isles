@@ -34,7 +34,8 @@ const wss = new WebSocketServer({ server });
 // The single shared piece of exhibition state: what the big screen is showing,
 // plus the sound setting (controlled from the tablet, obeyed by the display).
 let currentState = { type: 'home' };
-let muted = false;
+let muted = false;     // narration + chime ("Sound")
+let musicOn = true;    // ambient background music
 
 function broadcast(message) {
   const data = JSON.stringify(message);
@@ -62,6 +63,7 @@ wss.on('connection', (socket) => {
         // Sync a freshly-joined screen to the current selection + sound setting.
         socket.send(JSON.stringify(currentState));
         socket.send(JSON.stringify({ type: 'mute', muted }));
+        socket.send(JSON.stringify({ type: 'music', on: musicOn }));
         break;
 
       case 'select':
@@ -73,6 +75,11 @@ wss.on('connection', (socket) => {
       case 'mute':
         muted = !!msg.muted;
         broadcast({ type: 'mute', muted });
+        break;
+
+      case 'music':
+        musicOn = !!msg.on;
+        broadcast({ type: 'music', on: musicOn });
         break;
 
       case 'requestState':
