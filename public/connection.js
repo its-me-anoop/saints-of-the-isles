@@ -3,19 +3,21 @@
  *
  *   • WebSocket  — when a relay server is present (local `npm start`); full
  *                  cross-device sync, no pairing code needed.
- *   • MQTT room  — when there is no server (static host such as Vercel). The big
+ *   • MQTT rooms — when there is no server (static host such as Vercel). The big
  *                  screen shows a short pairing CODE; the tablet enters it, and
- *                  both subscribe to a topic named after that code on a public
- *                  MQTT broker (secure WebSocket). Messages relay through the
- *                  broker, so it works across ANY network and on iOS Safari —
- *                  no TURN, no NAT/firewall traversal, no accounts.
+ *                  both subscribe to a topic named after that code. We connect to
+ *                  SEVERAL public MQTT brokers AT ONCE (secure WebSocket) and
+ *                  relay the tiny sync messages through all of them — so the two
+ *                  devices always share at least one broker, it survives a broker
+ *                  being down or a port being blocked, and it works on iOS Safari
+ *                  and across any network with no TURN/NAT traversal and no setup.
  *
  * API:  createConnection(role, onMessage, opts) -> { send, pair, repair }
- *   opts.onMode(mode)        'ws' | 'rtc'   ('rtc' = "needs pairing")
- *   opts.onStatus(state)     'connecting' | 'online' | 'offline'
- *   opts.onCode(code)        (display) the pairing code to show
- *   opts.onPaired(code)      the other screen connected
- *   opts.onPairError(msg)    pairing attempt failed (msg may be null = silent)
+ *   opts.onMode(mode)    'ws' | 'rtc'  ('rtc' = "needs pairing")
+ *   opts.onStatus(state) 'connecting' | 'online' | 'offline'
+ *   opts.onCode(code)    (display) the pairing code to show
+ *   opts.onPaired(code)  the other screen connected
+ *   opts.onPairError(msg) pairing attempt failed (msg may be null = silent)
  */
 window.createConnection = function createConnection(role, onMessage, opts) {
   opts = opts || {};
@@ -27,9 +29,13 @@ window.createConnection = function createConnection(role, onMessage, opts) {
     onPairError: opts.onPairError || (() => {}),
   };
 
-  const MQTT_SRC = 'https://unpkg.com/mqtt@5.10.1/dist/mqtt.min.js';
-  // Public brokers (secure WebSocket). Tried in order; first to connect wins.
-  const BROKERS = ['wss://broker.emqx.io:8084/mqtt', 'wss://broker.hivemq.com:8884/mqtt'];
+  const MQTT_SRC = '/mqtt.min.js'; // bundled locally (no CDN dependency)
+  // Public brokers, all secure WebSocket. We connect to ALL of them at once.
+  const BROKERS = (window.SAINTS_BROKERS) || [
+    'wss://broker.emqx.io:8084/mqtt',
+    'wss://broker.hivemq.com:8884/mqtt',
+    'wss://test.mosquitto.org:8081/mqtt',
+  ];
   const TOPIC = (code) => `saints-of-the-isles/v1/${code.toUpperCase()}`;
   const ALPHA = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'; // no ambiguous 0/O/1/I
   const genCode = () => Array.from({ length: 4 }, () => ALPHA[Math.floor(Math.random() * ALPHA.length)]).join('');
@@ -70,10 +76,10 @@ window.createConnection = function createConnection(role, onMessage, opts) {
     ws.addEventListener('error', () => { try { ws.close(); } catch { /* noop */ } });
   }
 
-  // ================================================================ MQTT room
-  let client = null;
+  // ================================================================ MQTT rooms
+  let clients = [];       // one mqtt client per broker
   let room = null;        // current topic
-  let myCode = null;      // pairing code (display) / joined code (tablet)
+  let myCode = null;      // pairing code
   let peerSeen = false;
   let joinTimer = null;
 
@@ -86,10 +92,14 @@ window.createConnection = function createConnection(role, onMessage, opts) {
     });
   }
 
-  function publish(obj) {
-    if (client && client.connected && room) {
-      try { client.publish(room, JSON.stringify({ ...obj, __from: myId, __role: role })); } catch { /* noop */ }
-    }
+  function publishOn(c, obj) {
+    if (c && c.connected && room) { try { c.publish(room, JSON.stringify({ ...obj, __from: myId, __role: role })); } catch { /* noop */ } }
+  }
+  function publish(obj) { clients.forEach((c) => publishOn(c, obj)); }
+
+  function refreshStatus() {
+    if (peerSeen) { setStatus('online'); return; }
+    setStatus(clients.some((c) => c && c.connected) ? 'connecting' : 'connecting');
   }
 
   function markOnline() {
@@ -97,53 +107,50 @@ window.createConnection = function createConnection(role, onMessage, opts) {
     setStatus('online');
   }
 
-  function handleMessage(_topic, payload) {
+  function handleMessage(_topic, payloadBuf) {
     let m;
-    try { m = JSON.parse(payload.toString()); } catch { return; }
-    if (!m || m.__from === myId) return;          // ignore our own echoes
-    if (m.type === '__hello') {                   // a peer (re)joined — ALWAYS acknowledge
+    try { m = JSON.parse(payloadBuf.toString()); } catch { return; }
+    if (!m || m.__from === myId) return;        // ignore our own echoes
+    if (m.type === '__hello') {                 // a peer (re)joined — ALWAYS acknowledge
       markOnline();
-      publish({ type: '__hi' });                  // so every joiner gets a reply, not just the first
-      if (role === 'display') publish({ type: 'requestState' }); // pull the tablet's current state
+      publish({ type: '__hi' });
+      if (role === 'display') publish({ type: 'requestState' });
       return;
     }
-    if (m.type === '__hi') { markOnline(); return; } // ack — do not reply (prevents hello loops)
-    markOnline();                                  // any real traffic means the peer is present
+    if (m.type === '__hi') { markOnline(); return; } // ack — no reply (avoids loops)
+    markOnline();                                // any real traffic implies the peer is present
     deliver(m);
   }
 
-  function subscribeRoom() {
-    if (!client || !room) return;
-    client.subscribe(room, { qos: 0 }, () => { publish({ type: '__hello' }); });
+  function teardown() {
+    clients.forEach((c) => { try { c.end(true); } catch { /* noop */ } });
+    clients = [];
   }
 
-  let brokerIdx = 0;
-  function connectBroker(onReady) {
-    if (client) { onReady(); return; }
-    const tryBroker = () => {
-      const url = BROKERS[brokerIdx % BROKERS.length];
-      diag.broker = url;
-      let connectedOnce = false;
-      const c = window.mqtt.connect(url, {
-        clientId: 'saints-' + myId + '-' + Math.random().toString(36).slice(2, 6),
-        clean: true, keepalive: 30, connectTimeout: 8000, reconnectPeriod: 3000,
-      });
-      const failover = setTimeout(() => {
-        if (!connectedOnce) { try { c.end(true); } catch { /* noop */ } brokerIdx += 1; if (brokerIdx < BROKERS.length) tryBroker(); else setStatus('offline'); }
-      }, 9000);
+  // Connect to every broker at once for the current `room`. Idempotent messages
+  // mean duplicates across brokers are harmless.
+  function connectAll() {
+    teardown();
+    clients = BROKERS.map((url, i) => {
+      let c;
+      try {
+        c = window.mqtt.connect(url, {
+          clientId: 'saints-' + myId + '-' + i + '-' + Math.random().toString(36).slice(2, 6),
+          clean: true, keepalive: 30, connectTimeout: 9000, reconnectPeriod: 4000,
+        });
+      } catch { return null; }
       c.on('connect', () => {
-        connectedOnce = true; clearTimeout(failover);
-        client = c; diag.mqtt = 'connected';
-        setStatus(peerSeen ? 'online' : 'connecting');
-        subscribeRoom();
-        onReady();
+        diag['b' + i] = 'connected';
+        c.subscribe(room, { qos: 0 }, () => publishOn(c, { type: '__hello' }));
+        refreshStatus();
       });
-      c.on('reconnect', () => { diag.mqtt = 'reconnect'; if (!peerSeen) setStatus('connecting'); });
       c.on('message', handleMessage);
-      c.on('close', () => { diag.mqtt = 'close'; if (!closedByUs && !peerSeen) setStatus('connecting'); });
-      c.on('error', () => { /* reconnects automatically */ });
-    };
-    tryBroker();
+      c.on('reconnect', () => { diag['b' + i] = 'reconnect'; refreshStatus(); });
+      c.on('close', () => { diag['b' + i] = 'close'; refreshStatus(); });
+      c.on('error', () => { /* mqtt.js auto-reconnects */ });
+      return c;
+    }).filter(Boolean);
+    refreshStatus();
   }
 
   async function startRoom() {
@@ -152,6 +159,13 @@ window.createConnection = function createConnection(role, onMessage, opts) {
     try { await loadMqtt(); } catch { setStatus('offline'); cb.onPairError('Could not load the pairing library.'); return; }
     if (role === 'display') hostRoom();
     else autoJoin();
+    // iOS Safari can freeze the socket on screen-lock; re-announce on wake.
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'visible' && room) {
+        clients.forEach((c) => { try { if (c && !c.connected) c.reconnect(); } catch { /* noop */ } });
+        publish({ type: '__hello' });
+      }
+    });
   }
 
   function hostRoom() {
@@ -159,31 +173,28 @@ window.createConnection = function createConnection(role, onMessage, opts) {
     localStorage.setItem('saints-host-code', myCode);
     room = TOPIC(myCode);
     cb.onCode(myCode);
-    connectBroker(() => { /* subscribed in connect handler */ });
+    connectAll();
   }
 
   function doJoin(code, silent) {
     code = (code || '').toUpperCase();
     if (code.length < 4) { cb.onPairError('Enter the 4-character code.'); return; }
-    const newRoom = TOPIC(code);
-    const switchRoom = () => {
-      if (client && room && room !== newRoom) { try { client.unsubscribe(room); } catch { /* noop */ } }
-      room = newRoom; myCode = code; peerSeen = false;
-      subscribeRoom();
-      if (joinTimer) clearTimeout(joinTimer);
-      if (!silent) {
-        joinTimer = setTimeout(() => {
-          if (!peerSeen) cb.onPairError(`No big screen found for code ${code}. Check the code on the big screen.`);
-        }, 12000);
-      }
-    };
-    connectBroker(() => { if (client.connected) switchRoom(); else client.once('connect', switchRoom); });
+    myCode = code;
+    room = TOPIC(code);
+    peerSeen = false;
+    connectAll();
+    if (joinTimer) clearTimeout(joinTimer);
+    if (!silent) {
+      joinTimer = setTimeout(() => {
+        if (!peerSeen) cb.onPairError(`Couldn’t reach the big screen for code ${code}. Check the code, make sure the big screen is open, then tap Connect again.`);
+      }, 18000);
+    }
   }
 
   function autoJoin() {
     const stored = localStorage.getItem('saints-paired-code') || localStorage.getItem('saints-host-code');
     if (stored) doJoin(stored, true);
-    else connectBroker(() => {}); // pre-connect so manual pairing is instant
+    // else wait for a manual pair() — no pre-connect (a room is required first).
   }
 
   // ===================================================================== send
@@ -202,6 +213,6 @@ window.createConnection = function createConnection(role, onMessage, opts) {
     repair() { localStorage.removeItem('saints-paired-code'); peerSeen = false; },
     get mode() { return mode; },
     get code() { return myCode; },
-    close() { closedByUs = true; try { ws && ws.close(); } catch { /* noop */ } try { client && client.end(true); } catch { /* noop */ } },
+    close() { closedByUs = true; try { ws && ws.close(); } catch { /* noop */ } teardown(); },
   };
 };
