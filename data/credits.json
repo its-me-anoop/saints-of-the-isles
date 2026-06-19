@@ -1,0 +1,520 @@
+{
+  "duthac": {
+    "name": "St Duthac",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/f/fa/St_Duthus_Kirk_-_geograph.org.uk_-_819923.jpg",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:St_Duthus_Kirk_-_geograph.org.uk_-_819923.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "Anne Burgess"
+  },
+  "columba": {
+    "name": "St Columba",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Columba_at_Bridei%27s_fort.jpg",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Columba_at_Bridei%27s_fort.jpg",
+    "license": "Public domain",
+    "artist": "J. R. Skelton (Joseph Ratcliffe Skelton; 1865–1927) (illustrator), erroneously credited as John R. Skelton"
+  },
+  "john-ogilvie": {
+    "name": "St John Ogilvie",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/San_Juan_de_Ogilvie.jpg/960px-San_Juan_de_Ogilvie.jpg",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:San_Juan_de_Ogilvie.jpg",
+    "license": "Public domain",
+    "artist": "Unknown authorUnknown author"
+  },
+  "kentigern-mungo": {
+    "name": "St Mungo",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/St_Kentigern%2C_better_known_as_Mungo._Founder_and_patron_saint_of_Glasgow._%2810062429595%29.jpg/960px-St_Kentigern%2C_better_known_as_Mungo._Founder_and_patron_saint_of_Glasgow._%2810062429595%29.jpg",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:St_Kentigern,_better_known_as_Mungo._Founder_and_patron_saint_of_Glasgow._(10062429595).jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "dun_deagh"
+  },
+  "margaret-of-scotland": {
+    "name": "St Margaret of Scotland",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Saint_Margaret_of_Scotland.jpg",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Saint_Margaret_of_Scotland.jpg",
+    "license": "Public domain",
+    "artist": "AnonymousUnknown author"
+  },
+  "andrew-the-apostle": {
+    "name": "St Andrew",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Rubens_apostel_andreas_grt.jpg/960px-Rubens_apostel_andreas_grt.jpg",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Rubens_apostel_andreas_grt.jpg",
+    "license": "Public domain",
+    "artist": "Peter Paul Rubens"
+  },
+  "triduana": {
+    "name": "St Triduana",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/b/b7/St._Triduana%27s_Well%2C_Restalrig.jpg",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:St._Triduana%27s_Well,_Restalrig.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "kim traynor"
+  },
+  "ninian": {
+    "name": "St Ninian",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Ninian_of_Whithorn.jpg",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Ninian_of_Whithorn.jpg",
+    "license": "Public domain",
+    "artist": "Unknown authorUnknown author"
+  },
+  "columba-derry": {
+    "name": "St Columba of Derry",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Columba_at_Bridei%27s_fort.jpg",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Columba_at_Bridei%27s_fort.jpg",
+    "license": "Public domain",
+    "artist": "J. R. Skelton (Joseph Ratcliffe Skelton; 1865–1927) (illustrator), erroneously credited as John R. Skelton"
+  },
+  "comgall": {
+    "name": "St Comgall",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/St._Comgall_%28West_niche%2C_St._Comgall%27s_Church%2C_Antrim%29.jpg/960px-St._Comgall_%28West_niche%2C_St._Comgall%27s_Church%2C_Antrim%29.jpg",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:St._Comgall_(West_niche,_St._Comgall%27s_Church,_Antrim).jpg",
+    "license": "CC0",
+    "artist": "HenryPho17"
+  },
+  "saint-patrick": {
+    "name": "St Patrick",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Saint_Patrick_Catholic_Church_%28Junction_City%2C_Ohio%29_-_stained_glass%2C_Saint_Patrick_-_detail.jpg/960px-Saint_Patrick_Catholic_Church_%28Junction_City%2C_Ohio%29_-_stained_glass%2C_Saint_Patrick_-_detail.jpg",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Saint_Patrick_Catholic_Church_(Junction_City,_Ohio)_-_stained_glass,_Saint_Patrick_-_detail.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Nheyob"
+  },
+  "saint-malachy": {
+    "name": "St Malachy",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Malaqu%C3%ADas_de_Armagh_%28cropped%29.jpg",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Malaqu%C3%ADas_de_Armagh_(cropped).jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Andreas F. Borchert"
+  },
+  "finnian-of-clonard": {
+    "name": "St Finnian of Clonard",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/8/82/Statue_St_Finnian_of_Clonard_%28cropped%29.jpg",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Statue_St_Finnian_of_Clonard_(cropped).jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Andreas F. Borchert"
+  },
+  "oliver-plunkett": {
+    "name": "St Oliver Plunkett",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Oliver_Plunket_by_Edward_Luttrell.jpg/960px-Oliver_Plunket_by_Edward_Luttrell.jpg",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Oliver_Plunket_by_Edward_Luttrell.jpg",
+    "license": "Public domain",
+    "artist": "Edward Luttrell"
+  },
+  "brigid-of-kildare": {
+    "name": "St Brigid of Kildare",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Cong_St._Mary_of_the_Rosary_Window_St._Brigid_Detail_St._Brigid_holding_her_Lamp_II_2019_09_04.jpg/960px-Cong_St._Mary_of_the_Rosary_Window_St._Brigid_Detail_St._Brigid_holding_her_Lamp_II_2019_09_04.jpg",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Cong_St._Mary_of_the_Rosary_Window_St._Brigid_Detail_St._Brigid_holding_her_Lamp_II_2019_09_04.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Andreas F. Borchert"
+  },
+  "kevin-of-glendalough": {
+    "name": "St Kevin of Glendalough",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Kevin-black.jpg",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Kevin-black.jpg",
+    "license": "Public domain",
+    "artist": ""
+  },
+  "brendan-the-navigator": {
+    "name": "St Brendan the Navigator",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Saint_brendan_german_manuscript.jpg",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Saint_brendan_german_manuscript.jpg",
+    "license": "Public domain",
+    "artist": "Unknown mediaeval scribe."
+  },
+  "cuthbert": {
+    "name": "St Cuthbert",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Cuthbert_discovers_piece_of_timber_-_Life_of_St._Cuthbert_%28late_12th_C%29%2C_f.45v_-_BL_Yates_Thompson_MS_26.jpg/960px-Cuthbert_discovers_piece_of_timber_-_Life_of_St._Cuthbert_%28late_12th_C%29%2C_f.45v_-_BL_Yates_Thompson_MS_26.jpg",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Cuthbert_discovers_piece_of_timber_-_Life_of_St._Cuthbert_(late_12th_C),_f.45v_-_BL_Yates_Thompson_MS_26.jpg",
+    "license": "CC0",
+    "artist": "Bede"
+  },
+  "aidan-of-lindisfarne": {
+    "name": "St Aidan",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Saint_Aidan.jpg",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Saint_Aidan.jpg",
+    "license": "CC BY 2.0",
+    "artist": "Randy OHC"
+  },
+  "oswald-of-northumbria": {
+    "name": "St Oswald",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Saint_Oswald_Durham_Cathedral.jpg",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Saint_Oswald_Durham_Cathedral.jpg",
+    "license": "Public domain",
+    "artist": "Robin Widdison at English Wikipedia"
+  },
+  "bede": {
+    "name": "St Bede the Venerable",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/0/0d/E-codices_bke-0047_001v_medium_%28cropped%29.jpg",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:E-codices_bke-0047_001v_medium_(cropped).jpg",
+    "license": "Public domain",
+    "artist": "http://www.e-codices.unifr.ch/de/bke/0047/1v"
+  },
+  "robert-of-newminster": {
+    "name": "St Robert of Newminster",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Stiftskirche_Baumgartenberg_Kanzel06.jpg/960px-Stiftskirche_Baumgartenberg_Kanzel06.jpg",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Stiftskirche_Baumgartenberg_Kanzel06.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "BSonne"
+  },
+  "hilda-of-whitby": {
+    "name": "St Hilda",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/St_Hilda_%28Stained_glass%2C_Chester_Cathedral%29_%28cropped%29.JPG/330px-St_Hilda_%28Stained_glass%2C_Chester_Cathedral%29_%28cropped%29.JPG",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:St_Hilda_(Stained_glass,_Chester_Cathedral)_(cropped).JPG",
+    "license": "CC BY-SA 4.0",
+    "artist": "Mum's taxi"
+  },
+  "john-of-beverley": {
+    "name": "St John of Beverley",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Statue_-_St_John_of_Beverley_on_the_Minster.jpg",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Statue_-_St_John_of_Beverley_on_the_Minster.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "Graham Hermon"
+  },
+  "aelred-of-rievaulx": {
+    "name": "St Aelred of Rievaulx",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/c/cb/De_Speculo_Caritatis.jpeg",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:De_Speculo_Caritatis.jpeg",
+    "license": "Public domain",
+    "artist": "Elredo de Rieval, posiblemente"
+  },
+  "margaret-clitherow": {
+    "name": "St Margaret Clitherow",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/6/67/St._Margaret_Clitherow_JS.jpg",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:St._Margaret_Clitherow_JS.jpg",
+    "license": "Public domain",
+    "artist": "zeitgenössischer Stecher, um 1750, nach älterer Darstellung"
+  },
+  "cedd": {
+    "name": "St Cedd",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Saint_cedd.jpg",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Saint_cedd.jpg",
+    "license": "Public domain",
+    "artist": ""
+  },
+  "chad-of-mercia": {
+    "name": "St Chad",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Saint_Chad%27s_Church%2C_Wrecsam%2C_Cymru%2C_Wales_71_%28cropped%29.jpg/960px-Saint_Chad%27s_Church%2C_Wrecsam%2C_Cymru%2C_Wales_71_%28cropped%29.jpg",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Saint_Chad%27s_Church,_Wrecsam,_Cymru,_Wales_71_(cropped).jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Llywelyn2000"
+  },
+  "werburgh": {
+    "name": "St Werburgh",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Chester_Cathedral_-_Refektorium_Ostfenster_1_St.Werburg.jpg/960px-Chester_Cathedral_-_Refektorium_Ostfenster_1_St.Werburg.jpg",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Chester_Cathedral_-_Refektorium_Ostfenster_1_St.Werburg.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Wolfgang Sauber"
+  },
+  "guthlac-of-crowland": {
+    "name": "St Guthlac",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/4/4d/St_Guthlac%2C_Croyland_Abbey.JPG",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:St_Guthlac,_Croyland_Abbey.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Thorvaldsson"
+  },
+  "hugh-of-lincoln": {
+    "name": "St Hugh of Lincoln",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/1/19/Hug-lin-pi.jpg",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Hug-lin-pi.jpg",
+    "license": "Public domain",
+    "artist": "Unknown authorUnknown author"
+  },
+  "oswald-of-worcester": {
+    "name": "St Oswald of Worcester",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/0/04/Oswald_and_Eadnoth.jpg",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Oswald_and_Eadnoth.jpg",
+    "license": "Public domain",
+    "artist": "AnonymousUnknown author"
+  },
+  "thomas-de-cantilupe": {
+    "name": "St Thomas of Hereford",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Diocese_of_Hereford_arms.svg/960px-Diocese_of_Hereford_arms.svg.png",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Diocese_of_Hereford_arms.svg",
+    "license": "Public domain",
+    "artist": "Salop roundel.svg:User:Hogweard *Reference for Flags.svg:User:Amada44\nderivative work: Hogweard"
+  },
+  "john-kemble": {
+    "name": "St John Kemble",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/5/54/Saint-john-kemble.png",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Saint-john-kemble.png",
+    "license": "CC BY-SA 4.0",
+    "artist": "Unknown authorUnknown author"
+  },
+  "etheldreda-of-ely": {
+    "name": "St Æthelthryth",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/St-aethelthryth.jpg/960px-St-aethelthryth.jpg",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:St-aethelthryth.jpg",
+    "license": "Public domain",
+    "artist": "monk"
+  },
+  "edmund-the-martyr": {
+    "name": "St Edmund the Martyr",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Edmundbeingmartyred05.jpg/960px-Edmundbeingmartyred05.jpg",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Edmundbeingmartyred05.jpg",
+    "license": "Public domain",
+    "artist": ""
+  },
+  "augustine-of-canterbury": {
+    "name": "St Augustine of Canterbury",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/4/4f/LeningradBedeHiRes.jpg",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:LeningradBedeHiRes.jpg",
+    "license": "Public domain",
+    "artist": "Scriptorium de l'abbaye de Wearmouth-Jarrow"
+  },
+  "thomas-becket": {
+    "name": "St Thomas Becket",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/4/4e/London._British_Library%2C_Cotton_MS_Claudius_B_II._f.341r_%28cropped%29.jpg",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:London._British_Library,_Cotton_MS_Claudius_B_II._f.341r_(cropped).jpg",
+    "license": "Public domain",
+    "artist": "Unknown Miniaturist, English (active 1170s in Cirenchester)"
+  },
+  "dunstan": {
+    "name": "St Dunstan",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Dunstan3.jpg",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Dunstan3.jpg",
+    "license": "Public domain",
+    "artist": "Dunstan"
+  },
+  "edward-the-confessor": {
+    "name": "St Edward the Confessor",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Bayeux_Tapestry_scene1_EDWARD_REX.jpg/960px-Bayeux_Tapestry_scene1_EDWARD_REX.jpg",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Bayeux_Tapestry_scene1_EDWARD_REX.jpg",
+    "license": "Public domain",
+    "artist": "Myrabella"
+  },
+  "thomas-more": {
+    "name": "St Thomas More",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Hans_Holbein%2C_the_Younger_-_Sir_Thomas_More_-_Google_Art_Project.jpg/960px-Hans_Holbein%2C_the_Younger_-_Sir_Thomas_More_-_Google_Art_Project.jpg",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Hans_Holbein,_the_Younger_-_Sir_Thomas_More_-_Google_Art_Project.jpg",
+    "license": "Public domain",
+    "artist": "Hans Holbein the Younger"
+  },
+  "edmund-campion": {
+    "name": "St Edmund Campion",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Edmundus_Campion.jpg",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Edmundus_Campion.jpg",
+    "license": "Public domain",
+    "artist": "Unknown authorUnknown author"
+  },
+  "philip-howard": {
+    "name": "St Philip Howard",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/5/5a/PhilipHowardEarlOfArundel.jpg",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:PhilipHowardEarlOfArundel.jpg",
+    "license": "Public domain",
+    "artist": "Unidentified painter"
+  },
+  "david-of-wales": {
+    "name": "St David",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Castell_Coch_stained_glass_panel_2.JPG/960px-Castell_Coch_stained_glass_panel_2.JPG",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Castell_Coch_stained_glass_panel_2.JPG",
+    "license": "CC BY-SA 4.0",
+    "artist": "Hchc2009"
+  },
+  "illtud": {
+    "name": "St Illtud",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/3/3b/St_Illtyd_in_Holy_Trinity_Church%2C_Abergavenny.jpg",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:St_Illtyd_in_Holy_Trinity_Church,_Abergavenny.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Gwenddwr"
+  },
+  "melangell": {
+    "name": "St Melangell",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/3/34/Saint_Melangell.jpg",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Saint_Melangell.jpg",
+    "license": "Public domain",
+    "artist": "John Ingleby"
+  },
+  "edward-the-martyr": {
+    "name": "St Edward the Martyr",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Edward_the_Martyr_-_MS_Royal_14_B_VI.jpg",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Edward_the_Martyr_-_MS_Royal_14_B_VI.jpg",
+    "license": "Public domain",
+    "artist": "Unknown authorUnknown author"
+  },
+  "felix-of-burgundy": {
+    "name": "St Felix of Burgundy",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/6/63/Felix_of_Burgundy.jpg",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Felix_of_Burgundy.jpg",
+    "license": "Public domain",
+    "artist": "Amitchell125 at English Wikipedia"
+  },
+  "botolph-of-thorney": {
+    "name": "St Botolph",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/St_Botolph%2C_Cambridge_IMG_2936_%2828884698391%29.jpg/960px-St_Botolph%2C_Cambridge_IMG_2936_%2828884698391%29.jpg",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:St_Botolph,_Cambridge_IMG_2936_(28884698391).jpg",
+    "license": "CC BY 2.0",
+    "artist": "Fr James Bradley from Southampton, UK"
+  },
+  "walstan-of-bawburgh": {
+    "name": "St Walstan of Bawburgh",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/St_Walstan_from_a_rood_screen_at_St_Mary_Magdalene%2C_Norwich_%28originally_at_St._James%2C_Pockthorpe%29.jpg/960px-St_Walstan_from_a_rood_screen_at_St_Mary_Magdalene%2C_Norwich_%28originally_at_St._James%2C_Pockthorpe%29.jpg",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:St_Walstan_from_a_rood_screen_at_St_Mary_Magdalene,_Norwich_(originally_at_St._James,_Pockthorpe).jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Amitchell125"
+  },
+  "robert-southwell": {
+    "name": "St Robert Southwell",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Robert_Southwell.JPG",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Robert_Southwell.JPG",
+    "license": "Public domain",
+    "artist": "Unknown authorUnknown author"
+  },
+  "earconwald": {
+    "name": "St Erkenwald",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Wells_Cathedral%2C_Somerset%2C_UK_-_portrait_of_Erkenwald_in_stained_glass.jpg/960px-Wells_Cathedral%2C_Somerset%2C_UK_-_portrait_of_Erkenwald_in_stained_glass.jpg",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Wells_Cathedral,_Somerset,_UK_-_portrait_of_Erkenwald_in_stained_glass.jpg",
+    "license": "CC0",
+    "artist": "Navewham"
+  },
+  "richard-of-chichester": {
+    "name": "St Richard of Chichester",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/St_Saviour%2C_Eastbourne_IMG_3419_%2828342972384%29_%28cropped%29.jpg/960px-St_Saviour%2C_Eastbourne_IMG_3419_%2828342972384%29_%28cropped%29.jpg",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:St_Saviour,_Eastbourne_IMG_3419_(28342972384)_(cropped).jpg",
+    "license": "CC BY 2.0",
+    "artist": "Fr James Bradley from Southampton, UK"
+  },
+  "swithun": {
+    "name": "St Swithun",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/St_Swithun%2C_Benedictional_of_%C3%86thelwold%2C_London%2C_BL%2C_Ms_Add._19598%2C_Fol_90V.jpg/960px-St_Swithun%2C_Benedictional_of_%C3%86thelwold%2C_London%2C_BL%2C_Ms_Add._19598%2C_Fol_90V.jpg",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:St_Swithun,_Benedictional_of_%C3%86thelwold,_London,_BL,_Ms_Add._19598,_Fol_90V.jpg",
+    "license": "Public domain",
+    "artist": "Unknown authorUnknown author"
+  },
+  "non": {
+    "name": "St Non",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/St_Non_stained_glass_window_in_St_Nons_Chapel.jpg/960px-St_Non_stained_glass_window_in_St_Nons_Chapel.jpg",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:St_Non_stained_glass_window_in_St_Nons_Chapel.jpg",
+    "license": "CC BY 3.0",
+    "artist": "Thruxton"
+  },
+  "teilo": {
+    "name": "St Teilo",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/6/61/St_Teilo_in_Holy_Trinity_Church%2C_Abergavenny.jpg",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:St_Teilo_in_Holy_Trinity_Church,_Abergavenny.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Gwenddwr"
+  },
+  "cadoc": {
+    "name": "St Cadoc",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Saint_Cado.JPG",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Saint_Cado.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": ""
+  },
+  "dubricius": {
+    "name": "St Dyfrig",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Castell_Coch_stained_glass_panel_3.JPG/960px-Castell_Coch_stained_glass_panel_3.JPG",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Castell_Coch_stained_glass_panel_3.JPG",
+    "license": "CC BY-SA 4.0",
+    "artist": "Hchc2009"
+  },
+  "beuno": {
+    "name": "St Beuno",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/St.Beuno_-_Fassade.jpg/960px-St.Beuno_-_Fassade.jpg",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:St.Beuno_-_Fassade.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Wolfgang Sauber"
+  },
+  "winefride": {
+    "name": "St Winefride",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Castell_Coch_stained_glass_panel_4.JPG/960px-Castell_Coch_stained_glass_panel_4.JPG",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Castell_Coch_stained_glass_panel_4.JPG",
+    "license": "CC BY-SA 4.0",
+    "artist": "Hchc2009"
+  },
+  "asaph": {
+    "name": "St Asaph",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Sant_Silyn%2C_Wrecsam_Parish_Church_of_St._Giles%2C_Wrexham%2C_Wales_xz_48.jpg/960px-Sant_Silyn%2C_Wrecsam_Parish_Church_of_St._Giles%2C_Wrexham%2C_Wales_xz_48.jpg",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Sant_Silyn,_Wrecsam_Parish_Church_of_St._Giles,_Wrexham,_Wales_xz_48.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Llywelyn2000"
+  },
+  "richard-gwyn": {
+    "name": "St Richard Gwyn",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Richard_Gwyn.jpg/960px-Richard_Gwyn.jpg",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Richard_Gwyn.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Llywelyn2000"
+  },
+  "david-lewis": {
+    "name": "St David Lewis",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Saint_David_Lewis%2C_engraving_1683.jpg",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Saint_David_Lewis,_engraving_1683.jpg",
+    "license": "Public domain",
+    "artist": "Alexander Voet the Elder"
+  },
+  "petroc": {
+    "name": "St Petroc",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/8/80/Petroc.png",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Petroc.png",
+    "license": "Public domain",
+    "artist": "Unknown authorUnknown author"
+  },
+  "piran": {
+    "name": "St Piran",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/a/ac/StPiran.png",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:StPiran.png",
+    "license": "Public domain",
+    "artist": "Unknown authorUnknown author"
+  },
+  "sidwell": {
+    "name": "St Sidwell",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/0/04/St_Sidwell_-_geograph.org.uk_-_351497.jpg",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:St_Sidwell_-_geograph.org.uk_-_351497.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "Derek Harper"
+  },
+  "boniface": {
+    "name": "St Boniface",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/1/16/Saint_Boniface_by_Cornelis_Bloemaert.jpg",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Saint_Boniface_by_Cornelis_Bloemaert.jpg",
+    "license": "Public domain",
+    "artist": "Cornelis Bloemaert"
+  },
+  "aldhelm": {
+    "name": "St Aldhelm",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Aldhelm.malmesbury.arp.jpg/960px-Aldhelm.malmesbury.arp.jpg",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Aldhelm.malmesbury.arp.jpg",
+    "license": "Public domain",
+    "artist": "Arpingstone"
+  },
+  "adomnan": {
+    "name": "St Adomnán",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/c/ce/Raphoe_Cathedral_Church_of_St._Eunan_Choir_Window_W02_Saint_Eunan_II_2016_09_02.jpg",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Raphoe_Cathedral_Church_of_St._Eunan_Choir_Window_W02_Saint_Eunan_II_2016_09_02.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Andreas F. Borchert"
+  },
+  "fillan": {
+    "name": "St Fillan",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Bell_of_St_Fillan_Anderson_1881_Fig_64_scotlandinearlyc00ande_0222.jpg/960px-Bell_of_St_Fillan_Anderson_1881_Fig_64_scotlandinearlyc00ande_0222.jpg",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Bell_of_St_Fillan_Anderson_1881_Fig_64_scotlandinearlyc00ande_0222.jpg",
+    "license": "Public domain",
+    "artist": "Anderson, Joseph, 1832-1916"
+  },
+  "wilfrid": {
+    "name": "St Wilfrid",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Aidan%2C_Cuthbert_and_Wilfrid_-_St_John_Lee_church.jpg",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Aidan,_Cuthbert_and_Wilfrid_-_St_John_Lee_church.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "Mike Quinn"
+  },
+  "william-of-york": {
+    "name": "St William of York",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/9/94/Shrine_of_St._William_of_York_in_York_Minster.jpg",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Shrine_of_St._William_of_York_in_York_Minster.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Ernst.schnell"
+  },
+  "paulinus-of-york": {
+    "name": "St Paulinus",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/1/12/Paulinusofyork.jpg",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Paulinusofyork.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "User Polylerus on en.wikipedia"
+  },
+  "mildrith": {
+    "name": "St Mildred of Thanet",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Bronze_casket_for_St_Mildred%27s_relics.JPG/960px-Bronze_casket_for_St_Mildred%27s_relics.JPG",
+    "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Bronze_casket_for_St_Mildred%27s_relics.JPG",
+    "license": "CC BY-SA 3.0",
+    "artist": "Mum's taxi"
+  }
+}

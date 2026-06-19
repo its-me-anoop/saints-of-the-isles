@@ -1,0 +1,9 @@
+# The Vercel deploy is purely the static public/ folder.
+# These server-/build-only files aren't needed at runtime.
+node_modules
+server.js
+tools
+data
+.git
+.claude
+*.md

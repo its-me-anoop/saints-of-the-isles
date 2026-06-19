@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Saints of the Isles · Stage</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cinzel+Decorative:wght@400;700&family=Spectral:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="vellum"></div>
+  <main class="display" id="display">
+    <div class="aura"></div>
+    <div class="rays" id="rays"></div>
+
+    <!-- Idle invitation: a constellation of saints drifting behind the title -->
+    <section class="invite" id="invite">
+      <div class="invite__float" id="inviteFloat" aria-hidden="true"></div>
+      <div class="invite__center">
+        <div class="invite__mark">✠</div>
+        <h1>Saints of the Isles</h1>
+        <p>Touch a place on the map to reveal the saint who shaped it</p>
+      </div>
+    </section>
+
+    <!-- Saint reveal (filled by display.js) -->
+    <section class="saint" id="saint" aria-live="polite"></section>
+
+    <div class="display__foot">
+      <span class="lamp" data-conn-status><span class="lamp__text">Map</span></span>
+    </div>
+  </main>
+
+  <script src="/saints.js"></script>
+  <script src="/connection.js"></script>
+  <script src="/display.js"></script>
+</body>
+</html>

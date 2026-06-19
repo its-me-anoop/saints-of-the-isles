@@ -1,0 +1,914 @@
+/* =========================================================================
+   Saints of the Isles — shared styling
+   An illuminated-manuscript aesthetic: tinted ink, gold leaf, jewel light.
+   ========================================================================= */
+
+:root {
+  /* Neutrals, tinted toward indigo — never pure black or white. */
+  --ink:        oklch(15% 0.03 274);
+  --ink-2:      oklch(19% 0.035 274);
+  --ink-3:      oklch(24% 0.04 276);
+  --mist:       oklch(80% 0.02 274);
+  --mist-dim:   oklch(64% 0.025 274);
+
+  /* Gold leaf. */
+  --gold:       oklch(82% 0.13 86);
+  --gold-soft:  oklch(72% 0.10 86);
+  --gold-deep:  oklch(58% 0.09 80);
+
+  /* Parchment, for reading surfaces. */
+  --parchment:      oklch(93% 0.025 84);
+  --parchment-edge: oklch(86% 0.035 78);
+  --parchment-ink:  oklch(30% 0.045 56);
+  --parchment-dim:  oklch(46% 0.04 56);
+
+  /* The current saint's colour (set per-reveal via JS). */
+  --accent: oklch(72% 0.12 86);
+
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --font-display: 'Cinzel', 'Trajan Pro', Georgia, serif;
+  --font-deco: 'Cinzel Decorative', 'Cinzel', Georgia, serif;
+  --font-body: 'Spectral', 'Iowan Old Style', Palatino, Georgia, serif;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  height: 100%;
+  background: var(--ink);
+  color: var(--mist);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  min-height: 100%;
+  overflow: hidden;
+}
+
+/* A faint vellum grain + vignette shared by every screen. */
+.vellum {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(120% 90% at 50% 0%, transparent 55%, oklch(8% 0.03 274 / 0.55) 100%),
+    radial-gradient(80% 60% at 50% 40%, oklch(30% 0.05 280 / 0.18), transparent 70%);
+}
+
+/* ---- Connection lamp -------------------------------------------------- */
+.lamp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5ch;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  color: var(--mist-dim);
+}
+.lamp::before {
+  content: '';
+  width: 0.6em;
+  height: 0.6em;
+  border-radius: 50%;
+  background: var(--gold-deep);
+  box-shadow: 0 0 0 0 transparent;
+  transition: background 0.5s var(--ease), box-shadow 0.5s var(--ease);
+}
+[data-conn-status][data-conn-state='online'] .lamp::before,
+.lamp[data-conn-status][data-conn-state='online']::before {
+  background: var(--gold);
+  box-shadow: 0 0 12px 0 var(--gold-soft);
+}
+
+/* =========================================================================
+   LAUNCHER
+   ========================================================================= */
+.launcher {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 6vh 6vw;
+  overflow-y: auto;
+}
+.launcher__inner { max-width: 60ch; }
+.launcher__mark { font-size: clamp(2rem, 7vw, 3.4rem); color: var(--gold); }
+.launcher h1 {
+  font-family: var(--font-deco);
+  font-weight: 700;
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  line-height: 1.05;
+  margin: 0.2em 0 0.1em;
+  color: var(--parchment);
+  letter-spacing: 0.02em;
+}
+.launcher__sub {
+  font-size: clamp(1rem, 2.4vw, 1.25rem);
+  font-style: italic;
+  color: var(--mist);
+  margin: 0 0 2.4em;
+}
+.launcher__choices {
+  display: flex;
+  gap: 1.4rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2.6em;
+}
+.choice {
+  display: block;
+  text-decoration: none;
+  color: var(--parchment);
+  background: linear-gradient(165deg, var(--ink-3), var(--ink-2));
+  border: 1px solid oklch(50% 0.06 86 / 0.4);
+  border-radius: 14px;
+  padding: 1.6rem 2.2rem;
+  min-width: 15rem;
+  transition: transform 0.5s var(--ease), border-color 0.5s var(--ease), box-shadow 0.5s var(--ease);
+}
+.choice:hover, .choice:focus-visible {
+  transform: translateY(-4px);
+  border-color: var(--gold-soft);
+  box-shadow: 0 18px 40px -24px oklch(82% 0.13 86 / 0.7);
+  outline: none;
+}
+.choice__glyph { font-size: 2.4rem; }
+.choice__title {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  letter-spacing: 0.04em;
+  margin: 0.4em 0 0.2em;
+  color: var(--gold);
+}
+.choice__note { display: block; font-size: 0.92rem; color: var(--mist-dim); }
+.launcher__hint {
+  font-size: 0.9rem;
+  color: var(--mist-dim);
+  line-height: 1.7;
+  border-top: 1px solid oklch(50% 0.04 280 / 0.25);
+  padding-top: 1.4em;
+}
+.launcher__hint code {
+  font-family: var(--font-body);
+  color: var(--gold-soft);
+  font-style: italic;
+}
+
+/* =========================================================================
+   TABLET — the map
+   ========================================================================= */
+.tablet {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  padding: clamp(0.4rem, 1.4vh, 0.9rem) clamp(0.7rem, 2vw, 1.3rem) 0;
+}
+.tablet__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.tablet__title {
+  font-family: var(--font-deco);
+  color: var(--gold);
+  font-size: clamp(1.1rem, 3.2vw, 1.7rem);
+  letter-spacing: 0.04em;
+  margin: 0;
+}
+.tablet__cue {
+  font-style: italic;
+  color: var(--mist);
+  font-size: clamp(0.85rem, 2vw, 1.05rem);
+}
+.tablet__stage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 0;
+}
+
+.mapwrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  touch-action: none; /* let the scrub gesture drive previews, not scrolling */
+}
+.mapwrap svg { width: 100%; height: 100%; overflow: visible; }
+
+.sea-ring { fill: none; stroke: oklch(60% 0.05 230 / 0.18); stroke-width: 1.5; }
+.land {
+  fill: url(#landGrad);
+  stroke: var(--gold-soft);
+  stroke-width: 2;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 6px 18px oklch(8% 0.03 274 / 0.6));
+}
+.land--ireland {
+  fill: oklch(22% 0.025 200);
+  stroke: oklch(60% 0.06 86 / 0.6);
+  opacity: 0.8;
+}
+
+/* Saint pins */
+.pin {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.pin__halo {
+  fill: var(--pin-accent, var(--gold));
+  opacity: 0.18;
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: scale(0.5);
+  transition: transform 0.6s var(--ease), opacity 0.6s var(--ease);
+}
+.pin__dot {
+  fill: var(--pin-accent, var(--gold));
+  stroke: oklch(97% 0.02 86);
+  stroke-width: 1.5;
+  transition: transform 0.5s var(--ease);
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.pin__pulse {
+  fill: none;
+  stroke: var(--pin-accent, var(--gold));
+  stroke-width: 2;
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.pin__label {
+  font-family: var(--font-display);
+  font-size: 13px;
+  fill: var(--parchment);
+  paint-order: stroke;
+  stroke: oklch(10% 0.03 274);
+  stroke-width: 4px;
+  stroke-linejoin: round;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(4px);
+  transition: opacity 0.45s var(--ease), transform 0.45s var(--ease);
+  letter-spacing: 0.02em;
+}
+.pin:hover .pin__halo,
+.pin.is-hover .pin__halo,
+.pin.is-active .pin__halo { transform: scale(1.15); opacity: 0.4; }
+.pin:hover .pin__dot,
+.pin.is-hover .pin__dot,
+.pin.is-active .pin__dot { transform: scale(1.4); }
+
+.pin.is-active .pin__pulse { animation: ping 1.8s var(--ease) infinite; }
+@keyframes ping {
+  0%   { opacity: 0.7; transform: scale(0.6); }
+  70%  { opacity: 0;   transform: scale(2.4); }
+  100% { opacity: 0;   transform: scale(2.4); }
+}
+
+/* Idle gentle breathing on every dot, staggered via inline delay. */
+.pin__dot { animation: breathe 4.5s ease-in-out infinite; }
+@keyframes breathe {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.12); }
+}
+
+.compass { opacity: 0.5; }
+.compass text { font-family: var(--font-display); fill: var(--gold-soft); font-size: 14px; }
+.compass line, .compass path { stroke: var(--gold-soft); }
+
+.tablet__foot {
+  position: absolute;
+  bottom: 0.4rem;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.reset {
+  font-family: var(--font-display);
+  letter-spacing: 0.06em;
+  font-size: 0.8rem;
+  color: var(--mist-dim);
+  background: transparent;
+  border: 1px solid oklch(50% 0.04 280 / 0.4);
+  border-radius: 999px;
+  padding: 0.5em 1.2em;
+  cursor: pointer;
+  transition: color 0.4s var(--ease), border-color 0.4s var(--ease);
+}
+.reset:hover { color: var(--gold); border-color: var(--gold-soft); }
+
+/* The little "now showing" confirmation card on the tablet */
+.nowshowing {
+  position: absolute;
+  left: 50%;
+  bottom: 2.6rem;
+  transform: translate(-50%, 1rem);
+  opacity: 0;
+  pointer-events: none;
+  background: var(--parchment);
+  color: var(--parchment-ink);
+  border-radius: 12px;
+  padding: 0.7em 1.3em;
+  font-size: 0.95rem;
+  box-shadow: 0 16px 40px -20px oklch(8% 0.03 274 / 0.8);
+  transition: opacity 0.5s var(--ease), transform 0.5s var(--ease);
+  max-width: 80%;
+  text-align: center;
+}
+.nowshowing.is-shown { opacity: 1; transform: translate(-50%, 0); }
+.nowshowing b { font-family: var(--font-display); color: var(--accent); }
+
+/* =========================================================================
+   DISPLAY — the big screen
+   ========================================================================= */
+.display {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Ambient light tied to the current saint */
+.aura {
+  position: fixed;
+  inset: -10%;
+  z-index: 0;
+  background:
+    radial-gradient(60% 60% at 30% 25%, oklch(var(--accent) / 0.28), transparent 60%),
+    radial-gradient(70% 70% at 80% 80%, oklch(var(--accent) / 0.18), transparent 65%);
+  opacity: 0;
+  transition: opacity 1.2s var(--ease);
+}
+.display.has-saint .aura { opacity: 1; }
+
+/* Slowly rotating halo of rays behind the emblem */
+.rays {
+  position: absolute;
+  top: 50%;
+  left: clamp(8rem, 22vw, 22rem);
+  width: 60vh;
+  height: 60vh;
+  transform: translate(-50%, -50%) scale(0.7);
+  opacity: 0;
+  transition: opacity 1.2s var(--ease), transform 1.2s var(--ease);
+  pointer-events: none;
+}
+.display.has-saint .rays { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+.rays svg { width: 100%; height: 100%; animation: turn 80s linear infinite; }
+@keyframes turn { to { transform: rotate(360deg); } }
+
+/* ---- Idle invitation ---- */
+.invite {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 8vh 8vw;
+  transition: opacity 0.9s var(--ease);
+}
+.display.has-saint .invite { opacity: 0; pointer-events: none; }
+.invite__mark {
+  font-size: clamp(3rem, 9vh, 6rem);
+  color: var(--gold);
+  animation: shimmer 5s ease-in-out infinite;
+}
+@keyframes shimmer {
+  0%, 100% { text-shadow: 0 0 28px oklch(82% 0.13 86 / 0.2); opacity: 0.85; }
+  50%      { text-shadow: 0 0 54px oklch(82% 0.13 86 / 0.6); opacity: 1; }
+}
+.invite h1 {
+  font-family: var(--font-deco);
+  font-weight: 700;
+  font-size: clamp(2.6rem, 8vh, 5.5rem);
+  color: var(--parchment);
+  margin: 0.2em 0 0.1em;
+  letter-spacing: 0.02em;
+}
+.invite p {
+  font-size: clamp(1.1rem, 2.6vh, 1.6rem);
+  font-style: italic;
+  color: var(--mist);
+  margin: 0 0 2em;
+}
+.invite__names {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em 1.4em;
+  justify-content: center;
+  max-width: 70ch;
+  font-family: var(--font-display);
+  font-size: clamp(0.8rem, 1.7vh, 1rem);
+  letter-spacing: 0.06em;
+  color: var(--mist-dim);
+}
+.invite__names span { transition: color 0.4s var(--ease); }
+
+/* ---- The saint reveal ---- */
+.saint {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  align-items: center;
+  gap: clamp(1.8rem, 4.5vw, 5rem);
+  padding: clamp(1.8rem, 5vh, 4rem) clamp(2.5rem, 6vw, 6rem);
+  opacity: 0;
+  pointer-events: none;
+}
+.display.has-saint .saint { opacity: 1; pointer-events: auto; }
+
+.saint__left {
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: 100%;
+  align-content: center;
+  text-align: center;
+}
+.saint__frame {
+  position: relative;
+  width: min(25vw, 34vh);
+  aspect-ratio: 3 / 4;
+  border-radius: 46% 46% 9% 9% / 36% 36% 6% 6%;
+  overflow: hidden;
+  background: linear-gradient(170deg, oklch(34% 0.04 274), oklch(22% 0.04 276));
+  outline: 3px solid oklch(var(--accent) / 0.55);
+  outline-offset: 5px;
+  box-shadow:
+    0 0 0 8px oklch(20% 0.03 274),
+    0 0 0 9px oklch(82% 0.13 86 / 0.7),
+    0 26px 70px -28px oklch(var(--accent) / 0.85),
+    0 0 90px -10px oklch(var(--accent) / 0.4);
+}
+.saint__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  filter: saturate(1.02) contrast(1.02);
+}
+/* Inner shading so any portrait sits richly in its niche. */
+.saint__frame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  box-shadow: inset 0 -40px 70px -30px oklch(12% 0.03 274 / 0.8),
+              inset 0 0 40px oklch(12% 0.03 274 / 0.35);
+  border-radius: inherit;
+}
+.saint__frame.is-mono::before {
+  content: attr(data-mono);
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-deco);
+  font-size: clamp(5rem, 18vh, 11rem);
+  color: oklch(var(--accent));
+  text-shadow: 0 0 40px oklch(var(--accent) / 0.5);
+}
+.saint__credit {
+  margin-top: 1.1em;
+  font-size: 0.74rem;
+  font-style: italic;
+  color: var(--mist-dim);
+  max-width: 30ch;
+  line-height: 1.35;
+}
+.saint__aka {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: clamp(1rem, 2.2vh, 1.3rem);
+  color: var(--mist);
+  margin: -0.2em 0 0.6em;
+}
+.saint__place {
+  margin-top: 0.6em;
+  font-family: var(--font-display);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: clamp(0.85rem, 1.8vh, 1.05rem);
+  color: var(--gold);
+}
+.saint__region { color: var(--mist-dim); font-style: italic; margin-top: 0.3em; font-size: clamp(0.8rem, 1.6vh, 1rem); }
+.saint__meta {
+  display: flex;
+  gap: 1.4em;
+  justify-content: center;
+  margin-top: 1.3em;
+  flex-wrap: wrap;
+}
+.saint__meta div { text-align: center; }
+.saint__meta dt {
+  font-family: var(--font-display);
+  font-size: 0.66rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--mist-dim);
+}
+.saint__meta dd { margin: 0.2em 0 0; font-size: clamp(0.95rem, 2vh, 1.2rem); color: var(--parchment); }
+
+.saint__right { max-width: 60ch; }
+.saint__summary {
+  font-size: clamp(0.98rem, 2vh, 1.25rem);
+  line-height: 1.55;
+  color: var(--mist);
+  margin: 0 0 0.4em;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;   /* hard guard against overflow */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.saint__facts-wrap { margin-top: 1.2em; }
+.saint__facts-head {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: oklch(var(--accent));
+  margin-bottom: 0.7em;
+}
+.saint__epithet {
+  font-family: var(--font-display);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: clamp(0.75rem, 1.7vh, 1rem);
+  color: oklch(var(--accent));
+  margin: 0 0 0.3em;
+}
+.saint__name {
+  font-family: var(--font-deco);
+  font-weight: 700;
+  font-size: clamp(2.2rem, 6vh, 4.6rem);
+  line-height: 1.02;
+  margin: 0 0 0.4rem;
+  color: var(--parchment);
+  letter-spacing: 0.01em;
+}
+.saint__intro {
+  font-size: clamp(1.05rem, 2.1vh, 1.4rem);
+  font-style: italic;
+  color: var(--gold-soft);
+  margin: 0 0 0.9em;
+  line-height: 1.45;
+}
+.saint__story p {
+  font-size: clamp(0.95rem, 1.9vh, 1.18rem);
+  line-height: 1.5;
+  color: var(--mist);
+  margin: 0 0 0.7em;
+  max-width: 64ch;
+}
+.saint__facts {
+  list-style: none;
+  margin: 1em 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.5em;
+}
+.saint__facts li {
+  position: relative;
+  padding-left: 1.9em;
+  font-size: clamp(0.9rem, 1.8vh, 1.1rem);
+  line-height: 1.45;
+  color: var(--mist);
+}
+.saint__facts li::before {
+  content: '✦';
+  position: absolute;
+  left: 0;
+  top: 0.05em;
+  color: oklch(var(--accent));
+}
+.saint__quote {
+  margin: 1.1em 0 0;
+  padding-left: 1.1em;
+  border-left: 2px solid oklch(var(--accent));
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: clamp(1rem, 2.1vh, 1.35rem);
+  color: var(--parchment);
+  line-height: 1.4;
+}
+.saint__patronage {
+  margin-top: 1.1em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6em;
+}
+.saint__patronage span {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  color: var(--gold-soft);
+  border: 1px solid oklch(var(--accent) / 0.5);
+  border-radius: 999px;
+  padding: 0.4em 1em;
+}
+
+.display__foot {
+  position: fixed;
+  bottom: 1.2rem;
+  right: 1.6rem;
+  z-index: 3;
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+}
+.mutebtn {
+  background: transparent;
+  border: none;
+  color: var(--mist-dim);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: color 0.4s var(--ease);
+}
+.mutebtn:hover { color: var(--gold); }
+
+/* Entrance choreography for reveal pieces */
+.rise { opacity: 0; transform: translateY(18px); }
+.display.has-saint .rise {
+  animation: rise 0.85s var(--ease) forwards;
+  animation-delay: var(--rise-delay, 0s);
+}
+@keyframes rise {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive: stack the reveal on narrower screens */
+@media (max-width: 900px) {
+  .saint { grid-template-columns: 1fr; gap: 1.4rem; padding: 4vh 6vw; overflow-y: auto; align-content: start; align-items: start; }
+  .saint__emblem { font-size: clamp(4rem, 16vh, 8rem); }
+  .rays { left: 50%; top: 30%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  .pin__dot, .rays svg, .float-avatar { animation: none !important; }
+  .display.has-saint .rise { opacity: 1; transform: none; }
+}
+
+/* =========================================================================
+   Tablet — controls + scrub preview
+   ========================================================================= */
+.tablet__controls { display: flex; align-items: center; gap: 0.7rem; }
+.iconbtn {
+  font-family: var(--font-display);
+  letter-spacing: 0.05em;
+  font-size: 0.8rem;
+  color: var(--gold-soft);
+  background: transparent;
+  border: 1px solid oklch(60% 0.08 86 / 0.45);
+  border-radius: 999px;
+  padding: 0.5em 1.1em;
+  cursor: pointer;
+  transition: color 0.4s var(--ease), border-color 0.4s var(--ease), opacity 0.4s var(--ease);
+}
+.iconbtn:hover { color: var(--gold); border-color: var(--gold-soft); }
+.iconbtn.is-off { color: var(--mist-dim); border-color: oklch(50% 0.04 280 / 0.4); opacity: 0.8; }
+
+/* The avatar bubble that follows a scrubbing finger */
+.preview {
+  position: absolute;
+  left: 0; top: 0;
+  z-index: 6;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, calc(-100% - 26px)) scale(0.82);
+  transform-origin: center bottom;
+  transition: opacity 0.18s var(--ease), transform 0.28s var(--ease);
+  display: grid;
+  justify-items: center;
+  width: max-content;
+}
+.preview.is-shown { opacity: 1; transform: translate(-50%, calc(-100% - 26px)) scale(1); }
+.preview.is-below { transform: translate(-50%, 26px) scale(0.82); transform-origin: center top; }
+.preview.is-below.is-shown { transform: translate(-50%, 26px) scale(1); }
+.preview__img {
+  width: clamp(92px, 13vh, 150px);
+  height: clamp(92px, 13vh, 150px);
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center top;
+  background-color: oklch(24% 0.04 274);
+  outline: 3px solid oklch(var(--pin-accent, var(--gold)));
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px oklch(16% 0.03 274), 0 18px 40px -16px oklch(var(--pin-accent, var(--gold)) / 0.9);
+}
+.preview__img.is-mono::before {
+  content: attr(data-mono);
+  display: grid;
+  place-items: center;
+  width: 100%; height: 100%;
+  font-family: var(--font-deco);
+  font-size: 3.2rem;
+  color: oklch(var(--pin-accent, var(--gold)));
+}
+.preview__name {
+  margin-top: 0.6em;
+  font-family: var(--font-display);
+  font-size: clamp(0.95rem, 1.7vh, 1.2rem);
+  color: var(--parchment);
+  paint-order: stroke;
+  text-shadow: 0 2px 12px oklch(10% 0.03 274);
+  letter-spacing: 0.02em;
+}
+.preview__place {
+  font-size: 0.78rem;
+  font-style: italic;
+  color: var(--gold-soft);
+}
+
+/* Utility */
+.is-off { display: none !important; }
+
+/* View toggle (Map / List) */
+.viewtoggle {
+  display: inline-flex;
+  padding: 4px;
+  gap: 4px;
+  border-radius: 999px;
+  background: oklch(20% 0.03 274 / 0.7);
+  border: 1px solid oklch(50% 0.05 86 / 0.35);
+}
+.viewtoggle__btn {
+  font-family: var(--font-display);
+  letter-spacing: 0.04em;
+  font-size: 0.82rem;
+  color: var(--mist-dim);
+  background: transparent;
+  border: none;
+  border-radius: 999px;
+  padding: 0.45em 1.1em;
+  cursor: pointer;
+  transition: color 0.4s var(--ease), background 0.4s var(--ease);
+}
+.viewtoggle__btn.is-active {
+  color: var(--ink);
+  background: linear-gradient(170deg, var(--gold), var(--gold-soft));
+  box-shadow: 0 6px 16px -8px oklch(82% 0.13 86 / 0.8);
+}
+
+/* Zoom reset + map hint */
+.zoomreset {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  z-index: 5;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: var(--gold-soft);
+  background: oklch(18% 0.03 274 / 0.85);
+  border: 1px solid oklch(60% 0.08 86 / 0.5);
+  border-radius: 999px;
+  padding: 0.45em 1em;
+  cursor: pointer;
+}
+.maphint {
+  position: absolute;
+  bottom: 2.6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+  font-size: 0.82rem;
+  font-style: italic;
+  color: var(--mist-dim);
+  background: oklch(14% 0.03 274 / 0.55);
+  padding: 0.3em 0.9em;
+  border-radius: 999px;
+  pointer-events: none;
+  transition: opacity 0.5s var(--ease);
+}
+.maphint.is-hidden { opacity: 0; }
+
+/* List view */
+.listview {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  padding: 0.4rem 0.4rem 5rem;
+  -webkit-overflow-scrolling: touch;
+}
+.listgroup { margin-bottom: 1.6rem; }
+.listgroup__head {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  font-family: var(--font-display);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  color: var(--gold);
+  padding: 0.6em 0.4em;
+  background: linear-gradient(to bottom, var(--ink) 65%, transparent);
+}
+.listgroup__head span { color: var(--mist-dim); letter-spacing: 0.06em; }
+.listgrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(132px, 1fr));
+  gap: 0.9rem;
+}
+.scard {
+  display: grid;
+  justify-items: center;
+  gap: 0.4em;
+  padding: 0.9rem 0.5rem;
+  text-align: center;
+  background: linear-gradient(170deg, oklch(23% 0.035 274), oklch(19% 0.03 276));
+  border: 1px solid oklch(40% 0.04 280 / 0.4);
+  border-radius: 14px;
+  cursor: pointer;
+  transition: transform 0.4s var(--ease), border-color 0.4s var(--ease), box-shadow 0.4s var(--ease);
+}
+.scard:hover, .scard.is-active {
+  transform: translateY(-3px);
+  border-color: oklch(var(--pin-accent) / 0.8);
+  box-shadow: 0 16px 36px -22px oklch(var(--pin-accent) / 0.9);
+}
+.scard__img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center top;
+  background-color: oklch(26% 0.04 274);
+  outline: 2px solid oklch(var(--pin-accent) / 0.8);
+  outline-offset: 3px;
+}
+.scard__img.is-mono::before {
+  content: attr(data-mono);
+  display: grid;
+  place-items: center;
+  width: 100%; height: 100%;
+  font-family: var(--font-deco);
+  font-size: 2rem;
+  color: oklch(var(--pin-accent));
+}
+.scard__name {
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  color: var(--parchment);
+  line-height: 1.15;
+}
+.scard__place { font-size: 0.74rem; font-style: italic; color: var(--gold-soft); }
+
+/* =========================================================================
+   Display — floating avatar constellation on the idle screen
+   ========================================================================= */
+.invite__float { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
+.float-avatar {
+  position: absolute;
+  width: var(--s);
+  height: var(--s);
+  margin: calc(var(--s) / -2) 0 0 calc(var(--s) / -2);
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center top;
+  border: 2px solid oklch(var(--pin-accent, var(--gold)) / 0.7);
+  box-shadow: 0 10px 30px -12px oklch(8% 0.03 274 / 0.9),
+              0 0 24px -6px oklch(var(--pin-accent, var(--gold)) / 0.5);
+  filter: saturate(1.05);
+  animation: drift var(--dur, 28s) ease-in-out infinite alternate;
+  will-change: transform;
+}
+@keyframes drift {
+  from { transform: translate(var(--dx0, 0), var(--dy0, 0)); }
+  to   { transform: translate(var(--dx1, 0), var(--dy1, 0)); }
+}
+.invite__center {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  justify-items: center;
+  padding: 2rem 3rem;
+  border-radius: 28px;
+  /* a soft scrim so the title stays legible over the constellation */
+  background: radial-gradient(120% 120% at 50% 50%, oklch(13% 0.03 274 / 0.86) 38%, oklch(13% 0.03 274 / 0) 78%);
+}

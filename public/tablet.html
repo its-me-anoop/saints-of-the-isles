@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <title>Saints of the Isles · Map</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cinzel+Decorative:wght@400;700&family=Spectral:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="vellum"></div>
+  <main class="tablet">
+    <header class="tablet__bar">
+      <h1 class="tablet__title">✠ Saints of the Isles</h1>
+      <div class="viewtoggle" role="tablist" aria-label="View">
+        <button class="viewtoggle__btn is-active" id="viewMap" role="tab" aria-selected="true">🗺 Map</button>
+        <button class="viewtoggle__btn" id="viewList" role="tab" aria-selected="false">☰ List</button>
+      </div>
+    </header>
+
+    <section class="tablet__stage">
+      <div class="mapwrap" id="mapwrap" data-conn-status>
+        <!-- SVG map injected by tablet.js -->
+        <div class="preview" id="preview" aria-hidden="true"></div>
+        <button class="zoomreset" id="zoomReset" aria-hidden="true" hidden>⤢ Reset zoom</button>
+        <div class="maphint" id="mapHint">Drag a finger to preview · pinch to zoom · lift to choose</div>
+      </div>
+
+      <div class="listview" id="listview" hidden></div>
+
+      <div class="nowshowing" id="nowshowing"></div>
+
+      <div class="tablet__foot">
+        <span class="lamp" data-conn-status><span class="lamp__text">Big screen</span></span>
+        <div class="tablet__controls">
+          <button class="iconbtn" id="sound" title="Sound on the big screen" aria-pressed="true">🔔 Sound</button>
+          <button class="reset" id="reset">Clear the screen</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="/saints.js"></script>
+  <script src="/map.js"></script>
+  <script src="/connection.js"></script>
+  <script src="/tablet.js"></script>
+</body>
+</html>

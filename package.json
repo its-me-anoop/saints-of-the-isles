@@ -1,0 +1,16 @@
+{
+  "name": "saints-of-the-isles",
+  "version": "1.0.0",
+  "description": "An interactive two-screen exhibition: tap the UK map on a tablet, reveal the saint on the big screen.",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "d3-geo": "^3.1.1",
+    "express": "^4.19.2",
+    "ws": "^8.18.0"
+  }
+}
