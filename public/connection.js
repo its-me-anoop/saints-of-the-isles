@@ -72,6 +72,29 @@ window.createConnection = function createConnection(role, onMessage, opts) {
   let peer = null;
   let myCode = null;
   const channels = new Set();
+  const diag = (window.__saints = window.__saints || {});
+
+  // ICE servers: STUN to discover routes + a TURN relay so the link still works
+  // across different networks / restrictive firewalls (PeerJS's defaults are
+  // STUN-only, which fails on many NATs). Override with `?ice=<base64-json>` or
+  // localStorage 'saints-ice' to drop in your own TURN credentials.
+  // STUN handles same-Wi-Fi and most home NATs. A TURN relay (needed for mobile
+  // data / symmetric NAT / isolated guest Wi-Fi) can be added via the override
+  // below — drop in free credentials (e.g. from metered.ca) and it just works.
+  const DEFAULT_ICE = [
+    { urls: ['stun:stun.l.google.com:19302', 'stun:stun1.l.google.com:19302'] },
+    { urls: 'stun:stun.cloudflare.com:3478' },
+  ].concat(window.SAINTS_TURN || []);
+  function iceServers() {
+    try {
+      const p = new URLSearchParams(location.search).get('ice');
+      if (p) return JSON.parse(atob(p));
+      const ls = localStorage.getItem('saints-ice');
+      if (ls) return JSON.parse(ls);
+    } catch { /* fall through to defaults */ }
+    return DEFAULT_ICE;
+  }
+  const peerOpts = () => ({ debug: 1, config: { iceServers: iceServers() } });
 
   function loadPeerJS() {
     return new Promise((res, rej) => {
@@ -92,6 +115,13 @@ window.createConnection = function createConnection(role, onMessage, opts) {
     conn.on('data', (d) => { if (d && d.type) deliver(d); });
     conn.on('close', () => { channels.delete(conn); if (!channels.size) setStatus(role === 'display' ? 'connecting' : 'offline'); });
     conn.on('error', () => { channels.delete(conn); });
+    // Surface ICE progress for diagnostics + honest failure messaging.
+    conn.on('iceStateChanged', (s) => {
+      diag.ice = s;
+      if (role !== 'display' && !channels.has(conn) && (s === 'failed' || s === 'disconnected')) {
+        cb.onPairError('Couldn’t establish a direct link. Put both devices on the same Wi-Fi, then tap Connect again.');
+      }
+    });
   }
 
   async function startRtc() {
@@ -106,7 +136,7 @@ window.createConnection = function createConnection(role, onMessage, opts) {
   function hostRtc(code, attempt) {
     code = (code || localStorage.getItem('saints-host-code') || genCode()).toUpperCase();
     attempt = attempt || 0;
-    try { peer = new window.Peer(hostId(code)); } catch { setStatus('offline'); return; }
+    try { peer = new window.Peer(hostId(code), peerOpts()); } catch { setStatus('offline'); return; }
     peer.on('open', () => {
       myCode = code;
       localStorage.setItem('saints-host-code', code);
@@ -130,7 +160,7 @@ window.createConnection = function createConnection(role, onMessage, opts) {
 
   // ---- Tablet joins by code ----
   function ensurePeer() {
-    if (!peer) { try { peer = new window.Peer(); } catch { /* noop */ } }
+    if (!peer) { try { peer = new window.Peer(undefined, peerOpts()); } catch { /* noop */ } }
     return peer;
   }
   function doJoin(code, silent) {
@@ -140,16 +170,20 @@ window.createConnection = function createConnection(role, onMessage, opts) {
     const go = () => {
       const conn = peer.connect(hostId(code), { reliable: true });
       // Attach listeners synchronously (before 'open' fires) — wire() handles
-      // open/data/close/error and adds the channel.
+      // open/data/close/error/ice and adds the channel.
       wire(conn);
       conn.on('open', () => { localStorage.setItem('saints-paired-code', code); });
-      setTimeout(() => {
-        if (!channels.has(conn) && !silent) cb.onPairError(`No big screen found for code ${code}.`);
-      }, 8000);
+      if (!silent) {
+        setTimeout(() => { if (!channels.has(conn)) cb.onPairError('Still connecting… hang on a moment.'); }, 9000);
+        setTimeout(() => {
+          if (!channels.has(conn)) cb.onPairError('Couldn’t connect. Make sure both devices are on the same Wi-Fi, then tap Connect again.');
+        }, 24000);
+      }
     };
     if (peer.open) go(); else peer.on('open', go);
     peer.on('error', (e) => {
-      if (e && e.type === 'peer-unavailable' && !silent) cb.onPairError(`No big screen found for code ${code}.`);
+      diag.peerError = e && e.type;
+      if (e && e.type === 'peer-unavailable' && !silent) cb.onPairError(`No big screen found for code ${code}. Check the code on the big screen.`);
     });
   }
   function autoJoin() {
