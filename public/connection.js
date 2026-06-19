@@ -1,97 +1,180 @@
 /*
- * A resilient sync layer shared by both screens.
+ * Sync layer shared by both screens. Picks a transport automatically:
  *
- * Two transports, chosen automatically:
- *   • WebSocket  — when a relay server is present (local `npm start`); gives
- *                  full cross-device sync.
- *   • BroadcastChannel — fallback when there is no server (e.g. a static
- *                  Vercel deploy); syncs windows/tabs in the SAME browser, so
- *                  the "one computer, two displays" setup still works.
+ *   • WebSocket  — when a relay server is present (local `npm start`); full
+ *                  cross-device sync, no pairing needed.
+ *   • WebRTC     — when there is no server (static host such as Vercel). The
+ *                  big screen hosts a peer under a short pairing CODE; the
+ *                  tablet joins by entering that code. Signalling uses the free
+ *                  public PeerJS broker only for the handshake — the live link
+ *                  is a direct device-to-device DataChannel.
  *
- * The app sees one tiny API: createConnection(role, onMessage) -> { send }.
+ * API:  createConnection(role, onMessage, opts) -> { send, pair, repair }
+ *   opts.onMode(mode)        'ws' | 'rtc'
+ *   opts.onStatus(state)     'connecting' | 'online' | 'offline'
+ *   opts.onCode(code)        (display) the pairing code to display
+ *   opts.onPaired(code)      a peer link opened
+ *   opts.onPairError(msg)    pairing attempt failed (msg may be null = silent)
  */
-window.createConnection = function createConnection(role, onMessage) {
-  const bc = ('BroadcastChannel' in window) ? new BroadcastChannel('saints-of-the-isles') : null;
-  let socket = null;
-  let wsOpen = false;
-  let attempts = 0;
-  let closedByUs = false;
+window.createConnection = function createConnection(role, onMessage, opts) {
+  opts = opts || {};
+  const cb = {
+    onMode: opts.onMode || (() => {}),
+    onStatus: opts.onStatus || (() => {}),
+    onCode: opts.onCode || (() => {}),
+    onPaired: opts.onPaired || (() => {}),
+    onPairError: opts.onPairError || (() => {}),
+  };
 
-  function setStatus(state) {
+  const PEERJS_SRC = 'https://unpkg.com/peerjs@1.5.5/dist/peerjs.min.js';
+  const ID_PREFIX = 'saints-isles-v1-';
+  const ALPHA = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'; // no ambiguous 0/O/1/I
+  const hostId = (code) => ID_PREFIX + code.toUpperCase();
+  const genCode = () => Array.from({ length: 4 }, () => ALPHA[Math.floor(Math.random() * ALPHA.length)]).join('');
+
+  let mode = null;
+  let closedByUs = false;
+  const deliver = (m) => { try { onMessage(m); } catch { /* ignore */ } };
+  function lamp(state) {
     document.querySelectorAll('[data-conn-status]').forEach((el) => { el.dataset.connState = state; });
   }
+  function setStatus(s) { cb.onStatus(s); lamp(s === 'online' ? 'online' : 'offline'); }
 
-  function deliver(msg) { try { onMessage(msg); } catch { /* ignore */ } }
-
-  // BroadcastChannel only carries messages when the socket isn't doing it.
-  if (bc) {
-    bc.onmessage = (e) => {
-      if (wsOpen) return;            // avoid double-delivery when WS is live
-      if (e.data && e.data.__from === role) return; // ignore our own echoes
-      deliver(e.data);
-    };
-  }
-
+  // ===================================================================== WS
+  let ws = null, wsOpen = false, wsRetries = 0;
   function connectWs() {
-    let url;
+    let settled = false;
+    const giveUp = setTimeout(() => {
+      if (!wsOpen && !settled) { settled = true; try { ws && ws.close(); } catch { /* noop */ } startRtc(); }
+    }, 1500);
     try {
       const proto = location.protocol === 'https:' ? 'wss' : 'ws';
-      url = `${proto}://${location.host}`;
-      socket = new WebSocket(url);
+      ws = new WebSocket(`${proto}://${location.host}`);
     } catch {
-      fallback();
-      return;
+      clearTimeout(giveUp); startRtc(); return;
     }
-
-    socket.addEventListener('open', () => {
-      wsOpen = true;
-      attempts = 0;
-      setStatus('online');
-      send({ type: 'hello', role });
+    ws.addEventListener('open', () => {
+      settled = true; clearTimeout(giveUp);
+      mode = 'ws'; wsOpen = true; wsRetries = 0;
+      cb.onMode('ws'); setStatus('online'); send({ type: 'hello', role });
     });
-    socket.addEventListener('message', (ev) => {
-      try { deliver(JSON.parse(ev.data)); } catch { /* ignore */ }
-    });
-    socket.addEventListener('close', () => {
+    ws.addEventListener('message', (e) => { try { deliver(JSON.parse(e.data)); } catch { /* ignore */ } });
+    ws.addEventListener('close', () => {
       wsOpen = false;
       if (closedByUs) return;
-      attempts += 1;
-      if (attempts <= 3) {
+      if (mode === 'ws') { setStatus('offline'); wsRetries += 1; setTimeout(connectWs, Math.min(3000, 500 * wsRetries)); }
+      else if (!settled) { settled = true; clearTimeout(giveUp); startRtc(); }
+    });
+    ws.addEventListener('error', () => { try { ws.close(); } catch { /* noop */ } });
+  }
+
+  // =================================================================== WebRTC
+  let peer = null;
+  let myCode = null;
+  const channels = new Set();
+
+  function loadPeerJS() {
+    return new Promise((res, rej) => {
+      if (window.Peer) return res();
+      const s = document.createElement('script');
+      s.src = PEERJS_SRC; s.onload = () => res(); s.onerror = () => rej(new Error('peerjs load failed'));
+      document.head.appendChild(s);
+    });
+  }
+
+  function wire(conn) {
+    conn.on('open', () => {
+      channels.add(conn);
+      setStatus('online');
+      cb.onPaired(conn.peer);
+      if (role === 'display') { try { conn.send({ type: 'requestState' }); } catch { /* noop */ } }
+    });
+    conn.on('data', (d) => { if (d && d.type) deliver(d); });
+    conn.on('close', () => { channels.delete(conn); if (!channels.size) setStatus(role === 'display' ? 'connecting' : 'offline'); });
+    conn.on('error', () => { channels.delete(conn); });
+  }
+
+  async function startRtc() {
+    if (mode === 'rtc') return;
+    mode = 'rtc'; cb.onMode('rtc'); setStatus('connecting');
+    try { await loadPeerJS(); } catch { setStatus('offline'); cb.onPairError('Could not load the pairing library.'); return; }
+    if (role === 'display') hostRtc();
+    else autoJoin();
+  }
+
+  // ---- Display hosts under a stable code ----
+  function hostRtc(code, attempt) {
+    code = (code || localStorage.getItem('saints-host-code') || genCode()).toUpperCase();
+    attempt = attempt || 0;
+    try { peer = new window.Peer(hostId(code)); } catch { setStatus('offline'); return; }
+    peer.on('open', () => {
+      myCode = code;
+      localStorage.setItem('saints-host-code', code);
+      cb.onCode(code);
+      if (!channels.size) setStatus('connecting');
+    });
+    peer.on('connection', wire);
+    peer.on('disconnected', () => { try { peer.reconnect(); } catch { /* noop */ } });
+    peer.on('error', (e) => {
+      if (e && e.type === 'unavailable-id') {
+        try { peer.destroy(); } catch { /* noop */ }
+        if (attempt < 4) setTimeout(() => hostRtc(code, attempt + 1), 1600); // our stale peer is freeing up
+        else { const nc = genCode(); localStorage.setItem('saints-host-code', nc); hostRtc(nc, 0); }
+      } else if (e && (e.type === 'network' || e.type === 'server-error' || e.type === 'socket-error')) {
         setStatus('offline');
-        setTimeout(connectWs, 400 * attempts);
-      } else {
-        fallback(); // no server here — settle into BroadcastChannel mode
+        try { peer.destroy(); } catch { /* noop */ }
+        setTimeout(() => hostRtc(code, attempt), 4000);
       }
     });
-    socket.addEventListener('error', () => { try { socket.close(); } catch { /* noop */ } });
   }
 
-  // Settle into BroadcastChannel-only mode (static hosting, no relay).
-  function fallback() {
-    if (bc) {
-      setStatus('online');           // same-browser sync is available
-      bc.postMessage({ type: 'hello', role, __from: role });
-    } else {
-      setStatus('offline');
-    }
+  // ---- Tablet joins by code ----
+  function ensurePeer() {
+    if (!peer) { try { peer = new window.Peer(); } catch { /* noop */ } }
+    return peer;
+  }
+  function doJoin(code, silent) {
+    code = (code || '').toUpperCase();
+    if (code.length < 4) { cb.onPairError('Enter the 4-character code.'); return; }
+    ensurePeer();
+    const go = () => {
+      const conn = peer.connect(hostId(code), { reliable: true });
+      // Attach listeners synchronously (before 'open' fires) — wire() handles
+      // open/data/close/error and adds the channel.
+      wire(conn);
+      conn.on('open', () => { localStorage.setItem('saints-paired-code', code); });
+      setTimeout(() => {
+        if (!channels.has(conn) && !silent) cb.onPairError(`No big screen found for code ${code}.`);
+      }, 8000);
+    };
+    if (peer.open) go(); else peer.on('open', go);
+    peer.on('error', (e) => {
+      if (e && e.type === 'peer-unavailable' && !silent) cb.onPairError(`No big screen found for code ${code}.`);
+    });
+  }
+  function autoJoin() {
+    // Same-browser convenience: reuse a stored / sibling-tab host code.
+    const stored = localStorage.getItem('saints-paired-code') || localStorage.getItem('saints-host-code');
+    if (stored) doJoin(stored, true);
   }
 
+  // ===================================================================== send
   function send(obj) {
-    if (wsOpen && socket && socket.readyState === WebSocket.OPEN) {
-      socket.send(JSON.stringify(obj));
-    } else if (bc) {
-      bc.postMessage({ ...obj, __from: role });
-    }
+    if (mode === 'ws' && wsOpen) { ws.send(JSON.stringify(obj)); }
+    else if (mode === 'rtc') { channels.forEach((c) => { try { c.send(obj); } catch { /* noop */ } }); }
   }
 
-  connectWs();
+  // `?rtc` forces the WebRTC pairing transport even if a WS server exists
+  // (handy for testing, and a manual override on the hosted build).
+  if (/[?&](rtc|pair)(=|&|$)/.test(location.search)) startRtc();
+  else connectWs();
 
   return {
     send,
-    close() {
-      closedByUs = true;
-      if (socket) socket.close();
-      if (bc) bc.close();
-    },
+    pair(code) { if (mode === 'rtc' && role !== 'display') doJoin(code, false); },
+    repair() { localStorage.removeItem('saints-paired-code'); },
+    get mode() { return mode; },
+    get code() { return myCode; },
+    close() { closedByUs = true; try { ws && ws.close(); } catch { /* noop */ } try { peer && peer.destroy(); } catch { /* noop */ } },
   };
 };

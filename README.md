@@ -52,21 +52,31 @@ The server also prints a `http://<your-ip>:3000/...` address. Open `…/tablet` 
 the tablet and `…/display` on the screen's browser — they connect automatically
 and reconnect on their own if a device sleeps or reboots.
 
-## Hosting & how the two screens sync
+## Hosting & how the two screens pair
 
 The sync layer ([`public/connection.js`](public/connection.js)) picks its
 transport automatically:
 
-- **WebSocket** when a relay server is present (local `npm start`) — full sync
-  **across separate devices** on the network.
-- **BroadcastChannel** when there is no server (a static host such as **Vercel**)
-  — syncs windows/tabs in the **same browser**, so the common "one computer
-  driving two displays" setup still works with zero backend.
+- **WebSocket** when a relay server is present (local `npm start`) — the tablet
+  and big screen connect automatically across the network, no code needed.
+- **WebRTC pairing** when there is no server (a static host such as **Vercel**).
+  The big screen shows a 4-character **pairing code**; enter it on the tablet
+  and the two connect **directly, device-to-device**. A free public PeerJS
+  broker is used only for the brief handshake — the live link is a direct
+  peer-to-peer DataChannel, so it works across separate devices with no backend.
 
-So the published Vercel build is a pure static site: open `/tablet` and
-`/display` as two windows on the same machine and they stay in sync. For sync
-across *different* devices, run the local Node server (or put a realtime
-provider behind the WebSocket).
+### Pairing on the hosted site
+1. Open **`/display`** on the big screen — it shows a pairing code (e.g. `3YWS`).
+2. Open **`/tablet`** on the tablet, type the code, tap **Connect**.
+3. They link up; tapping a saint on the tablet now reveals it on the big screen.
+   Tap the "Big screen" status dot on the tablet to re-pair if the link drops.
+
+Both devices need internet only for the initial handshake; the same venue
+Wi-Fi gives the lowest-latency link. Append `?rtc` to either URL to force
+pairing mode even when a relay server is available.
+
+> Live demo: **https://saints-of-the-isles.vercel.app** — open `/display` and
+> `/tablet` on two devices and pair them.
 
 ## Exhibition setup tips
 

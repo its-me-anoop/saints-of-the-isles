@@ -42,6 +42,18 @@
     </section>
   </main>
 
+  <div class="pairgate" id="pairgate" hidden>
+    <div class="pairgate__panel">
+      <div class="pairgate__mark">✠</div>
+      <h2>Pair with the big screen</h2>
+      <p>Enter the 4-character code shown on the big screen.</p>
+      <input id="pairInput" class="pairgate__input" maxlength="4" autocapitalize="characters"
+             autocomplete="off" autocorrect="off" spellcheck="false" inputmode="text" placeholder="CODE" />
+      <button id="pairConnect" class="pairgate__btn">Connect</button>
+      <div class="pairgate__msg" id="pairMsg" aria-live="polite"></div>
+    </div>
+  </div>
+
   <script src="/saints.js"></script>
   <script src="/map.js"></script>
   <script src="/connection.js"></script>
