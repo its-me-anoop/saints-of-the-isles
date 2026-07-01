@@ -18,8 +18,9 @@ server — **no pairing code, they connect automatically**.
   the saint under your finger; lift to send them to the big screen),
   **pinch to zoom**, and a **Map / List** toggle (saints grouped by country).
 - The **big screen narrates** each saint aloud (Web Speech, sentence-chunked,
-  local-voice preferred), reads the pilgrimage site, and plays a slowly turning
-  **chord-cycle soundscape** (D minor → B♭ → F → C) with humanised bells in a
+  local-voice preferred), reads the pilgrimage site, and plays a **plainchant-like
+  hymn**: a composed four-phrase melody sung in a voice-like tone over a chord
+  cycle (D minor → B♭ → F → C) that glides in step with each phrase, inside a
   generated stone-chapel reverb — ducked under the voice, all toggled from the
   tablet. Reveals arpeggiate the current chord; clearing rings a soft gong.
 - **Searchable list** (name/place + country filter chips), a ✨ **Surprise me**

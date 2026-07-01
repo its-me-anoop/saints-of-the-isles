@@ -203,22 +203,81 @@
     fLfoG.gain.value = 500;
     fLfo.connect(fLfoG); fLfoG.connect(filter.frequency); fLfo.start();
 
-    setTimeout(advanceChord, 15000 + Math.random() * 6000);
-    scheduleBell();
+    setTimeout(playPhrase, 1400); // let the pad establish, then the hymn begins
   }
 
-  // Drift to the next chord — every pad voice glides to its new note.
-  function advanceChord() {
+  // Glide every pad voice to the notes of chord i.
+  function glideChord(i) {
     if (!audioCtx || !padVoices.length) return;
-    chordIdx = (chordIdx + 1) % CHORDS.length;
+    chordIdx = i % CHORDS.length;
     const now = audioCtx.currentTime;
-    CHORDS[chordIdx].pad.forEach((f, i) => {
-      const v = padVoices[i];
+    CHORDS[chordIdx].pad.forEach((f, k) => {
+      const v = padVoices[k];
       if (!v) return;
-      v.oscA.frequency.setTargetAtTime(f, now, 5);
-      v.oscB.frequency.setTargetAtTime(f * 1.005, now, 5);
+      v.oscA.frequency.setTargetAtTime(f, now, 4);
+      v.oscB.frequency.setTargetAtTime(f * 1.005, now, 4);
     });
-    setTimeout(advanceChord, 15000 + Math.random() * 9000);
+  }
+
+  // ---- The melody: a slow, plainchant-like hymn — one phrase per chord ---
+  // Stepwise, modal (D natural minor), ending each phrase on a chord tone.
+  const N = { G4: 392.00, A4: 440.00, C5: 523.25, D5: 587.33, E5: 659.25, F5: 698.46, G5: 783.99, A5: 880.00 };
+  const PHRASES = [
+    [[N.A4, 1.1], [N.D5, 0.85], [N.E5, 0.85], [N.F5, 1.3], [N.E5, 1.1], [N.D5, 2.6]], // over D minor
+    [[N.F5, 1.1], [N.G5, 0.85], [N.A5, 1.3], [N.G5, 1.1], [N.F5, 2.6]],               // over B-flat
+    [[N.A5, 1.1], [N.G5, 0.85], [N.F5, 1.1], [N.E5, 1.3], [N.F5, 2.6]],               // over F
+    [[N.G5, 1.1], [N.E5, 0.85], [N.D5, 1.1], [N.C5, 1.3], [N.D5, 2.6]],               // over C, leaning home
+  ];
+
+  // A voice-like tone: soft attack, three warm partials, gentle vibrato.
+  function melodyNote(freq, dur, when) {
+    try {
+      const t = audioCtx.currentTime + when;
+      const vol = 0.16 + Math.random() * 0.05;
+      const g = audioCtx.createGain();
+      g.gain.setValueAtTime(0.0001, t);
+      g.gain.exponentialRampToValueAtTime(vol, t + 0.14);           // sung entry, not struck
+      g.gain.setValueAtTime(vol, t + Math.max(0.2, dur * 0.55));
+      g.gain.exponentialRampToValueAtTime(0.0001, t + dur + 1.6);   // long release into the reverb
+      let dest = musicGain;
+      if (audioCtx.createStereoPanner) {
+        const p = audioCtx.createStereoPanner();
+        p.pan.value = (Math.random() - 0.5) * 0.5;
+        p.connect(musicGain);
+        dest = p;
+      }
+      g.connect(dest);
+      const o = audioCtx.createOscillator(); o.type = 'sine'; o.frequency.value = freq;
+      const o2 = audioCtx.createOscillator(); o2.type = 'sine'; o2.frequency.value = freq * 2;
+      const g2 = audioCtx.createGain(); g2.gain.value = 0.18; o2.connect(g2); g2.connect(g);
+      const o3 = audioCtx.createOscillator(); o3.type = 'sine'; o3.frequency.value = freq * 3;
+      const g3 = audioCtx.createGain(); g3.gain.value = 0.05; o3.connect(g3); g3.connect(g);
+      const vib = audioCtx.createOscillator(); vib.frequency.value = 4.6;
+      const vibG = audioCtx.createGain(); vibG.gain.value = freq * 0.0035;
+      vib.connect(vibG); vibG.connect(o.frequency);
+      o.connect(g);
+      const end = t + dur + 1.8;
+      o.start(t); o2.start(t); o3.start(t); vib.start(t + 0.25);
+      o.stop(end); o2.stop(end); o3.stop(end); vib.stop(end);
+      // an occasional faint octave shimmer answering the note
+      if (Math.random() < 0.3) bellNote(freq * 2, vol * 0.2, musicGain, when + dur * 0.5);
+    } catch { /* noop */ }
+  }
+
+  let phraseIdx = 0;
+  function playPhrase() {
+    if (!audioCtx || !musicGain) return;
+    glideChord(phraseIdx);               // harmony moves with the melody
+    const phrase = PHRASES[phraseIdx % PHRASES.length];
+    let t = 0.35;
+    for (const [f, d] of phrase) {
+      const dur = d * (0.95 + Math.random() * 0.1); // human timing
+      melodyNote(f, dur, t);
+      t += dur;
+    }
+    phraseIdx = (phraseIdx + 1) % PHRASES.length;
+    // a breath between phrases, as a singer would take
+    setTimeout(playPhrase, (t + 1.6 + Math.random() * 2.2) * 1000);
   }
 
   // Soft bell notes drawn from whichever chord is sounding now.
@@ -243,18 +302,6 @@
       o.connect(g);
       o.start(t); o.stop(t + 3.2); oh.start(t); oh.stop(t + 3.2);
     } catch { /* noop */ }
-  }
-  let lastBell = 0;
-  function scheduleBell() {
-    // Humanised: varied loudness, no immediate repeats, occasional silence.
-    if (audioCtx && musicGain && Math.random() > 0.15) {
-      const pool = CHORDS[chordIdx].bells;
-      let f = pool[Math.floor(Math.random() * pool.length)];
-      if (f === lastBell) f = pool[(pool.indexOf(f) + 1) % pool.length];
-      lastBell = f;
-      bellNote(f, 0.09 + Math.random() * 0.14, musicGain);
-    }
-    setTimeout(scheduleBell, 3000 + Math.random() * 5000);
   }
 
   function rampMusic() {
