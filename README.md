@@ -17,8 +17,14 @@ server — **no pairing code, they connect automatically**.
 - **Scrub to preview** (drag a finger across the map to see a circular avatar of
   the saint under your finger; lift to send them to the big screen),
   **pinch to zoom**, and a **Map / List** toggle (saints grouped by country).
-- The **big screen narrates** each saint aloud (Web Speech), reads the
-  pilgrimage site, and plays gentle ambient music — all toggled from the tablet.
+- The **big screen narrates** each saint aloud (Web Speech, sentence-chunked,
+  local-voice preferred), reads the pilgrimage site, and plays a slowly turning
+  **chord-cycle soundscape** (D minor → B♭ → F → C) with humanised bells in a
+  generated stone-chapel reverb — ducked under the voice, all toggled from the
+  tablet. Reveals arpeggiate the current chord; clearing rings a soft gong.
+- **Searchable list** (name/place + country filter chips), a ✨ **Surprise me**
+  button, a persistent *now-showing* chip, and touch sounds + haptics on the
+  tablet. The idle big screen drifts portraits and rotates the saints' own words.
 - **Real portraits** for 80 of the 85 saints, downloaded from Wikimedia Commons
   with full attribution (the few without a usable image show an elegant
   monogram). Images are stored locally so the kiosk works offline.

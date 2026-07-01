@@ -53,6 +53,26 @@
     }).join('');
   })();
 
+  // ---- Idle: rotating words of the saints --------------------------------
+  (function rotateQuotes() {
+    const el = document.getElementById('inviteQuote');
+    if (!el) return;
+    const pool = SAINTS.filter((s) => s.quote && s.quote.trim().length > 8);
+    if (!pool.length) return;
+    let qi = Math.floor(Math.random() * pool.length);
+    const show = () => {
+      const s = pool[qi % pool.length];
+      qi += 1;
+      el.classList.add('is-out');
+      setTimeout(() => {
+        el.innerHTML = `&ldquo;${esc(s.quote)}&rdquo;<span>— ${esc(s.name)}</span>`;
+        el.classList.remove('is-out');
+      }, 650);
+    };
+    show();
+    setInterval(show, 10500);
+  })();
+
   // ---- Rays behind the portrait ----------------------------------------
   (function buildRays() {
     const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
@@ -78,13 +98,19 @@
   // ---- Audio: ambient music + narration (TTS) + reveal chime ------------
   // The big screen produces all the sound; the tablet's 🔔 toggle controls it.
   let audioCtx = null;
-  let musicGain = null;
+  let musicGain = null;   // music bus (pad + bells)
+  let sfxGain = null;     // effects bus (reveal arpeggio, gong)
+  let reverbIn = null;    // shared reverb send
+  let padVoices = [];
+  let chordIdx = 0;
+  let speaking = false;   // narration in progress (ducks the music)
   let muted = false;      // narration + chime ("Sound")
   let musicOn = true;     // ambient background music ("Music")
   let unlocked = false;
   const MUSIC_VOL = 0.4;
   const sndind = document.getElementById('sndind');
   const audiostart = document.getElementById('audiostart');
+  const speakind = document.getElementById('speakind');
 
   function reflectSoundIndicator() {
     if (!sndind) return;
@@ -92,12 +118,53 @@
     sndind.classList.toggle('is-muted', muted && !musicOn);
   }
 
-  // A calm, audible D-minor pad with gentle bell tones drifting over it.
+  // ---- Ambient engine: a slow chord cycle in a stone-chapel reverb ------
+  // D minor -> B-flat -> F -> C, each with matching bell tones above it.
+  const CHORDS = [
+    { pad: [146.83, 220.00, 293.66, 349.23, 440.00], bells: [587.33, 698.46, 880.00, 1174.66] }, // D minor
+    { pad: [116.54, 174.61, 293.66, 349.23, 466.16], bells: [587.33, 698.46, 932.33, 1396.91] }, // B-flat major
+    { pad: [130.81, 174.61, 261.63, 349.23, 440.00], bells: [698.46, 880.00, 1046.50, 1396.91] }, // F major
+    { pad: [130.81, 196.00, 261.63, 329.63, 392.00], bells: [523.25, 783.99, 1046.50, 1318.51] }, // C major
+  ];
+
+  // A generated impulse response — no audio file, sounds like a stone chapel.
+  function makeReverb(out) {
+    const len = Math.floor(audioCtx.sampleRate * 2.6);
+    const ir = audioCtx.createBuffer(2, len, audioCtx.sampleRate);
+    for (let ch = 0; ch < 2; ch++) {
+      const d = ir.getChannelData(ch);
+      for (let i = 0; i < len; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / len, 2.9);
+    }
+    const conv = audioCtx.createConvolver();
+    conv.buffer = ir;
+    reverbIn = audioCtx.createGain();
+    const wet = audioCtx.createGain();
+    wet.gain.value = 0.5;
+    reverbIn.connect(conv); conv.connect(wet); wet.connect(out);
+  }
+
   function startAmbient() {
     if (!audioCtx || musicGain) return;
+    // Master bus with a gentle compressor so stacked sounds never clip.
+    const master = audioCtx.createGain();
+    const comp = audioCtx.createDynamicsCompressor();
+    comp.threshold.value = -14; comp.knee.value = 12; comp.ratio.value = 4;
+    master.connect(comp); comp.connect(audioCtx.destination);
+    makeReverb(master);
+
+    // Two buses — music and effects — each dry + a send into the shared reverb.
     musicGain = audioCtx.createGain();
     musicGain.gain.value = musicOn ? MUSIC_VOL : 0;
-    musicGain.connect(audioCtx.destination);
+    musicGain.connect(master);
+    const musicSend = audioCtx.createGain();
+    musicSend.gain.value = 0.6;
+    musicGain.connect(musicSend); musicSend.connect(reverbIn);
+
+    sfxGain = audioCtx.createGain();
+    sfxGain.connect(master);
+    const sfxSend = audioCtx.createGain();
+    sfxSend.gain.value = 0.8;
+    sfxGain.connect(sfxSend); sfxSend.connect(reverbIn);
 
     const filter = audioCtx.createBiquadFilter();
     filter.type = 'lowpass';
@@ -105,24 +172,29 @@
     filter.Q.value = 0.5;
     filter.connect(musicGain);
 
-    const chord = [146.83, 220.00, 293.66, 349.23, 440.00]; // D3 A3 D4 F4 A4
-    chord.forEach((f, i) => {
+    padVoices = CHORDS[0].pad.map((f, i) => {
       const g = audioCtx.createGain();
       g.gain.value = 0.07;
-      g.connect(filter);
-      [f, f * 1.005].forEach((freq, j) => {
-        const o = audioCtx.createOscillator();
-        o.type = j === 0 ? 'sine' : 'triangle';
-        o.frequency.value = freq;
-        o.connect(g);
-        o.start();
-      });
+      // Spread the five voices across the stereo field.
+      let out = filter;
+      if (audioCtx.createStereoPanner) {
+        const p = audioCtx.createStereoPanner();
+        p.pan.value = -0.4 + i * 0.2;
+        p.connect(filter);
+        out = p;
+      }
+      g.connect(out);
+      const oscA = audioCtx.createOscillator();
+      oscA.type = 'sine'; oscA.frequency.value = f; oscA.connect(g); oscA.start();
+      const oscB = audioCtx.createOscillator();
+      oscB.type = 'triangle'; oscB.frequency.value = f * 1.005; oscB.connect(g); oscB.start();
       const lfo = audioCtx.createOscillator(); // gentle breathing per voice
       lfo.type = 'sine';
       lfo.frequency.value = 0.06 + i * 0.017;
       const lfoG = audioCtx.createGain();
       lfoG.gain.value = 0.025;
       lfo.connect(lfoG); lfoG.connect(g.gain); lfo.start();
+      return { oscA, oscB };
     });
     const fLfo = audioCtx.createOscillator(); // slow filter sweep for movement
     fLfo.type = 'sine';
@@ -131,35 +203,67 @@
     fLfoG.gain.value = 500;
     fLfo.connect(fLfoG); fLfoG.connect(filter.frequency); fLfo.start();
 
+    setTimeout(advanceChord, 15000 + Math.random() * 6000);
     scheduleBell();
   }
 
-  // Soft, slow bell notes from the chord — gives the pad a sense of music.
-  function scheduleBell() {
-    if (!audioCtx || !musicGain) return;
+  // Drift to the next chord — every pad voice glides to its new note.
+  function advanceChord() {
+    if (!audioCtx || !padVoices.length) return;
+    chordIdx = (chordIdx + 1) % CHORDS.length;
+    const now = audioCtx.currentTime;
+    CHORDS[chordIdx].pad.forEach((f, i) => {
+      const v = padVoices[i];
+      if (!v) return;
+      v.oscA.frequency.setTargetAtTime(f, now, 5);
+      v.oscB.frequency.setTargetAtTime(f * 1.005, now, 5);
+    });
+    setTimeout(advanceChord, 15000 + Math.random() * 9000);
+  }
+
+  // Soft bell notes drawn from whichever chord is sounding now.
+  function bellNote(freq, vol, bus, when) {
     try {
-      const notes = [587.33, 698.46, 880.00, 1046.50]; // D5 F5 A5 C6
-      const f = notes[Math.floor(Math.random() * notes.length)];
-      const t = audioCtx.currentTime + 0.05;
+      const t = audioCtx.currentTime + (when || 0.05);
       const g = audioCtx.createGain();
       g.gain.setValueAtTime(0.0001, t);
-      g.gain.exponentialRampToValueAtTime(0.22, t + 0.04);
+      g.gain.exponentialRampToValueAtTime(vol, t + 0.04);
       g.gain.exponentialRampToValueAtTime(0.0001, t + 2.8);
-      g.connect(musicGain);
-      const o = audioCtx.createOscillator(); o.type = 'sine'; o.frequency.value = f;
-      const oh = audioCtx.createOscillator(); oh.type = 'sine'; oh.frequency.value = f * 2;
+      let dest = bus;
+      if (audioCtx.createStereoPanner) { // each bell rings from its own spot
+        const p = audioCtx.createStereoPanner();
+        p.pan.value = (Math.random() - 0.5) * 0.9;
+        p.connect(bus);
+        dest = p;
+      }
+      g.connect(dest);
+      const o = audioCtx.createOscillator(); o.type = 'sine'; o.frequency.value = freq;
+      const oh = audioCtx.createOscillator(); oh.type = 'sine'; oh.frequency.value = freq * 2;
       const ohg = audioCtx.createGain(); ohg.gain.value = 0.22; oh.connect(ohg); ohg.connect(g);
       o.connect(g);
       o.start(t); o.stop(t + 3.2); oh.start(t); oh.stop(t + 3.2);
     } catch { /* noop */ }
-    setTimeout(scheduleBell, 2600 + Math.random() * 4200);
+  }
+  let lastBell = 0;
+  function scheduleBell() {
+    // Humanised: varied loudness, no immediate repeats, occasional silence.
+    if (audioCtx && musicGain && Math.random() > 0.15) {
+      const pool = CHORDS[chordIdx].bells;
+      let f = pool[Math.floor(Math.random() * pool.length)];
+      if (f === lastBell) f = pool[(pool.indexOf(f) + 1) % pool.length];
+      lastBell = f;
+      bellNote(f, 0.09 + Math.random() * 0.14, musicGain);
+    }
+    setTimeout(scheduleBell, 3000 + Math.random() * 5000);
   }
 
   function rampMusic() {
     if (!musicGain || !audioCtx) return;
     const now = audioCtx.currentTime;
+    // Duck under the narration so the voice always sits on top.
+    const target = musicOn ? (speaking ? MUSIC_VOL * 0.3 : MUSIC_VOL) : 0;
     musicGain.gain.cancelScheduledValues(now);
-    musicGain.gain.setTargetAtTime(musicOn ? MUSIC_VOL : 0, now, 0.5);
+    musicGain.gain.setTargetAtTime(target, now, speaking ? 0.25 : 0.6);
   }
 
   function unlock() {
@@ -180,18 +284,27 @@
   }
   if (audiostart) audiostart.addEventListener('click', unlock);
   ['pointerdown', 'keydown', 'touchstart'].forEach((ev) => window.addEventListener(ev, unlock, { once: true }));
+  // Kiosk mode: if autoplay is already permitted (e.g. Chrome launched with
+  // --autoplay-policy=no-user-gesture-required), start without a tap.
+  try {
+    const probe = new (window.AudioContext || window.webkitAudioContext)();
+    if (probe.state === 'running') { audioCtx = probe; unlock(); }
+    else probe.close();
+  } catch { /* noop */ }
 
   // ---- Narration (Web Speech) ----
   let voice = null;
   function pickVoice() {
     try {
       const vs = speechSynthesis.getVoices();
-      // Prefer a natural, named British English voice when one is installed.
-      const pref = ['Google UK English Female', 'Google UK English Male', 'Serena', 'Kate', 'Stephanie',
-        'Daniel', 'Arthur', 'Oliver', 'Microsoft Libby Online (Natural) - English (United Kingdom)',
-        'Microsoft Sonia Online (Natural) - English (United Kingdom)'];
-      for (const n of pref) { const v = vs.find((x) => x.name === n); if (v) { voice = v; return; } }
-      voice = vs.find((v) => /en[-_]GB/i.test(v.lang)) || vs.find((v) => /^en/i.test(v.lang)) || vs[0] || null;
+      // Prefer LOCAL voices (network voices can silently fail or cut off),
+      // and a natural, named British English one when installed.
+      const locals = vs.filter((v) => v.localService);
+      const pool = locals.length ? locals : vs;
+      const pref = ['Serena', 'Kate', 'Stephanie', 'Daniel', 'Arthur', 'Oliver',
+        'Google UK English Female', 'Google UK English Male'];
+      for (const n of pref) { const v = pool.find((x) => x.name === n); if (v) { voice = v; return; } }
+      voice = pool.find((v) => /en[-_]GB/i.test(v.lang)) || pool.find((v) => /^en/i.test(v.lang)) || vs[0] || null;
     } catch { voice = null; }
   }
   try { pickVoice(); speechSynthesis.addEventListener('voiceschanged', pickVoice); } catch { /* noop */ }
@@ -208,6 +321,8 @@
       .replace(/\bc\.\s*(?=\d)/g, 'circa ')
       .replace(/\bd\.\s*(?=\d)/g, 'died ')
       .replace(/,?\s*(?:S\.?J\.?|O\.?S\.?B\.?|O\.?F\.?M\.?|O\.?P\.?)\b/g, '')
+      .replace(/(\d)\s*[-–—]\s*(\d)/g, '$1 to $2')   // "634 – 687" -> "634 to 687"
+      .replace(/\s*\([^)]*\)/g, '')                   // drop parenthetical glosses
       .replace(/&/g, ' and ')
       .replace(/[—–]/g, ', ')
       .replace(/\s+/g, ' ')
@@ -216,20 +331,50 @@
   }
   function narrate(s) {
     if (muted || !unlocked || !s) return;
+    if (currentId !== s.id) return; // the screen moved on before the voice began
     try {
       speechSynthesis.cancel();
-      const u = new SpeechSynthesisUtterance(speechText(s));
-      u.rate = 0.9; u.pitch = 1.0; u.volume = 1;
-      u.lang = (voice && voice.lang) || 'en-GB';
-      if (voice) u.voice = voice;
-      speechSynthesis.speak(u);
+      // Chunk into sentence groups — one very long utterance can be cut off
+      // mid-stream by some engines; a queue of short ones is robust.
+      const sentences = speechText(s).match(/[^.!?]+[.!?]+(?:["')\]]*)?/g) || [speechText(s)];
+      const chunks = [];
+      let cur = '';
+      for (const sent of sentences) {
+        if (cur && (cur + sent).length > 200) { chunks.push(cur); cur = sent; }
+        else cur += sent;
+      }
+      if (cur.trim()) chunks.push(cur);
+      // Duck the music and show the speaking bars while the voice is live.
+      const done = () => { speaking = false; rampMusic(); if (speakind) speakind.classList.remove('is-on'); };
+      chunks.forEach((chunk, i) => {
+        const u = new SpeechSynthesisUtterance(chunk.trim());
+        u.rate = 0.9; u.pitch = 1.0; u.volume = 1;
+        u.lang = (voice && voice.lang) || 'en-GB';
+        if (voice) u.voice = voice;
+        if (i === 0) u.onstart = () => { speaking = true; rampMusic(); if (speakind) speakind.classList.add('is-on'); };
+        if (i === chunks.length - 1) u.onend = done;
+        u.onerror = done;
+        speechSynthesis.speak(u);
+      });
     } catch { /* ignore */ }
   }
-  function stopNarration() { try { speechSynthesis.cancel(); } catch { /* noop */ } }
+  let narrateTimer = null;
+  function stopNarration() {
+    clearTimeout(narrateTimer);
+    try { speechSynthesis.cancel(); } catch { /* noop */ }
+    speaking = false;
+    if (speakind) speakind.classList.remove('is-on');
+    rampMusic();
+  }
 
   function setMuted(m) {        // "Sound" — narration + chime
     muted = !!m;
     if (muted) stopNarration();
+    else if (currentId && byId[currentId]) {
+      // Unmuting while a saint is showing: pick the narration back up.
+      clearTimeout(narrateTimer);
+      narrateTimer = setTimeout(() => narrate(byId[currentId]), 400);
+    }
     reflectSoundIndicator();
   }
   function setMusic(on) {       // "Music" — ambient background pad
@@ -240,22 +385,33 @@
   reflectSoundIndicator();
 
   function chime() {
-    if (muted || !audioCtx) return;
+    if (muted || !audioCtx || !sfxGain) return;
     try {
       if (audioCtx.state === 'suspended') audioCtx.resume();
-      const now = audioCtx.currentTime;
-      [523.25, 783.99, 1046.5].forEach((f, i) => {
-        const osc = audioCtx.createOscillator();
-        const gain = audioCtx.createGain();
-        osc.type = 'sine';
-        osc.frequency.value = f;
-        const peak = 0.16 / (i + 1);
-        gain.gain.setValueAtTime(0, now);
-        gain.gain.linearRampToValueAtTime(peak, now + 0.02 + i * 0.015);
-        gain.gain.exponentialRampToValueAtTime(0.0001, now + 2.6 + i * 0.3);
-        osc.connect(gain).connect(audioCtx.destination);
-        osc.start(now);
-        osc.stop(now + 3.2);
+      // A rising arpeggio of the current chord — the sound of a reveal.
+      const bells = CHORDS[chordIdx].bells;
+      [0, 1, 2].forEach((i) => {
+        bellNote(bells[i % bells.length], 0.15 / (i * 0.35 + 1), sfxGain, 0.03 + i * 0.11);
+      });
+    } catch { /* ignore */ }
+  }
+
+  // A low, soft gong when the screen returns to rest.
+  function gong() {
+    if (muted || !audioCtx || !sfxGain) return;
+    try {
+      const t = audioCtx.currentTime + 0.03;
+      [73.42, 146.83, 220.5].forEach((f, i) => {
+        const g = audioCtx.createGain();
+        g.gain.setValueAtTime(0.0001, t);
+        g.gain.exponentialRampToValueAtTime(0.12 / (i + 1), t + 0.06);
+        g.gain.exponentialRampToValueAtTime(0.0001, t + 3.6);
+        g.connect(sfxGain);
+        const o = audioCtx.createOscillator();
+        o.type = 'sine';
+        o.frequency.value = f * (i === 2 ? 1.007 : 1); // slight shimmer on top
+        o.connect(g);
+        o.start(t); o.stop(t + 4);
       });
     } catch { /* ignore */ }
   }
@@ -275,31 +431,32 @@
             onerror="this.parentNode.classList.add('is-mono');this.remove();" />`
       : '';
     const frameClass = s.image ? 'saint__frame' : 'saint__frame is-mono';
-    const credit = s.credit ? `<div class="saint__credit rise" style="--rise-delay:.5s">Image: ${esc(s.credit)}</div>` : '';
-    const summary = `<p class="saint__summary rise" style="--rise-delay:.3s">${esc(shortSummary(s))}</p>`;
+    const credit = s.credit ? `<div class="saint__credit rise" style="--rise-delay:1.3s">Image: ${esc(s.credit)}</div>` : '';
+    const summary = `<p class="saint__summary rise" style="--rise-delay:.9s">${esc(shortSummary(s))}<span class="saint__more"> ✦</span></p>`;
     const facts = (s.facts || []).slice(0, 3).map((f) => `<li>${esc(f)}</li>`).join('');
     const factsBlock = facts
-      ? `<div class="saint__facts-wrap rise" style="--rise-delay:.4s">
+      ? `<div class="saint__facts-wrap rise" style="--rise-delay:1.05s">
            <div class="saint__facts-head">Curious facts</div>
            <ul class="saint__facts">${facts}</ul>
          </div>` : '';
     const pilg = (s.pilgrimage && s.pilgrimage.site)
-      ? `<div class="saint__pilg rise" style="--rise-delay:.32s">
+      ? `<div class="saint__pilg rise" style="--rise-delay:.6s">
            <span class="saint__pilg-label">Pilgrimage</span>
            <span class="saint__pilg-site">${esc(s.pilgrimage.site)}</span>
            ${s.pilgrimage.town ? `<span class="saint__pilg-town">${esc(s.pilgrimage.town)}</span>` : ''}
          </div>` : '';
     const prayer = s.prayer
-      ? `<blockquote class="saint__prayer rise" style="--rise-delay:.58s">✛ ${esc(s.prayer)}</blockquote>` : '';
+      ? `<blockquote class="saint__prayer rise" style="--rise-delay:1.2s">✛ ${esc(s.prayer)}</blockquote>` : '';
 
+    // Three acts: the face (0s) — the identity (~0.35s) — the story (~0.8s).
     saintEl.innerHTML = `
       <div class="saint__left">
-        <div class="${frameClass} rise" style="--rise-delay:.05s" data-mono="${esc(monogram(s.name))}">
+        <div class="${frameClass} rise" style="--rise-delay:0s" data-mono="${esc(monogram(s.name))}">
           ${portrait}
         </div>
-        <div class="saint__place rise" style="--rise-delay:.16s">${esc(s.place)}</div>
-        <div class="saint__region rise" style="--rise-delay:.19s">${esc(s.region)}</div>
-        <dl class="saint__meta rise" style="--rise-delay:.26s">
+        <div class="saint__place rise" style="--rise-delay:.42s">${esc(s.place)}</div>
+        <div class="saint__region rise" style="--rise-delay:.46s">${esc(s.region)}</div>
+        <dl class="saint__meta rise" style="--rise-delay:.52s">
           <div><dt>Feast</dt><dd>${esc(s.feast)}</dd></div>
           <div><dt>Lived</dt><dd>${esc(s.era)}</dd></div>
         </dl>
@@ -307,9 +464,9 @@
         ${credit}
       </div>
       <div class="saint__right">
-        <p class="saint__epithet rise" style="--rise-delay:.1s">${esc(s.epithet)}</p>
-        <h1 class="saint__name rise" style="--rise-delay:.16s">${esc(s.name)}</h1>
-        <p class="saint__intro rise" style="--rise-delay:.24s">${esc(s.intro)}</p>
+        <p class="saint__epithet rise" style="--rise-delay:.38s">${esc(s.epithet)}</p>
+        <h1 class="saint__name rise" style="--rise-delay:.35s">${esc(s.name)}</h1>
+        <p class="saint__intro rise" style="--rise-delay:.8s">${esc(s.intro)}</p>
         ${summary}
         ${factsBlock}
         ${prayer}
@@ -317,13 +474,24 @@
 
     display.classList.add('has-saint');
     void saintEl.offsetWidth;
-    if (changing) { chime(); narrate(s); }
+    // Re-tapping the same saint replays the narration once it has finished.
+    let idle = false;
+    try { idle = !speechSynthesis.speaking && !speechSynthesis.pending; } catch { /* noop */ }
+    if (changing || idle) {
+      chime();
+      // Let the chime ring out before the voice enters (also avoids the
+      // cancel()->speak() race that can swallow the first utterance).
+      clearTimeout(narrateTimer);
+      narrateTimer = setTimeout(() => narrate(s), 700);
+    }
   }
 
   function showHome() {
+    const had = currentId !== null;
     currentId = null;
     display.classList.remove('has-saint');
     stopNarration();
+    if (had) gong();
   }
 
   // ---- Connection -------------------------------------------------------

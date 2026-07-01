@@ -324,7 +324,7 @@ body {
 .nowshowing {
   position: absolute;
   left: 50%;
-  bottom: 2.6rem;
+  bottom: 4.4rem;
   transform: translate(-50%, 1rem);
   opacity: 0;
   pointer-events: none;
@@ -376,7 +376,7 @@ body {
   transition: opacity 1.2s var(--ease), transform 1.2s var(--ease);
   pointer-events: none;
 }
-.display.has-saint .rays { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+.display.has-saint .rays { opacity: 0.28; transform: translate(-50%, -50%) scale(1); }
 .rays svg { width: 100%; height: 100%; animation: turn 80s linear infinite; }
 @keyframes turn { to { transform: rotate(360deg); } }
 
@@ -1003,3 +1003,224 @@ body {
   transition: opacity 0.4s var(--ease);
 }
 .sndind.is-muted { opacity: 0.3; }
+
+/* =========================================================================
+   Engagement & polish round — list tools, chips, chips, SFX-era UI
+   ========================================================================= */
+
+/* List tools: search + country chips */
+.listtools {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: grid;
+  gap: 0.6rem;
+  padding: 0.4rem 0.2rem 0.9rem;
+  background: linear-gradient(to bottom, var(--ink) 80%, transparent);
+}
+.listsearch {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  color: var(--parchment);
+  background: oklch(20% 0.03 274);
+  border: 1px solid oklch(55% 0.07 86 / 0.35);
+  border-radius: 999px;
+  padding: 0.7em 1.3em;
+  outline: none;
+  transition: border-color 0.3s var(--ease);
+}
+.listsearch::placeholder { color: var(--mist-dim); font-style: italic; }
+.listsearch:focus { border-color: var(--gold-soft); }
+.chiprow { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.chip {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  color: var(--mist-dim);
+  background: transparent;
+  border: 1px solid oklch(45% 0.04 280 / 0.5);
+  border-radius: 999px;
+  padding: 0.45em 1.05em;
+  cursor: pointer;
+  transition: color 0.3s var(--ease), border-color 0.3s var(--ease), background 0.3s var(--ease);
+}
+.chip.is-on {
+  color: var(--ink);
+  background: linear-gradient(170deg, var(--gold), var(--gold-soft));
+  border-color: transparent;
+}
+.listempty { text-align: center; padding: 3rem 1rem; font-style: italic; color: var(--mist-dim); }
+.scard__epi {
+  font-style: italic;
+  font-size: 0.76rem;
+  color: var(--mist);
+  line-height: 1.2;
+}
+.scard__feast {
+  font-family: var(--font-display);
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mist-dim);
+}
+
+/* Persistent "now on the big screen" chip in the tablet footer */
+.nowchip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55em;
+  max-width: 34vw;
+  background: oklch(20% 0.03 274 / 0.85);
+  border: 1px solid oklch(var(--pin-accent, var(--gold)) / 0.6);
+  border-radius: 999px;
+  padding: 0.25em 0.95em 0.25em 0.3em;
+  cursor: default;
+}
+.nowchip[hidden] { display: none !important; }
+.nowchip__img {
+  width: 1.9em;
+  height: 1.9em;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center top;
+  background-color: oklch(26% 0.04 274);
+  display: grid;
+  place-items: center;
+  font-family: var(--font-deco);
+  font-size: 0.85em;
+  color: oklch(var(--pin-accent, var(--gold)));
+  outline: 1.5px solid oklch(var(--pin-accent, var(--gold)) / 0.7);
+}
+.nowchip__name {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  color: var(--parchment);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* The scrub bubble gains the saint's epithet */
+.preview__epithet { font-size: 0.75rem; font-style: italic; color: var(--mist); margin-top: 0.1em; }
+
+/* Surprise button reads as the playful, primary invitation */
+.iconbtn--gold {
+  color: var(--ink);
+  background: linear-gradient(170deg, var(--gold), var(--gold-soft));
+  border-color: transparent;
+}
+.iconbtn--gold:hover { color: var(--ink); }
+
+/* Clear-the-screen is a deliberate action — give it its own zone */
+.tablet__controls .reset { margin-left: 1.1rem; }
+
+/* Offline: escalate beyond the little lamp dot */
+.lamp[data-conn-state='offline'] .lamp__text::after {
+  content: ' · reconnecting…';
+  font-style: italic;
+  color: oklch(72% 0.14 45);
+}
+.mapwrap[data-conn-state='offline']::before {
+  content: 'Reconnecting to the big screen…';
+  position: absolute;
+  top: 0.8rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 6;
+  font-style: italic;
+  font-size: 0.9rem;
+  color: oklch(80% 0.11 60);
+  background: oklch(18% 0.03 274 / 0.92);
+  border: 1px solid oklch(70% 0.14 45 / 0.45);
+  border-radius: 999px;
+  padding: 0.4em 1.2em;
+}
+
+/* Speaking indicator on the big screen — the voice is live */
+.speakind {
+  position: fixed;
+  bottom: 1.3rem;
+  left: 3.6rem;
+  z-index: 3;
+  display: none;
+  align-items: flex-end;
+  gap: 3px;
+  height: 14px;
+}
+.speakind.is-on { display: inline-flex; }
+.speakind i {
+  width: 3px;
+  border-radius: 2px;
+  background: var(--gold-soft);
+  height: 8px;
+  transform-origin: bottom;
+  animation: eq 1s ease-in-out infinite;
+}
+.speakind i:nth-child(2) { animation-delay: 0.18s; height: 13px; }
+.speakind i:nth-child(3) { animation-delay: 0.36s; height: 10px; }
+@keyframes eq {
+  0%, 100% { transform: scaleY(0.35); }
+  50%      { transform: scaleY(1); }
+}
+
+/* Ken Burns drift keeps the portrait alive */
+.saint__img { animation: kenburns 34s ease-in-out infinite alternate; }
+@keyframes kenburns {
+  from { transform: scale(1) translateY(0); }
+  to   { transform: scale(1.07) translateY(-2%); }
+}
+
+/* Rotating words of the saints on the idle screen */
+.invite__quote {
+  margin-top: 1.7em;
+  max-width: 56ch;
+  min-height: 4.4em;
+  font-style: italic;
+  font-size: clamp(0.95rem, 2vh, 1.25rem);
+  line-height: 1.55;
+  color: var(--gold-soft);
+  opacity: 0.92;
+  transition: opacity 0.65s var(--ease);
+}
+.invite__quote.is-out { opacity: 0; }
+.invite__quote span {
+  display: block;
+  margin-top: 0.45em;
+  font-family: var(--font-display);
+  font-style: normal;
+  font-size: 0.72em;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--mist-dim);
+}
+
+/* Gentle come-hither pulse on the idle instruction */
+.invite__center > p { animation: cue 5.5s ease-in-out infinite; }
+@keyframes cue {
+  0%, 100% { opacity: 0.72; }
+  50%      { opacity: 1; }
+}
+
+/* One micro-label size across the reveal (legibility at distance) */
+.saint__meta dt, .saint__pilg-label, .saint__facts-head {
+  font-size: clamp(0.72rem, 1.5vh, 0.85rem);
+}
+
+/* The summary's quiet "there is more" mark */
+.saint__more { color: oklch(var(--accent)); font-style: normal; }
+
+/* Prayer: illuminated block, not a side-stripe */
+.saint__prayer {
+  border-left: none;
+  border-radius: 12px;
+  padding: 0.9em 1.2em;
+  background: oklch(var(--accent) / 0.08);
+}
+
+/* Visible keyboard focus everywhere */
+button:focus-visible, .pin:focus-visible, .listsearch:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}

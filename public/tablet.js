@@ -11,6 +11,11 @@
   const resetBtn = document.getElementById('reset');
   const soundBtn = document.getElementById('sound');
   const musicBtn = document.getElementById('music');
+  const surpriseBtn = document.getElementById('surprise');
+  const nowchip = document.getElementById('nowchip');
+  const nowchipImg = document.getElementById('nowchipImg');
+  const nowchipName = document.getElementById('nowchipName');
+  let hintDone = false;
   const viewMapBtn = document.getElementById('viewMap');
   const viewListBtn = document.getElementById('viewList');
   const listview = document.getElementById('listview');
@@ -29,6 +34,46 @@
   const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
   // Haptic feedback (Android/Chrome support navigator.vibrate; iOS Safari ignores it).
   const haptic = (ms) => { try { if (navigator.vibrate) navigator.vibrate(ms); } catch { /* noop */ } };
+
+  // Tiny synthesized touch sounds; follow the Sound toggle, unlock on first touch.
+  let tctx = null;
+  let lastTick = 0;
+  function ensureTctx() {
+    try {
+      tctx = tctx || new (window.AudioContext || window.webkitAudioContext)();
+      if (tctx.state === 'suspended') tctx.resume();
+    } catch { /* noop */ }
+  }
+  window.addEventListener('pointerdown', ensureTctx, { once: true });
+  function blip(freq, dur, vol, delay) {
+    if (muted || !tctx) return;
+    try {
+      const t = tctx.currentTime + (delay || 0);
+      const o = tctx.createOscillator();
+      const g = tctx.createGain();
+      o.type = 'sine'; o.frequency.value = freq;
+      g.gain.setValueAtTime(0.0001, t);
+      g.gain.exponentialRampToValueAtTime(vol, t + 0.008);
+      g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+      o.connect(g).connect(tctx.destination);
+      o.start(t); o.stop(t + dur + 0.05);
+    } catch { /* noop */ }
+  }
+  function tickSound() {
+    const now = performance.now();
+    if (now - lastTick < 80) return; // don't machine-gun while scrubbing
+    lastTick = now;
+    blip(1350, 0.05, 0.045);
+  }
+  function confirmSound() { blip(659.25, 0.1, 0.06); blip(987.77, 0.16, 0.05, 0.07); }
+
+  // The "how to use it" hint hides once a visitor has selected a saint, then
+  // quietly returns after 25s of idle for whoever walks up next.
+  let hintTimer = null;
+  function scheduleHintReturn() {
+    clearTimeout(hintTimer);
+    hintTimer = setTimeout(() => { hintDone = false; applyView(); }, 25000);
+  }
   const [, , VW, VH] = MAP.viewBox.split(' ').map(Number);
 
   // ---- Build the map ----------------------------------------------------
@@ -65,7 +110,7 @@
   zoomLayer.appendChild(el('path', { class: 'land land--britain', d: MAP.uk }));
 
   // ---- Declutter pins ---------------------------------------------------
-  const MIN_SEP = 15;
+  const MIN_SEP = 22; // keep neighbouring hit-zones honest for fingertips
   const placed = [];
   function settle(x, y) {
     let px = x, py = y;
@@ -89,7 +134,7 @@
       transform: `translate(${x.toFixed(1)} ${y.toFixed(1)})`,
       style: `--pin-accent: oklch(${saint.accent});` });
     g.dataset.id = saint.id;
-    g.appendChild(el('circle', { class: 'pin__hit', r: 18, fill: 'transparent' }));
+    g.appendChild(el('circle', { class: 'pin__hit', r: 21, fill: 'transparent' }));
     g.appendChild(el('circle', { class: 'pin__pulse', r: 7 }));
     g.appendChild(el('circle', { class: 'pin__halo', r: 12 }));
     const dot = el('circle', { class: 'pin__dot', r: 4.5 });
@@ -121,7 +166,7 @@
     const zoomed = view.k > 1.02;
     zoomResetBtn.hidden = !zoomed;
     zoomResetBtn.setAttribute('aria-hidden', String(!zoomed));
-    if (mapHint) mapHint.classList.toggle('is-hidden', zoomed);
+    if (mapHint) mapHint.classList.toggle('is-hidden', zoomed || hintDone);
   }
   function zoomAt(cx, cy, kNew) {
     const U = toUser(cx, cy);
@@ -163,12 +208,14 @@
         `<div class="preview__img${s.image ? '' : ' is-mono'}" data-mono="${monogram(s.name)}"` +
         `${s.image ? ` style="background-image:url('/${esc(s.image)}')"` : ''}></div>` +
         `<div class="preview__name">${esc(s.name)}</div>` +
+        `<div class="preview__epithet">${esc(s.epithet || '')}</div>` +
         `<div class="preview__place">${esc(s.place)}</div>`;
       previewEl.style.left = `${cx}px`;
       previewEl.style.top = `${cy}px`;
       previewEl.classList.toggle('is-below', cy < w.height * 0.22);
       previewEl.classList.add('is-shown');
       haptic(6); // light tick as the finger passes over each saint
+      tickSound();
     }
     pinNodes.forEach((node, key) => node.classList.toggle('is-hover', key === underId));
   }
@@ -212,6 +259,7 @@
     if (pointers.size === 0) {
       if (!gestured && underId) select(underId);
       gestured = false; gStart = null; hidePreview();
+      scheduleHintReturn();
     } else if (pointers.size === 1) {
       gStart = null; // dropped from pinch to one finger — wait for full release
     }
@@ -229,6 +277,9 @@
     if (id === lastSel.id && now - lastSel.t < 500) return;
     lastSel = { id, t: now };
     haptic(20);
+    confirmSound();
+    hintDone = true;
+    if (mapHint) mapHint.classList.add('is-hidden'); // visitors have got it now
     lastSent = { type: 'select', id };
     conn.send(lastSent);
     markActive(id);
@@ -245,34 +296,93 @@
   function markActive(id) {
     pinNodes.forEach((node, key) => node.classList.toggle('is-active', key === id));
     listview.querySelectorAll('.scard').forEach((c) => c.classList.toggle('is-active', c.dataset.id === id));
+    // Persistent "now on the big screen" chip in the footer.
+    const s = id ? byId[id] : null;
+    nowchip.hidden = !s;
+    if (s) {
+      nowchipName.textContent = s.name;
+      nowchipImg.style.backgroundImage = s.image ? `url('/${s.image}')` : 'none';
+      nowchipImg.textContent = s.image ? '' : monogram(s.name);
+      nowchip.style.setProperty('--pin-accent', `oklch(${s.accent})`);
+    }
   }
 
   resetBtn.addEventListener('click', () => {
     haptic(12);
+    tickSound();
     lastSent = { type: 'home' };
     conn.send(lastSent);
     markActive(null);
     nowShowing.classList.remove('is-shown');
   });
 
-  // ---- List view --------------------------------------------------------
+  // ---- Surprise me: a random saint, anywhere on the isles ----------------
+  surpriseBtn.addEventListener('click', () => {
+    haptic(16);
+    const pool = SAINTS.filter((s) => s.id !== lastSel.id);
+    const pick = pool[Math.floor(Math.random() * pool.length)];
+    select(pick.id);
+  });
+
+  // ---- List view: searchable, filterable by country ----------------------
   const COUNTRY_ORDER = ['Scotland', 'Northern Ireland', 'Ireland', 'England', 'Wales'];
+  let countryFilter = 'All';
+  function applyListFilter() {
+    const q = (document.getElementById('listSearch').value || '').trim().toLowerCase();
+    let any = false;
+    listview.querySelectorAll('.listgroup').forEach((gr) => {
+      const c = gr.dataset.country;
+      let vis = 0;
+      gr.querySelectorAll('.scard').forEach((card) => {
+        const s = byId[card.dataset.id];
+        const hay = `${s.name} ${s.aka || ''} ${s.place} ${s.region}`.toLowerCase();
+        const ok = (countryFilter === 'All' || c === countryFilter) && (!q || hay.includes(q));
+        card.classList.toggle('is-off', !ok);
+        if (ok) vis++;
+      });
+      gr.classList.toggle('is-off', vis === 0);
+      any = any || vis > 0;
+    });
+    document.getElementById('listEmpty').hidden = any;
+  }
   (function buildList() {
     const groups = {};
     SAINTS.forEach((s) => { (groups[s.country] = groups[s.country] || []).push(s); });
     const order = COUNTRY_ORDER.filter((c) => groups[c])
       .concat(Object.keys(groups).filter((c) => !COUNTRY_ORDER.includes(c)));
-    listview.innerHTML = order.map((c) => {
+    const chips = ['All'].concat(order).map((c) =>
+      `<button class="chip${c === 'All' ? ' is-on' : ''}" data-country="${esc(c)}">${esc(c)}</button>`).join('');
+    const body = order.map((c) => {
       const cards = groups[c].map((s) =>
         `<button class="scard" data-id="${s.id}" style="--pin-accent:oklch(${s.accent})">
            <span class="scard__img${s.image ? '' : ' is-mono'}" data-mono="${esc(monogram(s.name))}"` +
         `${s.image ? ` style="background-image:url('/${esc(s.image)}')"` : ''}></span>
            <span class="scard__name">${esc(s.name)}</span>
+           <span class="scard__epi">${esc(s.epithet)}</span>
            <span class="scard__place">${esc(s.place)}</span>
+           <span class="scard__feast">Feast · ${esc(s.feast)}</span>
          </button>`).join('');
-      return `<div class="listgroup"><div class="listgroup__head">${esc(c)} <span>·&nbsp;${groups[c].length}</span></div><div class="listgrid">${cards}</div></div>`;
+      return `<div class="listgroup" data-country="${esc(c)}"><div class="listgroup__head">${esc(c)} <span>·&nbsp;${groups[c].length}</span></div><div class="listgrid">${cards}</div></div>`;
     }).join('');
+    listview.innerHTML = `
+      <div class="listtools">
+        <input id="listSearch" class="listsearch" type="search" placeholder="Search ${SAINTS.length} saints by name or place…"
+               aria-label="Search saints" autocomplete="off" autocorrect="off" spellcheck="false" />
+        <div class="chiprow">${chips}</div>
+      </div>
+      ${body}
+      <div class="listempty" id="listEmpty" hidden>No saints found — try another name or place.</div>`;
+    document.getElementById('listSearch').addEventListener('input', applyListFilter);
     listview.addEventListener('click', (e) => {
+      const chip = e.target.closest('.chip');
+      if (chip) {
+        haptic(8);
+        tickSound();
+        countryFilter = chip.dataset.country;
+        listview.querySelectorAll('.chip').forEach((x) => x.classList.toggle('is-on', x === chip));
+        applyListFilter();
+        return;
+      }
       const b = e.target.closest('.scard');
       if (b) select(b.dataset.id);
     });
@@ -287,9 +397,14 @@
     viewListBtn.classList.toggle('is-active', !map);
     viewMapBtn.setAttribute('aria-selected', String(map));
     viewListBtn.setAttribute('aria-selected', String(!map));
+    if (!map) {
+      // Land with the currently-showing saint in view, not the top of A–Z.
+      const act = listview.querySelector('.scard.is-active');
+      if (act) setTimeout(() => act.scrollIntoView({ block: 'center', behavior: 'auto' }), 40);
+    }
   }
-  viewMapBtn.addEventListener('click', () => { haptic(8); setView('map'); });
-  viewListBtn.addEventListener('click', () => { haptic(8); setView('list'); });
+  viewMapBtn.addEventListener('click', () => { haptic(8); tickSound(); setView('map'); });
+  viewListBtn.addEventListener('click', () => { haptic(8); tickSound(); setView('list'); });
   setView('map');
 
   // ---- Sound (governs the big screen) -----------------------------------
@@ -304,6 +419,7 @@
     haptic(10);
     conn.send({ type: 'mute', muted: !muted });
     reflectSound(!muted);
+    tickSound(); // after reflect, so switching ON gives audible feedback
   });
 
   // ---- Background music (governs the big screen) ------------------------
@@ -316,6 +432,7 @@
   }
   musicBtn.addEventListener('click', () => {
     haptic(10);
+    tickSound();
     conn.send({ type: 'music', on: !musicOn });
     reflectMusic(!musicOn);
   });
