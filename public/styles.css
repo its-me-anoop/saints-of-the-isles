@@ -26,6 +26,13 @@
   --accent: oklch(72% 0.12 86);
 
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Motion tokens — the cut grammar of the big screen (JS mirrors --t-exit). */
+  --t-exit: 400ms;            /* subject departs upward */
+  --t-invite-out: 500ms;      /* invite leaves fast — cut to the subject */
+  --t-invite-in: 900ms;       /* invite returns slow — the exhale */
+  --t-invite-in-delay: 120ms; /* a breath of empty stage before it */
+  --t-view-in: 200ms;         /* tablet incoming-panel breath */
   --font-display: 'Cinzel', 'Trajan Pro', Georgia, serif;
   --font-deco: 'Cinzel Decorative', 'Cinzel', Georgia, serif;
   --font-body: 'Spectral', 'Iowan Old Style', Palatino, Georgia, serif;
@@ -103,7 +110,7 @@ body {
   padding: 6vh 6vw;
   overflow-y: auto;
 }
-.launcher__inner { max-width: 60ch; }
+.launcher__inner { width: min(72rem, 100%); }
 .launcher__mark { font-size: clamp(2rem, 7vw, 3.4rem); color: var(--gold); }
 .launcher h1 {
   font-family: var(--font-deco);
@@ -144,7 +151,13 @@ body {
   box-shadow: 0 18px 40px -24px oklch(82% 0.13 86 / 0.7);
   outline: none;
 }
-.choice__glyph { font-size: 2.4rem; }
+.choice__step {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  color: var(--mist-dim);
+}
 .choice__title {
   display: block;
   font-family: var(--font-display);
@@ -155,16 +168,13 @@ body {
 }
 .choice__note { display: block; font-size: 0.92rem; color: var(--mist-dim); }
 .launcher__hint {
+  max-width: 68ch;
+  margin-inline: auto;
   font-size: 0.9rem;
   color: var(--mist-dim);
   line-height: 1.7;
   border-top: 1px solid oklch(50% 0.04 280 / 0.25);
   padding-top: 1.4em;
-}
-.launcher__hint code {
-  font-family: var(--font-body);
-  color: var(--gold-soft);
-  font-style: italic;
 }
 
 /* =========================================================================
@@ -192,11 +202,6 @@ body {
   letter-spacing: 0.04em;
   margin: 0;
 }
-.tablet__cue {
-  font-style: italic;
-  color: var(--mist);
-  font-size: clamp(0.85rem, 2vw, 1.05rem);
-}
 .tablet__stage {
   position: relative;
   display: grid;
@@ -204,15 +209,20 @@ body {
   min-height: 0;
 }
 
+/* Both stage panels pin to the stage exactly — percentage heights inside
+   auto-sized grid tracks let the SVG balloon to its intrinsic 3:4 ratio. */
 .mapwrap {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  display: grid;
-  place-items: center;
+  position: absolute;
+  inset: 0 0 4.2rem; /* keep Cornwall and Kent clear of the footer controls */
   touch-action: none; /* let the scrub gesture drive previews, not scrolling */
 }
-.mapwrap svg { width: 100%; height: 100%; overflow: visible; }
+.mapwrap svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible; /* viewBox letterboxes; halos may breathe past the edge */
+}
 
 .sea-ring { fill: none; stroke: oklch(60% 0.05 230 / 0.18); stroke-width: 1.5; }
 .land {
@@ -257,20 +267,6 @@ body {
   transform-box: fill-box;
   transform-origin: center;
 }
-.pin__label {
-  font-family: var(--font-display);
-  font-size: 13px;
-  fill: var(--parchment);
-  paint-order: stroke;
-  stroke: oklch(10% 0.03 274);
-  stroke-width: 4px;
-  stroke-linejoin: round;
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(4px);
-  transition: opacity 0.45s var(--ease), transform 0.45s var(--ease);
-  letter-spacing: 0.02em;
-}
 .pin:hover .pin__halo,
 .pin.is-hover .pin__halo,
 .pin.is-active .pin__halo { transform: scale(1.15); opacity: 0.4; }
@@ -305,11 +301,14 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+  z-index: 8;
+  padding: 1.4rem 0 max(0.4rem, env(safe-area-inset-bottom));
+  background: linear-gradient(to bottom, transparent, var(--ink) 34%);
 }
 .reset {
-  font-family: var(--font-display);
-  letter-spacing: 0.06em;
-  font-size: 0.8rem;
+  min-height: 48px;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
   color: var(--mist-dim);
   background: transparent;
   border: 1px solid oklch(50% 0.04 280 / 0.4);
@@ -363,6 +362,9 @@ body {
   transition: opacity 1.2s var(--ease);
 }
 .display.has-saint .aura { opacity: 1; }
+/* Lighting trough between two saints: the aura dims while the old shot
+   leaves, recolors unseen, then re-blooms via its usual 1.2s transition. */
+.display.is-cutting .aura { opacity: 0.35; transition-duration: var(--t-exit); }
 
 /* Slowly rotating halo of rays behind the emblem */
 .rays {
@@ -389,9 +391,15 @@ body {
   place-items: center;
   text-align: center;
   padding: 8vh 8vw;
-  transition: opacity 0.9s var(--ease);
+  /* Asymmetric on purpose: it leaves fast (cut to the subject) and returns
+     slow, after a breath of empty stage (the exhale). */
+  transition: opacity var(--t-invite-in) var(--ease) var(--t-invite-in-delay);
 }
-.display.has-saint .invite { opacity: 0; pointer-events: none; }
+.display.has-saint .invite {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--t-invite-out) var(--ease) 0s;
+}
 .invite__mark {
   font-size: clamp(3rem, 9vh, 6rem);
   color: var(--gold);
@@ -415,19 +423,6 @@ body {
   color: var(--mist);
   margin: 0 0 2em;
 }
-.invite__names {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5em 1.4em;
-  justify-content: center;
-  max-width: 70ch;
-  font-family: var(--font-display);
-  font-size: clamp(0.8rem, 1.7vh, 1rem);
-  letter-spacing: 0.06em;
-  color: var(--mist-dim);
-}
-.invite__names span { transition: color 0.4s var(--ease); }
-
 /* ---- The saint reveal ---- */
 .saint {
   position: absolute;
@@ -442,6 +437,16 @@ body {
   pointer-events: none;
 }
 .display.has-saint .saint { opacity: 1; pointer-events: auto; }
+
+/* The out-point: the shot continues its ascent and leaves. Declared only on
+   the exiting class — and after the has-saint rule, which it must outrank at
+   equal specificity — so removing it snaps clean for a fresh entrance. */
+.display .saint.is-exiting {
+  opacity: 0;
+  transform: translateY(-14px);
+  transition: opacity var(--t-exit) var(--ease), transform var(--t-exit) var(--ease);
+}
+.saint.is-exiting .saint__img { animation-play-state: paused; } /* freeze Ken Burns under the fade */
 
 .saint__left {
   position: relative;
@@ -497,18 +502,11 @@ body {
 }
 .saint__credit {
   margin-top: 1.1em;
-  font-size: 0.74rem;
+  font-size: 0.78rem;
   font-style: italic;
   color: var(--mist-dim);
   max-width: 30ch;
   line-height: 1.35;
-}
-.saint__aka {
-  font-family: var(--font-body);
-  font-style: italic;
-  font-size: clamp(1rem, 2.2vh, 1.3rem);
-  color: var(--mist);
-  margin: -0.2em 0 0.6em;
 }
 .saint__place {
   margin-top: 0.6em;
@@ -565,17 +563,27 @@ body {
 .saint__pilg-site { color: var(--parchment); font-size: clamp(0.9rem, 1.9vh, 1.12rem); }
 .saint__pilg-town { color: var(--gold-soft); font-style: italic; font-size: 0.85rem; }
 
-/* Prayer (right column) */
+/* Prayer (right column) — an illuminated block, softly tinted by the accent */
 .saint__prayer {
   margin: 1.1em 0 0;
-  padding: 0.8em 1.1em;
-  border-left: 2px solid oklch(var(--accent));
-  background: oklch(var(--accent) / 0.06);
-  border-radius: 0 10px 10px 0;
+  padding: 0.9em 1.2em;
+  border: 1px solid oklch(var(--accent) / 0.28);
+  background: oklch(var(--accent) / 0.08);
+  border-radius: 12px;
   font-style: italic;
   font-size: clamp(0.9rem, 1.85vh, 1.08rem);
   line-height: 1.5;
   color: var(--mist);
+}
+.saint__prayer span {
+  display: block;
+  margin-bottom: 0.35em;
+  font-family: var(--font-display);
+  font-style: normal;
+  font-size: 0.72em;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: oklch(var(--accent));
 }
 .saint__summary {
   font-size: clamp(0.98rem, 2vh, 1.25rem);
@@ -620,13 +628,6 @@ body {
   margin: 0 0 0.9em;
   line-height: 1.45;
 }
-.saint__story p {
-  font-size: clamp(0.95rem, 1.9vh, 1.18rem);
-  line-height: 1.5;
-  color: var(--mist);
-  margin: 0 0 0.7em;
-  max-width: 64ch;
-}
 .saint__facts {
   list-style: none;
   margin: 1em 0 0;
@@ -648,32 +649,6 @@ body {
   top: 0.05em;
   color: oklch(var(--accent));
 }
-.saint__quote {
-  margin: 1.1em 0 0;
-  padding-left: 1.1em;
-  border-left: 2px solid oklch(var(--accent));
-  font-family: var(--font-body);
-  font-style: italic;
-  font-size: clamp(1rem, 2.1vh, 1.35rem);
-  color: var(--parchment);
-  line-height: 1.4;
-}
-.saint__patronage {
-  margin-top: 1.1em;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6em;
-}
-.saint__patronage span {
-  font-family: var(--font-display);
-  font-size: 0.78rem;
-  letter-spacing: 0.05em;
-  color: var(--gold-soft);
-  border: 1px solid oklch(var(--accent) / 0.5);
-  border-radius: 999px;
-  padding: 0.4em 1em;
-}
-
 .display__foot {
   position: fixed;
   bottom: 1.2rem;
@@ -683,19 +658,11 @@ body {
   gap: 1.2rem;
   align-items: center;
 }
-.mutebtn {
-  background: transparent;
-  border: none;
-  color: var(--mist-dim);
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: color 0.4s var(--ease);
-}
-.mutebtn:hover { color: var(--gold); }
-
-/* Entrance choreography for reveal pieces */
+/* Entrance choreography for reveal pieces. Homed on .saint (not has-saint):
+   the container is empty when idle, so fresh nodes animate the moment their
+   innerHTML lands — and keep their forwards-fill while the container exits. */
 .rise { opacity: 0; transform: translateY(18px); }
-.display.has-saint .rise {
+.saint .rise {
   animation: rise 0.85s var(--ease) forwards;
   animation-delay: var(--rise-delay, 0s);
 }
@@ -703,10 +670,17 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* The unveiling: the portrait settles last and largest — a whisper of scale
+   under the rise. Scale lives on the frame; Ken Burns keeps the img channel. */
+.saint__frame.rise { transform: translateY(18px) scale(0.965); transform-origin: 50% 60%; }
+.saint .saint__frame.rise { animation-name: unveil-frame; animation-duration: 1.1s; }
+@keyframes unveil-frame {
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
 /* Responsive: stack the reveal on narrower screens */
 @media (max-width: 900px) {
   .saint { grid-template-columns: 1fr; gap: 1.4rem; padding: 4vh 6vw; overflow-y: auto; align-content: start; align-items: start; }
-  .saint__emblem { font-size: clamp(4rem, 16vh, 8rem); }
   .rays { left: 50%; top: 30%; }
 }
 
@@ -715,19 +689,20 @@ body {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
+    transition-delay: 0s !important; /* the invite's return delay must collapse too */
   }
   .pin__dot, .rays svg, .float-avatar { animation: none !important; }
-  .display.has-saint .rise { opacity: 1; transform: none; }
+  .saint .rise { opacity: 1 !important; transform: none !important; }
 }
 
 /* =========================================================================
    Tablet — controls + scrub preview
    ========================================================================= */
-.tablet__controls { display: flex; align-items: center; gap: 0.7rem; }
+.tablet__controls { display: flex; align-items: center; gap: 0.6rem; }
 .iconbtn {
-  font-family: var(--font-display);
-  letter-spacing: 0.05em;
-  font-size: 0.8rem;
+  min-height: 48px;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
   color: var(--gold-soft);
   background: transparent;
   border: 1px solid oklch(60% 0.08 86 / 0.45);
@@ -737,7 +712,6 @@ body {
   transition: color 0.4s var(--ease), border-color 0.4s var(--ease), opacity 0.4s var(--ease);
 }
 .iconbtn:hover { color: var(--gold); border-color: var(--gold-soft); }
-.iconbtn.is-quiet { color: var(--mist-dim); border-color: oklch(50% 0.04 280 / 0.4); opacity: 0.85; }
 
 /* The avatar bubble that follows a scrubbing finger */
 .preview {
@@ -794,6 +768,13 @@ body {
 /* Utility */
 .is-off { display: none !important; }
 
+/* The incoming view takes one breath; the outgoing one is cut — exits are
+   free on a controller, a visitor never waits to leave. */
+@keyframes view-in {
+  from { opacity: 0; transform: translateY(8px); }
+}
+.tablet__stage .view-enter { animation: view-in var(--t-view-in) var(--ease); }
+
 /* View toggle (Map / List) */
 .viewtoggle {
   display: inline-flex;
@@ -804,9 +785,9 @@ body {
   border: 1px solid oklch(50% 0.05 86 / 0.35);
 }
 .viewtoggle__btn {
-  font-family: var(--font-display);
-  letter-spacing: 0.04em;
-  font-size: 0.82rem;
+  min-height: 44px;
+  font-family: var(--font-body);
+  font-size: 0.92rem;
   color: var(--mist-dim);
   background: transparent;
   border: none;
@@ -817,8 +798,7 @@ body {
 }
 .viewtoggle__btn.is-active {
   color: var(--ink);
-  background: linear-gradient(170deg, var(--gold), var(--gold-soft));
-  box-shadow: 0 6px 16px -8px oklch(82% 0.13 86 / 0.8);
+  background: var(--gold);
 }
 
 /* Zoom reset + map hint */
@@ -827,27 +807,28 @@ body {
   top: 0.6rem;
   right: 0.6rem;
   z-index: 5;
-  font-family: var(--font-display);
-  font-size: 0.78rem;
-  letter-spacing: 0.04em;
+  min-height: 44px;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
   color: var(--gold-soft);
   background: oklch(18% 0.03 274 / 0.85);
   border: 1px solid oklch(60% 0.08 86 / 0.5);
   border-radius: 999px;
   padding: 0.45em 1em;
   cursor: pointer;
+  transition: color 0.3s var(--ease), border-color 0.3s var(--ease);
 }
+.zoomreset:hover { color: var(--gold); border-color: var(--gold-soft); }
 .maphint {
   position: absolute;
-  bottom: 2.6rem;
+  bottom: 5.2rem;
   left: 50%;
   transform: translateX(-50%);
   z-index: 4;
-  font-size: 0.82rem;
-  font-style: italic;
-  color: var(--mist-dim);
-  background: oklch(14% 0.03 274 / 0.55);
-  padding: 0.3em 0.9em;
+  font-size: 0.92rem;
+  color: var(--mist);
+  background: oklch(14% 0.03 274 / 0.9);
+  padding: 0.55em 1em;
   border-radius: 999px;
   pointer-events: none;
   transition: opacity 0.5s var(--ease);
@@ -856,13 +837,18 @@ body {
 
 /* List view */
 .listview {
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  inset: 0;
   overflow-y: auto;
-  padding: 0.4rem 0.4rem 5rem;
+  padding: 0.4rem 0.4rem 6.5rem;
+  isolation: isolate;
   -webkit-overflow-scrolling: touch;
 }
-.listgroup { margin-bottom: 1.6rem; }
+.listgroup {
+  margin-bottom: 1.6rem;
+  content-visibility: auto; /* skip layout/paint for off-screen country groups */
+  contain-intrinsic-size: auto 420px;
+}
 .listgroup__head {
   position: sticky;
   top: 0;
@@ -874,8 +860,9 @@ body {
   color: var(--gold);
   padding: 0.6em 0.4em;
   background: linear-gradient(to bottom, var(--ink) 65%, transparent);
+  margin: 0;
 }
-.listgroup__head span { color: var(--mist-dim); letter-spacing: 0.06em; }
+.listgroup__head span { color: var(--mist-dim); letter-spacing: 0.02em; text-transform: none; margin-left: 0.7em; }
 .listgrid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(132px, 1fr));
@@ -891,12 +878,13 @@ body {
   border: 1px solid oklch(40% 0.04 280 / 0.4);
   border-radius: 14px;
   cursor: pointer;
-  transition: transform 0.4s var(--ease), border-color 0.4s var(--ease), box-shadow 0.4s var(--ease);
+  min-height: 172px;
+  transition: transform 0.2s var(--ease), border-color 0.2s var(--ease), background 0.2s var(--ease);
 }
 .scard:hover, .scard.is-active {
-  transform: translateY(-3px);
+  transform: translateY(-2px);
   border-color: oklch(var(--pin-accent) / 0.8);
-  box-shadow: 0 16px 36px -22px oklch(var(--pin-accent) / 0.9);
+  background: oklch(24% 0.035 274);
 }
 .scard__img {
   width: 80px;
@@ -959,60 +947,15 @@ body {
   background: radial-gradient(120% 120% at 50% 50%, oklch(13% 0.03 274 / 0.86) 38%, oklch(13% 0.03 274 / 0) 78%);
 }
 
-/* One-tap "begin" overlay — a user gesture is required to start audio */
-.audiostart {
-  position: fixed;
-  inset: 0;
-  z-index: 40;
-  display: grid;
-  place-items: center;
-  background: oklch(12% 0.03 274 / 0.55);
-  -webkit-backdrop-filter: blur(2px);
-          backdrop-filter: blur(2px);
-  transition: opacity 0.7s var(--ease);
-}
-.audiostart.is-gone { opacity: 0; pointer-events: none; }
-.audiostart__btn {
-  font-family: var(--font-display);
-  letter-spacing: 0.1em;
-  font-size: clamp(1.1rem, 3vh, 1.6rem);
-  color: var(--ink);
-  background: linear-gradient(170deg, var(--gold), var(--gold-soft));
-  border: none;
-  border-radius: 999px;
-  padding: 0.8em 2.2em;
-  cursor: pointer;
-  box-shadow: 0 0 60px -10px oklch(82% 0.13 86 / 0.6);
-  animation: shimmer 4s ease-in-out infinite;
-}
-.audiostart__hint {
-  margin-top: 1em;
-  font-style: italic;
-  color: var(--mist);
-  font-size: clamp(0.85rem, 1.8vh, 1.05rem);
-}
-
-/* Tiny sound indicator on the big screen */
-.sndind {
-  position: fixed;
-  bottom: 1.2rem;
-  left: 1.6rem;
-  z-index: 3;
-  font-size: 1.1rem;
-  opacity: 0.7;
-  transition: opacity 0.4s var(--ease);
-}
-.sndind.is-muted { opacity: 0.3; }
-
 /* =========================================================================
-   Engagement & polish round — list tools, chips, chips, SFX-era UI
+   List tools, chips, and the tablet footer
    ========================================================================= */
 
 /* List tools: search + country chips */
 .listtools {
   position: sticky;
   top: 0;
-  z-index: 2;
+  z-index: 3;
   display: grid;
   gap: 0.6rem;
   padding: 0.4rem 0.2rem 0.9rem;
@@ -1028,15 +971,18 @@ body {
   border-radius: 999px;
   padding: 0.7em 1.3em;
   outline: none;
+  min-height: 48px;
+  -webkit-user-select: text;
+  user-select: text;
   transition: border-color 0.3s var(--ease);
 }
 .listsearch::placeholder { color: var(--mist-dim); font-style: italic; }
 .listsearch:focus { border-color: var(--gold-soft); }
 .chiprow { display: flex; gap: 0.5rem; flex-wrap: wrap; }
 .chip {
-  font-family: var(--font-display);
-  font-size: 0.78rem;
-  letter-spacing: 0.05em;
+  min-height: 44px;
+  font-family: var(--font-body);
+  font-size: 0.86rem;
   color: var(--mist-dim);
   background: transparent;
   border: 1px solid oklch(45% 0.04 280 / 0.5);
@@ -1047,20 +993,20 @@ body {
 }
 .chip.is-on {
   color: var(--ink);
-  background: linear-gradient(170deg, var(--gold), var(--gold-soft));
+  background: var(--gold);
   border-color: transparent;
 }
 .listempty { text-align: center; padding: 3rem 1rem; font-style: italic; color: var(--mist-dim); }
 .scard__epi {
   font-style: italic;
-  font-size: 0.76rem;
+  font-size: 0.8rem;
   color: var(--mist);
-  line-height: 1.2;
+  line-height: 1.25;
 }
 .scard__feast {
   font-family: var(--font-display);
-  font-size: 0.62rem;
-  letter-spacing: 0.12em;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--mist-dim);
 }
@@ -1093,13 +1039,20 @@ body {
   outline: 1.5px solid oklch(var(--pin-accent, var(--gold)) / 0.7);
 }
 .nowchip__name {
-  font-family: var(--font-display);
-  font-size: 0.8rem;
-  letter-spacing: 0.04em;
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.86rem;
   color: var(--parchment);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+.nowchip__label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  line-height: 1;
+  color: var(--mist-dim);
 }
 
 /* The scrub bubble gains the saint's epithet */
@@ -1138,33 +1091,6 @@ body {
   padding: 0.4em 1.2em;
 }
 
-/* Speaking indicator on the big screen — the voice is live */
-.speakind {
-  position: fixed;
-  bottom: 1.3rem;
-  left: 3.6rem;
-  z-index: 3;
-  display: none;
-  align-items: flex-end;
-  gap: 3px;
-  height: 14px;
-}
-.speakind.is-on { display: inline-flex; }
-.speakind i {
-  width: 3px;
-  border-radius: 2px;
-  background: var(--gold-soft);
-  height: 8px;
-  transform-origin: bottom;
-  animation: eq 1s ease-in-out infinite;
-}
-.speakind i:nth-child(2) { animation-delay: 0.18s; height: 13px; }
-.speakind i:nth-child(3) { animation-delay: 0.36s; height: 10px; }
-@keyframes eq {
-  0%, 100% { transform: scaleY(0.35); }
-  50%      { transform: scaleY(1); }
-}
-
 /* Ken Burns drift keeps the portrait alive */
 .saint__img { animation: kenburns 34s ease-in-out infinite alternate; }
 @keyframes kenburns {
@@ -1196,31 +1122,37 @@ body {
   color: var(--mist-dim);
 }
 
-/* Gentle come-hither pulse on the idle instruction */
-.invite__center > p { animation: cue 5.5s ease-in-out infinite; }
-@keyframes cue {
-  0%, 100% { opacity: 0.72; }
-  50%      { opacity: 1; }
-}
-
 /* One micro-label size across the reveal (legibility at distance) */
 .saint__meta dt, .saint__pilg-label, .saint__facts-head {
   font-size: clamp(0.72rem, 1.5vh, 0.85rem);
-}
-
-/* The summary's quiet "there is more" mark */
-.saint__more { color: oklch(var(--accent)); font-style: normal; }
-
-/* Prayer: illuminated block, not a side-stripe */
-.saint__prayer {
-  border-left: none;
-  border-radius: 12px;
-  padding: 0.9em 1.2em;
-  background: oklch(var(--accent) / 0.08);
 }
 
 /* Visible keyboard focus everywhere */
 button:focus-visible, .pin:focus-visible, .listsearch:focus-visible {
   outline: 2px solid var(--gold);
   outline-offset: 3px;
+}
+
+/* Press feedback on every touch control */
+.iconbtn:active, .reset:active, .chip:active, .viewtoggle__btn:active,
+.zoomreset:active, .scard:active, .choice:active {
+  transform: scale(0.97);
+}
+
+@media (max-width: 1024px), (max-height: 720px) {
+  .tablet__foot { gap: 0.6rem; }
+  .tablet__controls { gap: 0.4rem; }
+  .iconbtn, .reset { padding-inline: 0.85em; }
+  .nowchip { max-width: 24vw; }
+}
+
+@media (max-width: 760px) {
+  .tablet__bar { flex-wrap: nowrap; }
+  .tablet__title { font-size: 1rem; }
+  .tablet__foot { align-items: flex-end; }
+  .tablet__foot > .lamp, .nowchip { display: none; }
+  .tablet__controls { width: 100%; display: grid; grid-template-columns: repeat(2, 1fr); }
+  .tablet__controls .reset { margin-left: 0; grid-column: 1 / -1; }
+  .maphint { bottom: 8rem; max-width: 90%; text-align: center; }
+  .mapwrap { inset: 0 0 7.5rem; }
 }

@@ -31,11 +31,8 @@ app.get('/', (_req, res) => {
 const server = http.createServer(app);
 const wss = new WebSocketServer({ server });
 
-// The single shared piece of exhibition state: what the big screen is showing,
-// plus the sound setting (controlled from the tablet, obeyed by the display).
+// The single shared piece of exhibition state: what the big screen is showing.
 let currentState = { type: 'home' };
-let muted = false;     // narration + chime ("Sound")
-let musicOn = true;    // ambient background music
 
 function broadcast(message) {
   const data = JSON.stringify(message);
@@ -47,9 +44,9 @@ function broadcast(message) {
 }
 
 wss.on('connection', (socket) => {
-  let role = 'unknown';
-
   socket.on('message', (raw) => {
+    if (raw.length > 1024) return; // no legitimate message is this large
+
     let msg;
     try {
       msg = JSON.parse(raw.toString());
@@ -59,27 +56,16 @@ wss.on('connection', (socket) => {
 
     switch (msg.type) {
       case 'hello':
-        role = msg.role || 'unknown';
-        // Sync a freshly-joined screen to the current selection + sound setting.
+        // Sync a freshly-joined screen to the current selection.
         socket.send(JSON.stringify(currentState));
-        socket.send(JSON.stringify({ type: 'mute', muted }));
-        socket.send(JSON.stringify({ type: 'music', on: musicOn }));
         break;
 
       case 'select':
       case 'home':
-        currentState = msg.type === 'home' ? { type: 'home' } : { type: 'select', id: msg.id };
+        currentState = msg.type === 'home'
+          ? { type: 'home' }
+          : { type: 'select', id: String(msg.id || '') };
         broadcast(currentState);
-        break;
-
-      case 'mute':
-        muted = !!msg.muted;
-        broadcast({ type: 'mute', muted });
-        break;
-
-      case 'music':
-        musicOn = !!msg.on;
-        broadcast({ type: 'music', on: musicOn });
         break;
 
       case 'requestState':
@@ -87,8 +73,7 @@ wss.on('connection', (socket) => {
         break;
 
       default:
-        // Pass-through for any future message types (e.g. ambient cues).
-        broadcast(msg);
+        break; // unknown message types are dropped, never rebroadcast
     }
   });
 });

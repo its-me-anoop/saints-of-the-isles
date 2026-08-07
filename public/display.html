@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Saints of the Isles · Stage</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext y='.88em' font-size='58'%3E%E2%9C%A0%3C/text%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cinzel+Decorative:wght@400;700&family=Spectral:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet" />
@@ -19,30 +20,20 @@
     <section class="invite" id="invite">
       <div class="invite__float" id="inviteFloat" aria-hidden="true"></div>
       <div class="invite__center">
-        <div class="invite__mark">✠</div>
+        <div class="invite__mark" aria-hidden="true">✠</div>
         <h1>Saints of the Isles</h1>
-        <p>Touch a place on the map to reveal the saint who shaped it</p>
+        <p>Choose a place on the visitor map to meet the saint connected to it</p>
         <div class="invite__quote" id="inviteQuote" aria-hidden="true"></div>
       </div>
     </section>
 
     <!-- Saint reveal (filled by display.js) -->
-    <section class="saint" id="saint" aria-live="polite"></section>
+    <section class="saint" id="saint" aria-live="polite" aria-hidden="true"></section>
 
     <div class="display__foot">
       <span class="lamp" data-conn-status><span class="lamp__text">Map</span></span>
     </div>
 
-    <div class="sndind" id="sndind" aria-hidden="true">🔊</div>
-    <div class="speakind" id="speakind" aria-hidden="true"><i></i><i></i><i></i></div>
-
-    <!-- A user gesture is required to start audio (browser autoplay policy) -->
-    <div class="audiostart" id="audiostart">
-      <div>
-        <button class="audiostart__btn" id="audiostartBtn">✠ Touch to begin</button>
-        <div class="audiostart__hint">Starts the music &amp; narration · controlled from the tablet</div>
-      </div>
-    </div>
   </main>
 
   <script src="/saints.js"></script>

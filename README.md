@@ -17,21 +17,18 @@ server — **no pairing code, they connect automatically**.
 - **Scrub to preview** (drag a finger across the map to see a circular avatar of
   the saint under your finger; lift to send them to the big screen),
   **pinch to zoom**, and a **Map / List** toggle (saints grouped by country).
-- The **big screen narrates** each saint aloud (Web Speech, sentence-chunked,
-  local-voice preferred), reads the pilgrimage site, and plays a **plainchant-like
-  hymn**: a composed four-phrase melody sung in a voice-like tone over a chord
-  cycle (D minor → B♭ → F → C) that glides in step with each phrase, inside a
-  generated stone-chapel reverb — ducked under the voice, all toggled from the
-  tablet. Reveals arpeggiate the current chord; clearing rings a soft gong.
-- **Searchable list** (name/place + country filter chips), a ✨ **Surprise me**
-  button, a persistent *now-showing* chip, and touch sounds + haptics on the
+- **Cinematic transitions** on the big screen: each saint departs upward, the
+  stage holds a dark beat while the light dims, then the next procession rises
+  — interruption-proof under rapid tapping, and fully honoring
+  `prefers-reduced-motion`. The exhibition is silent by design.
+- **Searchable list** (name/place + country filter chips), a **Discover a
+  saint** button, a persistent *now-showing* chip, and haptic feedback on the
   tablet. The idle big screen drifts portraits and rotates the saints' own words.
 - **Real portraits** for 80 of the 85 saints, downloaded from Wikimedia Commons
   with full attribution (the few without a usable image show an elegant
   monogram). Images are stored locally so the kiosk works offline.
 - The **big screen** opens with a living constellation of drifting saint
   portraits; each reveal stays lean — a short summary and a few curious facts.
-- **Sound is controlled from the tablet** (the 🔔 button); the big screen obeys.
 
 ---
 
@@ -65,17 +62,36 @@ Both devices must be on the **same Wi-Fi as the computer** running the server,
 and that computer's firewall must allow port 3000. They connect automatically
 and reconnect on their own if a device sleeps or reboots — no code needed.
 
+## Run it on the web (Vercel)
+
+The app also deploys as a **static site** — no Node server needed:
+
+```bash
+npx vercel deploy --prod
+```
+
+`vercel.json` is already configured (static, clean URLs). On the web the
+WebSocket relay isn't available, so the screens sync over a
+**BroadcastChannel** instead: open `/tablet` and `/display` as **two windows
+of the same browser** (drag one to each monitor and fullscreen both). That is
+the classic one-computer exhibition rig.
+
+| Setup | Transport | Works across devices? |
+| --- | --- | --- |
+| `npm start` (local server) | WebSocket relay | Yes — same Wi-Fi |
+| Vercel / static hosting | BroadcastChannel | Same browser, any number of windows |
+
+To preview a single saint anywhere: `/display?demo=cuthbert`.
+
 ## Exhibition setup tips
 
 - Open **`/display`** full-screen (kiosk mode) on the big screen — landscape,
   1080p or larger looks best.
 - Open **`/tablet`** full-screen on the tablet; the map fills the screen and the
   pins have finger-sized tap targets.
-- The 🔔 button (on the **tablet**) toggles the soft reveal chime that plays on
-  the big screen — silence it in a quiet gallery. Browsers block audio until a
-  click, so click the big screen once at setup to allow the chime.
 - **"Clear the screen"** on the tablet returns the display to its idle
   invitation.
+- The display needs no interaction at all — it can run behind glass.
 
 ## How it fits together
 
@@ -86,7 +102,7 @@ public/
   tablet.html + tablet.js   the touch map (controller)
   display.html + display.js the big-screen reveal (stage)
   map.js               GENERATED — accurate SVG coastline paths + viewBox
-  saints.js            GENERATED — the 78 saints, each with projected pin x/y,
+  saints.js            GENERATED — the 85 saints, each with projected pin x/y,
                        accent colour, image path and credit
   images/              GENERATED — downloaded saint portraits
   connection.js        auto-reconnecting WebSocket shared by both screens

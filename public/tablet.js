@@ -9,8 +9,6 @@
   const previewEl = document.getElementById('preview');
   const nowShowing = document.getElementById('nowshowing');
   const resetBtn = document.getElementById('reset');
-  const soundBtn = document.getElementById('sound');
-  const musicBtn = document.getElementById('music');
   const surpriseBtn = document.getElementById('surprise');
   const nowchip = document.getElementById('nowchip');
   const nowchipImg = document.getElementById('nowchipImg');
@@ -34,38 +32,6 @@
   const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
   // Haptic feedback (Android/Chrome support navigator.vibrate; iOS Safari ignores it).
   const haptic = (ms) => { try { if (navigator.vibrate) navigator.vibrate(ms); } catch { /* noop */ } };
-
-  // Tiny synthesized touch sounds; follow the Sound toggle, unlock on first touch.
-  let tctx = null;
-  let lastTick = 0;
-  function ensureTctx() {
-    try {
-      tctx = tctx || new (window.AudioContext || window.webkitAudioContext)();
-      if (tctx.state === 'suspended') tctx.resume();
-    } catch { /* noop */ }
-  }
-  window.addEventListener('pointerdown', ensureTctx, { once: true });
-  function blip(freq, dur, vol, delay) {
-    if (muted || !tctx) return;
-    try {
-      const t = tctx.currentTime + (delay || 0);
-      const o = tctx.createOscillator();
-      const g = tctx.createGain();
-      o.type = 'sine'; o.frequency.value = freq;
-      g.gain.setValueAtTime(0.0001, t);
-      g.gain.exponentialRampToValueAtTime(vol, t + 0.008);
-      g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
-      o.connect(g).connect(tctx.destination);
-      o.start(t); o.stop(t + dur + 0.05);
-    } catch { /* noop */ }
-  }
-  function tickSound() {
-    const now = performance.now();
-    if (now - lastTick < 80) return; // don't machine-gun while scrubbing
-    lastTick = now;
-    blip(1350, 0.05, 0.045);
-  }
-  function confirmSound() { blip(659.25, 0.1, 0.06); blip(987.77, 0.16, 0.05, 0.07); }
 
   // The "how to use it" hint hides once a visitor has selected a saint, then
   // quietly returns after 25s of idle for whoever walks up next.
@@ -215,7 +181,6 @@
       previewEl.classList.toggle('is-below', cy < w.height * 0.22);
       previewEl.classList.add('is-shown');
       haptic(6); // light tick as the finger passes over each saint
-      tickSound();
     }
     pinNodes.forEach((node, key) => node.classList.toggle('is-hover', key === underId));
   }
@@ -277,7 +242,6 @@
     if (id === lastSel.id && now - lastSel.t < 500) return;
     lastSel = { id, t: now };
     haptic(20);
-    confirmSound();
     hintDone = true;
     if (mapHint) mapHint.classList.add('is-hidden'); // visitors have got it now
     lastSent = { type: 'select', id };
@@ -287,7 +251,7 @@
     if (saint) {
       const node = pinNodes.get(id);
       if (node) node.parentNode.appendChild(node);
-      nowShowing.innerHTML = `Now on the big screen — <b style="--accent: oklch(${saint.accent})">${esc(saint.name)}</b>`;
+      nowShowing.innerHTML = `Now on the large display: <b style="--accent: oklch(${saint.accent})">${esc(saint.name)}</b>`;
       nowShowing.classList.add('is-shown');
       clearTimeout(nowShowingTimer);
       nowShowingTimer = setTimeout(() => nowShowing.classList.remove('is-shown'), 3400);
@@ -309,7 +273,6 @@
 
   resetBtn.addEventListener('click', () => {
     haptic(12);
-    tickSound();
     lastSent = { type: 'home' };
     conn.send(lastSent);
     markActive(null);
@@ -351,7 +314,7 @@
     const order = COUNTRY_ORDER.filter((c) => groups[c])
       .concat(Object.keys(groups).filter((c) => !COUNTRY_ORDER.includes(c)));
     const chips = ['All'].concat(order).map((c) =>
-      `<button class="chip${c === 'All' ? ' is-on' : ''}" data-country="${esc(c)}">${esc(c)}</button>`).join('');
+      `<button class="chip${c === 'All' ? ' is-on' : ''}" data-country="${esc(c)}" aria-pressed="${c === 'All'}">${esc(c)}</button>`).join('');
     const body = order.map((c) => {
       const cards = groups[c].map((s) =>
         `<button class="scard" data-id="${s.id}" style="--pin-accent:oklch(${s.accent})">
@@ -362,24 +325,27 @@
            <span class="scard__place">${esc(s.place)}</span>
            <span class="scard__feast">Feast · ${esc(s.feast)}</span>
          </button>`).join('');
-      return `<div class="listgroup" data-country="${esc(c)}"><div class="listgroup__head">${esc(c)} <span>·&nbsp;${groups[c].length}</span></div><div class="listgrid">${cards}</div></div>`;
+      return `<section class="listgroup" data-country="${esc(c)}"><h2 class="listgroup__head">${esc(c)} <span>${groups[c].length} saints</span></h2><div class="listgrid">${cards}</div></section>`;
     }).join('');
     listview.innerHTML = `
       <div class="listtools">
         <input id="listSearch" class="listsearch" type="search" placeholder="Search ${SAINTS.length} saints by name or place…"
                aria-label="Search saints" autocomplete="off" autocorrect="off" spellcheck="false" />
-        <div class="chiprow">${chips}</div>
+        <div class="chiprow" aria-label="Filter saints by country">${chips}</div>
       </div>
       ${body}
-      <div class="listempty" id="listEmpty" hidden>No saints found — try another name or place.</div>`;
+      <div class="listempty" id="listEmpty" role="status" hidden>No saints match. Try another name or place.</div>`;
     document.getElementById('listSearch').addEventListener('input', applyListFilter);
     listview.addEventListener('click', (e) => {
       const chip = e.target.closest('.chip');
       if (chip) {
         haptic(8);
-        tickSound();
         countryFilter = chip.dataset.country;
-        listview.querySelectorAll('.chip').forEach((x) => x.classList.toggle('is-on', x === chip));
+        listview.querySelectorAll('.chip').forEach((x) => {
+          const selected = x === chip;
+          x.classList.toggle('is-on', selected);
+          x.setAttribute('aria-pressed', String(selected));
+        });
         applyListFilter();
         return;
       }
@@ -388,61 +354,46 @@
     });
   })();
 
+  let scrollTimer = null;
   function setView(v) {
     const map = v === 'map';
     wrap.classList.toggle('is-off', !map);
     listview.classList.toggle('is-off', map);
     listview.hidden = map;
+    wrap.hidden = !map;
     viewMapBtn.classList.toggle('is-active', map);
     viewListBtn.classList.toggle('is-active', !map);
     viewMapBtn.setAttribute('aria-selected', String(map));
     viewListBtn.setAttribute('aria-selected', String(!map));
+    viewMapBtn.tabIndex = map ? 0 : -1;
+    viewListBtn.tabIndex = map ? -1 : 0;
+    // The incoming panel takes one short breath (outgoing is cut instantly).
+    const incoming = map ? wrap : listview;
+    incoming.classList.remove('view-enter');
+    void incoming.offsetWidth; // restart-safe under rapid toggling
+    incoming.classList.add('view-enter');
+    clearTimeout(scrollTimer); // a List->Map->List flurry can't fire a stale scroll
     if (!map) {
       // Land with the currently-showing saint in view, not the top of A–Z.
       const act = listview.querySelector('.scard.is-active');
-      if (act) setTimeout(() => act.scrollIntoView({ block: 'center', behavior: 'auto' }), 40);
+      if (act) scrollTimer = setTimeout(() => act.scrollIntoView({ block: 'center', behavior: 'auto' }), 40);
     }
   }
-  viewMapBtn.addEventListener('click', () => { haptic(8); tickSound(); setView('map'); });
-  viewListBtn.addEventListener('click', () => { haptic(8); tickSound(); setView('list'); });
+  viewMapBtn.addEventListener('click', () => { haptic(8); setView('map'); });
+  viewListBtn.addEventListener('click', () => { haptic(8); setView('list'); });
+  [viewMapBtn, viewListBtn].forEach((button) => button.addEventListener('keydown', (event) => {
+    if (!['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
+    event.preventDefault();
+    const next = button === viewMapBtn ? viewListBtn : viewMapBtn;
+    setView(next === viewMapBtn ? 'map' : 'list');
+    next.focus();
+  }));
   setView('map');
-
-  // ---- Sound (governs the big screen) -----------------------------------
-  let muted = false;
-  function reflectSound(m) {
-    muted = !!m;
-    soundBtn.textContent = muted ? '🔕 Muted' : '🔔 Sound';
-    soundBtn.setAttribute('aria-pressed', String(!muted));
-    soundBtn.classList.toggle('is-quiet', muted);
-  }
-  soundBtn.addEventListener('click', () => {
-    haptic(10);
-    conn.send({ type: 'mute', muted: !muted });
-    reflectSound(!muted);
-    tickSound(); // after reflect, so switching ON gives audible feedback
-  });
-
-  // ---- Background music (governs the big screen) ------------------------
-  let musicOn = true;
-  function reflectMusic(on) {
-    musicOn = !!on;
-    musicBtn.textContent = musicOn ? '🎵 Music' : '🎵 Music off';
-    musicBtn.setAttribute('aria-pressed', String(musicOn));
-    musicBtn.classList.toggle('is-quiet', !musicOn);
-  }
-  musicBtn.addEventListener('click', () => {
-    haptic(10);
-    tickSound();
-    conn.send({ type: 'music', on: !musicOn });
-    reflectMusic(!musicOn);
-  });
 
   // ---- Connection -------------------------------------------------------
   const conn = window.createConnection('tablet', (msg) => {
     if (msg.type === 'select') markActive(msg.id);
     else if (msg.type === 'home') markActive(null);
-    else if (msg.type === 'mute') reflectSound(msg.muted);
-    else if (msg.type === 'music') reflectMusic(msg.on);
     else if (msg.type === 'requestState') conn.send(lastSent); // serverless late-join
   });
 })();
