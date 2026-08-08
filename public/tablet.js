@@ -29,6 +29,10 @@
   const esc = (s) => String(s == null ? '' : s).replace(/[&<>"]/g, (c) =>
     ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   const monogram = (name) => name.replace(/^(St|Saint)\s+/i, '').trim().charAt(0).toUpperCase() || '✠';
+  // Every portrait on the tablet is small (cards, the scrub bubble, the chip),
+  // so they all come from the generated thumbnails — loading 80 full-size
+  // originals at once is what evicts the tab on a memory-tight device.
+  const thumb = (image) => `images/thumbs/${image.split('/').pop().replace(/\.(jpe?g|png)$/i, '.webp')}`;
   const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
   // Haptic feedback (Android/Chrome support navigator.vibrate; iOS Safari ignores it).
   const haptic = (ms) => { try { if (navigator.vibrate) navigator.vibrate(ms); } catch { /* noop */ } };
@@ -172,7 +176,7 @@
       previewEl.style.setProperty('--pin-accent', `oklch(${s.accent})`);
       previewEl.innerHTML =
         `<div class="preview__img${s.image ? '' : ' is-mono'}" data-mono="${monogram(s.name)}"` +
-        `${s.image ? ` style="background-image:url('/${esc(s.image)}')"` : ''}></div>` +
+        `${s.image ? ` style="background-image:url('/${esc(thumb(s.image))}')"` : ''}></div>` +
         `<div class="preview__name">${esc(s.name)}</div>` +
         `<div class="preview__epithet">${esc(s.epithet || '')}</div>` +
         `<div class="preview__place">${esc(s.place)}</div>`;
@@ -265,7 +269,7 @@
     nowchip.hidden = !s;
     if (s) {
       nowchipName.textContent = s.name;
-      nowchipImg.style.backgroundImage = s.image ? `url('/${s.image}')` : 'none';
+      nowchipImg.style.backgroundImage = s.image ? `url('/${thumb(s.image)}')` : 'none';
       nowchipImg.textContent = s.image ? '' : monogram(s.name);
       nowchip.style.setProperty('--pin-accent', `oklch(${s.accent})`);
     }
@@ -319,7 +323,7 @@
       const cards = groups[c].map((s) =>
         `<button class="scard" data-id="${s.id}" style="--pin-accent:oklch(${s.accent})">
            <span class="scard__img${s.image ? '' : ' is-mono'}" data-mono="${esc(monogram(s.name))}"` +
-        `${s.image ? ` style="background-image:url('/${esc(s.image)}')"` : ''}></span>
+        `${s.image ? ` style="background-image:url('/${esc(thumb(s.image))}')"` : ''}></span>
            <span class="scard__name">${esc(s.name)}</span>
            <span class="scard__epi">${esc(s.epithet)}</span>
            <span class="scard__place">${esc(s.place)}</span>
@@ -354,6 +358,15 @@
     });
   })();
 
+  // Country headings stick directly below the search + filter bar, whose height
+  // changes when the chips wrap (narrow tablets, rotation).
+  const listtools = listview.querySelector('.listtools');
+  function measureTools() {
+    if (listtools) listview.style.setProperty('--tools-h', `${listtools.offsetHeight}px`);
+  }
+  window.addEventListener('resize', measureTools);
+  window.addEventListener('orientationchange', () => setTimeout(measureTools, 120));
+
   let scrollTimer = null;
   function setView(v) {
     const map = v === 'map';
@@ -374,6 +387,7 @@
     incoming.classList.add('view-enter');
     clearTimeout(scrollTimer); // a List->Map->List flurry can't fire a stale scroll
     if (!map) {
+      measureTools(); // the list has a box only once it is visible
       // Land with the currently-showing saint in view, not the top of A–Z.
       const act = listview.querySelector('.scard.is-active');
       if (act) scrollTimer = setTimeout(() => act.scrollIntoView({ block: 'center', behavior: 'auto' }), 40);

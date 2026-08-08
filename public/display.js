@@ -14,6 +14,9 @@
     ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   const monogram = (name) => name.replace(/^(St|Saint)\s+/i, '').trim().charAt(0).toUpperCase() || '✠';
   const rnd = (a, b) => a + Math.random() * (b - a);
+  // The drifting constellation shows 30 portraits at once, so it uses the
+  // generated thumbnails. Only the reveal below loads a full-size original.
+  const thumb = (image) => `images/thumbs/${image.split('/').pop().replace(/\.(jpe?g|png)$/i, '.webp')}`;
 
   // A short summary made of WHOLE sentences within a budget — never truncated.
   const shortSummary = (s) => {
@@ -61,7 +64,7 @@
         `--dx0:${rnd(-50, 50).toFixed(0)}px`, `--dy0:${rnd(-50, 50).toFixed(0)}px`,
         `--dx1:${rnd(-50, 50).toFixed(0)}px`, `--dy1:${rnd(-50, 50).toFixed(0)}px`,
         `--dur:${dur}s`, `animation-delay:${delay}s`, `opacity:${op}`,
-        `--pin-accent:oklch(${s.accent})`, `background-image:url('/${esc(s.image)}')`,
+        `--pin-accent:oklch(${s.accent})`, `background-image:url('/${esc(thumb(s.image))}')`,
       ].join(';');
       return `<div class="float-avatar" style="${vars}" title="${esc(s.name)}"></div>`;
     }).join('');

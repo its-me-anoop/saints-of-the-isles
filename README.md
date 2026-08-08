@@ -83,6 +83,21 @@ the classic one-computer exhibition rig.
 
 To preview a single saint anywhere: `/display?demo=cuthbert`.
 
+## Tablet requirements
+
+The visitor map is a plain web page, so any reasonably modern tablet works. It
+has been sized and profiled against an **iPad (7th gen, 10.2-inch)** — the
+oldest device likely to be used, capped at iPadOS 16 / Safari 16:
+
+- **Use portrait orientation.** The map is taller than it is wide, so portrait
+  fills far more of the screen and gives ~41 px saint targets instead of ~30 px
+  in landscape. Drag a finger to preview and lift to choose — you never have to
+  hit a pin precisely.
+- Open in Safari, then **Add to Home Screen** and launch from there for true
+  fullscreen without the browser chrome.
+- Turn on **Guided Access** (Settings → Accessibility) to lock the iPad to the
+  page, and set **Display & Brightness → Auto-Lock → Never**.
+
 ## Exhibition setup tips
 
 - Open **`/display`** full-screen (kiosk mode) on the big screen — landscape,
@@ -104,7 +119,10 @@ public/
   map.js               GENERATED — accurate SVG coastline paths + viewBox
   saints.js            GENERATED — the 85 saints, each with projected pin x/y,
                        accent colour, image path and credit
-  images/              GENERATED — downloaded saint portraits
+  images/              GENERATED — downloaded saint portraits (full size)
+  images/thumbs/       GENERATED — 176px WebP thumbnails (0.9 MB vs 23 MB);
+                       used by every small portrait: list cards, the scrub
+                       bubble, the now-showing chip, the drifting constellation
   connection.js        auto-reconnecting WebSocket shared by both screens
   styles.css           the illuminated-manuscript styling
 data/
@@ -129,6 +147,7 @@ The content lives in **`data/saints.master.json`**. To change the line-up:
 ```bash
 # 1. edit data/saints.master.json
 node tools/fetch-images.mjs   # (re)download portraits — resumable, polite
+node tools/make-thumbs.mjs    # build public/images/thumbs (needs cwebp)
 node tools/genmap.mjs         # re-project pins, rebuild public/map.js + saints.js
 node tools/gen-credits.mjs    # refresh CREDITS.md
 ```
