@@ -22,8 +22,11 @@
   --parchment-ink:  oklch(30% 0.045 56);
   --parchment-dim:  oklch(46% 0.04 56);
 
-  /* The current saint's colour (set per-reveal via JS). */
-  --accent: oklch(72% 0.12 86);
+  /* The current saint's colour, as BARE oklch components ("L C H") so every
+     use site can wrap it and add its own alpha: oklch(var(--accent) / 0.4).
+     JS writes the same bare form. --gold-c mirrors --gold for fallbacks. */
+  --accent: 72% 0.12 86;
+  --gold-c: 82% 0.13 86;
 
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
 
@@ -244,7 +247,7 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 .pin__halo {
-  fill: var(--pin-accent, var(--gold));
+  fill: oklch(var(--pin-accent, var(--gold-c)));
   opacity: 0.18;
   transform-box: fill-box;
   transform-origin: center;
@@ -252,7 +255,7 @@ body {
   transition: transform 0.6s var(--ease), opacity 0.6s var(--ease);
 }
 .pin__dot {
-  fill: var(--pin-accent, var(--gold));
+  fill: oklch(var(--pin-accent, var(--gold-c)));
   stroke: oklch(97% 0.02 86);
   stroke-width: 1.5;
   transition: transform 0.5s var(--ease);
@@ -261,7 +264,7 @@ body {
 }
 .pin__pulse {
   fill: none;
-  stroke: var(--pin-accent, var(--gold));
+  stroke: oklch(var(--pin-accent, var(--gold-c)));
   stroke-width: 2;
   opacity: 0;
   transform-box: fill-box;
@@ -297,7 +300,11 @@ body {
   z-index: 8;
   padding: 1.4rem 0 max(0.4rem, env(safe-area-inset-bottom));
   background: linear-gradient(to bottom, transparent, var(--ink) 34%);
+  /* The tall fade is decoration: let taps and flicks through it to the map and
+     the list underneath. The controls themselves opt back in below. */
+  pointer-events: none;
 }
+.tablet__foot > * { pointer-events: auto; }
 .reset {
   min-height: 48px;
   font-family: var(--font-body);
@@ -331,7 +338,7 @@ body {
   text-align: center;
 }
 .nowshowing.is-shown { opacity: 1; transform: translate(-50%, 0); }
-.nowshowing b { font-family: var(--font-display); color: var(--accent); }
+.nowshowing b { font-family: var(--font-display); color: oklch(var(--accent)); }
 
 /* =========================================================================
    DISPLAY — the big screen
@@ -730,9 +737,9 @@ body {
   background-size: cover;
   background-position: center top;
   background-color: oklch(24% 0.04 274);
-  outline: 3px solid oklch(var(--pin-accent, var(--gold)));
+  outline: 3px solid oklch(var(--pin-accent, var(--gold-c)));
   outline-offset: 3px;
-  box-shadow: 0 0 0 6px oklch(16% 0.03 274), 0 18px 40px -16px oklch(var(--pin-accent, var(--gold)) / 0.9);
+  box-shadow: 0 0 0 6px oklch(16% 0.03 274), 0 18px 40px -16px oklch(var(--pin-accent, var(--gold-c)) / 0.9);
 }
 .preview__img.is-mono::before {
   content: attr(data-mono);
@@ -741,7 +748,7 @@ body {
   width: 100%; height: 100%;
   font-family: var(--font-deco);
   font-size: 3.2rem;
-  color: oklch(var(--pin-accent, var(--gold)));
+  color: oklch(var(--pin-accent, var(--gold-c)));
 }
 .preview__name {
   margin-top: 0.6em;
@@ -923,9 +930,9 @@ body {
   border-radius: 50%;
   background-size: cover;
   background-position: center top;
-  border: 2px solid oklch(var(--pin-accent, var(--gold)) / 0.7);
+  border: 2px solid oklch(var(--pin-accent, var(--gold-c)) / 0.7);
   box-shadow: 0 10px 30px -12px oklch(8% 0.03 274 / 0.9),
-              0 0 24px -6px oklch(var(--pin-accent, var(--gold)) / 0.5);
+              0 0 24px -6px oklch(var(--pin-accent, var(--gold-c)) / 0.5);
   filter: saturate(1.05);
   animation: drift var(--dur, 28s) ease-in-out infinite alternate;
   will-change: transform;
@@ -1016,7 +1023,7 @@ body {
   gap: 0.55em;
   max-width: 34vw;
   background: oklch(20% 0.03 274 / 0.85);
-  border: 1px solid oklch(var(--pin-accent, var(--gold)) / 0.6);
+  border: 1px solid oklch(var(--pin-accent, var(--gold-c)) / 0.6);
   border-radius: 999px;
   padding: 0.25em 0.95em 0.25em 0.3em;
   cursor: default;
@@ -1033,8 +1040,8 @@ body {
   place-items: center;
   font-family: var(--font-deco);
   font-size: 0.85em;
-  color: oklch(var(--pin-accent, var(--gold)));
-  outline: 1.5px solid oklch(var(--pin-accent, var(--gold)) / 0.7);
+  color: oklch(var(--pin-accent, var(--gold-c)));
+  outline: 1.5px solid oklch(var(--pin-accent, var(--gold-c)) / 0.7);
 }
 .nowchip__name {
   display: block;

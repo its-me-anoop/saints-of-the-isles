@@ -64,7 +64,7 @@
         `--dx0:${rnd(-50, 50).toFixed(0)}px`, `--dy0:${rnd(-50, 50).toFixed(0)}px`,
         `--dx1:${rnd(-50, 50).toFixed(0)}px`, `--dy1:${rnd(-50, 50).toFixed(0)}px`,
         `--dur:${dur}s`, `animation-delay:${delay}s`, `opacity:${op}`,
-        `--pin-accent:oklch(${s.accent})`, `background-image:url('/${esc(thumb(s.image))}')`,
+        `--pin-accent:${s.accent}`, `background-image:url('/${esc(thumb(s.image))}')`,
       ].join(';');
       return `<div class="float-avatar" style="${vars}" title="${esc(s.name)}"></div>`;
     }).join('');
@@ -201,7 +201,7 @@
       }
       const s = byId[nextId];
       currentId = nextId; pendingId = null; phase = 'shown';
-      display.style.setProperty('--accent', `oklch(${s.accent})`); // recolor in the dim
+      display.style.setProperty('--accent', s.accent); // recolor in the dim
       saintEl.innerHTML = renderSaint(s);
       display.classList.add('has-saint');
       inviteEl.setAttribute('aria-hidden', 'true');
@@ -218,7 +218,7 @@
       if (nextId === null) { commit(); return; } // idle -> idle: kills strays
       // Idle -> saint: light before subject — the invite leaves and the aura
       // warms in the new colour for a beat before the procession enters.
-      display.style.setProperty('--accent', `oklch(${byId[nextId].accent})`);
+      display.style.setProperty('--accent', byId[nextId].accent);
       display.classList.add('has-saint');
       phase = 'leaving';
       phaseTimer = setTimeout(commit, IDLE_MS);

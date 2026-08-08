@@ -102,7 +102,7 @@
     const g = el('g', { class: 'pin', tabindex: '0', role: 'button',
       'aria-label': `${saint.name}, ${saint.place}`,
       transform: `translate(${x.toFixed(1)} ${y.toFixed(1)})`,
-      style: `--pin-accent: oklch(${saint.accent});` });
+      style: `--pin-accent: ${saint.accent};` });
     g.dataset.id = saint.id;
     g.appendChild(el('circle', { class: 'pin__hit', r: 21, fill: 'transparent' }));
     g.appendChild(el('circle', { class: 'pin__pulse', r: 7 }));
@@ -171,7 +171,7 @@
       const w = wrap.getBoundingClientRect();
       const cx = r.left + r.width / 2 - w.left;
       const cy = r.top + r.height / 2 - w.top;
-      previewEl.style.setProperty('--pin-accent', `oklch(${s.accent})`);
+      previewEl.style.setProperty('--pin-accent', s.accent);
       previewEl.innerHTML =
         `<div class="preview__img${s.image ? '' : ' is-mono'}" data-mono="${monogram(s.name)}"` +
         `${s.image ? ` style="background-image:url('/${esc(thumb(s.image))}')"` : ''}></div>` +
@@ -198,6 +198,10 @@
   }
 
   wrap.addEventListener('pointerdown', (e) => {
+    // Capture so this element still receives the up/cancel even if the finger
+    // strays outside it — otherwise the entry below is never removed and the
+    // stale count disables selection for the rest of the day.
+    try { wrap.setPointerCapture(e.pointerId); } catch { /* noop */ }
     pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
     if (pointers.size === 2) {
       gestured = true; hidePreview();
@@ -221,19 +225,27 @@
       scrub(e.clientX, e.clientY);
     }
   });
-  function endPointer(e) {
+  // `commit` is false for pointercancel: the system aborted the touch (a palm,
+  // an incoming call, Control Centre), so it must never push a saint on screen.
+  function endPointer(e, commit) {
+    try { wrap.releasePointerCapture(e.pointerId); } catch { /* noop */ }
     pointers.delete(e.pointerId);
     if (pointers.size === 0) {
-      if (!gestured && underId) select(underId);
+      if (commit && !gestured && underId) select(underId);
       gestured = false; gStart = null; hidePreview();
       scheduleHintReturn();
     } else if (pointers.size === 1) {
       gStart = null; // dropped from pinch to one finger — wait for full release
     }
   }
-  wrap.addEventListener('pointerup', endPointer);
-  wrap.addEventListener('pointercancel', endPointer);
+  wrap.addEventListener('pointerup', (e) => endPointer(e, true));
+  wrap.addEventListener('pointercancel', (e) => endPointer(e, false));
   wrap.addEventListener('pointerleave', () => { if (pointers.size === 0) hidePreview(); });
+  // Last resort: if a pointer is ever lost without up/cancel (backgrounded tab,
+  // rotation mid-gesture), drop the stale state rather than wedge the map.
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) { pointers.clear(); gestured = false; gStart = null; hidePreview(); }
+  });
 
   // ---- Selection --------------------------------------------------------
   let lastSent = { type: 'home' };
@@ -253,7 +265,7 @@
     if (saint) {
       const node = pinNodes.get(id);
       if (node) node.parentNode.appendChild(node);
-      nowShowing.innerHTML = `Now on the large display: <b style="--accent: oklch(${saint.accent})">${esc(saint.name)}</b>`;
+      nowShowing.innerHTML = `Now on the large display: <b style="--accent: ${saint.accent}">${esc(saint.name)}</b>`;
       nowShowing.classList.add('is-shown');
       clearTimeout(nowShowingTimer);
       nowShowingTimer = setTimeout(() => nowShowing.classList.remove('is-shown'), 3400);
@@ -269,7 +281,7 @@
       nowchipName.textContent = s.name;
       nowchipImg.style.backgroundImage = s.image ? `url('/${thumb(s.image)}')` : 'none';
       nowchipImg.textContent = s.image ? '' : monogram(s.name);
-      nowchip.style.setProperty('--pin-accent', `oklch(${s.accent})`);
+      nowchip.style.setProperty('--pin-accent', s.accent);
     }
   }
 
@@ -319,7 +331,7 @@
       `<button class="chip${c === 'All' ? ' is-on' : ''}" data-country="${esc(c)}" aria-pressed="${c === 'All'}">${esc(c)}</button>`).join('');
     const body = order.map((c) => {
       const cards = groups[c].map((s) =>
-        `<button class="scard" data-id="${s.id}" style="--pin-accent:oklch(${s.accent})">
+        `<button class="scard" data-id="${s.id}" style="--pin-accent:${s.accent}">
            <span class="scard__img${s.image ? '' : ' is-mono'}" data-mono="${esc(monogram(s.name))}"` +
         `${s.image ? ` style="background-image:url('/${esc(thumb(s.image))}')"` : ''}></span>
            <span class="scard__name">${esc(s.name)}</span>

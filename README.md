@@ -123,6 +123,8 @@ public/
   images/thumbs/       GENERATED — 176px WebP thumbnails (0.9 MB vs 23 MB);
                        used by every small portrait: list cards, the scrub
                        bubble, the now-showing chip, the drifting constellation
+  fonts/               GENERATED — self-hosted Cinzel + Spectral woff2, so the
+                       kiosk needs no internet and never flashes a fallback
   connection.js        auto-reconnecting WebSocket shared by both screens
   styles.css           the illuminated-manuscript styling
 data/
@@ -148,6 +150,7 @@ The content lives in **`data/saints.master.json`**. To change the line-up:
 # 1. edit data/saints.master.json
 node tools/fetch-images.mjs   # (re)download portraits — resumable, polite
 node tools/make-thumbs.mjs    # build public/images/thumbs (needs cwebp)
+node tools/fetch-fonts.mjs    # refresh self-hosted fonts (only if they change)
 node tools/genmap.mjs         # re-project pins, rebuild public/map.js + saints.js
 node tools/gen-credits.mjs    # refresh CREDITS.md
 ```
