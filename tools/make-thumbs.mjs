@@ -23,7 +23,10 @@ import { execFileSync } from 'node:child_process';
 import { mkdirSync, readdirSync, existsSync, statSync } from 'node:fs';
 import path from 'node:path';
 
-const THUMB = 176;   // short-edge pixels
+// Short edge in pixels. The largest consumer is the tablet's scrub bubble at
+// clamp(92px, 13vh, 150px) — 150 CSS px on a 2x display needs 300 device px,
+// so 320 keeps it crisp while the 80px cards and 116px avatars have margin.
+const THUMB = 320;
 const QUALITY = 72;
 
 const root = path.resolve(import.meta.dirname, '..');
