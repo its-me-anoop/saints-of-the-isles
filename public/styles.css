@@ -281,13 +281,6 @@ body {
   100% { opacity: 0;   transform: scale(2.4); }
 }
 
-/* Idle gentle breathing on every dot, staggered via inline delay. */
-.pin__dot { animation: breathe 4.5s ease-in-out infinite; }
-@keyframes breathe {
-  0%, 100% { transform: scale(1); }
-  50%      { transform: scale(1.12); }
-}
-
 .compass { opacity: 0.5; }
 .compass text { font-family: var(--font-display); fill: var(--gold-soft); font-size: 14px; }
 .compass line, .compass path { stroke: var(--gold-soft); }
@@ -691,7 +684,7 @@ body {
     transition-duration: 0.001ms !important;
     transition-delay: 0s !important; /* the invite's return delay must collapse too */
   }
-  .pin__dot, .rays svg, .float-avatar { animation: none !important; }
+  .rays svg, .float-avatar { animation: none !important; }
   .saint .rise { opacity: 1 !important; transform: none !important; }
 }
 

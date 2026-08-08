@@ -107,9 +107,7 @@
     g.appendChild(el('circle', { class: 'pin__hit', r: 21, fill: 'transparent' }));
     g.appendChild(el('circle', { class: 'pin__pulse', r: 7 }));
     g.appendChild(el('circle', { class: 'pin__halo', r: 12 }));
-    const dot = el('circle', { class: 'pin__dot', r: 4.5 });
-    dot.style.animationDelay = `${(i % 9) * 0.35}s`;
-    g.appendChild(dot);
+    g.appendChild(el('circle', { class: 'pin__dot', r: 4.5 }));
     g.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); select(saint.id); }
     });

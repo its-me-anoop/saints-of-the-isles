@@ -1,0 +1,28 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="stylesheet" href="./public/styles.css"/></head>
+<body>
+  <div class="vellum"></div>
+  <main class="tablet">
+    <header class="tablet__bar">
+      <h1 class="tablet__title"><span aria-hidden="true">&#10024;</span> Saints of the Isles</h1>
+      <div class="viewtoggle" role="tablist" aria-label="View">
+        <button class="viewtoggle__btn is-active" id="viewMap">Map</button>
+        <button class="viewtoggle__btn" id="viewList">Saints list</button>
+      </div>
+    </header>
+    <section class="tablet__stage">
+      <div class="mapwrap" id="mapwrap">
+        <div class="maphint" id="mapHint">Touch a place to meet its saint. Drag to explore.</div>
+      </div>
+      <div class="tablet__foot">
+        <span class="lamp"><span class="lamp__text">Big screen</span></span>
+        <div class="nowchip" id="nowchip"><span class="nowchip__img">A</span><span><span class="nowchip__label">On display</span><span class="nowchip__name">St Cuthbert of Lindisfarne</span></span></div>
+        <div class="tablet__controls">
+          <button class="iconbtn iconbtn--gold" id="surprise">Discover a saint</button>
+          <button class="reset" id="reset">Clear the screen</button>
+        </div>
+      </div>
+    </section>
+  </main>
+</body></html>
